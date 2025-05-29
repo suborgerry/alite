@@ -1,0 +1,154 @@
+{% style %}
+  .contact-details_section{
+    margin-bottom:100px;
+  }
+  .contact-details_wrapper{
+    margin:0 auto;
+    max-width:1200px;
+  }
+  .block_bottom-content img{
+    margin:0 4px;
+  }
+  .contact-details_title{
+    font-size:40px;
+    margin:30px 0 12px;
+    text-align:center;
+    font-weight:500;
+  }
+  .details_wrapper{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+  }
+  .detail_block{
+    border-radius:40px;
+    padding:30px 100px;
+    text-align:center;
+    font-size:20px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  .detail_block a{
+    color:#000000BF;
+    text-decoration:none;
+    
+  }
+  .detail_block h3{
+    font-size:20px;
+    font-weight:700;
+  }
+  .detail_block p, .detail_block h3{
+    margin:0;
+  }
+  .detail_block:nth-child(3n+1){
+    background-color:#DA9DFF;
+  }
+  .detail_block:nth-child(3n+2){
+        background-color:#ECEBEB;
+  }
+  .detail_block:nth-child(3n+3){
+        background-color:#4BFE85;
+  }
+  @media screen and (max-width:1150px){
+      .detail_block{
+        width: 250px;
+    padding:20px 0px;
+  }
+      .block_bottom-content img{
+    width:15px;
+  }
+  }
+  @media screen and (max-width:800px){
+    .details_wrapper{
+      flex-direction:column;
+      gap:35px
+    }
+    .detail_block:nth-child(even){
+      align-self:flex-end;
+          border-radius: 100px 0 0 100px;
+    }
+    .detail_block{
+      padding:20px 30px;
+    width: 95%;
+    font-size:14px;
+    border-radius: 0 100px 100px 0;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 2fr;
+    gap:10px;
+  }
+    .block_top-content strong{
+      display:none;
+    }
+    .detail_block h3{
+      grid-column: span 2;
+    }
+  }
+{%endstyle %}
+<section class="contact-details_section">
+  <div class="contact-details_wrapper">
+    <h2 class="contact-details_title">{{ section.settings.title }}</h2>
+    <div class="details_wrapper">
+      {% for block in section.blocks %}
+        {% if block.type =="block" %}
+            <div class="detail_block">
+              <h3 class="block_title">{{ block.settings.title }}</h3>
+              <p class="block_top-content">{% if block.settings.content_top_logo %}<img src ="{{ block.settings.top_logo | image_url }}">{% endif %}{{ block.settings.content_top }}</p>
+              <p class="block_bottom-content">{% if block.settings.content_bottom_logo %}<img src ="{{ block.settings.content_bottom_logo | image_url }}">{% endif %}{{ block.settings.content_bottom }}</p>
+            </div>
+          {% endif%}
+        {% endfor%}
+    </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "contact details",
+    "settings": [
+                {
+            "type": "text",
+            "id": "title",
+            "label": "title",
+          },
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name":"block",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "title",
+          },
+          {
+            "type": "image_picker",
+            "id": "content_top_logo",
+            "label": "content top logo",
+          },
+          {
+            "type": "html",
+            "id": "content_top",
+            "label": "content top",
+          },
+                    {
+            "type": "image_picker",
+            "id": "content_bottom_logo",
+            "label": "content bottom logo",
+          },
+          {
+            "type": "html",
+            "id": "content_bottom",
+            "label": "content bottom",
+          },
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "contact details"
+      }
+    ]
+  }
+{% endschema %}

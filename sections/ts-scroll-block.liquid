@@ -1,0 +1,398 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+
+<style>
+  .ts-scroll {
+    padding-top: 30px;    
+    overflow-x: hidden;
+
+  }
+
+  .ts-scroll__container {
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 0 50px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 120px;
+  }
+
+  .ts-scroll__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 0 120px;
+  }
+
+  .ts-scroll__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: center;
+    width: fit-content;
+  }
+
+  .ts-scroll__subtitle {
+    width: 100%;
+    color: #000;
+    text-align: center;
+    font-family: "ShopifySans" !important;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0 0 35px;
+  }
+
+  .ts-scroll__title {
+    color: #000;
+    text-align: center;
+    font-family: "ShopifySans" !important;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+  }
+
+  .ts-scroll__media-inner {
+    width: 100%;
+  }
+
+  .ts-scroll__media {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    display: flex;
+  }
+
+  .ts-scroll__media video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+
+  .ts-scroll__blocks {
+    grid-column-start: 1;
+    grid-column-end: 3
+  }
+
+  .ts-scroll__block {
+    margin: 0 0 90px;
+  }
+
+  .scroll-block__title {
+    color: #000;
+    font-family: "ShopifySans" !important;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    margin: 0 0 50px;
+    letter-spacing: normal;
+  }
+
+  .scroll-block__description {
+    text-align: center;
+    font-family: "ShopifySans" !important;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2;
+    margin: 0;
+    letter-spacing: normal;
+    width: fit-content;
+  }
+
+  .ts-scroll__animage {
+    position: absolute;
+    display: flex;
+    top: 25%;
+  }
+
+  .ts-scroll__animage--small {
+    left: 0;
+    transform: translateX(-95%);
+  }
+
+  .ts-scroll__animage--big {
+    top: 55%;
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  @media screen and (max-width: 1200px) {
+    .ts-scroll__animage {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ts-scroll {
+      padding: 0 0 60px;
+    }
+
+    .ts-scroll__container {
+      padding: 0 16px;
+      display: block;
+    }
+
+    .ts-scroll__top {
+      flex-direction: column;
+      margin: 0;
+      gap: 0;
+      position: sticky;
+      top: 133px;
+      z-index: 1;
+    }
+
+    .ts-scroll__heading {
+      width: 100%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background: #fff;
+    }
+
+    .ts-scroll__title {
+      width: 100%;
+    }
+
+    .ts-scroll__media {
+      background: #fff;
+      display: flex;
+      position: relative;
+    }
+
+    .ts-scroll__media video {
+      max-width: 85%;
+      margin: 0 auto;
+    }
+
+    .ts-scroll__subtitle {
+      margin: 0 0 20px;
+      font-size: 18px;
+    }
+
+    .scroll-block__title {
+      margin: 0 0 30px;
+      font-size: 28px;
+    }
+
+    .ts-scroll__blocks {
+      gap: 100px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ts-scroll__block {
+      min-height: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  }
+</style>
+
+<div class="ts-scroll">
+  <div class="ts-scroll__container">
+    
+      <div class="ts-scroll__heading">
+        {% if section.settings.subtitle != blank %}
+          <p class="ts-scroll__subtitle">
+            {{ section.settings.subtitle }}
+          </p>
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          <h2 class="ts-scroll__title">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+      </div>
+      <div class="ts-scroll__media-inner"> 
+        <div class="ts-scroll__media"> 
+          <video playsinline="playsinline" width="400x" loop="loop" muted="muted" preload="metadata">
+            <source src="{{ section.settings.video.sources[1].url }}" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    
+
+    <div class="ts-scroll__blocks">
+      {% for block in section.blocks %}
+        <div class="ts-scroll__block scroll-block">
+          <h3 class="scroll-block__title">
+            {{ block.settings.title }}
+          </h3>
+
+          <div class="scroll-block__animation">
+            <p class="scroll-block__description reveal-type" data-bg-color="#cccccc" data-fg-color="#000">
+              {{ block.settings.description }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="ts-scroll__animage ts-scroll__animage--big">
+      {{ section.settings.image_2 | image_url: width: 450 | image_tag }}
+    </div>
+    <div class="ts-scroll__animage ts-scroll__animage--small">
+      {{ section.settings.image_1 | image_url: width: 390 | image_tag }}
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    document.querySelector(".ts-scroll").addEventListener("mousemove", (event) => {
+      document.querySelector(".ts-scroll__animage--big").style.transform = `translateX(calc(100% + ${event.clientX / 50}px)) translateY(${event.clientY / 100}px)`;
+  
+      document.querySelector(".ts-scroll__animage--small").style.transform = `translateX(calc(-95% + ${event.clientX / 75}px)) translateY(${event.clientY / -100}px)`;
+    });
+
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    const splitTypes = document.querySelectorAll('.reveal-type')
+
+    splitTypes.forEach((char,i) => {
+
+      const bg = char.dataset.bgColor
+      const fg = char.dataset.fgColor
+
+      const text = new SplitType(char, { types: 'words, chars' })
+
+      let start = 'top 70%';
+      let end = 'top 35%';
+
+      if (window.innerWidth < 750) {
+        start = 'top 70%';
+        end = 'top 35%';
+      }
+
+      gsap.fromTo(text.chars, 
+        {
+          color: bg,
+        },
+        {
+          color: fg,
+          duration: 1,
+          stagger: 1,
+          scrollTrigger: {
+            trigger: char,
+            start: start,
+            end: end,
+            scrub: 1,
+            markers: false,
+            toggleActions: 'play play reverse reverse'
+          }
+        }
+      )
+    });
+
+    const percentageSeen = () => {
+      // Get the relevant measurements and positions
+      const element = document.querySelector('.ts-scroll .ts-scroll__media');
+      const viewportHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+      let elementOffsetTop = element.offsetTop;
+      const elementHeight = element.offsetHeight;
+      let viewPercentage = 0;
+
+
+      if (window.innerWidth < 750) {
+        elementOffsetTop = element.closest(".ts-scroll").offsetTop;
+      }
+
+      if ((elementOffsetTop - scrollTop) >  viewportHeight) {
+        viewPercentage = 0;
+      } else if (((elementOffsetTop - scrollTop) + elementHeight) < viewportHeight) {
+        viewPercentage = 100;
+      } else {
+        viewPercentage = ((viewportHeight - (elementOffsetTop - scrollTop)) / elementHeight) * 100;
+      }
+
+      viewPercentage = Math.round(viewPercentage * 10) / 10;
+
+      if (viewPercentage == 100) {
+        element.querySelector("video").play();
+        window.removeEventListener("scroll", percentageSeen);
+      }
+    };
+
+    window.addEventListener("scroll", percentageSeen);
+    percentageSeen();
+    
+    window.addEventListener("DOMContentLoaded", () => {
+      const bar = document.querySelector(".ts-scroll__media-inner");
+      const lastBlock = document.querySelector(".ts-scroll__blocks .ts-scroll__block:last-of-type");
+      const blocks = document.querySelector(".ts-scroll__blocks");
+      {% comment %} if (window.innerWidth < 750) {
+        bar.style.paddingBottom = (lastBlock.offsetHeight + 40) + "px";
+        blocks.style.marginTop = -lastBlock.offsetHeight + "px";
+      } {% endcomment %}
+    });
+  })();
+</script>
+
+{% schema %}
+  {
+    "name": "TS Scroll blocks",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "video",
+        "id": "video",
+        "label": "Video"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image for animation"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image for animation"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Text block",
+        "type": "text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Subtitle desktop",
+            "info": "Each line should be separated"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "TS Scroll blocks"
+      }
+    ]
+  } 
+{% endschema %}

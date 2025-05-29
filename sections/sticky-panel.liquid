@@ -1,0 +1,81 @@
+{% style %}
+  .sticky-panel{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    background-color: #fff;
+    padding: 10px 0;
+    z-index: 3;
+  }
+  .sticky-panel-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%; 
+  max-width: 1240px !important;
+  }
+    .stiky-text{
+    font-size:16px;
+    font-weight:500;
+    font-family: "ShopifySans" !important;
+    color:#000;
+    text-alight:center;
+    }
+
+   .stiky-button:link, .stiky-button:visited {
+     font-size:16px;
+    font-weight:500;
+    font-family: "ShopifySans" !important;
+    padding: 10px 125px;
+    background-color: #4BFE85;
+    color: #000;
+    text-decoration: none;
+    border-radius: 109px;
+    font-size: 16px;
+     text-align:center;
+     transition:all 0.3s;
+    }
+     .stiky-button:hover,.stiky-button:active{
+      background-color:#DA9DFF;
+     }
+    @media screen and (min-width:750px){
+        .sticky-panel-content{
+    padding:0 50px!important;
+  }
+    }
+  @media screen and (max-width:850px){
+  .stiky-text {
+    font-size: 12px;
+    max-width: 250px;
+}
+       .stiky-button:link, .stiky-button:visited {
+     font-size:14px;
+    padding: 8px 60px;
+    }
+    .sticky-panel{
+          padding: 6px 15px;
+    }
+   .sticky-panel-content{
+    padding:0 !important;
+  }
+  }
+
+  {% endstyle%}
+<div class="sticky-panel">
+  <div class="page-width--narrow sticky-panel-content"> 
+  <p class="stiky-text">{{ 'blogs.article.explore-text' | t }}</p>
+  <a href="https://alite.cc" class="stiky-button">{{ 'blogs.article.explore-btn' | t }}</a>
+  </div
+</div>
+{% schema %}
+  {
+    "name": "sticky-panel",
+    "presets": [
+      {
+        "name": "sticky-panel"
+      }
+    ]
+  } 
+{% endschema %}

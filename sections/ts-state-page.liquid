@@ -1,0 +1,111 @@
+{{ 'ts-state-page.css' | asset_url | stylesheet_tag }}
+
+
+<div class="ts-state-page page-width">
+  {% if section.settings.title != blank %}
+    <h2 class="ts-state-page__title">{{ section.settings.title }}</h2>
+  {% endif %}
+    <input autocomplete="off" type="search" id="state-search" name="state-search" placeholder="{{ section.settings.select_placeholder }}" />
+    <div class="ts-state-page__options">
+      {% assign sortCollections = collections | sort : "title" %}
+      {% assign revesedCollections = sortCollections | reverse %}
+      {% for curCollection in sortCollections %}
+        {% for stateYearCol in revesedCollections  %}
+          {% if stateYearCol.metafields.custom.year_fitler_name %}
+            {% if stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.state_filter_name and stateYearCol.metafields.custom.year_order == "1" %}
+                {% assign handle = stateYearCol.handle %}
+                {% break %}
+               {% elsif stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.state_filter_name %}
+                {% assign handle = stateYearCol.handle %}
+                {% continue %}
+              {% else %}
+              {% unless handle %}
+                {% assign handle = curCollection.handle %}
+                {% endunless %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% if curCollection.metafields.custom.state_filter_name and curCollection.all_products_count > 0 %}
+        <div class="ts-state-page__option" data-handle="{{ handle}}">
+          {{ curCollection.metafields.custom.state_filter_name}}
+        </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+<script>
+document.addEventListener("DOMContentLoaded", (event) => {
+  const search = document.querySelector("#state-search");
+  const optionsContainer = document.querySelector(".ts-state-page__options");
+  const options = document.querySelectorAll(".ts-state-page__option");
+
+  search.addEventListener("click", function () {
+    optionsContainer.style.pointerEvents = "all";
+    options.forEach(option => {
+      option.style.display = "flex"; // Показываем все варианты при клике в поле ввода
+    });
+  });
+
+  options.forEach(option => {
+    option.addEventListener("click", function () {
+      search.value = option.textContent.trim();
+      const currentHandle = option.dataset.handle;
+      window.location = "https://alite.cc/collections/" + currentHandle;
+    });
+  });
+
+  search.addEventListener("input", () => {
+    const input = search.value.toLowerCase();
+    options.forEach(option => {
+      const state = option.textContent.trim().toLowerCase();
+      
+      // Проверяем, содержит ли фраза введённый текст, а не только начало каждого слова
+      const match = state.includes(input);
+      
+      if (match) {
+        option.style.display = "flex"; 
+      } else {
+        option.style.display = "none"; 
+      }
+    });
+  });
+});
+
+
+</script>
+
+{% schema %}
+  {
+    "name": "TS States",
+    "settings": [
+      {
+        "type": "richtext",
+        "label": "States json",
+        "id": "json",
+        "info": "Use https://jsonformatter.curiousconcept.com/ for validate json"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Choose your state!"
+      },
+      {
+        "type": "text",
+        "id": "select_placeholder",
+        "label": "Select",
+        "default": "State"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection connected"
+      }
+    ],
+    "presets": [
+      {
+        "name": "TS States"
+      }
+    ]
+  } 
+{% endschema %}

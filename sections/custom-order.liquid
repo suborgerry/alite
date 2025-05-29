@@ -1,0 +1,88 @@
+<section class="custom-order-process page-width"  style="margin-top: {{ section.settings.margin_top | append: 'px' }}; margin-bottom: {{ section.settings.margin_bottom | append: 'px' }};">
+  <h2 class="custom-order-title">{{ section.settings.title }}</h2>
+  <div class="custom-order-box">
+      {{ section.settings.icon_svg }}
+    <p class="custom-order-text">{{ section.settings.text }}</p>
+  </div>
+</section>
+
+<style>
+  .custom-order-box svg{
+    flex-shrink: 0;
+  }
+.custom-order-title {
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.custom-order-box {
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+.custom-order-text {
+  margin: 0;
+  color:#000;
+  font-size:16px;
+}
+
+  @media (max-width: 768px){
+    .custom-order-box {
+    align-items: start;
+    gap: 25px;
+    flex-direction: column;
+}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Custom Order Process",
+  "tag": "section",
+  "class": "custom-order-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section title",
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Info text",
+    },
+    {
+      "type": "textarea",
+      "id": "icon_svg",
+      "label": "SVG icon",
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top margin (px)",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom margin (px)",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Order Process",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

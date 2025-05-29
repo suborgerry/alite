@@ -1,0 +1,153 @@
+<style>
+  .image-mobile{
+    display:none;
+  }
+  .multicolumn-new-title{
+    font-size:30px;
+    font-weight:700;
+    margin: 0 0 40px 0;
+  }
+  .multicolumn-new-container{
+    margin-bottom:30px;
+  }
+  .multicolumn-new-container-blocks{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:18px;
+  }
+  .multicolumn-new-block{
+    display: flex;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+}
+   .multicolumn-new-image{
+     margin-bottom:30px;
+     line-height:0;
+     width:100%
+   }
+  .multicolumn-new-image img{
+    width:100%;
+    object-fit:cover;
+  }
+  .multicolumn-new-block-title{
+    font-size:20px;
+    color:#000;
+    font-weight:700;
+    max-width:200px;
+    margin:0 0 10px 0
+  }
+  .multicolumn-new-text{
+    font-size:18px;
+    color:#000;
+    max-width:200px;
+    margin:0;
+    margin-top: auto;
+  }
+  @media screen and (max-width:750px){
+  .multicolumn-new-title{
+    font-size:18px;
+  }
+    .multicolumn-new-image{
+     margin-bottom:16px;
+     line-height:0;
+   }
+      .multicolumn-new-container-blocks{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+    .multicolumn-new-block:last-child{
+      grid-column:span 2;
+    }
+    .multicolumn-new-block .image-mobile{
+      display:block;
+    }
+    .multicolumn-new-block .image{
+      display:none;
+    }
+    .multicolumn-new-block{
+      border:1px solid #F2F2F2;
+    }
+      .multicolumn-new-block-title{
+    max-width:100%;
+          padding:0 16px
+  }
+  .multicolumn-new-text{
+    font-size:16px;
+    max-width:100%;
+    margin-bottom:16px;
+    padding:0 16px
+  }
+  .multicolumn-new-container{
+    margin-bottom:0px;
+  }
+  }
+</style>
+<div class="multicolumn-new-container page-width">
+  <h2 class="multicolumn-new-title">{{ section.settings.title }}</h2>
+  <div class="multicolumn-new-container-blocks">
+  {% for block in section.blocks %}
+    <div class="multicolumn-new-block">
+      <div class="multicolumn-new-image">
+        <img class="image" src="{{ block.settings.image |image_url}}">
+        <img class="image-mobile" src="{{ block.settings.image_mob |image_url}}">
+      </div>
+      <h3 class="multicolumn-new-block-title">
+        {{ block.settings.title }}
+      </h3>
+      <div class="multicolumn-new-text">
+        {{ block.settings.text }}
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Multicolumn new",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "block",
+        "name":"Block",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "text",
+            "label": "Title",
+            "id":"title"
+          },
+          {
+            "type": "text",
+            "label": "Text",
+            "id":"text"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mob",
+            "label": "Image mobile"
+          },
+        ]
+      }
+    ],
+        "presets": [
+      {
+        "name": "Multicolumn new"
+      }
+    ]
+  }
+{% endschema %}

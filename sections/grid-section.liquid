@@ -1,0 +1,288 @@
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+{% style %}
+  .circle-block{
+    width: fit-content;
+    border-radius: 100px;
+    background: #5D5D5D1A;
+  }
+  .main-grid{
+    margin: 40px auto 80px auto;
+    display:grid;
+    grid-template-columns: repeat({{section.settings.columns}}, 1fr);
+    gap:16px
+  }
+  [class*="grid-block-"]{
+    padding:30px;
+    background-color:#F9F9F9;
+    border-radius:15px;
+    
+  }
+  .block-image{
+    line-height:0;
+    overflow:hidden;
+    display:flex;
+
+    border-radius:16px;
+  }
+  .block-image img{
+    width:100%;
+    border-radius:16px;
+    max-height:200px;
+    object-fit: cover;
+    margin: auto;
+  }
+  .block-icon{
+    line-height:0;
+  }
+  .block-icon img{
+    padding:16px;
+    width: 60px;
+    height: 60px;
+  }
+  .block-info_title{
+    margin: 0 0 8px 0;
+    font-size:20px;
+    font-weight:700;
+  }
+  .block-info_text{
+    margin: 0 ;
+    font-size:16px;
+  }
+  .title{
+    margin:80px auto 0;
+    font-size:30px;
+    font-weight:700;
+  }  
+    @media screen and (max-width:750px){
+    .main-grid{
+    grid-template-columns: repeat({{section.settings.columns_mob}}, 1fr);
+    gap:10px
+  }
+        [class*="grid-block-"]{
+    padding:12px;
+    
+  }
+    }
+{% endstyle %}
+<h2 class="title page-width">{{ section.settings.title }}</h2>
+<div class="main-grid page-width">
+  {% for block in section.blocks %}
+    <div class="grid-block-{{ forloop.index }}">
+    {% if block.settings.icon %}
+      <div class="block-icon">
+        <div class="circle-block">
+        <img src="{{ block.settings.icon | image_url }}">
+      </div>
+      </div>
+      {% endif %}
+      {% if block.settings.title or block.settings.text %}
+      <div class="block-info">
+        <h3 class="block-info_title">
+          {{ block.settings.title }}
+        </h3>
+        <p class="block-info_text">{{ block.settings.text }}</p>
+      </div>
+      {% endif %}
+      {% if block.settings.image %}
+      <div class="block-image">
+        <img src="{{ block.settings.image | image_url }}">
+      </div>
+        {% endif %}
+    </div>
+    <style>
+    @media screen and (min-width:750px){
+      .grid-block-{{forloop.index}}{
+        grid-column: {{block.settings.position-x}}/span {{block.settings.width}};
+        grid-row: {{block.settings.position-y}}/span {{block.settings.height}};
+        {% if block.settings.width > 1 %}
+          display:grid;
+          row-gap:40px;
+          column-gap:40px;
+          
+        {% elsif block.settings.height > 1 %}
+          display:flex;
+          flex-direction:column-reverse;
+          gap:50px;
+          justify-content: space-around;
+        {% endif %}
+      }
+      {% if block.settings.width > 1 %}
+      .grid-block-{{forloop.index}} .block-image{
+        grid-row:1/span 2;
+        grid-column:2;
+      } 
+          
+        {% elsif block.settings.height > 1 %}
+      .grid-block-{{forloop.index}} .block-icon{
+        display:none;
+      } 
+      .grid-block-{{forloop.index}}   .block-image{
+    max-height:100%;
+  }
+      {% else %}
+    .grid-block-{{forloop.index}} .block-icon{
+      margin-bottom:40px;
+      }
+        {% endif %}
+      }
+        @media screen and (max-width:750px){
+        .grid-block-{{forloop.index}}{
+        grid-column: {{block.settings.position-x_mob}}/span {{block.settings.width_mob}};
+        grid-row: {{block.settings.position-y_mob}}/span {{block.settings.height_mob}};
+        {% if block.settings.width_mob > 1 %}
+          display:flex;
+          flex-direction:column-reverse;
+          gap:50px;
+          justify-content: space-around;
+  
+        {% elsif block.settings.height_mob > 1 %}
+          display:flex;
+          flex-direction:column-reverse;
+          gap:50px;
+          justify-content: space-around;
+        {% endif %}
+      }
+      {% if block.settings.width_mob > 1 %}
+      .grid-block-{{forloop.index}} .block-image{
+        grid-row:1/span 2;
+        grid-column:2;
+      }
+      .grid-block-{{forloop.index}} .block-icon{
+        display:none;
+      }
+          
+        {% elsif block.settings.height_mob > 1 %}
+      .grid-block-{{forloop.index}} .block-icon{
+        display:none;
+      } 
+      .grid-block-{{forloop.index}}   .block-image{
+    max-height:100%;
+  }
+      {% else %}
+    .grid-block-{{forloop.index}} .block-icon{
+      margin-bottom:40px;
+      }
+        {% endif %}
+      }
+          }
+      
+    </style>
+  {% endfor %}
+</div>
+{% schema %}
+  {
+    "name": "Grid section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section title"
+      },
+      {
+        "type": "number",
+        "id":"columns",
+        "label": "Columns"
+      },
+      {
+        "type": "number",
+        "id":"columns_mob",
+        "label": "Columns mobile"
+      },
+    ],
+    "blocks": [
+      {
+        "type": "cell",
+        "name": "Cell",
+        "settings":[
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mob",
+          "label": "Image mobile",
+          "info": "If not selected, the PC picture will be used"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+        },
+          {
+          "type": "number",
+          "id": "position-x",
+          "label": "Horizontal position",
+          
+        },
+        {
+          "type": "number",
+          "id": "width",
+          "label": "Width",
+        },
+        {
+          "type": "number",
+          "id": "position-y",
+          "label": "Vertical position",
+        },
+        {
+          "type": "number",
+          "id": "height",
+          "label": "Height",
+        },
+          {
+          "type": "number",
+          "id": "position-x_mob",
+          "label": "Horizontal position mobile",
+          
+        },
+        {
+          "type": "number",
+          "id": "width_mob",
+          "label": "Width mobile",
+        },
+        {
+          "type": "number",
+          "id": "position-y_mob",
+          "label": "Vertical position mobile",
+        },
+        {
+          "type": "number",
+          "id": "height_mob",
+          "label": "Height mobile",
+        },
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Grid section"
+      }
+    ]
+  }
+{% endschema %}

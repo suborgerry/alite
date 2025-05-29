@@ -1,0 +1,163 @@
+{% if section.settings.show_announcement %}
+  <style>
+    #shopify-section-{{ section.id }} {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 4;
+    }
+
+    .ts-announcement_VL {
+      background-color: {{ section.settings.background }};
+      color: {{ section.settings.color }};
+      overflow: hidden;
+      padding: 4px 0;
+      margin: 0 !important;
+    }
+
+    .ts-container_CH {
+      display: flex;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      position: relative;
+    }
+
+    .ts-announcement__title_VL a {
+      font-size: 12px;
+    }
+    
+    .ts-marquee-inner {
+      display: flex;
+      animation: scroll-marquee 100s linear infinite;
+      will-change: transform;
+    }
+
+    .ts-announcement__content_VL { 
+      display: inline-flex;
+      gap: 14px;
+      align-items: center;
+      padding: 0 6px;
+      white-space: nowrap;
+    }
+
+    .ts-announcement__title_VL {
+      color: {{ section.settings.color }};
+      font-family: "ShopifySans", sans-serif !important;
+      font-weight: 700;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      margin: 0;
+    }
+
+    .CH-icon {
+      display: inline-flex;
+      font-size: 14px;
+    }
+
+    @keyframes scroll-marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @media screen and (max-width: 749px) {
+      .ts-announcement__title_VL {
+        font-size: 12px !important;
+      }
+    }
+  </style>
+
+  <div class="ts-announcement_VL">
+    <div class="ts-container_CH">
+      <div class="ts-marquee-inner">
+        {% assign repeat_count = 20 %}
+        {% for i in (1..repeat_count) %}
+          <span class="ts-announcement__content_VL">
+            <p class="ts-announcement__title_VL">
+              {{ section.settings.title }}
+            </p>
+            {% if section.settings.left_svg != blank %}
+              <span class="CH-icon">{{ section.settings.left_svg }}</span>
+            {% endif %}
+            {% if section.settings.middle_svg != blank %}
+              <span class="CH-icon">{{ section.settings.middle_svg }}</span>
+            {% endif %}
+            {% if section.settings.right_svg != blank %}
+              <span class="CH-icon">{{ section.settings.right_svg }}</span>
+            {% endif %}
+          </span>
+        {% endfor %}
+        {% for i in (1..repeat_count) %}
+          <span class="ts-announcement__content_VL">
+            <p class="ts-announcement__title_VL">
+              {{ section.settings.title }}
+            </p>
+            {% if section.settings.left_svg != blank %}
+              <span class="CH-icon">{{ section.settings.left_svg }}</span>
+            {% endif %}
+            {% if section.settings.middle_svg != blank %}
+              <span class="CH-icon">{{ section.settings.middle_svg }}</span>
+            {% endif %}
+            {% if section.settings.right_svg != blank %}
+              <span class="CH-icon">{{ section.settings.right_svg }}</span>
+            {% endif %}
+          </span>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "TS Announcement VL",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Place your text here."
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "textarea",
+      "id": "left_svg",
+      "label": "Left SVG Icon"
+    },
+    {
+      "type": "textarea",
+      "id": "middle_svg",
+      "label": "Middle SVG Code"
+    },
+    {
+      "type": "textarea",
+      "id": "right_svg",
+      "label": "Right SVG Icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show Announcement",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "TS Announcement VL"
+    }
+  ]
+}
+{% endschema %}

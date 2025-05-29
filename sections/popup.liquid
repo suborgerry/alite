@@ -1,0 +1,440 @@
+<style> 
+  .popup-content {
+    padding: 16px;
+    position: relative;
+}
+  .top-svg-size{
+    width: {{ section.settings.top_svg_width }}px;
+    height: {{ section.settings.top_svg_height }}px;
+  }
+  .promo-svg-size{
+    width: {{ section.settings.promo_svg_width }}px;
+    height: {{ section.settings.promo_svg_height }}px;
+  }
+  .svg-margin{
+    margin-bottom: {{ section.settings.promo_svg_margin_bottom }}px;
+  }
+   .top-text {
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: {{ section.settings.top_text_size }}px;
+    margin-top: {{ section.settings.top_text_margin_top }}px;
+    margin-bottom: {{ section.settings.top_text_margin_bottom }}px;
+  }
+
+  .sub-text {
+    color: #fff;
+    text-align: center;
+    font-size: {{ section.settings.sub_text_size }}px;
+    margin-top: {{ section.settings.sub_text_margin_top }}px;
+    margin-bottom: {{ section.settings.sub_text_margin_bottom }}px;
+  }
+  .close {
+    display: flex;
+    font-size: 25px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    margin: 0px 0px 15px 0px;
+    background-color: #0000001A;
+    border-radius: 10px;
+}
+  .popup-content img{
+    width:100%;
+  }
+  .copiedNotification {
+    display: none;
+    padding: 12px;
+    background-color: rgb(233 233 233);
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    z-index: 1000;
+    font-size: 16px;
+    line-height: 1;
+    position: absolute;
+    width: 87px;
+    left: 50% !important;
+    top: 78% !important;
+    transform: translatex(-50%);
+}
+   .pop-up {
+      transition: bottom 0.5s ease;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 450px;
+        
+        height:262px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        border-radius: 30px;
+        text-align: center;
+        animation: fade-in 0.3s cubic-bezier(.76, 0, .24, 1);
+        z-index: 100000;
+        background-repeat: no-repeat;
+        background-position: center;
+        {% if section.settings.bg_gradient != blank %}
+           background: url('{{ section.settings.bg_image | image_url }}') no-repeat center / cover, 
+                {{ section.settings.bg_gradient }};
+        {% endif %}
+    }
+   .popup-items {
+    margin-left: 0px;
+    display: grid;
+    }
+  .close-container {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-bottom: -15px;
+    }
+   .p-text {
+     color: #fff;
+    text-align: center;
+     font-size:16px;
+     margin: 0px;
+   }
+  .h-text {
+    color: #fff;
+    text-align: center;
+    margin:0px;
+    font-size:24px;
+    font-weight:700;
+    }
+
+  {% if section.settings.top_svg == blank %}
+    .h1-text { display: none; }
+  {% endif %}
+  {% if section.settings.promo_svg == blank %}
+    .copyText { display: none; }
+  {% endif %}
+  {% if section.settings.discount_text == blank and section.settings.discount_value == blank %}
+    .h-text, .h3-text { display: none; }
+  {% endif %}
+  @media (max-width: 750px) {
+    .pop-up {
+        bottom: 0 !important;
+        right: 0 !important;
+        width: 82% !important;
+        background-size: 448px 448px !important;
+    }
+        .copiedNotification {
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+}
+  @media (max-width: 400px){
+    .h-text {
+    font-size: 20px;
+}
+    .p-text {
+    font-size: 14px;
+}
+    .close {
+    margin: 0px 0px 25px 0px;
+}
+    .top-text {
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: {{ section.settings.top_text_margin_top }}px;
+    margin-bottom: {{ section.settings.top_text_margin_bottom }}px;
+  }
+  .sub-text {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    margin-top: {{ section.settings.sub_text_margin_top }}px;
+    margin-bottom: {{ section.settings.sub_text_margin_bottom }}px;
+  }
+  }
+  @media (max-width: 399px){
+    .pop-up {
+    height: 215px;
+      width: 80% !important;
+}
+        .close {
+        margin: 0px 0px 10px 0px;
+    }
+    .top-text {
+        font-size: 18px;
+    }
+      .sub-text {
+        font-size: 12px;
+    }
+    .p-text {
+        font-size: 12px;
+    }
+        .h-text {
+        font-size: 18px;
+    }
+  }
+</style>
+
+
+<div class="pop-up" id="pop-up">
+  <div class="popup-content">
+    <div class="close-container">
+      <div class="close" id="close-btn">
+        <svg class="w-full h-full" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 18L6 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M18 6L6 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+    <div class="popup-items">
+      {% if section.settings.top_svg != blank %}
+        <img src="{{ section.settings.top_svg | image_url }}" alt="Top Icon" width="{{ section.settings.top_svg_width }}" height="{{ section.settings.top_svg_height }}" />
+      {% endif %}
+      {% if section.settings.top_text != blank %}
+        <p class="top-text">{{ section.settings.top_text }}</p>
+      {% endif %}
+      {% if section.settings.sub_text != blank %}
+        <h2 class="sub-text" >{{ section.settings.sub_text }}</h2>
+      {% endif %}
+      {% if section.settings.promo_svg != blank %}
+        <img src="{{ section.settings.promo_svg | image_url }}" alt="Promo Icon" width="{{ section.settings.promo_svg_width }}" height="{{ section.settings.promo_svg_height }}" class="copyText svg-margin" style="cursor: pointer;" />
+      {% endif %}
+      {% if section.settings.discount_text != blank %}
+        <p class="p-text" style="margin: 0px 0px -5px 0px;">{{ section.settings.discount_text }}</p>
+      {% endif %}
+      {% if section.settings.discount_value != blank %}
+        <h3 class="h-text">{{ section.settings.discount_value }}</h3>
+      {% endif %}
+      <div class="copiedNotification" style="display: none;">Copied!</div>
+    </div>
+  </div>
+</div>
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (sessionStorage.getItem("isClosed") === "true") {
+      document.getElementById("pop-up").style.display = "none";
+    }
+
+    document.querySelector("#close-btn").addEventListener("click", () => {
+      document.getElementById("pop-up").style.display = "none";
+      sessionStorage.setItem("isClosed", "true");
+    });
+
+    const promoSvg = document.querySelector(".copyText");
+    if (promoSvg) {
+      promoSvg.addEventListener("click", () => {
+        const textToCopy = "{{ section.settings.promo_code | escape }}";
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          const clipboard = document.querySelector(".copiedNotification");
+          clipboard.style.display = "block";
+          setTimeout(() => clipboard.setAttribute("open", true), 100);
+          setTimeout(() => clipboard.removeAttribute("open"), 1600);
+          setTimeout(() => (clipboard.style.display = "none"), 1700);
+        }).catch(err => console.error("Error copying text: ", err));
+      });
+    }
+  });
+
+   const popUp = document.querySelector(".pop-up");
+
+function updatePopUpPosition() {
+  if (stickyAdd.classList.contains("hide")) {
+    popUp.style.bottom = "20px";
+  } else {
+    popUp.style.bottom = "80px";
+  }
+}
+
+window.addEventListener("scroll", updatePopUpPosition);
+updatePopUpPosition(); // Проверка при загрузке страницы
+
+</script>
+
+
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+  var currentUrl = window.location.href;
+  if (currentUrl.includes('/?')) {
+    var newUrl = currentUrl.replace('/?', '?');
+    window.history.replaceState(null, null, newUrl);
+  }
+});
+
+      document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.querySelector(".ts-header__menu-btn");
+    const drawerCloseBtn = document.querySelector(".ts-drawer__close");
+    const popUp = document.querySelector(".pop-up");
+
+    if (menuBtn && drawerCloseBtn && popUp) {
+        menuBtn.addEventListener("click", function () {
+            popUp.style.opacity = "0";
+            popUp.style.visibility = "hidden";
+        });
+
+        drawerCloseBtn.addEventListener("click", function () {
+            popUp.style.opacity = "1";
+            popUp.style.visibility = "visible";
+        });
+    }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Popup Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "bg_gradient",
+      "label": "Radial Gradient/Color CSS"
+    },
+    {
+      "type": "image_picker",
+      "id": "top_svg",
+      "label": "Top SVG Icon"
+    },
+        {
+      "type": "range",
+      "id": "top_svg_width",
+      "label": "SVG Width",
+      "min": 20,
+      "max": 200,
+      "step": 2,
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "top_svg_height",
+      "label": "SVG Height",
+      "min": 20,
+      "max": 200,
+      "step": 2,
+      "default": 48
+    },
+    {
+      "type": "text",
+      "id": "top_text",
+      "label": "Top Text",
+      "default": "Top Text"
+    },
+    {
+      "type": "range",
+      "id": "top_text_size",
+      "label": "Top Text Size",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "top_text_margin_top",
+      "label": "Top Text Margin Top",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "top_text_margin_bottom",
+      "label": "Top Text Margin Bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "sub_text",
+      "label": "Sub Text",
+      "default": "Sub Text"
+    },
+    {
+      "type": "range",
+      "id": "sub_text_size",
+      "label": "Sub Text Size",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "sub_text_margin_top",
+      "label": "Sub Text Margin Top (px)",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "sub_text_margin_bottom",
+      "label": "Sub Text Margin Bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "image_picker",
+      "id": "promo_svg",
+      "label": "Promo SVG Icon"
+    },
+    {
+      "type": "range",
+      "id": "promo_svg_width",
+      "label": "SVG Width",
+      "min": 20,
+      "max": 200,
+      "step": 2,
+      "default": 150
+    },
+    {
+      "type": "range",
+      "id": "promo_svg_height",
+      "label": "SVG Height",
+      "min": 20,
+      "max": 200,
+      "step": 2,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "promo_svg_margin_bottom",
+      "label": "Promo SVG Margin Bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "promo_code",
+      "label": "Promo Code",
+    },
+    {
+      "type": "text",
+      "id": "discount_text",
+      "label": "Discount Text",
+      "default": "Discount Text"
+    },
+    {
+      "type": "text",
+      "id": "discount_value",
+      "label": "Discount Value",
+      "default": "Discount Value"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Popup Section"
+    }
+  ]
+}
+{% endschema %}

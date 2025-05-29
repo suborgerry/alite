@@ -1,0 +1,288 @@
+<style>
+  {% if template == 'cart' %}
+    .content-for-layout {
+     display: grid;
+    grid-template-columns: 2fr 1fr;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    gap: 0 35px;
+    }
+  @media screen and (max-width:750px){
+        .content-for-layout {
+     display: grid;
+    grid-template-columns: 1fr;
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    gap: 0 35px;
+    }
+    .cart__footer-wrapper{
+      padding:0 0 30px 0 !important;
+    }
+  }
+    .ts-product__price {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-family: "ShopifySans" !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 7px;
+  }
+  
+{% endif %}
+</style>
+<script src="{{ 'new-progress-bar.js' | asset_url }}"></script>
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+{{ 'cart-progress-bar.css' | asset_url | stylesheet_tag }}
+
+<div class="{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
+  <div>
+    <div class="new-progress-bar-cont" style="margin-top: {{ section.settings.margin_top }}px; margin-bottom: {{ section.settings.margin_bottom }}px;">
+      <h3>{{ 'general.cart.progressive' | t }}</h3>
+      <div class="new-progress-bar">
+      <div class="first-off">
+      <div class="progress-bar-text">
+      <p>{{ 'general.cart.sale1' | t }}</p>
+      <p>{{ 'general.cart.sale1_text' | t }}</p>
+      </div>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12.5" cy="12" r="12" fill="#E8E8E8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.2547 8.23228C19.4118 8.3812 19.5 8.58307 19.5 8.79354C19.5 9.00402 19.4118 9.20588 19.2547 9.35481L11.426 16.7677C11.2687 16.9165 11.0555 17 10.8333 17C10.611 17 10.3978 16.9165 10.2405 16.7677L5.76697 12.5318C5.68456 12.4591 5.61846 12.3714 5.57261 12.2739C5.52677 12.1765 5.50212 12.0713 5.50013 11.9647C5.49814 11.8581 5.51886 11.7521 5.56105 11.6532C5.60323 11.5543 5.66603 11.4645 5.74568 11.3891C5.82533 11.3137 5.9202 11.2542 6.02465 11.2143C6.12909 11.1743 6.24096 11.1547 6.35359 11.1566C6.46621 11.1585 6.57728 11.1818 6.68017 11.2252C6.78306 11.2686 6.87567 11.3312 6.95246 11.4092L10.8333 15.0839L18.0692 8.23228C18.2265 8.08354 18.4397 8 18.6619 8C18.8842 8 19.0974 8.08354 19.2547 8.23228Z" fill="#8D8D8D"/>
+</svg>
+      </div>
+     
+
+      <div class="second-off">
+      <div class="progress-bar-text">
+      <p>{{ 'general.cart.sale2' | t }}</p>
+      <p>{{ 'general.cart.sale2_text' | t }}</p>
+      </div>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12.5" cy="12" r="12" fill="#E8E8E8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.2547 8.23228C19.4118 8.3812 19.5 8.58307 19.5 8.79354C19.5 9.00402 19.4118 9.20588 19.2547 9.35481L11.426 16.7677C11.2687 16.9165 11.0555 17 10.8333 17C10.611 17 10.3978 16.9165 10.2405 16.7677L5.76697 12.5318C5.68456 12.4591 5.61846 12.3714 5.57261 12.2739C5.52677 12.1765 5.50212 12.0713 5.50013 11.9647C5.49814 11.8581 5.51886 11.7521 5.56105 11.6532C5.60323 11.5543 5.66603 11.4645 5.74568 11.3891C5.82533 11.3137 5.9202 11.2542 6.02465 11.2143C6.12909 11.1743 6.24096 11.1547 6.35359 11.1566C6.46621 11.1585 6.57728 11.1818 6.68017 11.2252C6.78306 11.2686 6.87567 11.3312 6.95246 11.4092L10.8333 15.0839L18.0692 8.23228C18.2265 8.08354 18.4397 8 18.6619 8C18.8842 8 19.0974 8.08354 19.2547 8.23228Z" fill="#8D8D8D"/>
+</svg>
+      </div>
+     
+
+      <div class="third-off">
+      <div class="progress-bar-text">
+      <p>{{ 'general.cart.sale3' | t }}</p>
+      <p>{{ 'general.cart.sale3_text' | t }}</p>
+      </div>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12.5" cy="12" r="12" fill="#E8E8E8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.2547 8.23228C19.4118 8.3812 19.5 8.58307 19.5 8.79354C19.5 9.00402 19.4118 9.20588 19.2547 9.35481L11.426 16.7677C11.2687 16.9165 11.0555 17 10.8333 17C10.611 17 10.3978 16.9165 10.2405 16.7677L5.76697 12.5318C5.68456 12.4591 5.61846 12.3714 5.57261 12.2739C5.52677 12.1765 5.50212 12.0713 5.50013 11.9647C5.49814 11.8581 5.51886 11.7521 5.56105 11.6532C5.60323 11.5543 5.66603 11.4645 5.74568 11.3891C5.82533 11.3137 5.9202 11.2542 6.02465 11.2143C6.12909 11.1743 6.24096 11.1547 6.35359 11.1566C6.46621 11.1585 6.57728 11.1818 6.68017 11.2252C6.78306 11.2686 6.87567 11.3312 6.95246 11.4092L10.8333 15.0839L18.0692 8.23228C18.2265 8.08354 18.4397 8 18.6619 8C18.8842 8 19.0974 8.08354 19.2547 8.23228Z" fill="#8D8D8D"/>
+</svg>
+</div>
+      </div>
+      </div>
+    <div class="cart__footer">
+      {%- if settings.show_cart_note -%}
+        <cart-note class="cart__note field">
+          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+          <textarea
+            class="text-area field__input"
+            name="note"
+            form="cart"
+            id="Cart-note"
+            placeholder="{{ 'sections.cart.note' | t }}"
+          >{{ cart.note }}</textarea>
+        </cart-note>
+      {%- endif -%}
+      <div class="cart__blocks">
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {% when "product" %}
+            <div class="subtotals_product">
+              <h2 class="subtotals_product_title">{{ block.settings.title }}</h2>
+              <h2 class="subtotals_product_text">{{ block.settings.text }}</h2>
+              <div class="subtotals_product_product">
+                <a href="{{  block.settings.product.url }}" class="subtotals_product-card">
+            <div class="subtotals_product-info">
+    <div class="subtotals_product-image_wrapper">
+    <img src="{{block.settings.product.featured_image | image_url }}" alt="{{ product.title }}">
+    </div>
+    <h3 class="subtotals_product-title">{{ block.settings.product.title }}</h3>
+            <div>
+              {%- assign discounted_price =  block.settings.product.price | times: 0.9 -%}
+              <p class="subtotals_product-original_price">{{ block.settings.product.price | money }}</p>
+              <p class="subtotals_product-price">{{ discounted_price | money }}</p>
+            </div>
+            </div>
+  <form method="post" action="/cart/add">
+    <input type="hidden" name="id" value="{{ block.settings.product.variants.first.id }}">
+    <button type="submit">{{ 'ts.products.add_cart' | t }}</button>
+  </form>
+</a>
+
+              </div>
+            </div>
+            {%- when 'subtotal' -%}
+              <div class="js-contents" {{ block.shopify_attributes }}>
+               <h3>{{ 'general.cart.purchase' | t }}</h3>
+               <div class="totals">
+  <h2 class="totals__subtotal">{{ 'general.cart.totals' | t }}</h2>
+<div class="total-price">
+  {% if cart.total_price < cart.original_total_price %}
+    <p class="totals__subtotal-value">
+      <span >
+        ${{ cart.original_total_price | money_without_currency }}
+      </span>
+      <p >
+        ${{ cart.total_price | money_without_currency }}
+      </p>
+    </p>
+  {% else %}
+    <p class="totals__subtotal-value">
+      ${{ cart.total_price | money_without_currency }}
+    </p>
+  {% endif %}
+</div>               
+</div>
+        {% if cart.total_price < cart.original_total_price %}
+  <div class="cart-savings">
+    <p>
+     {{ 'general.cart.save' | t }}
+    </p>
+    <span>${{ cart.original_total_price | minus: cart.total_price | money_without_currency }}</span>
+  </div>
+{% endif %}
+          
+
+
+                <div>
+                  {%- if cart.cart_level_discount_applications.size > 0 -%}
+                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                      {%- for discount in cart.cart_level_discount_applications -%}
+                        <li class="discounts__discount discounts__discount--position">
+                          {%- render 'icon-discount' -%}
+                          {{ discount.title }}
+                          (-{{ discount.total_allocated_amount | money }})
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </div>
+
+                <small class="tax-note caption-large rte">
+                  {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                    {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                  {%- elsif cart.taxes_included -%}
+                    {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
+                  {%- elsif shop.shipping_policy.body != blank -%}
+                    {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                  {%- else -%}
+                    {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
+                  {%- endif -%}
+                </small>
+              </div>
+            {%- else -%}
+              <div class="cart__ctas" {{ block.shopify_attributes }}>
+                <noscript>
+                  <button type="submit" class="cart__update-button button button--secondary" form="cart">
+                    {{ 'sections.cart.update' | t }}
+                  </button>
+                </noscript>
+
+                <button
+                  type="submit"
+                  id="checkout"
+                  class="cart__checkout-button button"
+                  name="checkout"
+                  {% if cart == empty %}
+                    disabled
+                  {% endif %}
+                  form="cart"
+                >
+                  {{ 'sections.cart.checkout' | t }}
+                </button>
+            <p>{{ 'general.cart.totals_text' | t }}</p>
+              </div>
+
+              {%- if additional_checkout_buttons -%}
+                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                  {{ content_for_additional_checkout_buttons }}
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {% endfor %}
+
+        <div id="cart-errors"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function isIE() {
+      const ua = window.navigator.userAgent;
+      const msie = ua.indexOf('MSIE ');
+      const trident = ua.indexOf('Trident/');
+
+      return msie > 0 || trident > 0;
+    }
+
+    if (!isIE()) return;
+    const cartSubmitInput = document.createElement('input');
+    cartSubmitInput.setAttribute('name', 'checkout');
+    cartSubmitInput.setAttribute('type', 'hidden');
+    document.querySelector('#cart').appendChild(cartSubmitInput);
+    document.querySelector('#checkout').addEventListener('click', function (event) {
+      document.querySelector('#cart').submit();
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-footer.name",
+  "class": "cart__footer-wrapper",
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+      "limit": 1
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1
+    },
+    {
+      "type": "product",
+      "name": "Product",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "html",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "product"
+        },
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ]
+}
+{% endschema %}

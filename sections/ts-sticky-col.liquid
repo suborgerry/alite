@@ -1,0 +1,321 @@
+{{ 'ts-sticky-col.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'discount-popup-mob.js' | asset_url }}"></script>
+
+{% unless section.settings.material %}
+  <style>
+    .ts-controlbar__left a {
+      display: none !important;
+    }
+  </style>
+{% else %}
+  <style>
+    @media screen and (max-width: 550px) {
+      .ts-controlbar__left[show] + .ts-controlbar__right[show],
+      .ts-controlbar__left[show] + .ts-controlbar__right[show] .ts-controlbar__checkout,
+      .ts-controlbar__checkout,
+      .ts-discount-control--collection .ts-controlbar__left a {
+        width: 160px;
+      }
+    }
+  </style>
+{% endunless %}
+<div class="ts-discount-control ts-discount-control--collection">
+  {% unless section.settings.material %}
+    <div id="ts-discount-bar-col" class="ts-header__discount header-discount">
+      <div class="header-discount__container">
+        <div class="header-discount__mesage-top {% if cart.item_count >= 10 %}final{% endif %}">
+          <p class="header-discount__mesage">
+            {{ 'ts.bar.buy' | t}} <span class="header-discount__count">4</span><span style="display: none;" class="ts-header__more-text">{{ 'ts.bar.more' | t}}</span> {{ 'ts.bar.symbols' | t}}<span style="font-weight: bold; color: #f00;">{{ 'ts.bar.get' | t}}<span class="header-discount__pers">10</span>{{ 'ts.bar.off' | t}}</span>
+          </p>
+          <p class="header-discount__mesage-final">
+            {{ 'ts.bar.congratulations' | t}}<strong>{{ 'ts.bar.discount' | t}}</strong>
+          </p>
+        </div>
+        <div class="header-discount__bar error">
+          <div class="ts-bar">
+            <span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endunless %}
+
+  <div class="ts-controlbar ts-controlbar--collection" data-items="{{ cart.item_count }}">
+    <div class="ts-controlbar__container 123">
+      {% if template == "collection.american-states" or template == "collection.promo" or template == "collection.canada-cities" or template == "collection.australia-cities" %}
+       <div class="ts-discount-popup__drag"><p></p></div>
+      {% endif %}
+      <div class="controlbar-content-container">
+      <div class="ts-controlbar__left" {% if cart.item_count < 2 %}show{% endif %}>
+        <a href="#ProductGridContainer" data-scroll>
+          <span>{{ 'ts.bottom_bar.choose-products' | t }}</span>
+          <span class="ts-icon__arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+              <path d="M13.8536 4.35355C14.0488 4.15829 14.0488 3.84171 13.8536 3.64645L10.6716 0.464466C10.4763 0.269204 10.1597 0.269204 9.96447 0.464466C9.7692 0.659728 9.7692 0.976311 9.96447 1.17157L12.7929 4L9.96447 6.82843C9.7692 7.02369 9.7692 7.34027 9.96447 7.53553C10.1597 7.7308 10.4763 7.7308 10.6716 7.53553L13.8536 4.35355ZM0.5 4.5H13.5V3.5H0.5V4.5Z" fill="black"/>
+            </svg>
+          </span>
+        </a>
+        <div class="ts-controlbar__info">
+          <p class="ts-total">{{ 'ts.bottom_bar.total' | t }}<span class="ts-icon__count">{{ cart.item_count }}</span>{{ 'ts.bottom_bar.items' | t }}</p>
+          <p class="ts-price">
+            <span class="ts-price__original" {% if cart.item_count > 3 %}style="color: #EC4545;"{% endif %}>
+              {% if cart.item_count >= 10 %}
+                {% assign tsDiscount = 0.7 %}
+              {% elsif cart.item_count >= 6 %}
+                {% assign tsDiscount = 0.75 %}
+              {% elsif cart.item_count >= 4 %}
+                {% assign tsDiscount = 0.9 %}
+              {% else %}
+                {% assign tsDiscount = 1 %}
+              {% endif %}
+              {{ cart.original_total_price | times: tsDiscount | money }}
+            </span>
+            
+            <span class="ts-price__discount">
+              {{ cart.original_total_price | money }}
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="ts-controlbar__right" {% if cart.item_count < 2 %}show{% endif %}>
+        <div class="ts-controlbar__checkout">
+          <span class="ts-controlbar__checkout-error">
+            {% if section.settings.material %}
+              {{ 'ts.bottom_bar.checkout' | t }}
+            {% else %}
+              {{ 'ts.bottom_bar.min' | t }}
+            {% endif %}
+          </span>
+          <span class="ts-controlbar__checkout-success">{{ 'ts.bottom_bar.checkout' | t }}</span>
+        </div>
+      </div>
+              </div>
+                {% if template == "collection.american-states" or template == "collection.promo" or template == "collection.canada-cities" or template == "collection.australia-cities" %}
+                <div class="ts-discount-popup-container">
+        <div id="ts-discount-popup" class="ts-discount-popup">
+          <div class="ts-discount-popup__content">
+           <div class="ts-discount-popup__text">
+             <div style="display: flex; gap: 10px; align-items: center;">
+              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12.5C24 19.1274 18.6274 24.5 12 24.5C5.37258 24.5 0 19.1274 0 12.5C0 5.87258 5.37258 0.5 12 0.5C18.6274 0.5 24 5.87258 24 12.5Z" fill="#CE3040"/>
+                <path d="M8.625 12.25C7.9 12.25 7.28125 11.9938 6.76875 11.4813C6.25625 10.9688 6 10.35 6 9.625C6 8.9 6.25625 8.28125 6.76875 7.76875C7.28125 7.25625 7.9 7 8.625 7C9.35 7 9.96875 7.25625 10.4813 7.76875C10.9938 8.28125 11.25 8.9 11.25 9.625C11.25 10.35 10.9938 10.9688 10.4813 11.4813C9.96875 11.9938 9.35 12.25 8.625 12.25ZM8.625 10.75C8.9375 10.75 9.20325 10.6407 9.42225 10.4222C9.64125 10.2037 9.7505 9.938 9.75 9.625C9.7495 9.312 9.64025 9.0465 9.42225 8.8285C9.20425 8.6105 8.9385 8.501 8.625 8.5C8.3115 8.499 8.046 8.6085 7.8285 8.8285C7.611 9.0485 7.5015 9.314 7.5 9.625C7.4985 9.936 7.608 10.2017 7.8285 10.4222C8.049 10.6427 8.3145 10.752 8.625 10.75ZM15.375 19C14.65 19 14.0312 18.7438 13.5187 18.2313C13.0062 17.7188 12.75 17.1 12.75 16.375C12.75 15.65 13.0062 15.0312 13.5187 14.5187C14.0312 14.0062 14.65 13.75 15.375 13.75C16.1 13.75 16.7188 14.0062 17.2313 14.5187C17.7438 15.0312 18 15.65 18 16.375C18 17.1 17.7438 17.7188 17.2313 18.2313C16.7188 18.7438 16.1 19 15.375 19ZM15.375 17.5C15.6875 17.5 15.9532 17.3907 16.1722 17.1722C16.3912 16.9537 16.5005 16.688 16.5 16.375C16.4995 16.062 16.3903 15.7965 16.1722 15.5785C15.9542 15.3605 15.6885 15.251 15.375 15.25C15.0615 15.249 14.796 15.3585 14.5785 15.5785C14.361 15.7985 14.2515 16.064 14.25 16.375C14.2485 16.686 14.358 16.9517 14.5785 17.1722C14.799 17.3927 15.0645 17.502 15.375 17.5ZM6.525 18.475C6.3875 18.3375 6.31875 18.1625 6.31875 17.95C6.31875 17.7375 6.3875 17.5625 6.525 17.425L16.425 7.525C16.5625 7.3875 16.7375 7.31875 16.95 7.31875C17.1625 7.31875 17.3375 7.3875 17.475 7.525C17.6125 7.6625 17.6813 7.8375 17.6813 8.05C17.6813 8.2625 17.6125 8.4375 17.475 8.575L7.575 18.475C7.4375 18.6125 7.2625 18.6813 7.05 18.6813C6.8375 18.6813 6.6625 18.6125 6.525 18.475Z" fill="white"/>
+              </svg>
+              <span class="ts-discount-popup__discount-left"></span> 
+              </div>
+              <span class="ts-discount-popup__text-content">
+                <span class="ts-discount-popup__highlight"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+           {% endif %}       
+    </div>
+  </div>
+</div>
+<script>
+  function tsUpdateCountsCol(cart) {
+    const controlBar = document.querySelector(".ts-controlbar");
+
+    fetch(window.Shopify.routes.root + 'cart.js').then(res => res.json()).then(cart => {
+      if (cart.item_count > 1) {
+        controlBar.querySelector(".ts-controlbar__right").removeAttribute('show');
+        controlBar.querySelector(".ts-controlbar__left").removeAttribute('show');
+      } else if (cart.item_count > 0) {
+        {% if section.settings.material %}
+          controlBar.querySelector(".ts-controlbar__right").removeAttribute('show');
+        {% endif %}
+        controlBar.querySelector(".ts-controlbar__left").removeAttribute('show');
+      } else {
+        controlBar.querySelector(".ts-controlbar__right").setAttribute('show', true);
+        controlBar.querySelector(".ts-controlbar__left").setAttribute('show', true);
+      }
+
+      document.querySelector(".ts-cart__bubble").innerHTML = cart.item_count > 0 ? ` (${cart.item_count})` : ``;
+
+      if (cart.item_count > 0) {
+        document.querySelector(".ts-cart__bubble-mob").style.display = "flex";
+        document.querySelector(".ts-cart__bubble-mob").innerHTML = `${cart.item_count}`;
+        if (document.querySelector(".ts-header__more-text")) {
+          document.querySelector(".ts-header__more-text").style.display = "inline";
+        }
+      } 
+
+      let discountRate = 1;
+      let leftToDiscount = 0;
+
+      if (cart.item_count >= 10) {
+        discountRate = 0.7;
+        leftToDiscount = 0;
+      } else if (cart.item_count >= 6) {
+        discountRate = 0.75;
+        leftToDiscount = 10 - cart.item_count;
+      } else if (cart.item_count >= 4) {
+        discountRate = 0.9; 
+        leftToDiscount = 6 - cart.item_count;
+      } else {
+        leftToDiscount = 4 - cart.item_count;
+        discountRate = 1;
+      }
+
+      let originalPrice = controlBar.querySelector(".ts-price__original");
+      let discountPrice = controlBar.querySelector(".ts-price__discount");
+      let symbol = originalPrice.innerText.replace(/[0-9]/g, '').replaceAll(",", "").replaceAll(".", "").trim();
+
+      let discountAmount = 10;
+      if (cart.item_count >= 6) {
+        discountAmount = 30
+      } else if (cart.item_count >= 4) {
+        discountAmount = 25;
+      } else {
+        discountAmount = 10;
+      }
+              
+      const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      });
+
+      const price = formatter.format(cart.original_total_price / 100).replace("$", "");
+
+      if (discountRate == 1) {
+        originalPrice.innerText = symbol + price;
+      } else {
+        discountPrice.innerText = symbol + price;
+      }
+
+      if (discountRate !== 1) {
+        originalPrice.style.color = "#EC4545";
+        discountPrice.style.display = "inline-block";
+
+        const priceDiscounted = formatter.format((cart.original_total_price * discountRate) / 100).replace("$", "");
+        originalPrice.innerText = symbol + priceDiscounted;
+      } else {
+        discountPrice.style.display = "none";
+      }
+
+      // header
+
+      document.querySelector(".header-discount__count").innerText = leftToDiscount;
+      document.querySelector(".header-discount__pers").innerText = discountAmount;
+
+      if (leftToDiscount == 0) {
+        document.querySelector(".header-discount__mesage-top").classList.add("final");
+      }
+
+      // Calculate bar 
+
+      const sectionBar = document.querySelector(".ts-discount__bar");
+
+      let sectionDiscountMessage = document.querySelector(".ts-discount__message-2");
+      if (sectionDiscountMessage && sectionDiscountMessage.innerText.includes("{count_left}")) {
+        sectionDiscountMessage.innerHTML = `${sectionDiscountMessage.innerText.split("{count_left}")[0]}<span class="ts-left-count">${leftToDiscount}</span>${sectionDiscountMessage.innerText.split("{count_left}")[1]}`;
+      } else {
+        if(sectionDiscountMessage && sectionDiscountMessage.querySelector(".ts-left-count")) {
+          sectionDiscountMessage.querySelector(".ts-left-count").innerText = leftToDiscount;
+        }
+      }
+
+      if (leftToDiscount == 0 && document.querySelector(".ts-discount__main")) {
+        document.querySelector(".ts-discount__main").classList.add("final");
+      }
+
+      let message = "error";
+      let widthBar = 10;
+
+      if (cart.item_count == 0 || cart.item_count == 1 || cart.item_count == 4 || cart.item_count == 6) {
+        message = "error";
+      } else if (cart.item_count > 1 && cart.item_count < 4) {
+        message = "warn";
+      } else if (cart.item_count == 5) {
+        message = "warn";
+      } else if (cart.item_count > 6 && cart.item_count < 10) { 
+        message = "warn";
+      } else {
+        message = "success";
+      }
+
+      if (cart.item_count == 0 || cart.item_count == 4 || cart.item_count == 6) {
+        widthBar = 10;
+      } else if (cart.item_count == 1 || cart.item_count == 7) {
+        widthBar = 25;
+      } else if (cart.item_count == 2 || cart.item_count == 5 || cart.item_count == 8) {
+        widthBar = 50;
+      } else if (cart.item_count == 3 || cart.item_count == 9) {
+        widthBar = 75;
+      } else {
+        widthBar = 100;
+      }
+
+      const headerBar = document.querySelector(".header-discount__bar");
+
+      if(sectionBar) {
+        sectionBar.classList.remove("error");
+        sectionBar.classList.remove("warn");
+        sectionBar.classList.remove("success");
+        sectionBar.classList.add(message);
+      }
+
+      if(headerBar) {
+        headerBar.classList.remove("error");
+        headerBar.classList.remove("warn");
+        headerBar.classList.remove("success");
+        headerBar.classList.add(message);
+      }
+
+
+      if (widthBar == 100) {
+        if(sectionBar) {
+          sectionBar.querySelector(".ts-bar span").style.width = `calc(100% + 2px)`;
+        }
+        if(headerBar) {
+          headerBar.querySelector(".ts-bar span").style.width = `calc(100% + 2px)`;
+        }
+      } else {
+        if(sectionBar) {
+          sectionBar.querySelector(".ts-bar span").style.width = widthBar + "%";
+        }
+        if(headerBar){
+          headerBar.querySelector(".ts-bar span").style.width = widthBar + "%";
+        }
+      }
+
+      if(sectionBar) {
+        sectionBar.querySelector("span[data-discount]").innerText = discountAmount + "{{ 'ts.bar.right_discount' | t }}";
+      }
+
+      controlBar.querySelector(".ts-icon__count").innerText = cart.item_count;
+      controlBar.setAttribute("data-items", cart.item_count);
+    })
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    tsUpdateCountsCol();
+  })
+
+  document.querySelector(".ts-controlbar__checkout").addEventListener("click", (e) => {
+    if (!e.target.closest(".ts-controlbar__right").hasAttribute("show")) {
+      window.location.pathname = "/checkout";
+    }
+  })
+</script>
+
+{% schema %}
+  {
+    "name": "TS Sticky add collection",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "material",
+        "label": "Material collection",
+        "default": false
+      }
+    ],
+    "presets": [
+      {
+        "name": "TS Sticky add collection"
+      }
+    ]
+  }
+{% endschema %}

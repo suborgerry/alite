@@ -1,0 +1,372 @@
+
+{% comment %} Rewritten contact form that submits to Shopify and sends data to Telegram via backend proxy {% endcomment %}
+
+{{ 'new-contact-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="contact page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}">
+        {{ section.settings.heading }}
+      </h2>
+    {%- else -%}
+      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+    {%- endif -%}
+
+    {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
+      <!-- Hidden input to collect selected product -->
+      <input type="hidden" name="contact[product_b2b]" id="selectedProducts">
+      <input type="hidden" name="contact[request_type]" value="B2B">
+
+     <div class="product-selector">
+  <label class="contact__title" for="productDropdown">{{ 'templates.contact.form.choose_product' | t }}</label>
+  <div class="field">
+    <div class="custom-dropdown-wrapper">
+      <input type="text" id="productDropdown" class="field__input dropdown" readonly placeholder="Select the product">
+      <div class="custom-dropdown hidden" id="customDropdownMenu">
+        {%- for block in section.blocks -%}
+  <div class="dropdown-option" data-value="{{ block.settings.title }}">{{ block.settings.title }}</div>
+{%- endfor -%}
+
+      </div>
+    </div>
+    <svg class="arrow---icon" width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.7625 0.808594L7.5 6.37135L13.2375 0.808594L15 2.52114L7.5 9.80859L0 2.52114L1.7625 0.808594Z" fill="#8D8D8D"/>
+    </svg>
+  </div>
+
+  <div class="product-buttons">
+    <div class="product-buttons-row">
+      <div class="product-buttons-scroll">
+        {%- for block in section.blocks -%}
+  <button type="button" class="product-btn" data-product="{{ block.settings.title }}">{{ block.settings.title }}</button>
+{%- endfor -%}
+      </div>
+      <button type="button" id="clearSelection" class="clear-btn">Clear</button>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Contact fields -->
+      <div class="contact__fields">
+        <div class="contact__layout">
+          <div class="contact__left">
+            <p class="contact__title">{{ 'templates.contact.form.information' | t }}</p>
+            <div class="field">
+            <input class="field__input" type="text" name="contact[name]" id="ContactForm-name"
+  placeholder="Name" required
+  pattern="^[A-Za-zА-Яа-яЁё\s\-]{2,50}$"
+  oninput="this.value = this.value.replace(/[^A-Za-zА-Яа-яЁё\s\-]/g, '')">
+
+              <label class="field__label" for="ContactForm-name">Name</label>
+            </div>
+            <div class="field">
+            <input class="field__input" type="email" name="contact[email]" id="ContactForm-email"
+  placeholder="Email" required
+  pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
+
+              <label class="field__label" for="ContactForm-email">Email</label>
+            </div>
+            <div class="field">
+             <input class="field__input" type="tel" name="contact[phone]" id="ContactForm-phone"
+  placeholder="Phone" required
+  pattern="[\+0-9\-\(\)\s]{7,20}" inputmode="tel"
+  oninput="this.value = this.value.replace(/[^0-9+\-\(\)\s]/g, '')">
+
+              <label class="field__label" for="ContactForm-phone">Phone</label>
+            </div>
+            <div class="field field-country">
+             <input class="field__input" type="text" name="contact[country]" id="ContactForm-country"
+  placeholder="Country" required
+  pattern="^[A-Za-zА-Яа-яЁё\s\-]{2,50}$"
+  oninput="this.value = this.value.replace(/[^A-Za-zА-Яа-яЁё\s\-]/g, '')">
+
+              <label class="field__label" for="ContactForm-country">Country</label>
+            </div>
+          </div>
+          <div class="contact__right">
+            <div class="contact__right-inner">
+              <p class="contact__title">{{ 'templates.contact.form.Comments' | t }}</p>
+              <div class="field margin-class">
+               <textarea class="text-area field__input" rows="10" name="contact[body]" id="ContactForm-body" placeholder="Message" required></textarea>
+                <label class="form__label field__label" for="ContactForm-body">Message</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact__button">
+        <button type="submit" class="button">{{ 'templates.contact.form.submit' | t }}</button>
+      </div>
+    {%- endform -%}
+  </div>
+<div id="thankYouPopup" class="popup-thankyou hidden">
+  <div class="popup-thankyou__content">
+    <button class="popup-thankyou__close" aria-label="Close">&times;</button>
+    <div class="popup-thankyou__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="12" fill="#4BFE85"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.7547 8.23228C18.9118 8.3812 19 8.58307 19 8.79354C19 9.00402 18.9118 9.20588 18.7547 9.35481L10.926 16.7677C10.7687 16.9165 10.5555 17 10.3333 17C10.111 17 9.89778 16.9165 9.74051 16.7677L5.26697 12.5318C5.18456 12.4591 5.11846 12.3714 5.07261 12.2739C5.02677 12.1765 5.00212 12.0713 5.00013 11.9647C4.99814 11.8581 5.01886 11.7521 5.06105 11.6532C5.10323 11.5543 5.16603 11.4645 5.24568 11.3891C5.32533 11.3137 5.4202 11.2542 5.52465 11.2143C5.62909 11.1743 5.74096 11.1547 5.85359 11.1566C5.96621 11.1585 6.07728 11.1818 6.18017 11.2252C6.28306 11.2686 6.37567 11.3312 6.45246 11.4092L10.3333 15.0839L17.5692 8.23228C17.7265 8.08354 17.9397 8 18.1619 8C18.3842 8 18.5974 8.08354 18.7547 8.23228Z" fill="black"/>
+</svg>
+</div>
+    <h2 class="popup-thankyou__title">{{ 'templates.contact.form.popup-title' | t }}</h2>
+    <p class="popup-thankyou__subtitle">{{ 'templates.contact.form.popup-text' | t }}</p>
+    <p class="popup-thankyou__text" style="margin: 0;">{{ 'templates.contact.form.popup-text2' | t }}</p>
+  </div>
+</div>
+
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("ContactForm");
+    const popup = document.getElementById("thankYouPopup");
+    const closeBtn = document.querySelector(".popup-thankyou__close");
+
+    const dropdownInput = document.getElementById('productDropdown');
+    const dropdownMenu = document.getElementById('customDropdownMenu');
+    const buttons = document.querySelectorAll('.product-btn');
+    const clearBtn = document.getElementById('clearSelection');
+    const hiddenInput = document.getElementById('selectedProducts');
+    const arrowIcon = document.querySelector('.arrow---icon');
+    let selectedProducts = [];
+
+    // 1. Dropdown logic
+    function updateVisualField() {
+      dropdownInput.value = selectedProducts.join(', ');
+      dropdownInput.classList.toggle('valid', selectedProducts.length > 0);
+    }
+
+    function updateHiddenInput() {
+      hiddenInput.value = selectedProducts.join(', ');
+    }
+
+    function updateStates() {
+      updateVisualField();
+      updateHiddenInput();
+      buttons.forEach(btn => {
+        btn.classList.toggle('active', selectedProducts.includes(btn.dataset.product));
+      });
+    }
+
+    function toggleProduct(value) {
+      if (selectedProducts.includes(value)) {
+        selectedProducts = selectedProducts.filter(p => p !== value);
+      } else {
+        selectedProducts.push(value);
+      }
+      updateStates();
+    }
+
+    buttons.forEach(btn => btn.addEventListener('click', () => toggleProduct(btn.dataset.product)));
+    clearBtn.addEventListener('click', () => { selectedProducts = []; updateStates(); });
+
+    dropdownInput.addEventListener('click', (e) => {
+      dropdownMenu.classList.toggle('hidden');
+      arrowIcon.style.transform = dropdownMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+      e.stopPropagation();
+    });
+
+    dropdownMenu.querySelectorAll('.dropdown-option').forEach(option => {
+      option.addEventListener('click', () => {
+        toggleProduct(option.dataset.value);
+        dropdownMenu.classList.add('hidden');
+        arrowIcon.style.transform = 'rotate(0deg)';
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!dropdownMenu.contains(e.target) && e.target !== dropdownInput) {
+        dropdownMenu.classList.add('hidden');
+        arrowIcon.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    // 2. Show popup only if real submission happened
+    const params = new URLSearchParams(window.location.search);
+    const submittedProducts = localStorage.getItem("lastSubmittedProducts");
+
+    if (params.get("contact_posted") === "true" && popup && submittedProducts) {
+      popup.classList.remove("hidden");
+      localStorage.removeItem("lastSubmittedProducts");
+
+      if (typeof fbq === "function") {
+        fbq('track', 'Lead');
+        console.log('fbq Lead tracked');
+        }
+      
+      const url = new URL(window.location);
+      url.searchParams.delete("contact_posted");
+      window.history.replaceState({}, document.title, url.toString());
+
+      setTimeout(() => popup.classList.add("hidden"), 10000);
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => popup.classList.add("hidden"));
+    }
+
+    // 3. Form validation + Telegram send
+    form.addEventListener("submit", function (e) {
+      const phoneInput = document.getElementById('ContactForm-phone');
+      const emailInput = document.getElementById('ContactForm-email');
+      const nameInput = document.getElementById('ContactForm-name');
+      const countryInput = document.getElementById('ContactForm-country');
+      const messageInput = document.getElementById('ContactForm-body');
+
+      const phoneRegex = /^[\+0-9\-\(\)\s]{7,20}$/;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const nameRegex = /^[A-Za-zА-Яа-яЁё\s\-]{2,50}$/;
+
+      let errors = [];
+
+      if (!phoneRegex.test(phoneInput.value)) {
+        errors.push('Please enter a valid phone number.');
+      }
+
+      if (!emailRegex.test(emailInput.value)) {
+        errors.push('Please enter a valid email address.');
+      }
+
+      if (!nameRegex.test(nameInput.value)) {
+        errors.push('Name must contain only letters, spaces, or hyphens.');
+      }
+
+      if (!nameRegex.test(countryInput.value)) {
+        errors.push('Country must contain only letters, spaces, or hyphens.');
+      }
+
+      if (!messageInput.value.trim()) {
+        errors.push('Please enter a message.');
+      }
+
+      if (!hiddenInput.value.trim()) {
+        errors.push('Please select at least one product.');
+        dropdownInput.classList.add('error');
+      } else {
+        dropdownInput.classList.remove('error');
+      }
+
+      if (errors.length > 0) {
+        e.preventDefault();
+        form.classList.add('shake');
+        setTimeout(() => form.classList.remove('shake'), 500);
+        alert(errors.join('\n'));
+        return false;
+      }
+
+      // Save selected products so popup can appear after redirect
+      localStorage.setItem("lastSubmittedProducts", hiddenInput.value);
+
+
+          
+      // Send to Telegram
+      const text = `📥 New request:\n🧾 Product: ${hiddenInput.value}\n👤 Name: ${nameInput.value}\n📧 Email: ${emailInput.value}\n📱 Phone number: ${phoneInput.value}\n🌍 Country: ${countryInput.value}\n💬 Message: ${messageInput.value}`;
+
+      fetch("https://api.telegram.org/bot7721441613:AAE00kiIVSV8OJRy5e-XPqz-am2BxRW2cDw/sendMessage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: "-1002619425687", text })
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+{% schema %}
+{
+  "name": "New contact form",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+  {
+    "type": "inline_richtext",
+    "id": "heading",
+    "default": "Contact form",
+    "label": "Heading"
+  },
+  {
+    "type": "select",
+    "id": "heading_size",
+    "options": [
+      { "value": "h2", "label": "t:sections.all.heading_size.options__1.label" },
+      { "value": "h1", "label": "t:sections.all.heading_size.options__2.label" },
+      { "value": "h0", "label": "t:sections.all.heading_size.options__3.label" }
+    ],
+    "default": "h1",
+    "label": "t:sections.all.heading_size.label"
+  },
+  {
+    "type": "header",
+    "content": "t:sections.all.padding.section_padding_heading"
+  },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_top",
+    "default": 36
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_bottom",
+    "default": 36
+  }
+],
+"blocks": [
+  {
+    "type": "product",
+    "name": "Product",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Product name",
+        "default": "Nanofilm Ecoslick"
+      }
+    ]
+  }
+],
+"max_blocks": 10,
+"presets": [
+  {
+    "name": "New contact form",
+    "blocks": [
+      { "type": "product" },
+      { "type": "product" },
+      { "type": "product" }
+    ]
+  }
+]
+}
+{% endschema %}

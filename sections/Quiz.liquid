@@ -1,0 +1,462 @@
+<style>
+  body{
+    grid-template-rows: auto auto auto 1fr auto;
+  }
+  .quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.green {
+  background-color: #4BFE85;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 0 15px;
+  margin: 20px auto;
+}
+.margin{
+      margin: 33px 0px;
+}
+.quiz-header {
+  background: #f5f5f5;
+  padding: 10px 0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.quiz-content {
+  padding: 200px 0;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.quiz-content.hidden {
+  opacity: 0;
+  display: none;
+}
+
+.quiz-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.quiz-content p {
+  font-size: 18px;
+  color: #000;
+  margin: 0px;
+}
+
+.quiz-result h1 {
+  font-size: 2.5em;
+  color: #000;
+  margin: 0px;
+}
+
+.quiz-result p {
+  font-size: 18px;
+  color: #000;
+}
+
+.quiz-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.quiz-button {
+  padding: 10px 10px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 1500px;
+  cursor: pointer;
+  transition: background 0.3s;
+  background: #000;
+  color: #fff;
+  width: 250px;
+  height: 55px;
+}
+
+.quiz-result-button {
+  padding: 10px 10px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 1500px;
+  cursor: pointer;
+  transition: background 0.3s;
+  background: #000;
+  color: #fff;
+  width: 340px;
+  height: 55px;
+}
+
+.quiz-button:hover {
+  background: #DA9DFF;
+  color: #000;
+}
+
+.quiz-result-button:hover {
+  background: #DA9DFF;
+  color: #000;
+}
+
+.quiz-result {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.quiz-result.active {
+  display: block;
+  opacity: 1;
+}
+
+.green-highlight {
+  color: #00cc00;
+}
+
+.result-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+  overflow: hidden; /* For desktop, no scrolling */
+}
+
+.item {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.item img {
+     max-width: 163px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.item p {
+  color: #000;
+  font-size: 1em;
+  margin: 0px;
+}
+
+.quiz-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: center;
+  padding: 0px;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .quiz-options {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 0 5px;
+  }
+
+  .quiz-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+  }
+
+  .quiz-result-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    border-radius: 1500px; /* Keep rounded corners */
+  }
+
+  .quiz-content {
+    padding: 50px 10px;
+  }
+
+  .quiz-container {
+  }
+
+  .quiz-content h1 {
+    font-size: 36px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .quiz-content p {
+    font-size: 16px !important;
+  }
+
+  .quiz-result {
+    padding: 60px 10px;
+  }
+
+  .quiz-result h1 {
+    font-size: 36px !important;
+
+  }
+
+  .green {
+        margin: 15px auto;
+  }
+
+  
+
+  .quiz-result p {
+    font-size: 16px;
+  }
+
+  .result-items {
+    flex-direction: row;
+    gap: 0px;
+    overflow-x: auto; /* Enable horizontal scrolling for slider on mobile */
+    padding: 0 10px;
+    scroll-snap-type:none; /* Snap to images */
+    display: flex;
+    justify-content: start;
+    scrollbar-width: none;
+    margin: 0px;
+  }
+
+  .item {
+    flex: 0 0 auto;
+    width: 200px; /* Fixed width for each item */
+    scroll-snap-align: center; /* Snap to center of each item */
+    margin: 0px -12px;
+  }
+
+  
+
+  .item p {
+    font-size: 14px;
+  }
+  .quiz-result.active {
+    display: grid
+;
+    opacity: 1;
+}
+  .margin{
+      margin: 25px 0px;
+}
+}
+</style>
+
+<div class="quiz-container">
+  <div class="quiz-content" id="quizContent">
+    <h1>{{ 'templates.quiz.title' | t }}</h1>
+    <p>{{ 'templates.quiz.bonus1' | t }} <strong>{{ 'templates.quiz.bonus2' | t }}</strong> {{ 'templates.quiz.bonus3' | t }}</p>
+    <p>{{ 'templates.quiz.forever1' | t }} <strong>{{ 'templates.quiz.forever2' | t }}</strong> {{ 'templates.quiz.forever3' | t }}</p>
+    <p style="margin: 30px 0px;"><strong>{{ 'templates.quiz.choose' | t }}</strong></p>
+    
+    <div class="quiz-options" id="quizOptions">
+      <button class="quiz-button" onclick="showResult('up-to-3')">{{ 'templates.quiz.button_1' | t }}</button>
+      <button class="quiz-button" onclick="showResult('3-to-5')">{{ 'templates.quiz.button_2' | t }}</button>
+      <button class="quiz-button" onclick="showResult('5-plus')">{{ 'templates.quiz.button_3' | t }}</button>
+    </div>
+  </div>
+
+  <div class="quiz-results">
+    <div class="quiz-result" id="resultUpTo3">
+      <h1 >{{ section.settings.result_title }}</h1>
+      <div class="green"><h1 style="font-size: 26px !important;">{{ 'templates.quiz-result.ammount1' | t }}</h1></div>
+      <p class="margin">{{ 'templates.quiz-result.text' | t }}</p>
+      <div class="result-items">
+        <div class="item">
+          <img src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/quiz_1_1.png?v=1740362191" alt="Vossen wheels">
+          <p>{{ 'templates.quiz-result.image_1_1' | t }}</p>
+        </div>
+        <div class="item">
+          <img src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/quiz_1_2.png?v=1740362190" alt="MacBook Pro">
+          <p>{{ 'templates.quiz-result.image_1_2' | t }}</p>
+        </div>
+        <div class="item">
+          <img src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/quiz_3_1.png?v=1740362190" alt="Samsung Neo QLED">
+          <p>{{ 'templates.quiz-result.image_1_3' | t }}</p>
+        </div>
+      </div>
+      <p >{{ 'templates.quiz-result.off1' | t }} <strong>{{ 'templates.quiz-result.off2' | t }}</strong> {{ 'templates.quiz-result.off3' | t }}</p>
+      <button onclick="goToLink()" class="quiz-result-button">{{ 'templates.quiz-result.button' | t }}</button>
+    </div>
+
+    <div class="quiz-result" id="result3To5">
+      <h1 >{{ section.settings.result_title }}</h1>
+      <div class="green"><h1 style="font-size: 26px !important;">{{ 'templates.quiz-result.ammount2' | t }}</h1></div>
+      <p class="margin">{{ 'templates.quiz-result.text' | t }}</p>
+      <div class="result-items">
+        <div class="item">
+          <img src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/quiz_2_1.png?v=1740362191" alt="Vossen wheels">
+          <p>{{ 'templates.quiz-result.image_2_1' | t }}</p>
+        </div>
+        <div class="item">
+          <img src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/quiz_2_2.png?v=1740362190" alt="MacBook Pro">
+          <p>{{ 'templates.quiz-result.image_2_2' | t }}</p>
+        </div>
+        <div class="item">
+          <img src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/carib.png?v=1740414264" alt="MacBook Pro">
+          <p>{{ 'templates.quiz-result.image_2_3' | t }}</p>
+        </div>
+      </div>
+      <p class="margin">{{ 'templates.quiz-result.off1' | t }} <strong>{{ 'templates.quiz-result.off2' | t }}</strong> {{ 'templates.quiz-result.off3' | t }}</p>
+      <button onclick="goToLink()" class="quiz-result-button">{{ 'templates.quiz-result.button' | t }}</button>
+    </div>
+
+    <div class="quiz-result" id="result5Plus">
+      <h1 >{{ section.settings.result_title }}</h1>
+      <div class="green"><h1 style="font-size: 26px !important;">{{ 'templates.quiz-result.ammount3' | t }}</h1></div>
+      <p class="margin">{{ 'templates.quiz-result.text' | t }}</p>
+      <div class="result-items">
+        <div class="item">
+          <img src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/quiz_3_1.png?v=1740362190" alt="MacBook Pro">
+          <p>{{ 'templates.quiz-result.image_3_1' | t }}</p>
+        </div>
+        <div class="item">
+          <img src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/quiz_3_2.png?v=1740362190" alt="MacBook Pro">
+          <p>{{ 'templates.quiz-result.image_3_2' | t }}</p>
+        </div>
+        <div class="item">
+          <img src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/skuter.png?v=1740414263" alt="MacBook Pro">
+          <p>{{ 'templates.quiz-result.image_3_3' | t }}</p>
+        </div>
+      </div>
+      <p class="margin">{{ 'templates.quiz-result.off1' | t }} <strong>{{ 'templates.quiz-result.off2' | t }}</strong> {{ 'templates.quiz-result.off3' | t }}</p>
+      <button onclick="goToLink()" class="quiz-result-button">{{ 'templates.quiz-result.button' | t }}</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Show result function with fade transition
+  function showResult(choice) {
+    // Hide the quiz content with a fade-out effect
+    const quizContent = document.getElementById('quizContent');
+    quizContent.classList.add('hidden');
+
+    // Wait for the fade-out animation to complete (0.5s) before showing the result
+    setTimeout(() => {
+      // Hide quiz content completely
+      quizContent.style.display = 'none';
+
+      // Show the appropriate result with a fade-in effect
+      const results = document.querySelectorAll('.quiz-result');
+      results.forEach(result => result.classList.remove('active')); // Reset all results
+
+      if (choice === 'up-to-3') {
+        document.getElementById('resultUpTo3').classList.add('active');
+      } else if (choice === '3-to-5') {
+        document.getElementById('result3To5').classList.add('active');
+      } else if (choice === '5-plus') {
+        document.getElementById('result5Plus').classList.add('active');
+      }
+    }, 500); // Matches the transition duration of 0.5s
+  }
+
+  // Slider functionality for mobile
+  document.addEventListener('DOMContentLoaded', () => {
+    const resultItems = document.querySelectorAll('.result-items');
+    
+    resultItems.forEach(items => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let startY;
+        let startScrollTop;
+        let isVerticalScroll = false;
+        
+        items.addEventListener('mousedown', (e) => {
+            isDown = true;
+            items.classList.add('active');
+            startX = e.pageX - items.offsetLeft;
+            scrollLeft = items.scrollLeft;
+        });
+        
+        items.addEventListener('mouseleave', () => {
+            isDown = false;
+            items.classList.remove('active');
+        });
+        
+        items.addEventListener('mouseup', () => {
+            isDown = false;
+            items.classList.remove('active');
+        });
+        
+        items.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - items.offsetLeft;
+            
+            items.scrollLeft = scrollLeft - walk;
+        });
+        
+        // Touch Events
+        let touchStartX = 0;
+        let touchMoveX = 0;
+        let touchStartY = 0;
+        let touchMoveY = 0;
+        let velocity = 0;
+        let lastMoveTime;
+        
+        items.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            startScrollTop = window.scrollY;
+            velocity = 0;
+            lastMoveTime = Date.now();
+            isVerticalScroll = false;
+        });
+        
+        items.addEventListener('touchmove', (e) => {
+            touchMoveX = e.touches[0].clientX;
+            touchMoveY = e.touches[0].clientY;
+            let deltaX = touchStartX - touchMoveX;
+            let deltaY = touchStartY - touchMoveY;
+            
+            if (Math.abs(deltaY) > Math.abs(deltaX)) {
+                isVerticalScroll = true;
+                return; // Даем возможность вертикального скролла
+            }
+            
+            e.preventDefault();
+            
+            let currentTime = Date.now();
+            let timeDiff = currentTime - lastMoveTime;
+            velocity = deltaX / timeDiff;
+            lastMoveTime = currentTime;
+            
+            items.scrollLeft += deltaX;
+            touchStartX = touchMoveX;
+        });
+        
+        items.addEventListener('touchend', () => {
+            if (isVerticalScroll) return;
+            
+            let inertiaInterval = setInterval(() => {
+                if (Math.abs(velocity) < 0.01) {
+                    clearInterval(inertiaInterval);
+                }
+                items.scrollLeft += velocity * 20;
+                velocity *= 0.95;
+            }, 16);
+        });
+    });
+});
+</script>
+<script>
+        function goToLink() {
+            window.location.href = 'https://alite.cc/pages/american-states'; // Замените на вашу ссылку
+        }
+    </script>
+{% schema %}
+{
+  "name": "Quiz Section",
+  "settings": [
+     { "type": "text", "id": "result_title", "label": "Result Title" },
+  ],
+  "presets": [
+    { "name": "Quiz Section" }
+  ]
+}
+{% endschema %}

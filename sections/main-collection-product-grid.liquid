@@ -1,0 +1,2244 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'ts-state-page.css' | asset_url | stylesheet_tag }}
+{{ 'new-progress-bar.css' | asset_url | stylesheet_tag }}
+{{ 'discount-popup.css' | asset_url | stylesheet_tag }}
+{{ 'cart-popup.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'new-progress-bar.js' | asset_url }}"></script>
+<script src="{{ 'discount-popup.js' | asset_url }}"></script>
+<script src="{{ 'cart-popup.js' | asset_url }}"></script>
+{%- if section.settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{%- style -%}
+  [id*="search"]:focus {
+  outline:none;
+  border-color: #DA9DFF;
+  box-shadow: none !important;
+}
+
+  
+@media screen and (max-width: 750px) {
+    .param__mobile{
+      display:grid !important;
+      padding: 0 !important;
+    }
+  
+  .param_large{
+    display: flex;
+    align-items: center;
+    margin:0px;
+    gap: 4px;
+  }
+  
+  .param__pc{
+    display:none !important;
+  }
+  .product__add_info {
+    grid-template-columns: 1fr !important;
+        column-gap: 4px !important;
+    grid-row-gap: 4px !important;
+}
+  .product__param {
+    padding: 1px 8px !important;  
+}
+ .info-modal .info-icon{
+    display:none !important;
+  }
+ .info-modal .close-icon{
+   padding: 8px 0px !important;
+  }
+  .info-modal {
+    left: 0px !important;
+}
+  .param-padding{
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+  .product__param_version{
+    grid-column: span 1 !important;
+    position:relative;
+    background-color: #F4F4F4;
+  }
+  }
+  
+{%- endstyle -%}
+
+{% if section.settings.custom_cards %}
+<style>
+  .year-filter-mobile{display:none;}
+  .ts-product {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    background: #FFF;
+    overflow: hidden;
+    width: 100%;
+    height:100%;
+    justify-content: end;
+
+  }
+
+  .ts-product__media {
+    max-width: 160px;
+    margin: auto;
+  }
+
+  .ts-product__media img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+ .product__param_version{
+    grid-column: span 3;
+   position:relative;
+   background-color: #F4F4F4;
+  }
+  .ts-product__content {
+    padding: 0 8px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  .ts-products-list h3.ts-product__title {
+    color: #000;
+    font-family: "ShopifySans", sans-serif !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0 0 6px;
+  }
+
+  .ts-products-list h3.ts-product__title a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .ts-product:hover h3.ts-product__title a{
+    text-decoration: underline;
+  }
+
+  .ts-product__price {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-family: "ShopifySans", sans-serif !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0 0 7px;
+  }
+
+  .ts-product__regular, 
+  .ts-product__compare {
+    color: #8D8D8D;
+  }
+
+
+
+
+  
+  .product__param {
+    display: flex;
+    gap: 12px;
+    padding: 5px 12px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    align-items: center; 
+}
+  .product__add_info{
+  align-self: start;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap:8px;
+}
+.param__logo{
+    display: flex;
+    align-items: center;
+}
+.param__info{
+  margin: 0px;
+  font-size: 12px;
+    font-weight: 700;
+    color: black;
+}
+.param__name{
+  margin: 0px;
+  font-size: 12px;
+}
+.info-modal {
+    opacity:0;
+    pointer-events:none;
+    position: absolute;
+    z-index: 1000; 
+    left: -1px;
+    top: 120%;
+    width: 100%; 
+    height: 100%;
+    transition:all 0.3s;
+    
+  }
+  .param__logo:hover + .info-modal ,  .param__logo:active + .info-modal {
+    opacity:1;
+    pointer-events:initial;
+  }
+  .info-modal-content {
+    background-color: #fff;
+    padding: 0px 8px 0 8px;
+    border: 1px solid #CCCCCC;
+    width: 100%;
+    border-radius: 5px;
+    text-wrap: wrap;
+    font-size:12px;
+    color:#000;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+  }
+    .info-modal-content p {
+      margin:0;
+    }
+    .info-modal-content p:first-child {
+      margin-bottom:10px;
+    }
+  .param__mobile{
+    display:none;
+  }
+  .ts-product__compare {
+    text-decoration-line: line-through;
+  }
+
+  .ts-product__regular.ts-product__regular--sale {
+    color: #EC4545;
+  }
+
+  .ts-product__quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 35px;
+    border-radius: 35px;
+    border: 1px solid #EEE;
+    margin: 0 0 7px;
+  }
+
+  .ts-product__quantity > span {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .ts-product__quantity > span * {
+    pointer-events: none;
+  }
+
+  .ts-product__quantity input {
+    appearance: none;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-family: "ShopifySans", sans-serif !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    width: 30px;
+  }
+
+  .ts-product__quantity input::-webkit-outer-spin-button,
+  .ts-product__quantity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .ts-product__quantity input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  .ts-product__quantity input:focus-visible {
+    border: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .ts-product__button {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
+    background: #000;
+    height: 35px;
+    color: #FFF;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    transition-property: color,background-color,border-color,text-decoration-color,fill,stroke;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-duration: .15s;
+  }
+
+  .ts-product__button * {
+    pointer-events: none;
+  }
+
+  .ts-products-list:not([loading]) .ts-product__button:hover,
+  .ts-products-list:not([loading]) .ts-product__button.active {
+    color: #000;
+    background: #DA9DFF;
+  }
+
+  .ts-product__button .ts-icon-loader {
+    display: none;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+  }
+
+  .ts-products-list[loading] .ts-product__button {
+    cursor: no-drop;
+    opacity: 0.5;
+  }
+
+  .ts-products-list[loading] .ts-product__button span:not(.ts-icon-loader) {
+    display: none;
+  }
+
+  .ts-products-list[loading] .ts-product__button .ts-icon-loader {
+    display: flex;
+  }
+
+  @-moz-keyframes spin { 
+    100% { 
+      -moz-transform: rotate(360deg); 
+    } 
+  }
+
+  @-webkit-keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+    } 
+  }
+
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg); 
+      transform:rotate(360deg); 
+    } 
+  }
+
+  @media screen and (max-width: 749px) {
+    .year-filter{display:none;}
+    .ts-product {
+      min-width: 160px;
+      scroll-snap-align: start;
+    }
+  }
+</style>
+      <style>
+        a{
+          text-decoration:none;
+          flex-shrink: 0;
+        }
+      .scroll {
+        margin: 30px auto 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 56px;
+      }
+      .scroll-container {
+        overflow-x: scroll;
+        scroll-behavior:smooth;
+        scrollbar-width: none;
+        max-width: 1200px;
+      }
+      .slider {
+        display: flex;
+        transform: translateX(0px);
+        gap: 20px;
+        transition: all 0.3s;
+        margin-bottom: 25px;
+
+      }
+      .scroll-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        padding: 14px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      .scroll_year-block {
+        height: 100%;
+        width:200px;
+        flex-shrink: 0;
+        display: grid;
+        padding: 20px 26px;
+        border: 1px rgba(0, 0, 0, 0.2) solid;
+        border-radius: 18px;
+        background-color: #f4f4f4;
+      }
+      .icon {
+        opacity:0;
+        display: flex;
+        align-items: center;
+      }
+      .active .icon {
+        opacity:1;
+        display: flex;
+        align-items: center;
+      }
+      .active {
+        background-color: #DA9DFF;
+        border: 1px solid #2e2e2e;
+      }
+      .button-active {
+        background-color: #000000;
+        cursor:pointer;
+      }
+      .active .scroll_year-block_image {
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+          rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+          rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      }
+      .scroll_year-block_content {
+        display: flex;
+        gap:30px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 15px 0;
+      }
+         {% if collection.metafields.custom.number_texture %} 
+            .scroll_year-block_content {
+        margin: 0 0 5px 0;
+      }
+            {% endif %}
+        .texture{
+          color:#000;
+          margin:0 0 10px 0;
+          font-size:12px;
+        }
+      .year_title {  
+        margin: 0;
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .scroll_year-block_image {
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+        align-self:end;
+      }
+      .scroll_year-block_image img {
+        width: 100%;
+      }
+           .scrollbar{
+        width:100%;
+        height:4px;
+        background-color:#2E2E2E33;
+        border-radius:50px;
+        display:none;
+      }
+       .track{
+        width:0%;
+        transition: 0.3s all;
+        display:block !important;
+        height:4px;
+        background-color:#2E2E2E;
+        border-radius:50px;
+      }
+        @media screen and (max-width: 750px){
+          .year-filter-mobile{
+            display:block;
+          }
+        a{
+          text-decoration:none;
+          flex-shrink: 0;
+        }
+      .scroll {
+        margin: 0px auto 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 56px;
+      }
+      .scroll-container {
+        overflow-x: scroll;
+        scroll-behavior:smooth;
+        max-width: 1200px;
+        scrollbar-width: auto;
+      }
+      .slider {
+        display: flex;
+        transform: translateX(0px);
+        gap: 20px;
+        transition: all 0.3s;
+        margin-bottom: 25px;
+
+      }
+      .scroll-button {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        padding: 14px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      .scroll_year-block {
+        width:200px;
+        height: 100%;
+        flex-shrink: 0;
+        display: grid;
+        padding: 20px 26px;
+        border: 1px rgba(0, 0, 0, 0.2) solid;
+        border-radius: 18px;
+        background-color: #f4f4f4;
+      }
+      .icon {
+        opacity:0;
+        display: flex;
+        align-items: center;
+      }
+      .active .icon {
+        opacity:1;
+        display: flex;
+        align-items: center;
+      }
+      .active {
+        background-color: #DA9DFF;
+        border: 1px solid #2e2e2e;
+      }
+      .button-active {
+        background-color: #000000;
+        cursor:pointer;
+      }
+      .active .scroll_year-block_image {
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+          rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+          rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      }
+      .scroll_year-block_content {
+        display: flex;
+        gap:30px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 15px 0;
+      }
+          {% if collection.metafields.custom.number_texture %} 
+            .scroll_year-block_content {
+        margin: 0 0 5px 0;
+      }
+            {% endif %}
+      .year_title {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .scroll_year-block_image {
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      .scroll_year-block_image img {
+        width: 100%;
+      }
+      .scrollbar{
+        display:none;
+        width:100%;
+        height:4px;
+        background-color:#2E2E2E33;
+        border-radius:50px;
+        
+      }
+       .track{
+        width:0%;
+        transition: 0.3s all;
+        display:block !important;
+        height:4px;
+        background-color:#2E2E2E;
+        border-radius:50px;
+      }
+          #style-1::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #2E2E2E33
+}
+
+#style-1::-webkit-scrollbar
+{
+  	border-radius: 10px;
+	width: 12px;
+	background-color: #2E2E2E33;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color:  #2E2E2E;
+}
+        }
+    </style>
+{% endif %}
+{% if collection.title =="USA Nanofilm" %}
+  <style>
+            .year-filter-mobile{
+            display:none;
+          }
+          .year-filter{
+            display:none !important;
+          }
+    </style>
+
+  <style>
+    {% if template == 'collection.american-states' %}
+   .ts-states.facets {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+}
+  {% endif %}
+  
+  </style>
+  
+  {% endif %}
+{% if section.settings.enable_states and section.settings.enable_filtering == false %}
+  {{ 'ts-collection-states.css' | asset_url | stylesheet_tag }}
+{% endif %}
+{% if section.settings.enable_cities and section.settings.enable_filtering == false %}
+  {{ 'ts-collection-states.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+<div class="section-{{ section.id }}-padding">
+  {%- paginate collection.products by section.settings.products_per_page -%}
+    {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
+    {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
+      <facet-filters-form class="facets facets-vertical-sort page-width small-hide no-js-hidden{% if section.settings.enable_states and section.settings.enable_filtering == false %} ts-states{% endif %}">
+        {% if section.settings.enable_states and section.settings.enable_filtering == false %}
+          {% assign currentTag = false %}
+          {% if collection.all_tags.size > 0 %}
+            {% for tag in collection.all_tags %}
+              {% if current_tags contains tag %}
+                {% assign currentTag = tag %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if collection.metafields.custom.year_fitler_name %}
+            {% for c in collections %}
+              {% if c.metafields.custom.state_filter_name ==  collection.metafields.custom.year_fitler_name%}
+            {% assign curCol = c %}
+                {% endif %}
+              {% endfor %}
+                {% else %}
+                {% assign curCol = collection %}
+            {% endif %}
+            <input autocomplete="off" type="search" id="state-search" name="state-search" placeholder="{{  curCol.metafields.custom.state_filter_name }}" />
+            <div class="ts-collection-states__options">
+                {% assign sortCollections = collections | sort :"title" %}
+                {% assign reversedCollections = sortCollections | reverse %}
+                {% for curCollection in sortCollections %}
+                  {% for stateYearCol in reversedCollections  %}
+                    {% if stateYearCol.metafields.custom.year_fitler_name %}
+            {% if stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.state_filter_name and stateYearCol.metafields.custom.year_order == "1" %}
+                {% assign handle = stateYearCol.handle %}
+                {% break %}
+               {% elsif stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.state_filter_name %}
+                {% assign handle = stateYearCol.handle %}
+                {% continue %}
+              {% else %}
+              {% unless handle %}
+                {% assign handle = curCollection.handle %}
+                {% endunless %}
+              {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                 {% if curCollection.metafields.custom.state_filter_name and curCollection.all_products_count > 0 %}
+                  <div class="ts-collection-states__option" data-handle="{{ handle}}">
+                    {{ curCollection.metafields.custom.state_filter_name}}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+        {% endif %}
+         {% if section.settings.enable_cities and section.settings.enable_filtering == false %}
+          {% assign currentTag = false %}
+          {% if collection.all_tags.size > 0 %}
+            {% for tag in collection.all_tags %}
+              {% if current_tags contains tag %}
+                {% assign currentTag = tag %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if collection.metafields.custom.year_fitler_name%}
+            {% for c in collections %}
+              {% if c.metafields.custom.australia_filter_name == collection.metafields.custom.year_fitler_name %}
+            {% assign curCol = c %}
+            {% assign curColFilter = c.metafields.custom.australia_filter_name %}
+                {% endif %}
+              {% if  c.metafields.custom.canada_filter_name == collection.metafields.custom.year_fitler_name %}
+            {% assign curCol = c %}
+            {% assign curColFilter = c.metafields.custom.canada_filter_name %}
+                {% endif %}
+              {% endfor %}
+                {% else %}
+                {% assign curCol = collection %}
+            {% endif %}
+            <input autocomplete="off" type="search" id="au-search" name="state-search" placeholder="{{curColFilter}}" />
+            <div class="ts-collection-states__options">
+                {% assign sortCollections = collections | sort :"title" %}
+                {% assign revesedCollections = sortCollections | reverse %}
+                {% for curCollection in sortCollections %}
+                  {% for stateYearCol in revesedCollections  %}
+                    {% if stateYearCol.metafields.custom.year_fitler_name and curCol.metafields.custom.australia_filter_name %}
+             {% if stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.australia_filter_name and stateYearCol.metafields.custom.year_order == "1" %}
+                {% assign handle = stateYearCol.handle %}
+                {% break %}
+               {% elsif stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.australia_filter_name %}
+                {% assign handle = stateYearCol.handle %}
+                {% continue %}
+              {% else %}
+              {% unless handle %}
+                {% assign handle = curCollection.handle %}
+                {% endunless %}
+              {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                 {% if curCollection.metafields.custom.australia_filter_name and curCollection.all_products_count > 0 and curCol.metafields.custom.australia_filter_name %}
+                  <div class="ts-collection-states__option" data-handle="{{ handle}}">
+                    {{ curCollection.metafields.custom.australia_filter_name}}
+                  </div>
+                {% endif %}
+                  {% for stateYearCol in revesedCollections  %}
+                    {% if stateYearCol.metafields.custom.year_fitler_name and curCol.metafields.custom.canada_filter_name %}
+            {% if stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.canada_filter_name and stateYearCol.metafields.custom.year_order == "1"%}
+                {% assign handle = stateYearCol.handle %}
+                {% break %}
+              {% elsif stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.canada_filter_name%}
+                {% assign handle = stateYearCol.handle %}
+                {% continue %}
+               {% else %}
+              {% unless handle %}
+                {% assign handle = curCollection.handle %}
+                {% endunless %}
+              {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                 {% if curCollection.metafields.custom.canada_filter_name and curCollection.all_products_count > 0 and curCol.metafields.custom.canada_filter_name %}
+                  <div class="ts-collection-states__option" data-handle="{{ handle}}">
+                    {{ curCollection.metafields.custom.canada_filter_name}}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+        {% endif %}
+      </facet-filters-form>
+  {% if section.settings.enable_states %}
+   <div class="year-filter page-width">
+      <div class="scroll">
+        <button class="scroll-button button-left">
+         {% render "arrow-button-left" %}
+        </button>
+        <div  id="style-1" class="scroll-container">
+          <div class="slider">
+            {%  assign i = 1 %}
+            {% assign sortCollections = collections | sort: "title" | reverse  %}
+            {% for c in sortCollections %}
+              {% if collection.metafields.custom.state_filter_name %}
+              {% if c.metafields.custom.year_fitler_name == collection.metafields.custom.state_filter_name %}
+            <a id="block-{% if c.metafields.custom.year_order %}{{ c.metafields.custom.year_order }}{% else %}{{ i }}{% endif %}" href="{{ c.handle }}">
+            <div class="scroll_year-block {% if collection == c %}active{% endif %}">
+              <div class="scroll_year-block_content">
+                <h3 class="year_title">{{ c.metafields.custom.state_year }}</h3>
+                <div class="icon">
+                  {% render "checkmark" %}
+                </div>
+              </div>
+              {% if c.metafields.custom.number_texture %}
+              <p class="texture">{{ c.metafields.custom.number_texture }} </p>
+              {% endif %}
+              <div class="scroll_year-block_image">
+                <img src="{{ c.featured_image | image_url:width:c.featured_image.width  }}" />
+              </div>
+            </div>
+            </a>
+            {%  assign i = i | plus: 1 %}
+              {% endif %}
+              {% else %}
+           {% if c.metafields.custom.year_fitler_name == collection.metafields.custom.year_fitler_name%}
+            <a id="block-{% if c.metafields.custom.year_order %}{{ c.metafields.custom.year_order }}{% else %}{{ i }}{% endif %}" href="{{ c.handle }}">
+            <div class="scroll_year-block {% if collection == c %}active{% endif %}">
+              <div class="scroll_year-block_content">
+                <h3 class="year_title">{{ c.metafields.custom.state_year }}</h3>
+                <div class="icon">
+                  {% render "checkmark" %}
+                </div>
+              </div>
+              {% if c.metafields.custom.number_texture %}
+              <p class="texture">{{ c.metafields.custom.number_texture }} </p>
+              {% endif %}
+              <div class="scroll_year-block_image">
+                <img src="{{ c.featured_image | image_url:width:c.featured_image.width  }}" />
+              </div>
+            </div>
+            </a>
+            {%  assign i = i | plus: 1 %}
+              {% endif %}
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      <button class="scroll-button button-right button-active">
+              {% render "arrow-button-right" %}
+        </button>
+      </div>
+     <div class="scrollbar">
+        <div class="track"></div>
+     </div>
+    </div>
+    
+    {% elsif  collection.metafields.custom.year_fitler_name%}
+       <div class="year-filter page-width">
+      <div class="scroll">
+        <button class="scroll-button button-left">
+         {% render "arrow-button-left" %}
+        </button>
+        <div  id="style-1" class="scroll-container">
+          <div class="slider">
+            {%  assign i = 1 %}
+            {% assign sortCollections = collections | sort: "title" | reverse  %}
+            {% for c in sortCollections %}
+              {% if c.metafields.custom.year_fitler_name == collection.metafields.custom.year_fitler_name %}
+              {% if c.metafields.custom.country_year %}
+            <a id="block-{% if c.metafields.custom.year_order %}{{ c.metafields.custom.year_order }}{% else %}{{ i }}{% endif %}" href="{{ c.handle }}">
+            <div class="scroll_year-block {% if collection == c %}active{% endif %}">
+              <div class="scroll_year-block_content">
+                <h3 class="year_title">{{ c.metafields.custom.country_year }}</h3>
+                <div class="icon">
+                  {% render "checkmark" %}
+                </div>
+              </div>
+              {% if c.metafields.custom.number_texture %}
+              <p class="texture">{{ c.metafields.custom.number_texture }} </p>
+              {% endif %}
+              <div class="scroll_year-block_image">
+                <img src="{{ c.featured_image | image_url:width:c.featured_image.width  }}" />
+              </div>
+            </div>
+            </a>
+            {%  assign i = i | plus: 1 %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      <button class="scroll-button button-right button-active">
+              {% render "arrow-button-right" %}
+        </button>
+      </div>
+     <div class="scrollbar">
+        <div class="track"></div>
+     </div>
+    </div>
+    {% elsif  collection.metafields.custom.canada_filter_name or collection.metafields.custom.australia_filter_name %}
+       <div class="year-filter page-width">
+      <div class="scroll">
+        <button class="scroll-button button-left">
+         {% render "arrow-button-left" %}
+        </button>
+        <div  id="style-1" class="scroll-container">
+          <div class="slider">
+            {%  assign i = 1 %}
+            {% assign sortCollections = collections | sort: "title" | reverse  %}
+            {% for c in sortCollections %}
+              {% if c.metafields.custom.year_fitler_name ==  collection.metafields.custom.canada_filter_name or c.metafields.custom.year_fitler_name ==  collection.metafields.custom.australia_filter_name %}
+              {% if c.metafields.custom.country_year %}
+            <a id="block-{% if c.metafields.custom.year_order %}{{ c.metafields.custom.year_order }}{% else %}{{ i }}{% endif %}" href="{{ c.handle }}">
+            <div class="scroll_year-block {% if collection == c %}active{% endif %}">
+              <div class="scroll_year-block_content">
+                <h3 class="year_title">{{ c.metafields.custom.country_year }}</h3>
+                <div class="icon">
+                  {% render "checkmark" %}
+                </div>
+              </div>
+              {% if c.metafields.custom.number_texture %}
+              <p class="texture">{{ c.metafields.custom.number_texture }} </p>
+              {% endif %}
+              <div class="scroll_year-block_image">
+                <img src="{{ c.featured_image | image_url:width:c.featured_image.width  }}" />
+              </div>
+            </div>
+            </a>
+            {%  assign i = i | plus: 1 %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      <button class="scroll-button button-right button-active">
+              {% render "arrow-button-right" %}
+        </button>
+      </div>
+     <div class="scrollbar">
+        <div class="track"></div>
+     </div>
+    </div>
+    {% endif %}
+    {%- endif -%}
+
+    {% if section.settings.show_progress_bar %}
+    {% if template == "collection.american-states" or template == "collection.promo" or template == "collection.canada-cities" or template == "collection.australia-cities" %}
+      <div class="new-progress-bar-cont page-width progress-bar-pc">
+      <div class="new-progress-bar">
+      <div class="first-off">
+      <div class="progress-bar-text">
+      <p>-10% OFF</p>
+      <p>for 4+ stickers</p>
+      </div>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12.5" cy="12" r="12" fill="#E8E8E8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.2547 8.23228C19.4118 8.3812 19.5 8.58307 19.5 8.79354C19.5 9.00402 19.4118 9.20588 19.2547 9.35481L11.426 16.7677C11.2687 16.9165 11.0555 17 10.8333 17C10.611 17 10.3978 16.9165 10.2405 16.7677L5.76697 12.5318C5.68456 12.4591 5.61846 12.3714 5.57261 12.2739C5.52677 12.1765 5.50212 12.0713 5.50013 11.9647C5.49814 11.8581 5.51886 11.7521 5.56105 11.6532C5.60323 11.5543 5.66603 11.4645 5.74568 11.3891C5.82533 11.3137 5.9202 11.2542 6.02465 11.2143C6.12909 11.1743 6.24096 11.1547 6.35359 11.1566C6.46621 11.1585 6.57728 11.1818 6.68017 11.2252C6.78306 11.2686 6.87567 11.3312 6.95246 11.4092L10.8333 15.0839L18.0692 8.23228C18.2265 8.08354 18.4397 8 18.6619 8C18.8842 8 19.0974 8.08354 19.2547 8.23228Z" fill="#8D8D8D"/>
+</svg>
+      </div>
+      <svg class="arrow-progress-bar" width="82" height="16" viewBox="0 0 82 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M81.2071 8.70711C81.5976 8.31659 81.5976 7.68342 81.2071 7.2929L74.8431 0.928939C74.4526 0.538414 73.8195 0.538414 73.4289 0.928939C73.0384 1.31946 73.0384 1.95263 73.4289 2.34315L79.0858 8.00001L73.4289 13.6569C73.0384 14.0474 73.0384 14.6805 73.4289 15.0711C73.8195 15.4616 74.4526 15.4616 74.8431 15.0711L81.2071 8.70711ZM0.5 9L80.5 9.00001L80.5 7.00001L0.5 7L0.5 9Z" fill="#8D8D8D"/>
+</svg>
+
+      <div class="second-off">
+      <div class="progress-bar-text">
+      <p>-20% OFF</p>
+      <p>for 6+ stickers</p>
+      </div>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12.5" cy="12" r="12" fill="#E8E8E8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.2547 8.23228C19.4118 8.3812 19.5 8.58307 19.5 8.79354C19.5 9.00402 19.4118 9.20588 19.2547 9.35481L11.426 16.7677C11.2687 16.9165 11.0555 17 10.8333 17C10.611 17 10.3978 16.9165 10.2405 16.7677L5.76697 12.5318C5.68456 12.4591 5.61846 12.3714 5.57261 12.2739C5.52677 12.1765 5.50212 12.0713 5.50013 11.9647C5.49814 11.8581 5.51886 11.7521 5.56105 11.6532C5.60323 11.5543 5.66603 11.4645 5.74568 11.3891C5.82533 11.3137 5.9202 11.2542 6.02465 11.2143C6.12909 11.1743 6.24096 11.1547 6.35359 11.1566C6.46621 11.1585 6.57728 11.1818 6.68017 11.2252C6.78306 11.2686 6.87567 11.3312 6.95246 11.4092L10.8333 15.0839L18.0692 8.23228C18.2265 8.08354 18.4397 8 18.6619 8C18.8842 8 19.0974 8.08354 19.2547 8.23228Z" fill="#8D8D8D"/>
+</svg>
+      </div>
+      <svg class="arrow-progress-bar" width="82" height="16" viewBox="0 0 82 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M81.2071 8.70711C81.5976 8.31658 81.5976 7.68342 81.2071 7.29289L74.8431 0.928932C74.4526 0.538408 73.8195 0.538408 73.4289 0.928932C73.0384 1.31946 73.0384 1.95262 73.4289 2.34315L79.0858 8L73.4289 13.6569C73.0384 14.0474 73.0384 14.6805 73.4289 15.0711C73.8195 15.4616 74.4526 15.4616 74.8431 15.0711L81.2071 8.70711ZM0.5 9H80.5V7H0.5V9Z" fill="#8D8D8D"/>
+</svg>
+
+      <div class="third-off">
+      <div class="progress-bar-text">
+      <p>-30% OFF</p>
+      <p>for 10+ stickers</p>
+      </div>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12.5" cy="12" r="12" fill="#E8E8E8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.2547 8.23228C19.4118 8.3812 19.5 8.58307 19.5 8.79354C19.5 9.00402 19.4118 9.20588 19.2547 9.35481L11.426 16.7677C11.2687 16.9165 11.0555 17 10.8333 17C10.611 17 10.3978 16.9165 10.2405 16.7677L5.76697 12.5318C5.68456 12.4591 5.61846 12.3714 5.57261 12.2739C5.52677 12.1765 5.50212 12.0713 5.50013 11.9647C5.49814 11.8581 5.51886 11.7521 5.56105 11.6532C5.60323 11.5543 5.66603 11.4645 5.74568 11.3891C5.82533 11.3137 5.9202 11.2542 6.02465 11.2143C6.12909 11.1743 6.24096 11.1547 6.35359 11.1566C6.46621 11.1585 6.57728 11.1818 6.68017 11.2252C6.78306 11.2686 6.87567 11.3312 6.95246 11.4092L10.8333 15.0839L18.0692 8.23228C18.2265 8.08354 18.4397 8 18.6619 8C18.8842 8 19.0974 8.08354 19.2547 8.23228Z" fill="#8D8D8D"/>
+</svg>
+</div>
+      </div>
+      </div>
+      {% endif %}
+      {% endif %}
+    
+
+    {% if collection.metafields.custom.country_year%}
+ <div class="page-width product__add_info param__pc">
+        <div class="product__param">
+        <div class="param__logo">
+          {% if collection.metafields.custom.suitable_for =="Car" or collection.metafields.custom.suitable_for =="Rear" or collection.metafields.custom.suitable_for =="Front" or collection.metafields.custom.suitable_for =="Both" 
+            or collection.metafields.custom.suitable_for =="Carro"
+          or collection.metafields.custom.suitable_for =="Auto"
+          or collection.metafields.custom.suitable_for =="Машина"
+          or collection.metafields.custom.suitable_for =="carr"
+          or collection.metafields.custom.suitable_for =="Αυτοκίνητο"
+          or collection.metafields.custom.suitable_for =="кола"
+          or collection.metafields.custom.suitable_for =="Voiture"
+          or collection.metafields.custom.suitable_for =="कार"
+          or collection.metafields.custom.suitable_for =="Automobil"%}
+          {% render "suitable-logo" %}
+        {% elsif collection.metafields.custom.suitable_for == "Moto"%}
+          {% render "suitable-for-moto" %}
+        {% else %}
+          {% render "any_plate" %}
+        {% endif %}
+        </div>
+        <div class="param__text">
+          <h3 class="param__name">{{ section.settings.custom_param_suitable_for }}</h3>
+          <p class="param__info">{{ collection.metafields.custom.suitable_for }}</p>
+        </div>
+      </div>
+     <div class="product__param">
+        <div class="param__logo">{{ section.settings.alt_size_icon_svg }}</div>
+        <div class="param__text">
+          <h3 class="param__name">{{ section.settings.custom_param_height }}</h3>
+          <p class="param__info">{{ collection.metafields.custom.height }}</p>
+        </div>
+      </div>
+   <div class="product__param">
+       <div class="param__logo">{{ section.settings.custom_param_color_svg }}</div>
+        <div class="param__text">
+
+              <h3 class="param__name">{{ section.settings.custom_param_color }}</h3>
+          <p class="param__info">{{ section.settings.param_color }}</p>
+              
+        </div>
+      </div>
+     <div class="product__param param_large product__param_version">
+  <div class="param__logo param_large">{{ section.settings.alt_version_icon_svg }}</div>
+  <div class="param__text param_large">
+    {% if  template == 'collection.blackout' or template == 'collection.promo-materials' or template == 'collection.nanotapes'%}
+                  <h3 class="param__name">{{ section.settings.custom_param_version }}</h3>
+    <p class="param__info">{{ collection.metafields.custom.country_year | remove: "Version" }}</p>
+      
+                {% else %}
+              <h3 class="param__name">{{ section.settings.custom_param_version }}</h3>
+    <p class="param__info">{{ collection.metafields.custom.country_year | remove: "Version" }}, {{ collection.metafields.custom.number_texture }}</p>
+                {% endif %}
+  </div>
+  <div class="param__logo info-icon" style="margin-left:auto; cursor:pointer;" onclick="openInfoModal()">{% render "info-icon" %}</div>
+<div id="infoModal" class="info-modal">
+  <div class="info-modal-content">
+     <div class="param__logo info-icon" style="margin-bottom: auto;">{% render "info-icon" %}</div>
+    <div style="padding: 10px 0px;
+    margin-right: 18px;">
+     
+   {{ section.settings.custom_short_desc1 }}
+  {{ section.settings.custom_short_desc2 }}
+       
+    </div>
+  </div>
+</div>
+</div>
+    </div>
+    {% elsif collection.metafields.custom.state_year%}
+ <div class="page-width product__add_info param__pc">
+        <div class="product__param">
+        <div class="param__logo">
+ {% if collection.metafields.custom.suitable_for =="Car" or collection.metafields.custom.suitable_for =="Rear" or collection.metafields.custom.suitable_for =="Front" or collection.metafields.custom.suitable_for =="Both" 
+            or collection.metafields.custom.suitable_for =="Carro"
+          or collection.metafields.custom.suitable_for =="Auto"
+          or collection.metafields.custom.suitable_for =="Машина"
+          or collection.metafields.custom.suitable_for =="carr"
+          or collection.metafields.custom.suitable_for =="Αυτοκίνητο"
+          or collection.metafields.custom.suitable_for =="кола"
+          or collection.metafields.custom.suitable_for =="Voiture"
+          or collection.metafields.custom.suitable_for =="कार"
+          or collection.metafields.custom.suitable_for =="Automobil"%} 
+   {% render "suitable-logo" %}
+       {% elsif collection.metafields.custom.suitable_for == "Moto"%}
+          {% render "suitable-for-moto" %}
+        {% else %}
+          {% render "any_plate" %}
+        {% endif %}
+        </div>
+        <div class="param__text">
+          <h3 class="param__name">{{ section.settings.custom_param_suitable_for }}</h3>
+          <p class="param__info">{{ collection.metafields.custom.suitable_for }}</p>
+        </div>
+      </div>    
+     <div class="product__param">
+        <div class="param__logo">{{ section.settings.alt_size_icon_svg }}</div>
+        <div class="param__text">
+           <h3 class="param__name">{{ section.settings.custom_param_height }}</h3>         
+          <p class="param__info">{{ collection.metafields.custom.height }}</p>
+        </div>
+      </div>
+   <div class="product__param">
+        <div class="param__logo">{{ section.settings.custom_param_color_svg }}</div>
+        <div class="param__text">
+
+              <h3 class="param__name">{{ section.settings.custom_param_color }}</h3>
+          <p class="param__info">{{ section.settings.param_color }}</p>
+              
+        </div>
+      </div>
+     <div class="product__param product__param_version" >
+  <div class="param__logo">{{ section.settings.alt_version_icon_svg }}</div>
+  <div class="param__text param_large">
+{% if  template == 'collection.blackout' %}
+                  <h3 class="param__name">{{ section.settings.custom_param_version }}</h3>
+    <p class="param__info">{{ collection.metafields.custom.state_year | remove: "Version" }}</p>
+                {% else %}
+              <h3 class="param__name">{{ section.settings.custom_param_version }}</h3>
+    <p class="param__info">{{ collection.metafields.custom.state_year | remove: "Version" }}, {{ collection.metafields.custom.number_texture }}</p>
+                {% endif %}
+  </div>
+  <div class="param__logo info-icon" style="margin-left:auto; cursor:pointer;">{% render "info-icon" %}</div>
+<div id="infoModal" class="info-modal">
+  <div class="info-modal-content">
+     <div class="param__logo info-icon" style="margin-bottom: auto;">{% render "info-icon" %}</div>
+    <div style="padding: 10px 0px;
+    margin-right: 18px;">
+  {{ section.settings.custom_short_desc1 }}
+  {{ section.settings.custom_short_desc2 }}
+    </div>
+  </div>
+</div>
+</div>
+    </div>
+{% endif %}
+    <div class="{% if section.settings.filter_type == 'vertical' %} facets-vertical page-width{% endif %}">
+      {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+         {% if section.settings.enable_cities and section.settings.enable_filtering == false %}
+          {% assign currentTag = false %}
+          {% if collection.all_tags.size > 0 %}
+            {% for tag in collection.all_tags %}
+              {% if current_tags contains tag %}
+                {% assign currentTag = tag %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% if collection.metafields.custom.year_fitler_name%}
+            {% for c in collections %}
+              {% if c.metafields.custom.australia_filter_name == collection.metafields.custom.year_fitler_name %}
+            {% assign curCol = c %}
+            {% assign curColFilter = c.metafields.custom.australia_filter_name %}
+                {% endif %}
+              {% if  c.metafields.custom.canada_filter_name == collection.metafields.custom.year_fitler_name %}
+            {% assign curCol = c %}
+            {% assign curColFilter = c.metafields.custom.canada_filter_name %}
+                {% endif %}
+              {% endfor %}
+                {% else %}
+                {% assign curCol = collection %}
+            {% endif %}
+  
+            <input autocomplete="off" type="search" id="au-search-mob" name="state-search" placeholder="{{curColFilter }}" />
+            <div class="ts-collection-states__options">
+                {% assign sortCollections = collections | sort :"title" %}
+                {% assign revesedCollections = sortCollections | reverse %}
+                {% for curCollection in sortCollections %}
+                  {% for stateYearCol in revesedCollections  %}
+                    {% if stateYearCol.metafields.custom.year_fitler_name and curCol.metafields.custom.australia_filter_name %}
+                  {% if stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.australia_filter_name and stateYearCol.metafields.custom.year_order == "1" %}
+                {% assign handle = stateYearCol.handle %}
+                {% break %}
+               {% elsif stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.australia_filter_name %}
+                {% assign handle = stateYearCol.handle %}
+                {% continue %}
+              {% else %}
+              {% unless handle %}
+                {% assign handle = curCollection.handle %}
+                {% endunless %}
+              {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                 {% if curCollection.metafields.custom.australia_filter_name and curCollection.all_products_count > 0 and curCol.metafields.custom.australia_filter_name %}
+                  <div class="ts-collection-states__option" data-handle="{{ handle}}">
+                    {{ curCollection.metafields.custom.australia_filter_name}}
+                  </div>
+                {% endif %}
+                  {% for stateYearCol in revesedCollections  %}
+                    {% if stateYearCol.metafields.custom.year_fitler_name and curCol.metafields.custom.canada_filter_name %}
+                {% if stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.canada_filter_name and stateYearCol.metafields.custom.year_order == "1"%}
+                {% assign handle = stateYearCol.handle %}
+                {% break %}
+              {% elsif stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.canada_filter_name%}
+                {% assign handle = stateYearCol.handle %}
+                {% continue %}
+               {% else %}
+              {% unless handle %}
+                {% assign handle = curCollection.handle %}
+                {% endunless %}
+              {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                 {% if curCollection.metafields.custom.canada_filter_name and curCollection.all_products_count > 0 and curCol.metafields.custom.canada_filter_name %}
+                  <div class="ts-collection-states__option" data-handle="{{ handle}}">
+                    {{ curCollection.metafields.custom.canada_filter_name}}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+        {% endif %}
+      {% if section.settings.enable_states and section.settings.enable_filtering == false %}
+        {% assign currentTag = false %}
+        {% if collection.all_tags.size > 0 %}
+          {% for tag in collection.all_tags %}
+            {% if current_tags contains tag %}
+              {% assign currentTag = tag %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {% if collection.metafields.custom.year_fitler_name %}
+            {% for c in collections %}
+              {% if c.metafields.custom.state_filter_name ==  collection.metafields.custom.year_fitler_name%}
+            {% assign curCol = c %}
+                {% endif %}
+              {% endfor %}
+                {% else %}
+                {% assign curCol = collection %}
+            {% endif %}
+          <input autocomplete="off" type="search" id="state-search-mob" name="state-search" placeholder="{{ curCol.metafields.custom.state_filter_name }}" />
+          <div class="ts-collection-states__options">
+           {% assign sortCollections = collections | sort :"title" %}
+                {% assign revesedCollections = sortCollections | reverse %}
+                {% for curCollection in sortCollections %}
+                  {% for stateYearCol in revesedCollections  %}
+                    {% if stateYearCol.metafields.custom.year_fitler_name %}
+            {% if stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.state_filter_name and stateYearCol.metafields.custom.year_order == "1" %}
+                {% assign handle = stateYearCol.handle %}
+                {% break %}
+               {% elsif stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.state_filter_name %}
+                {% assign handle = stateYearCol.handle %}
+                {% continue %}
+              {% else %}
+              {% unless handle %}
+                {% assign handle = curCollection.handle %}
+                {% endunless %}
+              {% endif %}
+                      {% endif %}
+                    {% endfor %}
+                 {% if curCollection.metafields.custom.state_filter_name and curCollection.all_products_count > 0 %}
+                  <div class="ts-collection-states__option" data-handle="{{ handle}}">
+                    {{ curCollection.metafields.custom.state_filter_name}}
+                  </div>
+                {% endif %}
+              {% endfor %}
+          </div>
+      {% endif %}
+
+ <style>
+  {% if template == 'collection.folding-frame'%}
+    .scroll_year-block_image {
+        box-shadow: none !important;
+      }
+  {% endif %}
+</style>
+      
+ {% if section.settings.enable_states %}
+   <div class="year-filter-mobile ">
+      <div class="scroll">
+        <div  id="style-1" class="scroll-container">
+          <div class="slider">
+            {%  assign i = 1 %}
+            {% assign sortCollections = collections | sort: "title" | reverse  %}
+  {% for c in sortCollections %}
+              {% if collection.metafields.custom.state_filter_name %}
+              {% if c.metafields.custom.year_fitler_name == collection.metafields.custom.state_filter_name %}
+            <a id="block-{% if c.metafields.custom.year_order %}{{ c.metafields.custom.year_order }} c{% else %}{{ i }}{% endif %}" href="{{ c.handle }}">
+            <div class="scroll_year-block {% if collection == c %}active{% endif %}">
+              <div class="scroll_year-block_content">
+                <h3 class="year_title">{{ c.metafields.custom.state_year }}</h3>
+                <div class="icon">
+                  {% render "checkmark" %}
+                </div>
+              </div>
+              {% if c.metafields.custom.number_texture %}
+              <p class="texture">{{ c.metafields.custom.number_texture }} </p>
+              {% endif %}
+              <div class="scroll_year-block_image">
+                <img src="{{ c.featured_image | image_url:width:c.featured_image.width  }}" />
+              </div>
+            </div>
+            </a>
+            {%  assign i = i | plus: 1 %}
+              {% endif %}
+            {% else %}
+           {% if c.metafields.custom.year_fitler_name == collection.metafields.custom.year_fitler_name%}
+            <a id="block-{% if c.metafields.custom.year_order %}{{ c.metafields.custom.year_order }}{% else %}{{ i }}{% endif %}{% if c.metafields.custom.year_order %}{{ c.metafields.custom.year_order }}{% else %}{{ i }}{% endif %}" href="{{ c.handle }}">
+            <div class="scroll_year-block {% if collection == c %}active{% endif %}">
+              <div class="scroll_year-block_content">
+                <h3 class="year_title">{{ c.metafields.custom.state_year }}</h3>
+                <div class="icon">
+                  {% render "checkmark" %}
+                </div>
+              </div>
+              {% if c.metafields.custom.number_texture %}
+              <p class="texture">{{ c.metafields.custom.number_texture }} </p>
+              {% endif %}
+              <div class="scroll_year-block_image">
+                <img src="{{ c.featured_image | image_url:width:c.featured_image.width  }}" />
+              </div>
+            </div>
+            </a>
+            {%  assign i = i | plus: 1 %}
+              {% endif %}
+              {% else %}
+           {% if c.metafields.custom.year_fitler_name == collection.metafields.custom.year_fitler_name%}
+            <a id="block-{% if c.metafields.custom.year_order %}{{ c.metafields.custom.year_order }}{% else %}{{ i }}{% endif %}" href="{{ c.handle }}">
+            <div class="scroll_year-block {% if collection == c %}active{% endif %}">
+              <div class="scroll_year-block_content">
+                <h3 class="year_title">{{ c.metafields.custom.state_year }}</h3>
+                <div class="icon">
+                  {% render "checkmark" %}
+                </div>
+              </div>
+              {% if c.metafields.custom.number_texture %}
+              <p class="texture">{{ c.metafields.custom.number_texture }} </p>
+              {% endif %}
+              <div class="scroll_year-block_image">
+                <img src="{{ c.featured_image | image_url:width:c.featured_image.width  }}" />
+              </div>
+            </div>
+            </a>
+            {%  assign i = i | plus: 1 %}
+              {% endif %}
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% elsif  collection.metafields.custom.year_fitler_name%}
+     <div class="year-filter-mobile ">
+      <div class="scroll">
+        <div  id="style-1" class="scroll-container">
+          <div class="slider">
+            {%  assign i = 1 %}
+            {% assign sortCollections = collections | sort: "title" | reverse  %}
+            {% for c in sortCollections %}
+              {% if c.metafields.custom.year_fitler_name == collection.metafields.custom.year_fitler_name %}
+              {% if c.metafields.custom.country_year %}
+            <a id="block-{% if c.metafields.custom.year_order %}{{ c.metafields.custom.year_order }} c{% else %}{{ i }}{% endif %}" href="{{ c.handle }}">
+            <div class="scroll_year-block {% if collection == c %}active{% endif %}">
+              <div class="scroll_year-block_content">
+                <h3 class="year_title">{{ c.metafields.custom.country_year }}</h3>
+                <div class="icon">
+                  {% render "checkmark" %}
+                </div>
+              </div>
+                {% if c.metafields.custom.number_texture %}
+              <p class="texture">{{ c.metafields.custom.number_texture }} </p>
+              {% endif %}
+              <div class="scroll_year-block_image">
+                <img src="{{ c.featured_image | image_url:width:c.featured_image.width  }}" />
+              </div>
+            </div>
+            </a>
+            {%  assign i = i | plus: 1 %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% elsif collection.metafields.custom.canada_filter_name or collection.metafields.custom.australia_filter_name  %}
+     <div class="year-filter-mobile ">
+      <div class="scroll">
+        <div  id="style-1" class="scroll-container">
+          <div class="slider">
+            {% assign i = 1 %}
+            {% assign sortCollections = collections | sort: "title" | reverse  %}
+            {% for c in sortCollections %}
+              {% if c.metafields.custom.year_fitler_name == collection.metafields.custom.canada_filter_name or c.metafields.custom.year_fitler_name == collection.metafields.custom.australia_filter_name %}
+              {% if c.metafields.custom.country_year %}
+            <a id="block-{% if c.metafields.custom.year_order %}{{ c.metafields.custom.year_order }} c{% else %}{{ i }}{% endif %}" href="{{ c.handle }}">
+            <div class="scroll_year-block {% if collection == c %}active{% endif %}">
+              <div class="scroll_year-block_content">
+                <h3 class="year_title">{{ c.metafields.custom.country_year }}</h3>
+                <div class="icon">
+                  {% render "checkmark" %}
+                </div>
+              </div>
+                {% if c.metafields.custom.number_texture %}
+              <p class="texture">{{ c.metafields.custom.number_texture }} </p>
+              {% endif %}
+              <div class="scroll_year-block_image">
+                <img src="{{ c.featured_image | image_url:width:c.featured_image.width  }}" />
+              </div>
+            </div>
+            </a>
+            {%  assign i = i | plus: 1 %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+     {% if section.settings.show_progress_bar %}
+    {% if template == "collection.american-states" or template == "collection.promo" or template == "collection.canada-cities" or template == "collection.australia-cities" %}
+      <div class="new-progress-bar-cont page-width progress-bar-mob">
+      <div class="new-progress-bar">
+      <div class="first-off-mob">
+      <div class="progress-bar-text">
+      <p>-10% OFF</p>
+      <p>for 4+ stickers</p>
+      </div>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12.5" cy="12" r="12" fill="#E8E8E8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.2547 8.23228C19.4118 8.3812 19.5 8.58307 19.5 8.79354C19.5 9.00402 19.4118 9.20588 19.2547 9.35481L11.426 16.7677C11.2687 16.9165 11.0555 17 10.8333 17C10.611 17 10.3978 16.9165 10.2405 16.7677L5.76697 12.5318C5.68456 12.4591 5.61846 12.3714 5.57261 12.2739C5.52677 12.1765 5.50212 12.0713 5.50013 11.9647C5.49814 11.8581 5.51886 11.7521 5.56105 11.6532C5.60323 11.5543 5.66603 11.4645 5.74568 11.3891C5.82533 11.3137 5.9202 11.2542 6.02465 11.2143C6.12909 11.1743 6.24096 11.1547 6.35359 11.1566C6.46621 11.1585 6.57728 11.1818 6.68017 11.2252C6.78306 11.2686 6.87567 11.3312 6.95246 11.4092L10.8333 15.0839L18.0692 8.23228C18.2265 8.08354 18.4397 8 18.6619 8C18.8842 8 19.0974 8.08354 19.2547 8.23228Z" fill="#8D8D8D"/>
+</svg>
+      </div>
+      <svg class="arrow-progress-bar" width="82" height="16" viewBox="0 0 82 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M81.2071 8.70711C81.5976 8.31659 81.5976 7.68342 81.2071 7.2929L74.8431 0.928939C74.4526 0.538414 73.8195 0.538414 73.4289 0.928939C73.0384 1.31946 73.0384 1.95263 73.4289 2.34315L79.0858 8.00001L73.4289 13.6569C73.0384 14.0474 73.0384 14.6805 73.4289 15.0711C73.8195 15.4616 74.4526 15.4616 74.8431 15.0711L81.2071 8.70711ZM0.5 9L80.5 9.00001L80.5 7.00001L0.5 7L0.5 9Z" fill="#8D8D8D"/>
+</svg>
+
+      <div class="second-off-mob">
+      <div class="progress-bar-text">
+      <p>-20% OFF</p>
+      <p>for 6+ stickers</p>
+      </div>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12.5" cy="12" r="12" fill="#E8E8E8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.2547 8.23228C19.4118 8.3812 19.5 8.58307 19.5 8.79354C19.5 9.00402 19.4118 9.20588 19.2547 9.35481L11.426 16.7677C11.2687 16.9165 11.0555 17 10.8333 17C10.611 17 10.3978 16.9165 10.2405 16.7677L5.76697 12.5318C5.68456 12.4591 5.61846 12.3714 5.57261 12.2739C5.52677 12.1765 5.50212 12.0713 5.50013 11.9647C5.49814 11.8581 5.51886 11.7521 5.56105 11.6532C5.60323 11.5543 5.66603 11.4645 5.74568 11.3891C5.82533 11.3137 5.9202 11.2542 6.02465 11.2143C6.12909 11.1743 6.24096 11.1547 6.35359 11.1566C6.46621 11.1585 6.57728 11.1818 6.68017 11.2252C6.78306 11.2686 6.87567 11.3312 6.95246 11.4092L10.8333 15.0839L18.0692 8.23228C18.2265 8.08354 18.4397 8 18.6619 8C18.8842 8 19.0974 8.08354 19.2547 8.23228Z" fill="#8D8D8D"/>
+</svg>
+      </div>
+      <svg class="arrow-progress-bar" width="82" height="16" viewBox="0 0 82 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M81.2071 8.70711C81.5976 8.31658 81.5976 7.68342 81.2071 7.29289L74.8431 0.928932C74.4526 0.538408 73.8195 0.538408 73.4289 0.928932C73.0384 1.31946 73.0384 1.95262 73.4289 2.34315L79.0858 8L73.4289 13.6569C73.0384 14.0474 73.0384 14.6805 73.4289 15.0711C73.8195 15.4616 74.4526 15.4616 74.8431 15.0711L81.2071 8.70711ZM0.5 9H80.5V7H0.5V9Z" fill="#8D8D8D"/>
+</svg>
+
+      <div class="third-off-mob">
+      <div class="progress-bar-text">
+      <p>-30% OFF</p>
+      <p>for 10+ stickers</p>
+      </div>
+      <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12.5" cy="12" r="12" fill="#E8E8E8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19.2547 8.23228C19.4118 8.3812 19.5 8.58307 19.5 8.79354C19.5 9.00402 19.4118 9.20588 19.2547 9.35481L11.426 16.7677C11.2687 16.9165 11.0555 17 10.8333 17C10.611 17 10.3978 16.9165 10.2405 16.7677L5.76697 12.5318C5.68456 12.4591 5.61846 12.3714 5.57261 12.2739C5.52677 12.1765 5.50212 12.0713 5.50013 11.9647C5.49814 11.8581 5.51886 11.7521 5.56105 11.6532C5.60323 11.5543 5.66603 11.4645 5.74568 11.3891C5.82533 11.3137 5.9202 11.2542 6.02465 11.2143C6.12909 11.1743 6.24096 11.1547 6.35359 11.1566C6.46621 11.1585 6.57728 11.1818 6.68017 11.2252C6.78306 11.2686 6.87567 11.3312 6.95246 11.4092L10.8333 15.0839L18.0692 8.23228C18.2265 8.08354 18.4397 8 18.6619 8C18.8842 8 19.0974 8.08354 19.2547 8.23228Z" fill="#8D8D8D"/>
+</svg>
+</div>
+      </div>
+      </div>
+      {% endif %}
+      {% endif %} 
+{% if collection.metafields.custom.country_year%}
+ <div class="page-width product__add_info param__mobile">
+        <div class="product__param param-padding">
+        <div class="param__logo" >
+ {% if collection.metafields.custom.suitable_for =="Car" or collection.metafields.custom.suitable_for =="Rear" or collection.metafields.custom.suitable_for =="Front" or collection.metafields.custom.suitable_for =="Both" 
+            or collection.metafields.custom.suitable_for =="Carro"
+          or collection.metafields.custom.suitable_for =="Auto"
+          or collection.metafields.custom.suitable_for =="Машина"
+          or collection.metafields.custom.suitable_for =="carr"
+          or collection.metafields.custom.suitable_for =="Αυτοκίνητο"
+          or collection.metafields.custom.suitable_for =="кола"
+          or collection.metafields.custom.suitable_for =="Voiture"
+          or collection.metafields.custom.suitable_for =="कार"
+          or collection.metafields.custom.suitable_for =="Automobil"%}     
+   {% render "suitable-logo" %}
+        {% elsif collection.metafields.custom.suitable_for == "Moto"%}
+          {% render "suitable-for-moto" %}
+        {% else %}
+          {% render "any_plate" %}
+        {% endif %}
+        </div>
+        <div class="param__text">
+          <h3 class="param__name">{{ section.settings.custom_param_suitable_for }}</h3>
+          <p class="param__info">{{ collection.metafields.custom.suitable_for }}</p>
+        </div>
+      </div>
+     <div class="product__param param-padding">
+        <div class="param__logo">{{ section.settings.alt_size_icon_svg }}</div>
+        <div class="param__text">
+         <h3 class="param__name">{{ section.settings.custom_param_height }}</h3>       
+          <p class="param__info">{{ collection.metafields.custom.height }}</p>
+        </div>
+      </div>
+   <div class="product__param param-padding">
+       <div class="param__logo">{{ section.settings.custom_param_color_svg_mob }}</div>
+        <div class="param__text">
+
+              <h3 class="param__name">{{ section.settings.custom_param_color }}</h3>
+          <p class="param__info">{{ section.settings.param_color }}</p>
+              
+        </div>
+      </div>
+     <div class="product__param param_large product__param_version">
+  <div class="param__logo">{{ section.settings.alt_version_icon_svg }}</div>
+  <div class="param__text param_large">
+    {% if  template == 'collection.blackout' %}
+                  <h3 class="param__name">{{ section.settings.custom_param_version }}</h3>
+    <p class="param__info">{{ collection.metafields.custom.country_year | remove: "Version" }}</p>
+                {% else %}
+              <h3 class="param__name">{{ section.settings.custom_param_version }}</h3>
+    <p class="param__info">{{ collection.metafields.custom.country_year | remove: "Version" }}, {{ collection.metafields.custom.number_texture }}</p>
+                {% endif %}
+  </div>
+  <div class="param__logo info-icon" style="margin-left:auto; cursor:pointer;">{% render "info-icon" %}</div>
+<div id="infoModal" class="info-modal">
+  <div class="info-modal-content">
+    <div style="padding: 8px 0px;
+    margin-right: 18px;">
+  {{ section.settings.custom_short_desc1 }}
+  {{ section.settings.custom_short_desc2 }}
+    </div>
+    <div class="param__logo close-icon" style="margin-bottom: auto;">{% render "close-modal" %}</div>
+  </div>
+</div>
+</div>
+    </div>
+    {% elsif collection.metafields.custom.state_year%}
+ <div class="page-width product__add_info param__mobile">
+        <div class="product__param param-padding">
+        <div class="param__logo">
+ {% if collection.metafields.custom.suitable_for =="Car" or collection.metafields.custom.suitable_for =="Rear" or collection.metafields.custom.suitable_for =="Front" or collection.metafields.custom.suitable_for =="Both" 
+            or collection.metafields.custom.suitable_for =="Carro"
+          or collection.metafields.custom.suitable_for =="Auto"
+          or collection.metafields.custom.suitable_for =="Машина"
+          or collection.metafields.custom.suitable_for =="carr"
+          or collection.metafields.custom.suitable_for =="Αυτοκίνητο"
+          or collection.metafields.custom.suitable_for =="кола"
+          or collection.metafields.custom.suitable_for =="Voiture"
+          or collection.metafields.custom.suitable_for =="कार"
+          or collection.metafields.custom.suitable_for =="Automobil"%}
+   {% render "suitable-logo" %}
+        {% elsif collection.metafields.custom.suitable_for == "Moto"%}
+          {% render "suitable-for-moto" %}
+        {% else %}
+          {% render "any_plate" %}
+        {% endif %}
+        </div>
+        <div class="param__text">
+          <h3 class="param__name">{{ section.settings.custom_param_suitable_for }}</h3>
+          <p class="param__info">{{ collection.metafields.custom.suitable_for }}</p>
+        </div>
+      </div> 
+     <div class="product__param param-padding">
+        <div class="param__logo">{{ section.settings.alt_size_icon_svg }}</div>
+        <div class="param__text">
+       <h3 class="param__name">{{ section.settings.custom_param_height }}</h3>    
+          <p class="param__info">{{ collection.metafields.custom.height }}</p>
+        </div>
+      </div>
+   <div class="product__param param-padding">
+        <div class="param__logo">{{ section.settings.custom_param_color_svg_mob }}</div>
+        <div class="param__text">
+
+              <h3 class="param__name">{{ section.settings.custom_param_color }}</h3>
+          <p class="param__info">{{ section.settings.param_color }}</p>
+              
+        </div>
+      </div>
+     <div class="product__param param_large product__param_version">
+  <div class="param__logo">{{ section.settings.alt_version_icon_svg }}</div>
+  <div class="param__text param_large">
+    {% if  template == 'collection.blackout' %}
+                  <h3 class="param__name">{{ section.settings.custom_param_version }}</h3>
+    <p class="param__info">{{ collection.metafields.custom.state_year | remove: "Version" }}</p>
+                {% else %}
+              <h3 class="param__name">{{ section.settings.custom_param_version }}</h3>
+    <p class="param__info">{{ collection.metafields.custom.state_year | remove: "Version" }}, {{ collection.metafields.custom.number_texture }}</p>
+                {% endif %}
+  </div>
+  <div class="param__logo info-icon" style="margin-left:auto; cursor:pointer;">{% render "info-icon" %}</div>
+<div id="infoModal" class="info-modal">
+  <div class="info-modal-content">
+    <div style="padding: 8px 0px;
+    margin-right: 18px;">
+  {{ section.settings.custom_short_desc1 }}
+  {{ section.settings.custom_short_desc2 }}
+    </div>
+    <div class="param__logo close-icon" style="margin-bottom: auto;">{% render "close-modal" %}</div>
+  </div>
+</div>
+</div>
+    </div>
+{% endif %}   
+      <div class="product-grid-container" id="ProductGridContainer">
+        {%- if collection.products.size == 0 -%}
+          <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
+            <div class="loading-overlay gradient"></div>
+            <div class="title-wrapper center">
+              <h2 class="title title--primary">
+                {{ 'sections.collection_template.empty' | t -}}
+                <br>
+                {{
+                  'sections.collection_template.use_fewer_filters_html'
+                  | t: link: collection.url, class: 'underlined-link link'
+                }}
+              </h2>
+            </div>
+          </div>
+        {%- else -%}
+          <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
+            <div class="loading-overlay gradient"></div>
+
+            <ul style="margin-top: 8px;"
+              id="product-grid"
+              data-id="{{ section.id }}"
+              class="
+                ts-products-list
+                grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+                grid--{{ section.settings.columns_desktop }}-col-desktop
+              "
+            >
+              {%- for product in collection.products -%}
+                {% assign lazy_load = false %}
+                {%- if forloop.index > 2 -%}
+                  {%- assign lazy_load = true -%}
+                {%- endif -%}
+                <li class="grid__item">
+                  {% if section.settings.custom_cards %}
+                    {% render 'ts-grid-item', product: product %}
+                  {% else %}
+                    {% render 'card-product',
+                      card_product: product,
+                      media_aspect_ratio: section.settings.image_ratio,
+                      show_secondary_image: section.settings.show_secondary_image,
+                      show_vendor: section.settings.show_vendor,
+                      show_rating: section.settings.show_rating,
+                      lazy_load: lazy_load,
+                      show_quick_add: section.settings.enable_quick_add,
+                      section_id: section.id
+                    %}
+                  {% endif %}
+                </li>
+              {%- endfor -%}
+            </ul>
+
+            {%- if paginate.pages > 1 -%}
+              {% render 'pagination', paginate: paginate, anchor: '' %}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endpaginate -%}
+</div>
+
+
+
+  {% if template == "collection.american-states" or template == "collection.promo" or template == "collection.canada-cities" or template == "collection.australia-cities" %}
+<div class="discount-popup-container page-width">
+<div id="discount-popup" class="discount-popup">
+  <p class="popup-discount-text"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 12.5C24 19.1274 18.6274 24.5 12 24.5C5.37258 24.5 0 19.1274 0 12.5C0 5.87258 5.37258 0.5 12 0.5C18.6274 0.5 24 5.87258 24 12.5Z" fill="#CE3040"/>
+<path d="M8.625 12.25C7.9 12.25 7.28125 11.9938 6.76875 11.4813C6.25625 10.9688 6 10.35 6 9.625C6 8.9 6.25625 8.28125 6.76875 7.76875C7.28125 7.25625 7.9 7 8.625 7C9.35 7 9.96875 7.25625 10.4813 7.76875C10.9938 8.28125 11.25 8.9 11.25 9.625C11.25 10.35 10.9938 10.9688 10.4813 11.4813C9.96875 11.9938 9.35 12.25 8.625 12.25ZM8.625 10.75C8.9375 10.75 9.20325 10.6407 9.42225 10.4222C9.64125 10.2037 9.7505 9.938 9.75 9.625C9.7495 9.312 9.64025 9.0465 9.42225 8.8285C9.20425 8.6105 8.9385 8.501 8.625 8.5C8.3115 8.499 8.046 8.6085 7.8285 8.8285C7.611 9.0485 7.5015 9.314 7.5 9.625C7.4985 9.936 7.608 10.2017 7.8285 10.4222C8.049 10.6427 8.3145 10.752 8.625 10.75ZM15.375 19C14.65 19 14.0312 18.7438 13.5187 18.2313C13.0062 17.7188 12.75 17.1 12.75 16.375C12.75 15.65 13.0062 15.0312 13.5187 14.5187C14.0312 14.0062 14.65 13.75 15.375 13.75C16.1 13.75 16.7188 14.0062 17.2313 14.5187C17.7438 15.0312 18 15.65 18 16.375C18 17.1 17.7438 17.7188 17.2313 18.2313C16.7188 18.7438 16.1 19 15.375 19ZM15.375 17.5C15.6875 17.5 15.9532 17.3907 16.1722 17.1722C16.3912 16.9537 16.5005 16.688 16.5 16.375C16.4995 16.062 16.3903 15.7965 16.1722 15.5785C15.9542 15.3605 15.6885 15.251 15.375 15.25C15.0615 15.249 14.796 15.3585 14.5785 15.5785C14.361 15.7985 14.2515 16.064 14.25 16.375C14.2485 16.686 14.358 16.9517 14.5785 17.1722C14.799 17.3927 15.0645 17.502 15.375 17.5ZM6.525 18.475C6.3875 18.3375 6.31875 18.1625 6.31875 17.95C6.31875 17.7375 6.3875 17.5625 6.525 17.425L16.425 7.525C16.5625 7.3875 16.7375 7.31875 16.95 7.31875C17.1625 7.31875 17.3375 7.3875 17.475 7.525C17.6125 7.6625 17.6813 7.8375 17.6813 8.05C17.6813 8.2625 17.6125 8.4375 17.475 8.575L7.575 18.475C7.4375 18.6125 7.2625 18.6813 7.05 18.6813C6.8375 18.6813 6.6625 18.6125 6.525 18.475Z" fill="white"/>
+</svg>
+ </p>
+  <button class="discount-popup__button discount-popup__button-hide"id="popup-discount-btn"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12.5" r="12" fill="#E8E8E8"/>
+<path d="M16 8.5L8 16.5M8 8.5L16 16.5" stroke="#8D8D8D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+</button>
+</div>
+</div>
+{% endif %}
+  
+<div class="cart-popup-container page-width">
+<div id="cart-popup" class="cart-popup">
+  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12.5" r="12" fill="#4BFE85"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.7547 8.73228C18.9118 8.8812 19 9.08307 19 9.29354C19 9.50402 18.9118 9.70588 18.7547 9.85481L10.926 17.2677C10.7687 17.4165 10.5555 17.5 10.3333 17.5C10.111 17.5 9.89778 17.4165 9.74051 17.2677L5.26697 13.0318C5.18456 12.9591 5.11846 12.8714 5.07261 12.7739C5.02677 12.6765 5.00212 12.5713 5.00013 12.4647C4.99814 12.3581 5.01886 12.2521 5.06105 12.1532C5.10323 12.0543 5.16603 11.9645 5.24568 11.8891C5.32533 11.8137 5.4202 11.7542 5.52465 11.7143C5.62909 11.6743 5.74096 11.6547 5.85359 11.6566C5.96621 11.6585 6.07728 11.6818 6.18017 11.7252C6.28306 11.7686 6.37567 11.8312 6.45246 11.9092L10.3333 15.5839L17.5692 8.73228C17.7265 8.58354 17.9397 8.5 18.1619 8.5C18.3842 8.5 18.5974 8.58354 18.7547 8.73228Z" fill="black"/>
+</svg>
+
+  <p class="popup-cart-text"> Product added to your cart
+ </p>
+  <button class="cart-popup__button cart-popup__button-hide"id="popup-cart-btn"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12.5" r="12" fill="#E8E8E8"/>
+<path d="M16 8.5L8 16.5M8 8.5L16 16.5" stroke="#8D8D8D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+</button>
+</div>
+</div>
+
+
+  {% if template == "collection.american-states" or template == "collection.promo" or template == "collection.canada-cities" or template == "collection.australia-cities" %}
+<style>
+  @media screen and (min-width: 749px) {
+.cart-popup-container{
+  bottom:155px;
+}
+    }
+</style>
+{% endif %}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const searches = document.querySelectorAll("#state-search,#state-search-mob,#canada-search,#canada-search-mob,#au-search,#au-search-mob");
+  const optionsContainers = document.querySelectorAll(".ts-collection-states__options");
+
+  const debounce = (func, delay) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => func.apply(this, args), delay);
+    };
+  };
+
+  searches.forEach((search, index) => {
+    const optionsContainer = optionsContainers[index];
+
+    search.addEventListener("click", (event) => {
+      optionsContainer.style.pointerEvents = "all";
+      optionsContainer.style.opacity = "1";
+      search.classList.add("active-input");
+      event.stopPropagation();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!search.contains(event.target) && !optionsContainer.contains(event.target)) {
+        optionsContainer.style.pointerEvents = "none";
+        optionsContainer.style.opacity = "0";
+        search.classList.remove("active-input");
+      }
+    });
+
+    const options = optionsContainer.querySelectorAll(".ts-collection-states__option");
+    options.forEach(option => {
+      option.addEventListener("click", () => {
+        search.value = option.textContent.trim();
+        const currentHandle = option.dataset.handle;
+        window.location = "https://alite.cc/collections/" + currentHandle;
+      });
+    });
+
+    const filterOptions = debounce(() => {
+      const input = search.value.toLowerCase();
+      options.forEach(option => {
+        const state = option.textContent.trim().toLowerCase();
+        if (state.includes(input)) {
+          option.style.display = "flex";
+        } else {
+          option.style.display = "none";
+        }
+      });
+    }, 300);
+
+    search.addEventListener("input", filterOptions);
+  });
+});
+
+
+</script>
+<script>
+    const sliders = document.querySelectorAll('.slider');
+
+    sliders.forEach(slider => {
+        const blocks = Array.from(slider.children);
+        blocks.sort((a, b) => {
+            const idA = parseInt(a.id.split('-')[1]);
+            const idB = parseInt(b.id.split('-')[1]);
+            return idA - idB;
+        });
+
+        slider.innerHTML = '';
+        blocks.forEach(block => {
+            slider.appendChild(block);
+        });
+    });
+</script>
+
+{% if section.settings.enable_states and section.settings.enable_filtering == false %}
+  <script>
+    const options = document.querySelectorAll(".ts-collection-states__options");
+    const states = document.querySelectorAll(".ts-collection-states__options");
+    const label = document.querySelector("ts-collection-states__current-label");
+    const currentTag = "{{ collection.handle }}";
+    states.forEach(option => {
+        if (currentTag === option.dataset.handle) {
+          console.log(option)
+          option.classList.add("selected ");
+          const state = option.textContent;
+          label.textContent = state;
+        }
+    })
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".ts-collection-states__select")) {
+        document.querySelectorAll(".ts-collection-states__select").forEach(select => select.classList.remove("active"));
+      }
+    });
+    document.querySelectorAll(".ts-collection-states__select").forEach(select => {
+      select.addEventListener("click", (e) => {
+        if (e.target.classList.contains("ts-collection-states__select")) {
+          e.target.classList.toggle("active");
+        }
+      });
+    })
+
+    document.querySelectorAll(".ts-collection-states__options").forEach(optionsBlock => {
+      optionsBlock.addEventListener("click", (e) => {
+        if (e.target.classList.contains("ts-collection-states__option")) {
+          const currentLabel = e.target.innerText;
+          const currentHandle = e.target.dataset.handle;
+          const stateSelects = document.querySelectorAll(".ts-collection-states__select");
+          const baseLink = stateSelects[0].dataset.url;
+          const currentTag = stateSelects[0].getAttribute("data-tag");
+  
+          document.querySelectorAll(".ts-collection-states__select").forEach(nestedOptionBlock => {
+            nestedOptionBlock.classList.add("selected");
+            nestedOptionBlock.classList.remove("active");
+            nestedOptionBlock.querySelector(".ts-collection-states__current-label").innerText = currentLabel;
+          });
+  
+      if (baseLink !== '') window.location = "https://alite.cc/collections/" + currentHandle;
+        }
+      })
+    })
+  </script>
+{% endif %}
+{% if section.settings.enable_cities and section.settings.enable_filtering == false %}
+  <script>
+    const options = document.querySelectorAll(".ts-collection-states__options");
+    const states = document.querySelectorAll(".ts-collection-states__options");
+    const label = document.querySelector("ts-collection-states__current-label");
+    const currentTag = "{{ collection.handle }}";
+    states.forEach(option => {
+        if (currentTag === option.dataset.handle) {
+          console.log(option)
+          option.classList.add("selected ");
+          const state = option.textContent;
+          label.textContent = state;
+        }
+    })
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".ts-collection-states__select")) {
+        document.querySelectorAll(".ts-collection-states__select").forEach(select => select.classList.remove("active"));
+      }
+    });
+    document.querySelectorAll(".ts-collection-states__select").forEach(select => {
+      select.addEventListener("click", (e) => {
+        if (e.target.classList.contains("ts-collection-states__select")) {
+          e.target.classList.toggle("active");
+        }
+      });
+    })
+
+    document.querySelectorAll(".ts-collection-states__options").forEach(optionsBlock => {
+      optionsBlock.addEventListener("click", (e) => {
+        if (e.target.classList.contains("ts-collection-states__option")) {
+          const currentLabel = e.target.innerText;
+          const currentHandle = e.target.dataset.handle;
+          const stateSelects = document.querySelectorAll(".ts-collection-states__select");
+          const baseLink = stateSelects[0].dataset.url;
+          const currentTag = stateSelects[0].getAttribute("data-tag");
+  
+          document.querySelectorAll(".ts-collection-states__select").forEach(nestedOptionBlock => {
+            nestedOptionBlock.classList.add("selected");
+            nestedOptionBlock.classList.remove("active");
+            nestedOptionBlock.querySelector(".ts-collection-states__current-label").innerText = currentLabel;
+          });
+  
+      if (baseLink !== '') window.location = "https://alite.cc/collections/" + currentHandle;
+        }
+      })
+    })
+  </script>
+{% endif %}
+
+{% if section.settings.custom_cards %}
+  <script>
+    (() => {
+      document.querySelector("#shopify-section-{{ section.id }} .ts-products-list").addEventListener("click", (event) => {
+        if (event.target.classList.contains("ts-quantity__minus")) {
+          const quantity = event.target.closest(".ts-quantity").querySelector(".ts-quantity__input");
+          if (quantity.value != 0) {
+            quantity.value -= 1;
+          }
+        } else if (event.target.classList.contains("ts-quantity__plus")) {
+          const quantity = event.target.closest(".ts-quantity").querySelector(".ts-quantity__input");
+          if (quantity.value != 99) {
+            quantity.value = parseInt(quantity.value) + 1;
+          }
+        } else if (event.target.classList.contains("ts-product__button")) {
+          const quantity = parseInt(event.target.closest(".ts-product").querySelector(".ts-quantity__input").value);
+          const productId = parseInt(event.target.closest(".ts-product").dataset.id);
+  
+          if (quantity > 0) {
+            event.target.closest(".ts-products-list").setAttribute("loading", true);
+            fetch(window.Shopify.routes.root + 'cart/add.js', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({"items": [{"id": productId, "quantity": quantity}]})
+            }).then((response) => response.json()).then(response => {
+              if (response.items) {
+                event.target.closest(".ts-products-list").removeAttribute("loading");
+                event.target.classList.add("active");
+                event.target.closest(".ts-product").querySelector(".ts-quantity__input").value = 1;
+                if (tsUpdateCountsCol) tsUpdateCountsCol();
+              } else {
+                if (response.message) {
+                  window.alert(response.message)
+                }
+              }
+            })
+          }
+        }
+      });
+  
+      document.querySelectorAll("#shopify-section-{{ section.id }} .ts-products-list input").forEach(input => {
+        input.addEventListener("keyup", (event) => {
+          const number = parseInt(event.target.value);
+  
+          if (number) {
+            if (number > 99) {
+              event.target.value = 99; 
+            } else {
+              event.target.value = number;
+            }
+          }
+        })
+      })
+    })();
+  </script>
+{% endif %}
+
+<script>
+  const buttonLeft = document.querySelector('.button-left');
+  const buttonRight = document.querySelector('.button-right');
+  const productAmount = document.querySelector('.slider').childElementCount;
+  const blockWidth = document.querySelector('.scroll_year-block ')?.getBoundingClientRect().width + document.querySelector('.slider').style.gap;
+  const productsToShow = Math.floor(document.querySelector('.slider').getBoundingClientRect().width / blockWidth);
+  let trackWidth = productsToShow / productAmount * 100;
+  document.querySelector(".track").style.width = `${trackWidth}%`
+  let percentPerBlock = 1 / productAmount * 100;
+  const mobileBlock = document.querySelector('.year-filter-mobile ');
+  const productAmountMobile =  mobileBlock.querySelector('.slider').childElementCount;
+  const blockWidthMobile =  mobileBlock.querySelector('.scroll_year-block ')?.getBoundingClientRect().width +  mobileBlock.querySelector('.slider').style.gap;
+  const productsToShowMobile = Math.floor(mobileBlock.querySelector('.slider').getBoundingClientRect().width / blockWidthMobile);
+  if(productsToShowMobile > productAmountMobile){
+   mobileBlock.querySelector(".scroll-container").style.overflow = "hidden"
+  }
+  if(productsToShow >= productAmount){
+    buttonLeft.style.display = "none"
+    buttonRight.style.display = "none"
+    document.querySelector(".scrollbar").style.display = "none"
+    document.querySelector(".scroll").style.margin = "0px 0 0"
+  }
+  if(productAmount <=0){
+    document.querySelector(".year-filter").style.display = "none"
+    document.querySelector(".scroll").style.margin = "0"
+  }
+  let counter = productsToShow;
+  let transformInPx = 0;
+  buttonLeft.addEventListener("click",function(e){
+    if(counter === productsToShow){
+       buttonLeft.classList.remove("button-active");
+        return;
+    }
+    counter--
+    trackWidth -= percentPerBlock;
+      document.querySelector(".track").style.width = `${trackWidth}%`
+      buttonRight.classList.add("button-active");
+       transformInPx -= +blockWidth +20;
+      document.querySelector('.slider').style.transform =`translateX(-${transformInPx}px)`
+        if(counter === productsToShow){
+       buttonLeft.classList.remove("button-active");
+    }
+  })
+  
+  buttonRight.addEventListener("click",function(e){
+        if(counter === productAmount ){
+       buttonRight.classList.remove("button-active");
+          return;
+      }
+    counter++
+        trackWidth += percentPerBlock;
+      document.querySelector(".track").style.width = `${trackWidth}%`
+    buttonLeft.classList.add("button-active");
+       transformInPx += +blockWidth +20;
+      document.querySelector('.slider').style.transform =`translateX(-${transformInPx}px)`
+            if(counter === productAmount){
+      buttonRight.classList.remove("button-active");
+      }
+
+  })
+</script>  
+<script>
+  const closeBtns = document.querySelectorAll(".close-icon");
+  closeBtns.forEach(btn =>{
+    btn.addEventListener("click",function(e){
+        const modal = e.target.closest(".info-modal")
+      modal.style.opacity = 0;
+      modal.style.pointerEvents = "none";
+    })
+  })
+</script>
+
+
+
+
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-product-grid.name",
+  "class": "section",
+  "settings": [
+    {
+  "id": "show_progress_bar",
+  "type": "checkbox",
+  "default": true,
+  "label": "Show progress bar"
+},
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "default": 16,
+      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "custom_cards",
+      "label": "Add custom cards",
+      "default": false
+    },
+    {
+  "type": "text",
+  "id": "custom_param_height",
+  "label": "Custom parameter Height",
+  "default": "Material Size"
+},
+    {
+  "type": "text",
+  "id": "custom_param_suitable_for",
+  "label": "Custom parameter Suitable for",
+  "default": "Suitable for"
+},
+    {
+  "type": "text",
+  "id": "custom_param_color",
+  "label": "Custom parameter Color",
+  "default": "Color"
+},
+    {
+  "type": "text",
+  "id": "param_color",
+  "label": "Custom parameter Color",
+  "default": "Black"
+},
+    {
+  "type": "textarea",
+  "id": "custom_param_color_svg",
+  "label": "Color icon",
+
+},
+    {
+  "type": "textarea",
+  "id": "alt_size_icon_svg",
+  "label": "size icon",
+
+},
+    {
+  "type": "textarea",
+  "id": "alt_version_icon_svg",
+  "label": "version icon",
+},
+    {
+  "type": "textarea",
+  "id": "custom_param_color_svg_mob",
+  "label": "Color icon Mob",
+
+},
+    {
+  "type": "text",
+  "id": "custom_param_version",
+  "label": "Custom parameter Version",
+  "default": "Version"
+},
+    {
+  "type": "richtext",
+  "id": "custom_short_desc1",
+  "label": "Short description",
+},
+{
+  "type": "richtext",
+  "id": "custom_short_desc2",
+  "label": "Short description",
+},
+    {
+      "type": "header",
+      "content": "State collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_states",
+      "label": "Enable states select",
+      "default": false,
+      "info": "States turned on only if filters turned off"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_cities",
+      "label": "Enable city select",
+      "default": false,
+      "info": "States turned on only if filters turned off"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_product_details",
+      "label": "Enable Product Details",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "label": "States json",
+      "id": "states_json",
+      "info": "Use https://jsonformatter.curiousconcept.com/ for validate json"
+    },
+    {
+      "type": "text",
+      "id": "custom_element_text",
+      "label": "Custom Element Text",
+      "default": "This is a custom element"
+    },
+    {
+      "type": "text",
+      "id": "state_placeholder",
+      "label": "Select",
+      "default": "State"
+    },
+    {
+      "type": "collection",
+      "id": "state_collection",
+      "label": "Collection connected"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header__3.content"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
+      "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.enable_quick_buy.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header__1.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_filtering.label",
+      "info": "t:sections.main-collection-product-grid.settings.enable_filtering.info"
+    },
+    {
+      "type": "select",
+      "id": "filter_type",
+      "options": [
+        {
+          "value": "horizontal",
+          "label": "t:sections.main-collection-product-grid.settings.filter_type.options__1.label"
+        },
+        {
+          "value": "vertical",
+          "label": "t:sections.main-collection-product-grid.settings.filter_type.options__2.label"
+        },
+        {
+          "value": "drawer",
+          "label": "t:sections.main-collection-product-grid.settings.filter_type.options__3.label"
+        }
+      ],
+      "default": "horizontal",
+      "label": "t:sections.main-collection-product-grid.settings.filter_type.label",
+      "info": "t:sections.main-collection-product-grid.settings.filter_type.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header_mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.main-collection-product-grid.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}
+
+

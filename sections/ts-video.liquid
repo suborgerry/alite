@@ -1,0 +1,169 @@
+<style>
+  .ts-video {
+    background: #000;
+    padding: 50px 0 0;
+  }
+
+  .ts-section__wrapper {
+    position: relative;
+    transition: clip-path 0.1s;
+    aspect-ratio: 16 / 9;
+  }
+  
+  .ts-video__container {
+    display: flex;
+  }
+
+  .ts-video__container video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .ts-video__placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.3s
+  }
+
+  .ts-video__placeholder img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .ts-video__placeholder.play {
+    opacity: 0;
+  }
+
+  .ts-video__placeholder * {
+    pointer-events: none;
+  }
+
+  .ts-video .ts-video__play {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s;
+  }
+
+  .ts-video__placeholder:hover .ts-video__play {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  @media screen and (max-width: 749px) {
+    .ts-video {
+      padding: 20px 0 0;
+    }
+  }
+</style>
+
+<div class="ts-video section-{{ section.id }}">
+  <div class="ts-section__wrapper">
+    {% if section.settings.video != blank %}
+      <div class="ts-video__container">
+        {{ section.settings.video | video_tag: image_size: "2000x", autoplay: false, muted: false, controls: false, loop: true }}
+      </div>
+
+      <div class="ts-video__placeholder">
+        {{ section.settings.video.preview_image | image_url: width: 2000 | image_tag: fetchpriority: "high" }}
+        <div class="ts-video__play">
+          <svg xmlns="http://www.w3.org/2000/svg" width="124" height="124" viewBox="0 0 124 124" fill="none">
+            <path d="M49.0833 80.5173V43.4826C49.084 43.0192 49.2094 42.5646 49.4463 42.1664C49.6831 41.7681 50.0228 41.4409 50.4295 41.219C50.8363 40.9971 51.2953 40.8887 51.7584 40.9052C52.2215 40.9217 52.6716 41.0624 53.0616 41.3126L81.8709 59.8248C82.2357 60.0585 82.5359 60.3802 82.7437 60.7603C82.9516 61.1404 83.0606 61.5667 83.0606 61.9999C83.0606 62.4332 82.9516 62.8595 82.7437 63.2396C82.5359 63.6197 82.2357 63.9414 81.8709 64.1751L53.0616 82.6924C52.6716 82.9426 52.2215 83.0834 51.7584 83.0998C51.2953 83.1163 50.8363 83.0079 50.4295 82.786C50.0228 82.5641 49.6831 82.2369 49.4463 81.8387C49.2094 81.4404 49.084 80.9858 49.0833 80.5224V80.5173Z" fill="white"/>
+            <path d="M5.16675 62.0001C5.16675 30.6126 30.6126 5.16675 62.0001 5.16675C93.3876 5.16675 118.833 30.6126 118.833 62.0001C118.833 93.3876 93.3876 118.833 62.0001 118.833C30.6126 118.833 5.16675 93.3876 5.16675 62.0001ZM62.0001 12.9167C48.9824 12.9167 36.4978 18.088 27.2929 27.2929C18.088 36.4978 12.9167 48.9824 12.9167 62.0001C12.9167 75.0178 18.088 87.5023 27.2929 96.7072C36.4978 105.912 48.9824 111.083 62.0001 111.083C75.0178 111.083 87.5023 105.912 96.7072 96.7072C105.912 87.5023 111.083 75.0178 111.083 62.0001C111.083 48.9824 105.912 36.4978 96.7072 27.2929C87.5023 18.088 75.0178 12.9167 62.0001 12.9167Z" fill="white"/>
+          </svg>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  (function () {
+    const wrapper = document.querySelector('.ts-video.section-{{ section.id }} .ts-video__container');
+    const element = document.querySelector('.ts-video.section-{{ section.id }} .ts-section__wrapper');
+
+    const percentageSeen = () => {
+      // Get the relevant measurements and positions
+      const viewportHeight = window.innerHeight;
+      const scrollTop = window.scrollY;
+      const elementOffsetTop = element.offsetTop;
+      const elementHeight = element.offsetHeight;
+      let viewPercentage = 0;
+
+      if ((elementOffsetTop - scrollTop) >  viewportHeight) {
+        viewPercentage = 0;
+      } else if (((elementOffsetTop - scrollTop) + elementHeight) < viewportHeight) {
+        viewPercentage = 100;
+      } else {
+        viewPercentage = ((viewportHeight - (elementOffsetTop - scrollTop)) / elementHeight) * 100;
+      }
+      
+      let insetBase = 75;
+      let radiusBase = 25
+      let max = 50;
+      let distance = 25;
+
+      if (window.innerWidth < 750) {
+        insetBase = 25;
+        radiusBase = 10;
+        max = 60;
+      }
+      viewPercentage = Math.round(viewPercentage * 10) / 10;
+
+      if (viewPercentage >= max - distance && viewPercentage <= max) {
+        const inset = ((max - viewPercentage) * insetBase) / distance;
+        const radius = ((max - viewPercentage) * radiusBase) / distance;
+
+        element.style.clipPath = `inset(${inset.toFixed(2)}px round ${radius.toFixed(2)}px)`;
+      } else if (viewPercentage > max) {
+        element.style.clipPath = `inset(${0}px round ${0}px)`;
+      } else {
+        element.style.clipPath = `inset(${insetBase}px round ${radiusBase}px)`;
+      }
+    };
+
+    window.addEventListener("scroll", percentageSeen);
+    percentageSeen();
+
+    document.querySelector(".ts-video.section-{{ section.id }} .ts-video__placeholder").addEventListener("click", (e) => {
+      const video = e.target.closest(".ts-video").querySelector("video");
+      
+      if (e.target.classList.contains("play")) {
+        video.pause();
+      } else {
+        video.play();
+      }
+
+      e.target.classList.toggle("play");
+    })
+  })();
+</script>
+
+{% schema %}
+  {
+    "name": "TS Video",
+    "settings": [
+      {
+        "type": "video",
+        "id": "video",
+        "label": "A Shopify-hosted video"
+      }
+    ],
+    "presets": [
+      {
+        "name": "TS Video"
+      }
+    ]
+  }
+{% endschema %}

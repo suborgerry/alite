@@ -1,0 +1,70 @@
+.js-contents h3{
+  font-weight: 700;
+}
+.cart-savings{
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+  margin:0 5px;
+}
+.cart-savings p{
+  margin:0;
+  color: #8D8D8D;
+  font-weight: 700;
+  font-size: 16px;
+}
+.cart-savings span{
+color: #CE3040;
+    font-weight: 700;
+}
+.total-price{
+  display: flex;
+}
+.total-price p{
+ margin:0; 
+}
+.totals p{
+  font-weight: 700;
+  color:#000;
+}
+.totals span{
+  font-weight: 700;
+  text-decoration: line-through; color: #8D8D8D; 
+  margin-right: 10px;
+}
+.totals {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 5px;
+}
+
+.totals > * {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.totals > h2 {
+  font-size: calc(var(--font-heading-scale) * 1.6rem);
+  color: #8D8D8D;
+  font-weight: 700;
+}
+
+.totals * {
+  line-height: 1;
+}
+
+.totals > * + * {
+  margin-left: 2rem;
+}
+
+
+.cart__ctas + .totals {
+  margin-top: 2rem;
+}
+
+@media all and (min-width: 750px) {
+  .totals {
+    justify-content: space-between;
+  }
+}

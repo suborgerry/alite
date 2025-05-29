@@ -1,0 +1,317 @@
+{% assign unique_id = 'ba_slider_' | append: section.id %}
+
+<main class="ba_main {{ unique_id }} color-{{ section.settings.color_scheme }} gradient page-width ">
+  <div
+    class="container-ba before_after-content"
+  >
+    <div class="before_after-heading">
+      <h3>{{ section.settings.ba_heading }}</h3>
+    </div>
+  </div>
+  <div class="container-ba before_after ">
+   <div class="image-container">
+  <!-- Desktop Version -->
+  <div class="image-desktop">
+    <div class="before_img">
+      <img
+        class="image-before slider-image"
+        src="{{ section.settings.bf_image | image_url }}"
+        alt="color photo">
+      <span class="before_badge ba_badge" style="{% unless section.settings.show_badge %}display: none;{% endunless %}">Off</span>
+    </div>
+    <div class="after_img">
+      <img
+        class="image-after slider-image"
+        src="{{ section.settings.af_image | image_url }}"
+        alt="black and white">
+      <span class="after_badge ba_badge" style="{% unless section.settings.show_badge %}display: none;{% endunless %}">On</span>
+    </div>
+  </div>
+
+  <!-- Mobile Version -->
+  <div class="image-mobile">
+    <div class="before_img">
+      <img
+        class="image-before slider-image"
+        src="{{ section.settings.bf_image_mobile | image_url }}"
+        alt="color photo (mobile)">
+      <span class="before_badge ba_badge" style="{% unless section.settings.show_badge %}display: none;{% endunless %}">Off</span>
+    </div>
+    <div class="after_img">
+      <img
+        class="image-after slider-image"
+        src="{{ section.settings.af_image_mobile | image_url }}"
+        alt="black and white (mobile)">
+      <span class="after_badge ba_badge" style="{% unless section.settings.show_badge %}display: none;{% endunless %}">On</span>
+    </div>
+  </div>
+</div>
+
+    <!-- step="10" -->
+    <input
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      aria-label="Percentage of before photo shown"
+      class="ba-slider"
+    >
+    <div class="slider-line" aria-hidden="true"><p></p></div>
+    <div class="before-slider-button" aria-hidden="true">
+      <svg width="42" height="42" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="50" height="50" rx="25" fill="#F9F9F9"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M8.8976 24.6113L16.5798 17.5L18.5 19.2775L11.7779 25.5L18.5 31.7225L16.5798 33.5L8.8976 26.3887C8.64302 26.153 8.5 25.8333 8.5 25.5C8.5 25.1667 8.64302 24.847 8.8976 24.6113Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M42.1024 26.3888L34.4202 33.5L32.5 31.7225L39.2221 25.5L32.5 19.2775L34.4202 17.5L42.1024 24.6113C42.357 24.847 42.5 25.1667 42.5 25.5C42.5 25.8333 42.357 26.153 42.1024 26.3888Z" fill="black"/>
+</svg>
+
+    </div>
+  </div>
+  
+</main>
+
+{% schema %}
+{
+  "name": "Before / After Slider",
+  "settings": [
+     {
+          "type": "header",
+          "content": "Subscribe to our [channel](https://www.youtube.com/@websensepro?sub_confirmation=1)"
+        },
+    {
+      "id":"bf_image",
+      "type":"image_picker",
+      "label":"Before Image"
+    },
+    {
+      "id":"af_image",
+      "type":"image_picker",
+      "label":"After Image"
+    },
+    {
+  "id":"bf_image_mobile",
+  "type":"image_picker",
+  "label":"Before Image (Mobile)"
+},
+{
+  "id":"af_image_mobile",
+  "type":"image_picker",
+  "label":"After Image (Mobile)"
+},
+
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show Badges",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "grayscale_before",
+      "label": "Grayscale for Before Image",
+      "default": false
+    },
+  {
+      "id":"ba_heading",
+      "type":"richtext",
+      "label":"Heading"
+    },
+  ],
+  "presets":[
+    {
+      "name":"Before / After Slider"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}
+
+
+<style>
+  .before_after-heading p{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: start;
+    margin: 0px;
+  }
+  .before_after-heading h3{
+   margin: 0 0 12px 0;
+  }
+     
+
+         .ba_main {
+                gap: 40px;
+                width: 100%;
+               margin-bottom: 30px;
+                }
+
+               img {
+                 display: block;
+               }
+
+               .container-ba {
+                 display: grid;
+                 /* place-content: center; */
+                 position: relative;
+                 overflow: hidden;
+                 border-radius: 1rem;
+                 --position: 50%;
+               }
+
+              
+
+  .before_badge {
+    z-index: 2 !important;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: #E0103A;
+    padding: 0 5px;
+    border-radius: 5px;
+    color: #fff;
+  }
+
+    .after_badge {
+    z-index: 2 !important;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #4BFE85;
+    padding: 0 5px;
+    border-radius: 5px;
+    color: #000;
+  }
+
+               .slider-image {
+                 width: 100%;
+                 height: 100%;
+                 object-fit: cover;
+                 object-position: left;
+               }
+
+               .image-before {
+                 position: absolute;
+                 inset: 0;
+                 width: var(--position);
+                 {% if section.settings.grayscale_before %}filter: grayscale(100%);{% endif %}
+               }
+
+               .ba-slider {
+                 position: absolute;
+                 inset: 0;
+                 cursor: pointer;
+                 opacity: 0;
+                 /* for Firefox */
+                 width: 100%;
+                 height: 100%;
+               }
+
+               .ba-slider:focus-visible ~ .before-slider-button {
+                 outline: 5px solid black;
+                 outline-offset: 3px;
+               }
+
+               .slider-line {
+                 position: absolute;
+                 inset: 0;
+                 width: .2rem;
+                 height: 100%;
+                 background-color: #fff;
+                 /* z-index: 10; */
+                 left: var(--position);
+                 transform: translateX(-50%);
+                 pointer-events: none;
+               }
+
+               .before-slider-button {
+                 position: absolute;
+                 background-color: #fff !important;
+                 color: black;
+                 padding: .5rem;
+                 border-radius: 100vw;
+                 display: grid;
+                 place-items: center;
+                 top: 50%;
+                 left: var(--position);
+                 transform: translate(-50%, -50%);
+                 pointer-events: none;
+                 /* z-index: 100; */
+                 box-shadow: 1px 1px 1px hsl(0, 50%, 2%, .5);
+               }
+  .container-ba{
+    text-align: center;
+  }
+
+       @media only screen and (max-width: 768px)
+         {
+           .container-ba{
+               width: 100%;
+           }
+           .ba_main{
+             padding: 0 20px;
+           }
+           .before_after-heading p{
+    font-size: 24px;
+  }
+           .before_badge {
+    z-index: 2 !important;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: #E0103A;
+    padding: 0 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 12px;
+  }
+
+    .after_badge {
+    z-index: 2 !important;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #4BFE85;
+    padding: 0 5px;
+    border-radius: 5px;
+    color: #000;
+    font-size: 12px;
+  }
+           .before-slider-button svg{
+             width:30px;
+            height: 30px;
+           }
+         }
+  
+  .image-desktop {
+  display: block;
+}
+
+.image-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .image-desktop {
+    display: none;
+  }
+  .image-mobile {
+    display: block;
+  }
+}
+
+</style>
+
+
+<script>
+function initializeBeforeAfterSlider(uniqueId) {
+  const container = document.querySelector(`.${uniqueId} .before_after`);
+  const slider = document.querySelector(`.${uniqueId} .ba-slider`);
+
+  slider.addEventListener('input', (e) => {
+    container.style.setProperty('--position', `${e.target.value}%`);
+  });
+}
+
+initializeBeforeAfterSlider('{{ unique_id }}');
+</script>

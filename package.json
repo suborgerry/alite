@@ -1,0 +1,12 @@
+{
+  "name": "hellolittlefox",
+  "version": "1.2.0",
+  "scripts": {
+    "start": "bun gulp & bun dev",
+    "dev": "shopify theme dev -s `cat var.store.env` --live-reload hot-reload",
+    "serve": "shopify theme serve --theme-editor-sync",
+    "push": "shopify theme push -s `cat var.store.env`",
+    "push:new": "shopify theme push -s `cat var.store.env` --unpublished",
+    "pull": "shopify theme pull -s `cat var.store.env`"
+  }
+}

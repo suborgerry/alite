@@ -1,0 +1,1519 @@
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  
+  .product-side-mobile{
+    display:none !important;
+  }
+  .side-products-text-mobile{
+    display:none;
+  }
+  .product-side{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:10px;
+  }
+  .product-side:not(:last-child){
+    margin-bottom:12px;
+  }
+  .side-products{
+    grid-column:2 !important;
+    grid-row:4/6;
+    margin-top:20px;
+  }
+  .product-side img{
+    width:100%;
+  }
+  .product-side-content h3{
+    color:#000;
+    font-size:14px;
+    font-weight:700;
+    text-align:center;
+  }
+  .product-side-content p{
+    color:#000;
+    font-size:14px;
+    text-align:center;
+  }
+  .product-side-content a:link,.product-side-content a:visited{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px;
+    background-color:#000;
+    border-radius:50px;
+    text-decoration:none;
+    color:#fff;
+    font-size:12px;
+    border:1px solid #000;
+    transition:all 0.3s;
+  }
+  .product-side-content a:hover,.product-side-content a:active{
+    background-color:#DA9DFF;
+    color:#000;
+  }
+  .side-products{
+    grid-column:2 !important;
+    grid-row:4/6;
+    margin-top:20px;
+    position: sticky;
+    top: 100px;
+    align-self: start;
+  }
+  
+  body{
+    overflow-x:hidden;
+    
+  }
+  .mobile-ad{
+    display:none !important;
+  }
+  @media screen and(max-width:750px){
+    
+      .mobile-ad{
+    display:none !important;
+  }
+  .pc-ad{
+    display:none !important;
+  }
+  }
+  .related-post-image {
+   background-color: #fff;
+    width: 260px;
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .page-width--narrow{
+    margin: 0 auto;
+    padding: 0 50px;
+    }
+
+  .border img{
+    border:none !important;
+  }
+  .product-side-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 10px;
+}
+
+.product-side {
+  padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.3s ease;
+    display: flex;
+    gap: 25px;
+}
+
+.product-side:hover {
+  background-color: #f9f9f9;
+}
+
+
+
+.product-side-content h3,
+.product-side-content p {
+  color: #000;
+  font-size: 14px;
+  text-align: center;
+}
+
+.learn-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 55px;
+  background-color: #000;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  border: 1px solid #000;
+  transition: all 0.3s;
+}
+
+.learn-more:hover {
+  background-color: #DA9DFF;
+  color: #000;
+}
+  .product-side-img-container{
+    width:40%;
+    overflow:hidden;
+    line-height:1;
+    display: flex;
+    align-items: center;
+  }
+  .product-side-img-container img{
+    width: 100%;
+  }
+ 
+  {% endstyle %}
+<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when '@app' -%}
+        <div class="page-width page-width--narrow">
+          {% render block %}
+        </div>
+      {% when 'products' %}
+      
+       <div class="side-products">
+        <div class="side-products-container">
+        <a href="{{ block.settings.link_1 }}" class="product-side-link">
+          <article class="product-side">
+      <div class="product-side-img-container"> 
+            <img src="{{ block.settings.image_1 | image_url }}">
+      </div>
+            <div class="product-side-content">
+              <h3 style="margin-bottom: 0px;">{{ block.settings.title_1 }}</h3>
+              <p style="margin-bottom: 0px;">{{ block.settings.description_1 }}</p>
+              <span class="learn-more" style="margin-top: 10px;">{{ "blogs.article.learn_more" | t }}</span>
+            </div>
+          </article>
+        </a>
+        
+       <a href="{{ block.settings.link_2 }}" class="product-side-link">
+          <article class="product-side">
+      <div class="product-side-img-container"> 
+            <img src="{{ block.settings.image_2 | image_url }}">
+      </div>
+            <div class="product-side-content">
+              <h3 style="margin-bottom: 0px;">{{ block.settings.title_2 }}</h3>
+              <p style="margin-bottom: 0px;">{{ block.settings.description_2 }}</p>
+              <span class="learn-more" style="margin-top: 10px;">{{ "blogs.article.learn_more" | t }}</span>
+            </div>
+          </article>
+        </a>
+        
+        <a href="{{ block.settings.link_3 }}" class="product-side-link">
+          <article class="product-side">
+      <div class="product-side-img-container"> 
+            <img src="{{ block.settings.image_3 | image_url }}">
+      </div>
+            <div class="product-side-content">
+              <h3 style="margin-bottom: 0px;">{{ block.settings.title_3 }}</h3>
+              <p style="margin-bottom: 0px;">{{ block.settings.description_3 }}</p>
+              <span class="learn-more" style="margin-top: 10px;">{{ "blogs.article.learn_more" | t }}</span>
+            </div>
+          </article>
+        </a>
+         
+        <a href="{{ block.settings.link_4 }}" class="product-side-link">
+          <article class="product-side">
+      <div class="product-side-img-container"> 
+            <img src="{{ block.settings.image_4 | image_url }}">
+      </div>
+            <div class="product-side-content">
+              <h3 style="margin-bottom: 0px;">{{ block.settings.title_4 }}</h3>
+              <p style="margin-bottom: 0px;">{{ block.settings.description_4 }}</p>
+              <span class="learn-more" style="margin-top: 10px;">{{ "blogs.article.learn_more" | t }}</span>
+            </div>
+          </article>
+        </a>
+        </div>
+      </div>
+        
+<script>
+
+</script>
+      {% when 'side-ad' %}
+      {% style %}
+      .article-template .page-width--narrow{
+      margin:10px 0;
+      padding:0;
+    }
+  @media screen and (min-width:1000px){
+    .page-width--narrow{
+    max-width: 120rem;
+    padding-left: 16px;
+    padding-top: 0px;
+  }
+.article-template div, .article-template header{
+      grid-column:1;
+}
+  .article-template{
+    margin:0 auto;
+    padding: 0 37px;
+  }
+  .advert{
+    grid-column:2 !important;
+    grid-row: 1 / 5;
+    background-color:#D9D9D9;
+    height: auto;
+    display:none;
+    width:auto;
+  }
+  .article-template{
+      display: grid;
+      max-width: 1240px;
+      column-gap: 25px;
+      grid-template-columns: 2.2fr 1fr;
+    }
+
+    .article-template__hero-container{
+      width:100%;   
+    }
+    .related-posts{
+      grid-column:span 2 !important;
+      max-width:100%;
+    }
+      }
+  @media screen and (max-width:1000px){
+      .advert{
+        display:none;
+      }
+  }
+
+  {% endstyle %}
+
+
+      
+      <style>
+        .author-container{
+          font-size: 16px;
+          font-weight: 700;
+          font-family: "ShopifySans" !important;
+          color: #000;
+        }
+        .pipe{
+          display:inline;
+        }
+        .links-container-pc{
+         display:flex;
+       }
+        .links-container-mobile{
+          display:none;
+        }
+        
+        a{
+          text-decoration:none;
+          flex-shrink: 0;
+        }
+      .scroll {
+        margin: 30px auto 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 56px;
+      }
+      .scroll-container {
+        overflow-x: scroll;
+        scroll-behavior:smooth;
+        scrollbar-width: none;
+        max-width: 1200px;
+      }
+      .slider {
+        display: flex;
+        transform: translateX(0px);
+        gap: 20px;
+        transition: all 0.3s;
+        margin-bottom: 25px;
+
+      }
+        .related-post:hover .related-post-title {
+    text-decoration: underline;
+}
+      .scroll-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        padding: 14px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      .scroll_year-block {
+        height: 100%;
+        width:200px;
+        flex-shrink: 0;
+        display: grid;
+        padding: 20px 26px;
+        border: 1px rgba(0, 0, 0, 0.2) solid;
+        border-radius: 18px;
+        background-color: #f4f4f4;
+      }
+      .icon {
+        opacity:0;
+        display: flex;
+        align-items: center;
+      }
+      .active .icon {
+        opacity:1;
+        display: flex;
+        align-items: center;
+      }
+      .active {
+        background-color: #DA9DFF;
+        border: 1px solid #2e2e2e;
+      }
+      .button-active {
+        background-color: #000000;
+        cursor:pointer;
+      }
+      .active .scroll_year-block_image {
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+          rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+          rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      }
+      .scroll_year-block_content {
+        display: flex;
+        gap:30px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 15px 0;
+      }
+         {% if collection.metafields.custom.number_texture %} 
+            .scroll_year-block_content {
+        margin: 0 0 5px 0;
+      }
+            {% endif %}
+        .texture{
+          color:#000;
+          margin:0 0 10px 0;
+          font-size:12px;
+        }
+      .year_title {  
+        margin: 0;
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .scroll_year-block_image {
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+        align-self:end;
+      }
+      .scroll_year-block_image img {
+        width: 100%;
+      }
+      .scrollbar{
+        width:100%;
+        height:4px;
+        background-color:#2E2E2E33;
+        border-radius:50px;
+        display:none;
+      }
+       .track{
+        width:0%;
+        transition: 0.3s all;
+        display:block !important;
+        height:4px;
+        background-color:#2E2E2E;
+        border-radius:50px;
+      }
+        @media screen and (max-width: 1000px){
+          .year-filter-mobile{
+            display:block;
+          }
+        a{
+          text-decoration:none;
+          flex-shrink: 0;
+        }
+      .scroll {
+        margin: 30px auto 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 56px;
+      }
+      .scroll-container {
+        overflow-x: scroll;
+        scroll-behavior:smooth;
+        max-width: 1200px;
+        scrollbar-width: auto;
+      }
+      .slider {
+        display: flex;
+        transform: translateX(0px);
+        gap: 20px;
+        transition: all 0.3s;
+        margin-bottom: 25px;
+
+      }
+      .scroll-button {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        padding: 14px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      .scroll_year-block {
+        width:200px;
+        height: 100%;
+        flex-shrink: 0;
+        display: grid;
+        padding: 20px 26px;
+        border: 1px rgba(0, 0, 0, 0.2) solid;
+        border-radius: 18px;
+        background-color: #f4f4f4;
+      }
+      .icon {
+        opacity:0;
+        display: flex;
+        align-items: center;
+      }
+      .active .icon {
+        opacity:1;
+        display: flex;
+        align-items: center;
+      }
+      .active {
+        background-color: #DA9DFF;
+        border: 1px solid #2e2e2e;
+      }
+      .button-active {
+        background-color: #000000;
+        cursor:pointer;
+      }
+      .active .scroll_year-block_image {
+        box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+          rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+          rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      }
+      .scroll_year-block_content {
+        display: flex;
+        gap:30px;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 0 15px 0;
+      }
+          {% if collection.metafields.custom.number_texture %} 
+            .scroll_year-block_content {
+        margin: 0 0 5px 0;
+      }
+            {% endif %}
+      .year_title {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .scroll_year-block_image {
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      .scroll_year-block_image img {
+        width: 100%;
+      }
+      .scrollbar{
+        display:none;
+        width:100%;
+        height:4px;
+        background-color:#2E2E2E33;
+        border-radius:50px;
+        
+      }
+       .track{
+        width:0%;
+        transition: 0.3s all;
+        display:block !important;
+        height:4px;
+        background-color:#2E2E2E;
+        border-radius:50px;
+      }
+          #style-1::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #2E2E2E33
+}
+
+#style-1::-webkit-scrollbar
+{
+  	border-radius: 10px;
+	width: 12px;
+	background-color: #2E2E2E33;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color:  #2E2E2E;
+}
+        }
+        .popup_CH{
+    display:none;
+  }
+        .author-link{
+          text-decoration: none; 
+          color: inherit;
+        }
+        .author-link:hover{
+          text-decoration: none; 
+          color: #DA9DFF;
+          transition: all 0.3s;
+        }
+       
+         @media screen and (max-width:1170px){
+         .learn-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 54px;
+    background-color: #000;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    border: 1px solid #000;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+           
+         }
+         @media screen and (max-width:1250px){
+         .learn-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 55px;
+    background-color: #000;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    border: 1px solid #000;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+          
+         }
+         @media screen and (max-width:1000px){
+        .product-side {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.3s ease;
+    display: flex
+;
+    gap: 25px;
+    max-width: 357px;
+    justify-content: center;
+    margin: 0 auto;
+}
+         }
+         @media (max-width: 768px) {
+          .product-side img {
+    width: 100%;
+}
+       .links-container-pc{
+         display:none;
+       }
+      .links-container-mobile{
+        display:flex;
+        max-height: 23px;
+        margin: 13px auto;
+      }
+      .content--container{
+        display:flex;
+      }
+      .date-links{
+        display:grid;
+      }
+      .pipe{
+         display:none;
+      }
+          .circle-divider{
+            color: #797979;
+          }
+          .author-container{
+            color: #797979;
+          }
+          .side-products{
+      display:none;
+    }
+                 .product-side {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 400px;
+        margin: 25px 0px !important;
+        align-items: center;
+        margin: 0 auto !important;
+    }
+          .product-side-link {
+    display: block !important;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 10px;
+}
+}
+    </style>
+        <div class="advert">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7162835873843504"
+     crossorigin="anonymous"></script>
+<!-- desktop-ad-01 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7162835873843504"
+     data-ad-slot="3771518840"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+      {%- when 'featured_image' -%}
+        {%- if article.image -%}
+          <div class="article-template__hero-container page-width--narrow"  style="grid-column:span 2" {{ block.shopify_attributes }}>
+            <div
+              class="article-template__hero-{{ block.settings.image_height }} media"
+              itemprop="image"
+              {% if block.settings.image_height == 'adapt' and article.image %}
+                style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"
+              {% endif %}>
+              
+              <img
+                srcset="
+                  {% if article.image.width >= 350 %}{{ article.image | image_url: width: 350 }} 350w,{% endif %}
+                  {% if article.image.width >= 750 %}{{ article.image | image_url: width: 750 }} 750w,{% endif %}
+                  {% if article.image.width >= 1100 %}{{ article.image | image_url: width: 1100 }} 1100w,{% endif %}
+                  {% if article.image.width >= 1500 %}{{ article.image | image_url: width: 1500 }} 1500w,{% endif %}
+                  {% if article.image.width >= 2200 %}{{ article.image | image_url: width: 2200 }} 2200w,{% endif %}
+                  {% if article.image.width >= 3000 %}{{ article.image | image_url: width: 3000 }} 3000w,{% endif %}
+                  {{ article.image | image_url }} {{ article.image.width }}w
+                "
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw"
+                src="{{ article.image | image_url: width: 1100 }}"
+                loading="eager"
+                fetchpriority="high"
+                width="{{ article.image.width }}"
+                height="{{ article.image.height }}"
+                alt="{{ article.image.alt | escape }}"
+              >
+            </div>
+          </div>
+        {%- endif -%}
+      {%- when 'read-time' -%}
+      
+      <div class="content--container">
+      
+      <div class="read-time page-width page-width--narrow ">
+                <p>{{ 'blogs.article.read-time' | t }} - {{ article.metafields.custom.read_time }}</p>
+              </div>
+      
+      {%- if block.settings.show_links -%}
+        <div class="links-container-mobile">
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ article.url }}&text={{ article.title }}" class="fb-button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30" class="fb-svg">
+              <path d="M12,27V15H8v-4h4V8.852C12,4.785,13.981,3,17.361,3c1.619,0,2.475,0.12,2.88,0.175V7h-2.305C16.501,7,16,7.757,16,9.291V11 h4.205l-0.571,4H16v12H12z"></path>
+          </svg>
+          </a>
+          <a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ article.url }}&text={{ article.title }}" class="x-button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 32 32" class="x-svg">
+          <path d="M 4.0175781 4 L 13.091797 17.609375 L 4.3359375 28 L 6.9511719 28 L 14.246094 19.34375 L 20.017578 28 L 20.552734 28 L 28.015625 28 L 18.712891 14.042969 L 27.175781 4 L 24.560547 4 L 17.558594 12.310547 L 12.017578 4 L 4.0175781 4 z M 7.7558594 6 L 10.947266 6 L 24.279297 26 L 21.087891 26 L 7.7558594 6 z"></path>
+          </svg>
+          </a>
+            <div class="ts-social__card-blog" style="cursor:pointer; background-color: transparent; margin-left: 12px; position: relative;" id="copyButton">
+  <p style="margin: 0px !important; max-height: 25px;">
+    <span>
+      <svg alt="" width="19" height="20" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="copy-svg">
+        <path d="M6.78375 16.0487C5.34876 17.4837 3.01118 17.4838 1.57622 16.0488C0.141242 14.6138 0.141265 12.2762 1.57626 10.8413L4.46936 7.94815C5.90435 6.51316 8.24192 6.51314 9.6769 7.94811C9.73518 8.00481 9.78161 8.07252 9.8135 8.14732C9.84539 8.22211 9.8621 8.30251 9.86266 8.38382C9.86322 8.46513 9.84762 8.54574 9.81676 8.62097C9.7859 8.6962 9.7404 8.76454 9.6829 8.82204C9.62541 8.87954 9.55706 8.92505 9.48183 8.95591C9.4066 8.98677 9.32599 9.00236 9.24468 9.00181C9.16337 9.00125 9.08298 8.98454 9.00818 8.95265C8.93338 8.92076 8.86567 8.87433 8.80897 8.81605C7.83981 7.84688 6.30645 7.8469 5.33727 8.81607L2.44417 11.7092C1.475 12.6784 1.47499 14.2117 2.44415 15.1809C3.41331 16.15 4.94666 16.15 5.91584 15.1809L8.66428 12.4324C8.72098 12.3741 8.7887 12.3277 8.8635 12.2958C8.9383 12.2639 9.01868 12.2472 9.09999 12.2466C9.1813 12.2461 9.26191 12.2617 9.33714 12.2925C9.41237 12.3234 9.48072 12.3689 9.53821 12.4264C9.59571 12.4839 9.64121 12.5522 9.67206 12.6274C9.70292 12.7027 9.71852 12.7833 9.71796 12.8646C9.7174 12.9459 9.7007 13.0263 9.66881 13.1011C9.63692 13.1759 9.59048 13.2436 9.5322 13.3003L6.78375 16.0487ZM12.2806 10.5518C10.8456 11.9868 8.50807 11.9869 7.07311 10.5519C7.01484 10.4952 6.96842 10.4275 6.93654 10.3527C6.90466 10.2779 6.88796 10.1975 6.88741 10.1162C6.88686 10.0349 6.90246 9.95432 6.93332 9.8791C6.96418 9.80387 7.00968 9.73554 7.06717 9.67804C7.12466 9.62055 7.193 9.57505 7.26822 9.54419C7.34344 9.51333 7.42405 9.49773 7.50535 9.49828C7.58665 9.49883 7.66703 9.51552 7.74183 9.5474C7.81662 9.57928 7.88434 9.62571 7.94104 9.68397C8.9102 10.6531 10.4436 10.6531 11.4127 9.68392L14.3058 6.79084C15.275 5.82167 15.275 4.28832 14.3059 3.31916C13.3367 2.34999 11.8033 2.34999 10.8342 3.31917L8.08572 6.06762C8.02902 6.12593 7.9613 6.17239 7.8865 6.20431C7.81169 6.23622 7.73129 6.25294 7.64997 6.25352C7.56864 6.25409 7.48801 6.2385 7.41277 6.20764C7.33752 6.17678 7.26916 6.13127 7.21165 6.07376C7.15415 6.01626 7.10864 5.9479 7.07778 5.87265C7.04693 5.7974 7.03133 5.71678 7.0319 5.63545C7.03247 5.55413 7.0492 5.47372 7.08112 5.39891C7.11303 5.32411 7.15949 5.25639 7.2178 5.1997L9.96624 2.45126C11.4012 1.01626 13.7388 1.01624 15.1738 2.45122C16.6087 3.88618 16.6087 6.22376 15.1737 7.65876L12.2806 10.5518Z" fill="black" stroke="black"></path>
+      </svg>
+    </span>
+  </p>
+  <div id="copiedNotification" style="display: none; 
+    position: absolute;
+    top: 32px;
+    left: -22px;
+    padding: 10px;
+    background-color: #000;
+    color: white;
+    border-radius: 8px;
+    z-index: 1000;
+    font-size: 12px;
+    line-height: 1;">
+    Copied!
+  </div>    
+</div>
+</div>
+          {%- endif -%}
+        </div>
+      {%- when 'short-summary' -%}
+    {% assign short_summary = article.metafields.custom.short_summary %}
+
+{% if short_summary != blank %}
+  <div class="short-summary-block">
+    <div class="short-summary-icon">
+      <span style="height: 30px;"><svg fill="#000000" width="30px" height="30px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M960 0c530.193 0 960 429.807 960 960s-429.807 960-960 960S0 1490.193 0 960 429.807 0 960 0Zm223.797 707.147c-28.531-29.561-67.826-39.944-109.227-39.455-55.225.657-114.197 20.664-156.38 40.315-100.942 47.024-178.395 130.295-242.903 219.312-11.616 16.025-17.678 34.946 2.76 49.697 17.428 12.58 29.978 1.324 40.49-9.897l.69-.74c.801-.862 1.591-1.72 2.37-2.565 11.795-12.772 23.194-25.999 34.593-39.237l2.85-3.31 2.851-3.308c34.231-39.687 69.056-78.805 115.144-105.345 27.4-15.778 47.142 8.591 42.912 35.963-2.535 16.413-11.165 31.874-17.2 47.744-21.44 56.363-43.197 112.607-64.862 168.888-23.74 61.7-47.405 123.425-70.426 185.398l-2 5.38-1.998 5.375c-20.31 54.64-40.319 108.872-53.554 165.896-10.575 45.592-24.811 100.906-4.357 145.697 11.781 25.8 36.77 43.532 64.567 47.566 37.912 5.504 78.906 6.133 116.003-2.308 19.216-4.368 38.12-10.07 56.57-17.005 56.646-21.298 108.226-54.146 154.681-92.755 47.26-39.384 88.919-85.972 126.906-134.292 12.21-15.53 27.004-32.703 31.163-52.596 3.908-18.657-12.746-45.302-34.326-34.473-11.395 5.718-19.929 19.867-28.231 29.27-10.42 11.798-21.044 23.423-31.786 34.92-21.488 22.987-43.513 45.463-65.634 67.831-13.54 13.692-30.37 25.263-47.662 33.763-21.59 10.609-38.785-1.157-36.448-25.064 2.144-21.954 7.515-44.145 15.046-64.926 30.306-83.675 61.19-167.135 91.834-250.686 19.157-52.214 38.217-104.461 56.999-156.816 17.554-48.928 32.514-97.463 38.834-149.3 4.357-35.71-4.9-72.647-30.269-98.937Zm63.72-401.498c-91.342-35.538-200.232 25.112-218.574 121.757-13.25 69.784 13.336 131.23 67.998 157.155 105.765 50.16 232.284-29.954 232.29-147.084.005-64.997-28.612-111.165-81.715-131.828Z" fill-rule="evenodd"></path> </g></svg></span>
+    </div>
+    <div class="short-summary-content_container">
+    <div class="short-summary-content">
+      <strong>{{ 'blogs.article.short-summary' | t }}</strong>
+      <p>{{ short_summary }}</p>
+    </div>
+      </div>
+  </div>
+{% endif %}
+
+  <style>
+    .short-summary-content_container{
+      width: 100%;
+      height: 100%;
+      background-color: #f5f5f5;
+    }
+    .short-summary-block {
+      display: flex;
+      border: 1px solid #DA9DFF;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px 0 30px 0;
+}
+
+.short-summary-icon {
+  background-color: #DA9DFF;
+    padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.short-summary-info {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.short-summary-content {
+  padding: 26px 26px;
+  color: #000;
+}
+
+.short-summary-content p {
+  margin: 0;
+}
+    @media (max-width: 768px) {
+    .short-summary-content {
+    padding: 14px 20px;
+}
+      .short-summary-icon {
+    padding: 20px 30px;
+}
+    .short-summary-block {
+      display: flex;
+      border: 1px solid #DA9DFF;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px 0 30px 0;
+      flex-direction: column;
+}  
+}
+  </style>
+      {%- when 'other-blogs' -%}
+  <div class="related-posts page-width--narrow">
+    <h3 style="color:#000;font-size:24px;font-weight:700; margin-bottom: 10px;">{{ block.settings.label }}</h3>
+    <a href="https://alite.cc/blogs/news" class="viev-all" >
+  <h3 class="viev-all" >
+    {{ block.settings.link }}
+  </h3>
+</a>
+          <div class="scroll">
+        <button class="scroll-button button-left">
+         {% render "arrow-button-left" %}
+        </button>
+        <div  id="style-1" class="scroll-container">
+          <div class="slider">
+      {% for post in blog.articles %}
+    {% unless post.url == article.url %}
+      <a class="related-post" href="{{ post.url }}" style="display:flex; text-decoration:none;">
+          <div class="related-post-image-container">
+            {% if post.image %}
+              <div class="related-post-image-container">
+              <img src="{{ post.image | image_url }}" alt="{{ post.title }}">
+              </div>
+            {% else %}
+              <div class="related-post-image">
+              <img src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/black-logo-green_404b42a3-7904-4ffb-80af-ad6804448f6b.png?v=1726152281" alt="Default Logo" style="background-color: #fff; width: 150px; height: auto;">
+              </div>
+            {% endif %}
+          </div>
+
+          {% if block.settings.blog_show_date %}
+          <span class="circle--divider" itemprop="dateCreated pubdate datePublished">
+            {{ post.published_at | time_tag: format: 'date' }}
+          </span>
+          {% endif %}
+
+          <p class="related-post-title">{{ post.title}}</p>
+
+          <div class="read_more-button" href="{{ post.url }}">
+            Read more
+          </div>
+      </a>
+    {% endunless %}
+{% endfor %}
+          </div>
+        </div>
+      <button class="scroll-button button-right button-active">
+              {% render "arrow-button-right" %}
+        </button>
+      </div>
+     <div class="scrollbar">
+        <div class="track"></div>
+     </div>
+  </div>
+      <script>
+  const buttonLeft = document.querySelector('.button-left');
+  const buttonRight = document.querySelector('.button-right');
+  const productAmount = document.querySelector('.slider').childElementCount;
+  const blockWidth = document.querySelector('.related-post')?.getBoundingClientRect().width + document.querySelector('.slider').style.gap;
+  const productsToShow = Math.floor(document.querySelector('.slider').getBoundingClientRect().width / blockWidth);
+  let trackWidth = productsToShow / productAmount * 100;
+  document.querySelector(".track").style.width = `${trackWidth}%`
+  let percentPerBlock = 1 / productAmount * 100;
+  const mobileBlock = document.querySelector('.related-posts');
+  const productAmountMobile =  mobileBlock.querySelector('.slider').childElementCount;
+  const blockWidthMobile =  mobileBlock.querySelector('.related-post')?.getBoundingClientRect().width +  mobileBlock.querySelector('.slider').style.gap;
+  const productsToShowMobile = Math.floor(mobileBlock.querySelector('.slider').getBoundingClientRect().width / blockWidthMobile);
+  if(productsToShowMobile > productAmountMobile){
+   mobileBlock.querySelector(".scroll-container").style.overflow = "hidden"
+  }
+  if(productsToShow >= productAmount){
+    buttonLeft.style.display = "none"
+    buttonRight.style.display = "none"
+    document.querySelector(".scrollbar").style.display = "none"
+    document.querySelector(".scroll").style.margin = "30px 0 0"
+  }
+  if(productAmount <=0){
+    document.querySelector(".related-posts").style.display = "none"
+    document.querySelector(".scroll").style.margin = "0"
+  }
+  let counter = productsToShow;
+  let transformInPx = 0;
+  buttonLeft.addEventListener("click",function(e){
+    if(counter === productsToShow){
+       buttonLeft.classList.remove("button-active");
+        return;
+    }
+    counter--
+    trackWidth -= percentPerBlock;
+      document.querySelector(".track").style.width = `${trackWidth}%`
+      buttonRight.classList.add("button-active");
+       transformInPx -= +blockWidth +20;
+      document.querySelector('.slider').style.transform =`translateX(-${transformInPx}px)`
+        if(counter === productsToShow){
+       buttonLeft.classList.remove("button-active");
+    }
+  })
+  
+  buttonRight.addEventListener("click",function(e){
+        if(counter === productAmount ){
+       buttonRight.classList.remove("button-active");
+          return;
+      }
+    counter++
+        trackWidth += percentPerBlock;
+      document.querySelector(".track").style.width = `${trackWidth}%`
+    buttonLeft.classList.add("button-active");
+       transformInPx += +blockWidth +20;
+      document.querySelector('.slider').style.transform =`translateX(-${transformInPx}px)`
+            if(counter === productAmount){
+      buttonRight.classList.remove("button-active");
+      }
+
+  })
+</script>  
+      {%- when 'title' -%}
+        <header class="page-width page-width--narrow" {{ block.shopify_attributes }}>
+          <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
+          <div class="date-links">
+            
+           {%- if block.settings.blog_show_author -%}
+  <span class="author-container" style="margin-right: 6px;" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    
+      <span itemprop="name">{{ 'blogs.article.author-text' | t }} <a class="author-link" href="https://alite.cc/blogs/news/vladimir-kostyra-auto-security-privacy-expert">{{ article.author }} </a><p class="pipe">|</p></span>
+    
+  </span>
+{%- endif -%}
+
+            
+          {%- if block.settings.blog_show_date -%}
+            <span class="circle-divider" itemprop="dateCreated pubdate datePublished">
+              {{- article.published_at | time_tag: format: 'date' -}}
+            </span>
+          {%- endif -%}
+          {%- if block.settings.show_links -%}
+            <div class="links-container-pc">
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ article.url }}&text={{ article.title }}" class="fb-button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30" class="fb-svg">
+              <path d="M12,27V15H8v-4h4V8.852C12,4.785,13.981,3,17.361,3c1.619,0,2.475,0.12,2.88,0.175V7h-2.305C16.501,7,16,7.757,16,9.291V11 h4.205l-0.571,4H16v12H12z"></path>
+          </svg>
+          </a>
+          <a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ article.url }}&text={{ article.title }}" class="x-button"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 32 32" class="x-svg">
+          <path d="M 4.0175781 4 L 13.091797 17.609375 L 4.3359375 28 L 6.9511719 28 L 14.246094 19.34375 L 20.017578 28 L 20.552734 28 L 28.015625 28 L 18.712891 14.042969 L 27.175781 4 L 24.560547 4 L 17.558594 12.310547 L 12.017578 4 L 4.0175781 4 z M 7.7558594 6 L 10.947266 6 L 24.279297 26 L 21.087891 26 L 7.7558594 6 z"></path>
+          </svg>
+          </a>
+            <div class="ts-social__card-blog" style="cursor:pointer; background-color: transparent; margin-left: 12px; position: relative;" id="copyButton">
+  <p style="margin: 0px !important; max-height: 25px;">
+    <span>
+      <svg alt="" width="19" height="20" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="copy-svg">
+        <path d="M6.78375 16.0487C5.34876 17.4837 3.01118 17.4838 1.57622 16.0488C0.141242 14.6138 0.141265 12.2762 1.57626 10.8413L4.46936 7.94815C5.90435 6.51316 8.24192 6.51314 9.6769 7.94811C9.73518 8.00481 9.78161 8.07252 9.8135 8.14732C9.84539 8.22211 9.8621 8.30251 9.86266 8.38382C9.86322 8.46513 9.84762 8.54574 9.81676 8.62097C9.7859 8.6962 9.7404 8.76454 9.6829 8.82204C9.62541 8.87954 9.55706 8.92505 9.48183 8.95591C9.4066 8.98677 9.32599 9.00236 9.24468 9.00181C9.16337 9.00125 9.08298 8.98454 9.00818 8.95265C8.93338 8.92076 8.86567 8.87433 8.80897 8.81605C7.83981 7.84688 6.30645 7.8469 5.33727 8.81607L2.44417 11.7092C1.475 12.6784 1.47499 14.2117 2.44415 15.1809C3.41331 16.15 4.94666 16.15 5.91584 15.1809L8.66428 12.4324C8.72098 12.3741 8.7887 12.3277 8.8635 12.2958C8.9383 12.2639 9.01868 12.2472 9.09999 12.2466C9.1813 12.2461 9.26191 12.2617 9.33714 12.2925C9.41237 12.3234 9.48072 12.3689 9.53821 12.4264C9.59571 12.4839 9.64121 12.5522 9.67206 12.6274C9.70292 12.7027 9.71852 12.7833 9.71796 12.8646C9.7174 12.9459 9.7007 13.0263 9.66881 13.1011C9.63692 13.1759 9.59048 13.2436 9.5322 13.3003L6.78375 16.0487ZM12.2806 10.5518C10.8456 11.9868 8.50807 11.9869 7.07311 10.5519C7.01484 10.4952 6.96842 10.4275 6.93654 10.3527C6.90466 10.2779 6.88796 10.1975 6.88741 10.1162C6.88686 10.0349 6.90246 9.95432 6.93332 9.8791C6.96418 9.80387 7.00968 9.73554 7.06717 9.67804C7.12466 9.62055 7.193 9.57505 7.26822 9.54419C7.34344 9.51333 7.42405 9.49773 7.50535 9.49828C7.58665 9.49883 7.66703 9.51552 7.74183 9.5474C7.81662 9.57928 7.88434 9.62571 7.94104 9.68397C8.9102 10.6531 10.4436 10.6531 11.4127 9.68392L14.3058 6.79084C15.275 5.82167 15.275 4.28832 14.3059 3.31916C13.3367 2.34999 11.8033 2.34999 10.8342 3.31917L8.08572 6.06762C8.02902 6.12593 7.9613 6.17239 7.8865 6.20431C7.81169 6.23622 7.73129 6.25294 7.64997 6.25352C7.56864 6.25409 7.48801 6.2385 7.41277 6.20764C7.33752 6.17678 7.26916 6.13127 7.21165 6.07376C7.15415 6.01626 7.10864 5.9479 7.07778 5.87265C7.04693 5.7974 7.03133 5.71678 7.0319 5.63545C7.03247 5.55413 7.0492 5.47372 7.08112 5.39891C7.11303 5.32411 7.15949 5.25639 7.2178 5.1997L9.96624 2.45126C11.4012 1.01626 13.7388 1.01624 15.1738 2.45122C16.6087 3.88618 16.6087 6.22376 15.1737 7.65876L12.2806 10.5518Z" fill="black" stroke="black"></path>
+      </svg>
+    </span>
+  </p>
+  <div id="copiedNotification" style="display: none; 
+    position: absolute;
+    top: 32px;
+    left: -22px;
+    padding: 10px;
+    background-color: #000;
+    color: white;
+    border-radius: 8px;
+    z-index: 1000;
+    font-size: 12px;
+    line-height: 1;">
+    Copied!
+  </div>    
+</div>
+</div>
+          {%- endif -%}
+            
+            <script>
+document.getElementById('copyButton').addEventListener('click', function() {
+    
+    var notification = document.getElementById('copiedNotification');
+    notification.style.display = 'block';
+    
+  
+    setTimeout(function() {
+        notification.style.display = 'none';
+    }, 2000);
+});
+</script>
+            </div>
+          
+        </header>
+      {%- when 'ad' -%}
+      <div class="ad page-width--narrow pc-ad"> 
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7162835873843504"
+     crossorigin="anonymous"></script>
+<!-- ad-02-desktop-horizontal -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7162835873843504"
+     data-ad-slot="7760362174"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      
+      </div>
+      <div class="ad page-width--narrow mobile-ad"> 
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7162835873843504"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-7162835873843504"
+     data-ad-slot="5106278678"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+      {%- when 'content' -%}
+        <div
+          class="article-template__content page-width page-width--narrow rte border"
+          itemprop="articleBody"
+          {{ block.shopify_attributes }}
+        >
+          {{ article.content }}
+        </div>
+
+      {%- when 'share' -%}
+        <div class="article-template__social-sharing page-width page-width--narrow" {{ block.shopify_attributes }}>
+          {% assign share_url = request.origin | append: article.url %}
+          {% render 'share-button', block: block, share_link: share_url %}
+        </div>
+    {%- endcase -%}
+  {%- endfor -%} 
+  {%- if blog.comments_enabled? -%}
+    <div class="article-template__comment-wrapper background-secondary">
+      <div id="comments" class="page-width page-width--narrow">
+        {%- if article.comments_count > 0 -%}
+          {%- assign anchorId = '#Comments-' | append: article.id -%}
+
+          <h2 id="Comments-{{ article.id }}" tabindex="-1">
+            {{ 'blogs.article.comments' | t: count: article.comments_count }}
+          </h2>
+          {% paginate article.comments by 5 %}
+            <div class="article-template__comments">
+              {%- if comment.status == 'pending' and comment.content -%}
+                <article id="{{ comment.id }}" class="article-template__comments-comment">
+                  {{ comment.content }}
+                  <footer class="right">
+                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span>
+                  </footer>
+                </article>
+              {%- endif -%}
+
+              {%- for comment in article.comments -%}
+                <article id="{{ comment.id }}" class="article-template__comments-comment">
+                  {{ comment.content }}
+                  <footer class="right">
+                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span
+                    ><span class="caption-with-letter-spacing">
+                      {{- comment.created_at | time_tag: format: 'date' -}}
+                    </span>
+                  </footer>
+                </article>
+              {%- endfor -%}
+              {% render 'pagination', paginate: paginate, anchor: anchorId %}
+            </div>
+          {% endpaginate %}
+        {%- endif -%}
+        {% form 'new_comment', article %}
+          {%- liquid
+            assign post_message = 'blogs.article.success'
+            if blog.moderated? and comment.status == 'unapproved'
+              assign post_message = 'blogs.article.success_moderated'
+            endif
+          -%}
+          <h2>{{ 'blogs.article.comment_form_title' | t }}</h2>
+          {%- if form.errors -%}
+            <div class="form__message" role="alert">
+              <h3 class="form-status caption-large text-body" tabindex="-1" autofocus>
+                {% render 'icon-error' %}
+                {{ 'templates.contact.form.error_heading' | t }}
+              </h3>
+            </div>
+            <ul class="form-status-list caption-large">
+              {%- for field in form.errors -%}
+                <li>
+                  <a href="#CommentForm-{{ field }}" class="link">
+                    {%- if form.errors.translated_fields[field] contains 'author' -%}
+                      {{ 'blogs.article.name' | t }}
+                    {%- elsif form.errors.translated_fields[field] contains 'body' -%}
+                      {{ 'blogs.article.message' | t }}
+                    {%- else -%}
+                      {{ form.errors.translated_fields[field] }}
+                    {%- endif -%}
+                    {{ form.errors.messages[field] }}
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- elsif form.posted_successfully? -%}
+            <div class="form-status-list form__message" role="status">
+              <h3 class="form-status" tabindex="-1" autofocus>
+                {% render 'icon-success' %}
+                {{ post_message | t }}
+              </h3>
+            </div>
+          {%- endif -%}
+
+          <div
+            {% if blog.moderated? == false %}
+              class="article-template__comments-fields"
+            {% endif %}
+          >
+            <div class="article-template__comment-fields">
+              <div class="field field--with-error">
+                <input
+                  type="text"
+                  name="comment[author]"
+                  id="CommentForm-author"
+                  class="field__input"
+                  autocomplete="name"
+                  value="{{ form.author }}"
+                  aria-required="true"
+                  required
+                  {% if form.errors contains 'author' %}
+                    aria-invalid="true"
+                    aria-describedby="CommentForm-author-error"
+                  {% endif %}
+                  placeholder="{{ 'blogs.article.name' | t }}"
+                >
+                <label class="field__label" for="CommentForm-author">
+                  {{- 'blogs.article.name' | t }}
+                  <span aria-hidden="true">*</span></label
+                >
+                {%- if form.errors contains 'author' -%}
+                  <small id="CommentForm-author-error">
+                    <span class="form__message">
+                      {%- render 'icon-error' -%}
+                      {{- 'blogs.article.name' | t }}
+                      {{ form.errors.messages.author }}.</span
+                    >
+                  </small>
+                {%- endif -%}
+              </div>
+              <div class="field field--with-error">
+                <input
+                  type="email"
+                  name="comment[email]"
+                  id="CommentForm-email"
+                  autocomplete="email"
+                  class="field__input"
+                  value="{{ form.email }}"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  aria-required="true"
+                  required
+                  {% if form.errors contains 'email' %}
+                    aria-invalid="true"
+                    aria-describedby="CommentForm-email-error"
+                  {% endif %}
+                  placeholder="{{ 'blogs.article.email' | t }}"
+                >
+                <label class="field__label" for="CommentForm-email">
+                  {{- 'blogs.article.email' | t }}
+                  <span aria-hidden="true">*</span></label
+                >
+                {%- if form.errors contains 'email' -%}
+                  <small id="CommentForm-email-error">
+                    <span class="form__message">
+                      {%- render 'icon-error' -%}
+                      {{- 'blogs.article.email' | t }}
+                      {{ form.errors.messages.email }}.</span
+                    >
+                  </small>
+                {%- endif -%}
+              </div>
+            </div>
+            <div class="field field--with-error">
+              <textarea
+                rows="5"
+                name="comment[body]"
+                id="CommentForm-body"
+                class="text-area field__input"
+                aria-required="true"
+                required
+                {% if form.errors contains 'body' %}
+                  aria-invalid="true"
+                  aria-describedby="CommentForm-body-error"
+                {% endif %}
+                placeholder="{{ 'blogs.article.message' | t }}"
+              >{{ form.body }}</textarea>
+              <label class="form__label field__label" for="CommentForm-body">
+                {{- 'blogs.article.message' | t }}
+                <span aria-hidden="true">*</span></label
+              >
+            </div>
+            {%- if form.errors contains 'body' -%}
+              <small id="CommentForm-body-error">
+                <span class="form__message">
+                  {%- render 'icon-error' -%}
+                  {{- 'blogs.article.message' | t }}
+                  {{ form.errors.messages.body }}.</span
+                >
+              </small>
+            {%- endif -%}
+          </div>
+          {%- if blog.moderated? -%}
+            <p class="article-template__comment-warning caption">{{ 'blogs.article.moderated' | t }}</p>
+          {%- endif -%}
+          <input type="submit" class="button" value="{{ 'blogs.article.post' | t }}">
+        {% endform %}
+      </div>
+    </div>
+  {%- endif -%}
+  <style>
+  {% if template == 'article.asd-blogs'%}
+    
+    .popup_VL{
+      display: none !important; 
+    }
+    .popup_VL-container::before{
+      display: none !important; 
+    }
+    .popup_VL-container{
+      display: none !important; 
+    }
+  {% endif %}
+    </style>
+</article>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "articleBody": {{ article.content | strip_html | json }},
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ request.origin | append: page.url | json }}
+    },
+    "headline": {{ article.title | json }},
+    {% if article.excerpt != blank %}
+      "description": {{ article.excerpt | strip_html | json }},
+    {% endif %}
+    {% if article.image %}
+      "image": [
+        {{ article | image_url: width: 1920 | prepend: "https:" | json }}
+      ],
+    {% endif %}
+    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "author": {
+      "@type": "Person",
+      "name": {{ article.author | json }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ shop.name | json }}
+    }
+  }
+</script>
+
+<script>
+
+  function copyLink() {
+    const url = window.location.href; 
+    navigator.clipboard.writeText(url) 
+      .then(() => {
+        const button = document.getElementById("copyButton"); 
+         button.querySelector("svg path").style.fill = "#da9dff"
+
+        setTimeout(() => {
+         button.querySelector("svg path").style.fill = "0"
+        }, 3000);
+      })
+      .catch(err => console.log('Ошибка копирования', err));
+  }
+
+
+  document.getElementById("copyButton").addEventListener("click", copyLink);
+
+  
+</script>
+{% schema %}
+{
+  "name": "t:sections.main-article.name",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "featured_image",
+      "name": "t:sections.main-article.blocks.featured_image.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "image_height",
+          "options": [
+            {
+              "value": "adapt",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__1.label"
+            },
+            {
+              "value": "small",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__2.label"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__3.label"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__4.label"
+            }
+          ],
+          "default": "adapt",
+          "label": "t:sections.main-article.blocks.featured_image.settings.image_height.label",
+          "info": "t:sections.main-article.blocks.featured_image.settings.image_height.info"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "t:sections.main-article.blocks.title.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "blog_show_date",
+          "default": true,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_date.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "blog_show_author",
+          "default": false,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_links",
+          "default": false,
+          "label": "show links"
+        }
+      ]
+    },
+    {
+      "type": "read-time",
+      "name": "read-time",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_links",
+          "default": false,
+          "label": "show links"
+        }
+      ]
+    },
+    {
+      "type": "short-summary",
+      "name": "short-summary",
+      "limit": 1,
+    },
+    {
+  "type": "products",
+  "name": "Products",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Nanofilm Ecoslick Image "
+    },
+    {
+      "type": "text",
+      "id": "title_1",
+      "label": "Nanofilm Ecoslick Title"
+    },
+    {
+      "type": "text",
+      "id": "description_1",
+      "label": "Nanofilm Ecoslick Description"
+    },
+    {
+      "type": "url",
+      "id": "link_1",
+      "label": "Nanofilm Ecoslick Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Material Image"
+    },
+    {
+      "type": "text",
+      "id": "title_2",
+      "label": "Material Title"
+    },
+    {
+      "type": "text",
+      "id": "description_2",
+      "label": "Material Description"
+    },
+    {
+      "type": "url",
+      "id": "link_2",
+      "label": "Material Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Folding frames Image"
+    },
+    {
+      "type": "text",
+      "id": "title_3",
+      "label": "Folding frames Title"
+    },
+    {
+      "type": "text",
+      "id": "description_3",
+      "label": "Folding frames Description"
+    },
+    {
+      "type": "url",
+      "id": "link_3",
+      "label": "Folding frames Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "Folding frames Image"
+    },
+    {
+      "type": "text",
+      "id": "title_4",
+      "label": "Folding frames Title"
+    },
+    {
+      "type": "text",
+      "id": "description_4",
+      "label": "Folding frames Description"
+    },
+    {
+      "type": "url",
+      "id": "link_4",
+      "label": "Folding frames Link"
+    }
+  ]
+},
+    {
+      "type": "ad",
+      "name": "ad",
+      "limit": 1,
+    },
+    {
+      "type": "side-ad",
+      "name": "Side ad",
+      "limit": 1,
+    },
+    {
+      "type": "other-blogs",
+      "name": "other-blogs",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "blog_show_date",
+          "default": true,
+          "label": "t:sections.main-article.blocks.title.settings.blog_show_date.label"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "default": "You may also like",
+          "label": "label"
+        },
+        {
+          "type": "text",
+          "id": "link",
+          "label": "link"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "t:sections.main-article.blocks.content.name",
+      "limit": 1
+    },
+    {
+      "type": "share",
+      "name": "t:sections.main-article.blocks.share.name",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "text",
+          "id": "share_label",
+          "label": "t:sections.main-article.blocks.share.settings.text.label",
+          "default": "Share"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-article.blocks.share.settings.featured_image_info.content"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-article.blocks.share.settings.title_info.content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

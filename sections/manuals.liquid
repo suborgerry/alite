@@ -1,0 +1,291 @@
+<section class="installation-guide page-width">
+  <div class="container">
+    <div class="steps">
+      {% for block in section.blocks %}
+        <div class="step">
+          <div class="step-text">
+            <div class="text-container">
+              <div class="title-container"> 
+                <p>{{ block.settings.title }}</p> 
+                <p>|</p> 
+                <p>{{ block.settings.title1 }}</p>
+              </div>
+              <p>{{ block.settings.text }}</p>
+            </div>
+            {% if block.settings.image %}
+            <div class="step-image">
+              <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.title }}">
+            </div>
+            {% endif %}
+          </div>
+          {% assign button_count = 0 %}
+          {% if block.settings.button_text_1 != blank %}
+            {% assign button_count = button_count | plus: 1 %}
+          {% endif %}
+          {% if block.settings.button_text_2 != blank %}
+            {% assign button_count = button_count | plus: 1 %}
+          {% endif %}
+          {% if block.settings.button_text_3 != blank %}
+            {% assign button_count = button_count | plus: 1 %}
+          {% endif %}
+          
+          <div class="buttons button-count-{{ button_count }}">
+              {% if block.settings.button_text_1 != blank %}
+              <a href="{{ block.settings.button_link_1 }}" class="button" target="_blank">{{ block.settings.button_text_1 }} <span class="icon"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="0.5" width="24" height="24" rx="12" fill="black"/>
+<path d="M5 11.75C4.58579 11.75 4.25 12.0858 4.25 12.5C4.25 12.9142 4.58579 13.25 5 13.25L5 11.75ZM18.3875 13.0303C18.6804 12.7374 18.6804 12.2626 18.3875 11.9697L13.6145 7.1967C13.3216 6.90381 12.8467 6.90381 12.5538 7.1967C12.2609 7.48959 12.2609 7.96447 12.5538 8.25736L16.7965 12.5L12.5538 16.7426C12.2609 17.0355 12.2609 17.5104 12.5538 17.8033C12.8467 18.0962 13.3216 18.0962 13.6145 17.8033L18.3875 13.0303ZM5 13.25L17.8571 13.25L17.8571 11.75L5 11.75L5 13.25Z" fill="white"/>
+</svg>
+</span></a>
+              {% endif %}
+              {% if block.settings.button_text_2 != blank %}
+              <a href="{{ block.settings.button_link_2 }}" class="button" target="_blank">{{ block.settings.button_text_2 }} <span class="icon"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="0.5" width="24" height="24" rx="12" fill="black"/>
+<path d="M5 11.75C4.58579 11.75 4.25 12.0858 4.25 12.5C4.25 12.9142 4.58579 13.25 5 13.25L5 11.75ZM18.3875 13.0303C18.6804 12.7374 18.6804 12.2626 18.3875 11.9697L13.6145 7.1967C13.3216 6.90381 12.8467 6.90381 12.5538 7.1967C12.2609 7.48959 12.2609 7.96447 12.5538 8.25736L16.7965 12.5L12.5538 16.7426C12.2609 17.0355 12.2609 17.5104 12.5538 17.8033C12.8467 18.0962 13.3216 18.0962 13.6145 17.8033L18.3875 13.0303ZM5 13.25L17.8571 13.25L17.8571 11.75L5 11.75L5 13.25Z" fill="white"/>
+</svg>
+</span></a>
+              {% endif %}
+              {% if block.settings.button_text_3 != blank %}
+              <a href="{{ block.settings.button_link_3 }}" class="button" target="_blank">{{ block.settings.button_text_3 }} <span class="icon"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="0.5" width="24" height="24" rx="12" fill="black"/>
+<path d="M5 11.75C4.58579 11.75 4.25 12.0858 4.25 12.5C4.25 12.9142 4.58579 13.25 5 13.25L5 11.75ZM18.3875 13.0303C18.6804 12.7374 18.6804 12.2626 18.3875 11.9697L13.6145 7.1967C13.3216 6.90381 12.8467 6.90381 12.5538 7.1967C12.2609 7.48959 12.2609 7.96447 12.5538 8.25736L16.7965 12.5L12.5538 16.7426C12.2609 17.0355 12.2609 17.5104 12.5538 17.8033C12.8467 18.0962 13.3216 18.0962 13.6145 17.8033L18.3875 13.0303ZM5 13.25L17.8571 13.25L17.8571 11.75L5 11.75L5 13.25Z" fill="white"/>
+</svg>
+</span></a>
+              {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .installation-guide {
+    text-align: left;
+    padding: 0px 20px 40px 20px;
+  }
+  .header img {
+    max-width: 120px;
+    height: auto;
+  }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .step {
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 20px 0;
+  }
+  .step-text {
+    flex: 1;
+  }
+  .step-image img {
+    width: 100%;
+    height: auto;
+  }
+  .buttons {
+    display: grid;
+    gap: 10px;
+
+  }
+  .button {
+   display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #000;
+    justify-content: space-between;
+    font-size: 16px;
+    background-color: #F7F7F7;
+    transition: all 0.2s;
+  }
+  .button:hover rect {
+  fill:#DA9DFF;
+    transition: all 0.2s;
+  }
+  .button:hover path {
+  fill:#000;
+    transition: all 0.2s;
+  }
+  .button .icon {
+    margin-left: 5px;
+  }
+  .icon{
+   transition: all 0.2s;
+  }
+  .step-text{
+    display:flex;
+    justify-content: space-between;
+  }
+  .step-image{
+    margin: 0px 15px;
+    max-width: 250px;
+    width: 100%;
+  }
+  .text-container p{
+    max-width:900px;
+  }
+  .step-text img{
+    width: 100%;
+    max-width: 270px;
+    height: auto;
+  }
+  .title-container{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .title-container p:first-child {
+    font-size:24px;
+    font-weight:700;
+    font-family: Grtsk !important;
+    color:#000;
+    margin:0;
+}
+  .title-container p:nth-child(2) {
+    font-size:24px;
+    color:#000;
+    margin:0;
+  }
+  .title-container p:nth-child(3) {
+    font-size:16px;
+    color:#000;
+    margin:0;
+}
+  .text-container p{
+    font-size:16px;
+    color:#000;
+    margin: 12px 0 30px 0;
+  }
+  
+  .buttons.button-count-1 {
+    grid-template-columns: 1fr;
+  }
+  .buttons.button-count-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .buttons.button-count-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .buttons.button-count-3 a:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  @media screen and (max-width: 750px) {
+  .step-image{
+    grid-row: 1;
+  }
+    .step-text {
+    display: grid;
+    justify-items: center;
+}
+    .buttons.button-count-1 {
+    grid-template-columns: 1fr;
+    }
+    .buttons.button-count-2 {
+    grid-template-columns: 1fr;
+    }
+    .buttons.button-count-3 {
+    grid-template-columns: 1fr;
+}
+    .buttons.button-count-3 a:nth-child(3) {
+    grid-column: span 1;
+}
+    .title-container p:first-child {
+    font-size:24px;
+}
+  .title-container p:nth-child(2) {
+    font-size:24px;
+  }
+  .title-container p:nth-child(3) {
+    font-size:14px;
+}
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Installation Manuals",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "title"
+        },
+        {
+          "type": "text",
+          "id": "title1",
+          "label": "Title",
+          "default": "title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Step Image"
+        },
+        {
+          "type": "text",
+          "id": "button_text_1",
+          "label": "First Button Text",
+          "default": "Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "First Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_text_2",
+          "label": "Second Button Text",
+          "default": "Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "Second Button Link"
+        },
+        {
+          "type": "text",
+          "id": "button_text_3",
+          "label": "Second Button Text",
+          "default": "Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link_3",
+          "label": "Second Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Installation Manuals",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

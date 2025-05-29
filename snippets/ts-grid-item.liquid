@@ -1,0 +1,50 @@
+<div class="ts-product" data-id="{{ product.first_available_variant.id }}">
+  <a href="{{ product.url }}" class="ts-product__media">
+    {{ product.featured_image | image_url: width: 320 | image_tag }}
+  </a>
+  <div class=ts-product__content>
+    <h3 class="ts-product__title">
+      <a href="{{ product.url }}">
+        {{ product.title }}
+      </a>
+    </h3>
+    <div class="ts-product_info">
+      <div class="ts-product__price">
+        <span class="ts-product__regular {% if product.compare_at_price != blank %}ts-product__regular--sale{% endif %}">
+          {{ product.price | money }}
+        </span>
+  
+        {% if product.compare_at_price != blank %}
+          <span class="ts-product__compare">
+            {{ product.compare_at_price | money }}
+          </span>
+        {% endif %}
+      </div>
+  
+      <div class="ts-product__quantity ts-quantity">
+        <span class="ts-quantity__minus">
+          <svg width="5" height="2" viewBox="0 0 5 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.67048 0.789551V1.72705H0.852295V0.789551H4.67048Z" fill="black"/>
+          </svg>
+        </span>
+  
+        <input class="ts-quantity__input" type="number" name="quantity" value="1" min="0" max="99" />
+  
+        <span class="ts-quantity__plus">
+          <svg width="6" height="7" viewBox="0 0 6 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.47732 6.40341V0.778409H3.43186V6.40341H2.47732ZM0.14209 4.06818V3.11364H5.76709V4.06818H0.14209Z" fill="black"/>
+          </svg>
+        </span>
+      </div>
+  
+      <div class="ts-product__button">
+        <span>{{ 'ts.products.add_cart' | t }}</span>
+        <span class="ts-icon-loader">
+          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 8.5C15 10.0772 14.4674 11.6081 13.4885 12.8447C12.5095 14.0813 11.1417 14.9511 9.60664 15.3131C8.07157 15.6751 6.45923 15.5081 5.03095 14.8391C3.60268 14.1702 2.44217 13.0385 1.73751 11.6275C1.03285 10.2165 0.825348 8.60886 1.14863 7.06517C1.47191 5.52149 2.30703 4.13221 3.51864 3.12251C4.73024 2.11281 6.24732 1.54187 7.824 1.50221C9.40068 1.46256 10.9445 1.95652 12.2054 2.90403" stroke="white"></path>
+          </svg> 
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

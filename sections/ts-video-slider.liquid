@@ -1,0 +1,376 @@
+<style>
+  .ts-video__controls{
+    display:none !important;
+  }
+  .hidden {
+    display: none;
+  }
+  .ts-video__text-1 {
+    font-size:20px;
+    font-weight: 700;
+  }
+  .ts-video__text-2 {
+    font-size:16px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: start;
+    gap: 7px;
+  }
+  .ts-products-list .ts-container {
+    padding: 0px 20px 0px 20px;
+  }
+  .ts-products__title {
+    font-size: 30px;
+  }
+  @media screen and (max-width: 900px) {
+    .ts-products__title {
+      font-size: 24px;
+    }
+  }
+  .video-text_container{
+    display:block;
+    padding: 0 0px 0 20px;
+    margin-top: 10px;
+  }
+  .video-text_container p{
+    margin:0px;
+    color: #000;
+  }
+  .ts-videos__container {
+    position: relative;
+  }
+
+  .ts-videos__title {
+    color: #000;
+    font-family: "ShopifySans" !important;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0 0 12px;
+  }
+
+  .ts-videos__description * {
+    color: #000;
+    font-family: "ShopifySans" !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 213.678%; /* 34.188px */
+    margin: 0;
+  }
+
+  .ts-videos__description {
+    margin: 0 0 12px;
+  }
+
+  .ts-videos {
+    display: flex;
+    gap: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #C6C6C6;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+    overflow-y: hidden;
+  }
+
+  .ts-videos::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ts-videos__video {
+    width: 100%;
+    min-width: 250px;
+    max-width: calc(33.33% - 33.3px);
+  }
+
+  .ts-video__inner {
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+  }
+
+  .ts-video__placeholder {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    wight: 100%;
+    height: 100%;
+    transition: opacity 0.3s;
+  }
+
+  .ts-video__placeholder.hide {
+    opacity: 0;
+  }
+
+  .ts-video__placeholder img {
+    wight: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ts-video__placeholder * {
+    pointer-events: none;
+  }
+
+  .ts-video__inner video {
+    width: 100%;
+    height: auto;
+  }
+
+  .ts-video__controls {
+    width: fix-content;
+    margin-left: auto;
+    display: flex;
+    justify-content: end;
+  }
+
+  .ts-video__controls svg {
+    cursor: pointer;
+  }
+
+  .ts-video__controls .ts-video__pause,
+  .ts-video__controls.play .ts-video__play {
+    display: none;
+  }
+
+  .ts-video__controls .ts-video__play,
+  .ts-video__controls.play .ts-video__pause {
+    display: block;
+  }
+
+  .ts-videos__dots {
+    display: none;
+    align-items: center;
+    gap: 19px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ts-videos__dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 30px;
+    background: #D9D9D9;
+  }
+  
+  .ts-videos__dot.active {
+    background: #4BFE85;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ts-videos__dots {
+      display: flex;
+    }
+    
+    .ts-videos__container {
+      padding: 0 16px !important;
+      position: relative;
+    }
+
+    .ts-videos__title {
+      text-align: center;
+      margin: 0 0 18px;
+    }
+
+    .ts-videos__description {
+      margin: 0 0 30px;
+    }
+
+    .ts-videos {
+      gap: 18px;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding-right: 16px;
+      margin-right: -16px;
+      border-bottom: none;
+    }
+
+    .ts-videos__container::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+      width: calc(100% - 32px);
+      height: 1px;
+      background-color: #C6C6C6;
+    }
+
+    .ts-video__card {
+      scroll-snap-align: start;
+    }
+
+    .ts-video__text-1 {
+    font-size:16px;
+  }
+    .ts-video__text-2 {
+    font-size:12px;
+  }
+    .video-text_container {
+    padding-bottom: 30px;
+}
+  }
+</style>
+
+<div class="ts-video-slider section-{{ section.id }}">
+  <div class="ts-videos__container page-width">
+    {% if section.settings.title != blank %}
+      <h2 class="ts-videos__title">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="ts-videos__description">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="ts-videos">
+        {% for block in section.blocks %}
+          <div class="ts-videos__video ts-video__card">
+            <div class="ts-video__inner">
+              {{ block.settings.video | video_tag: width: "400x", autoplay: false, muted: false, controls: false, loop: true }}
+
+              <div class="ts-video__placeholder">
+                {{ block.settings.video.preview_image | image_url: width: 400 | image_tag }}
+              </div>
+            </div>
+
+            <div class="ts-video__controls">
+              <svg class="ts-video__play" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                <path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm35.33-95-48-32A6,6,0,0,0,106,96v64a6,6,0,0,0,9.33,5l48-32a6,6,0,0,0,0-10ZM118,148.79V107.21L149.18,128Z"></path>
+              </svg>
+              <svg class="ts-video__pause" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
+                <path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM110,96v64a6,6,0,0,1-12,0V96a6,6,0,0,1,12,0Zm48,0v64a6,6,0,0,1-12,0V96a6,6,0,0,1,12,0Z"></path>
+              </svg>
+            </div>
+
+            <div class="video-text_container">
+              <p class="ts-video__text-1  {% if block.settings.text_line_1 == blank %}hidden{% endif %}">
+              {{ block.settings.text_line_1 }}
+            </p>
+            <p class="ts-video__text-2  {% if block.settings.text_line_2 == blank %}hidden{% endif %}">
+              {{ block.settings.text_line_2 }} {% if block.settings.flag != blank %}
+                  <img  style="max-width:{{ block.settings.flag_width }}px" class="ts-video__flag" src="{{ block.settings.flag | image_url: width: 100 }}" alt="Flag">
+                {% endif %}
+            </p>
+              
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="ts-videos__dots">
+        {% for block in section.blocks %}
+          <span class="ts-videos__dot {% if forloop.index == 1 %}active{% endif %}"></span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll(".ts-video-slider.section-{{ section.id }} .ts-video__card").forEach(card => {
+    card.addEventListener("click", (event) => {
+      let button = card.querySelector(".ts-video__controls");
+      let video = card.querySelector("video");
+      let placeholder = card.querySelector(".ts-video__placeholder");
+      
+      if (event.target.classList.contains("ts-video__controls") || event.target.classList.contains("ts-video__placeholder")) {
+        document.querySelectorAll(".ts-video-slider.section-{{ section.id }} .ts-video__card video").forEach(v => {
+          if (v !== video) {
+            v.pause();
+            v.closest(".ts-video__card").querySelector(".ts-video__placeholder").classList.remove("hide");
+            v.closest(".ts-video__card").querySelector(".ts-video__controls").classList.remove("play");
+          }
+        });
+        
+        if (button.classList.contains("play")) {
+          video.pause();
+        } else {
+          video.play();
+        }
+        
+        placeholder.classList.add("hide");
+        button.classList.toggle("play");
+      }
+    });
+  });
+
+  let startCardPosition = document.querySelector('.section-{{ section.id }} .ts-videos .ts-video__card').getBoundingClientRect().left;
+  document.querySelector('.section-{{ section.id }} .ts-videos').addEventListener('scroll', (e) => {
+    const rect = e.target.querySelector('.ts-video__card').getBoundingClientRect();
+    const rectWidth = e.target.querySelector('.ts-video__card').offsetWidth;
+    document.querySelector('.section-{{ section.id }} .ts-videos__dots .ts-videos__dot.active').classList.remove('active');
+    document.querySelector(`.section-{{ section.id }} .ts-videos__dots .ts-videos__dot:nth-of-type(${Math.round((startCardPosition - rect.left) / (rectWidth * 0.9)) + 1})`).classList.add('active');
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "TS Video blocks",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      }
+    ],
+    "blocks": [
+      { 
+        "type": "video",
+        "limit": 3,
+        "name": "Video",
+        "settings": [
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Video"
+          },
+          {
+            "type": "text",
+            "id": "text_line_1",
+            "label": "First text line"
+          },
+          {
+            "type": "text",
+            "id": "text_line_2",
+            "label": "Second text line"
+          },
+          {
+          "type": "image_picker",
+          "id": "flag",
+          "label": "Flag Image"
+        },
+          {
+  "type": "range",
+  "id": "flag_width",
+  "label": "Flag Width",
+  "min": 10,
+  "max": 100,
+  "step": 1,
+  "default": 30
+}
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "TS Video blocks"
+      }
+    ]
+  }
+{% endschema %}

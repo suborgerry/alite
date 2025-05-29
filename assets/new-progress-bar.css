@@ -1,0 +1,178 @@
+.progress-bar-mob{
+  display: none;
+}
+.third-off::after {
+    content: "best offer";
+    position: absolute;
+    top: -26px;
+    left: 28%;
+    transform: translate(-50%);
+    background-color: #ce3040;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 4px 25px;
+    line-height: 1;
+    z-index: 2;
+    white-space: nowrap;
+}
+.third-off-mob::after {
+    content: "best offer";
+    position: absolute;
+    top: -26px;
+    left: 28%;
+    transform: translate(-50%);
+    background-color: #ce3040;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 12px;
+    padding: 4px 25px;
+    line-height: 1;
+    z-index: 2;
+    white-space: nowrap;
+}
+.active-progress-svg circle{
+  fill:#4BFE85;
+}
+.active-progress-svg  path{
+  fill:#000;
+}
+.new-progress-bar-cont{
+  
+}
+.new-progress-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 15px 30px;
+  border-radius: 15px;
+}
+.first-off{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+}
+.second-off{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.third-off{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+.first-off-mob{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+}
+.second-off-mob{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.third-off-mob{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+.progress-bar-text p {
+  margin:0px;
+}
+.progress-bar-text p:first-child {
+  font-size:14px;
+  color:#000;
+  font-weight:700;
+}
+.progress-bar-text p:nth-child(2) {
+  font-size:12px;
+  color:#8D8D8D;
+}
+
+@media screen and (max-width: 750px) {
+  .arrow-progress-bar{
+    display:none;
+  }
+  .first-off{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column-reverse;
+  gap: 8px;
+  
+}
+.second-off{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+.third-off{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+  .first-off-mob{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column-reverse;
+  gap: 8px;
+  
+}
+.second-off-mob{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+.third-off-mob{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+  .third-off:after {
+    left: 50%;
+}
+  .third-off-mob:after {
+    left: 50%;
+}
+  .discount-popup-container{
+    display:none;
+  }
+  .progress-bar-pc{
+    display:none;
+  }
+  .progress-bar-mob{
+  display: block;
+    padding: 0;
+}
+}

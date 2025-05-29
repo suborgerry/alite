@@ -1,0 +1,332 @@
+<style>
+  .ts-faq__container {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    padding: 0 50px;
+  }
+
+  .ts-faq__title {
+    color: #000;
+    font-family: "Grtsk" !important;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0 0 24px;
+    letter-spacing: normal;
+  }
+
+  .ts-faq__description {
+    margin: 0 0 40px;
+  }
+
+  .ts-faq__description * {
+    color: #000;
+    font-family: "ShopifySans" !important;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+  }
+
+  .ts-faq__row {
+    border-bottom: 1px solid #7F7F7F;
+  }
+
+  .ts-faq__question {
+    color: #000;
+    font-family: "ShopifySans" !important;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    margin: 0;
+    padding: 32px 0;
+    text-decoration: none;
+    letter-spacing: normal;
+  }
+
+  .ts-faq__question * {
+    pointer-events: none;
+    text-decoration: none;
+    color: #000;
+  }
+
+  .ts-faq__question.ts-faq__question--link a {
+    pointer-events: auto;
+  }
+
+  .ts-faq__icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ts-faq__icon--plus {
+    position: relative;
+  }
+
+  .ts-faq__icon--plus::after,
+  .ts-faq__icon--plus::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    transition: transform 0.3s;
+  }
+
+  .ts-faq__icon--plus::after {
+    width: 16px;
+    height: 1px;
+  }
+
+  .ts-faq__icon--plus::before {
+    width: 1px;
+    height: 16px;
+  }
+
+  .ts-faq__question.open .ts-faq__icon--plus::before  {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .ts-faq__question.open .ts-faq__icon--plus::after {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  .ts-faq__icon--arrow  {
+    display: flex;
+    transition: transform 0.3s;
+  }
+
+  .ts-faq__question:hover .ts-faq__icon--arrow {
+    transform: translate(4px, -4px)
+  }
+
+  .ts-faq__answer {
+    transition: max-height 0.3s;
+    overflow: hidden;
+  }
+
+  .ts-faq__answer * {
+    color: #000;
+    font-family: "ShopifySans" !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ts-faq__answer-inner {
+    padding: 0 20px 34px 50px;
+  }
+
+  .ts-faq__answer ul li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 19px;
+  }
+
+  .ts-faq__answer ul li:last-of-type {
+    margin: 0;
+  }
+
+  .ts-faq__answer ul li::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Crect x='5' y='6' width='14' height='12' fill='black'/%3E%3Cpath d='M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z' fill='%234BFE85'/%3E%3C/svg%3E");
+    width: 24px;
+    height: 24px;
+  }
+
+  .ts-faq__answer-media {
+    display: flex;
+    padding: 0;
+    margin-bottom: 34px;
+    width: fit-content;
+    border-radius: 9px;
+    overflow: hidden;
+  }
+
+  .ts-faq__answer-media img {
+    max-width: 600px;
+    height: fit-content;
+  }
+  
+
+  @media screen and (max-width: 989px) {
+    .ts-faq__container {
+      padding: 0 16px;
+    }
+
+    .ts-faq__title {
+      font-size: 42px;
+      margin: 0 0 28px;
+    }
+
+    .ts-faq__question,
+    .ts-faq__description * {
+      font-size: 20px;
+    }
+
+    .ts-faq__description {
+      margin: 0 0 50px;
+    }
+
+    .ts-faq__answer-inner {
+      padding: 0 0 34px 0;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ts-faq__answer-media img {
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="ts-faq">
+  <div class="ts-faq__container">
+    {% if section.settings.title != blank %}
+      <h2 class="ts-faq__title">
+        {{ section.settings.title }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="ts-faq__description">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class=ts-faq__rows>
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'answer' %}
+              <div class="ts-faq__row">
+                <h3 class="ts-faq__question {% if block.settings.open %}open{% endif %}">
+                 <span>{{ block.settings.question }}</span>
+                 <span class="ts-faq__icon ts-faq__icon--plus"></span>
+                </h3>
+
+                <div class="ts-faq__answer" style="max-height: {% if block.settings.open %}unset{% else %}0{% endif %};">
+                  <div class="ts-faq__answer-inner">
+                    {{ block.settings.answer }}
+                  </div>
+                  {% if block.settings.gif != blank %}
+                    <div class="ts-faq__answer-media">
+                      {{ block.settings.gif | image_url: width: block.settings.gif.width | image_tag }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            {% when 'link' %}
+              <div class="ts-faq__row">
+                <h3 class="ts-faq__question ts-faq__question--link">
+                  <a href="{{ block.settings.answer }}">
+                    {{ block.settings.question }}
+                  </a>
+                  <span class="ts-faq__icon ts-faq__icon--arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" viewBox="0 0 19 22" fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M5.61331 3.92896L5.61958 5.48567L13.1794 5.5071L1.39539 17.5297L2.49029 18.644L14.2728 6.6229L14.3047 14.3247L15.8324 14.3291L15.7968 5.51439L15.8044 5.51542L15.7981 3.95873L5.61331 3.92896Z" fill="#4BFE85"/>
+                    </svg>
+                  </span>
+                </h3>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.ts-faq__question:not(.ts-faq__question--link)').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const infoCard = btn.nextElementSibling;
+      btn.classList.toggle('open');
+      infoCard.style.maxHeight = btn.classList.contains('open') ? infoCard.scrollHeight + 'px' : 
+      "0";
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "TS FAQ",
+    "settings": [
+      {
+        "type": "text", 
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "answer",
+        "name": "Row with answer",
+        "settings": [
+          {
+            "type": "inline_richtext",
+            "id": "question",
+            "label": "Question"
+          },
+          {
+            "type": "richtext",
+            "id": "answer",
+            "label": "Answer"
+          },
+          {
+            "type": "image_picker",
+            "id": "gif",
+            "label": "GIF"
+          },
+          {
+            "type": "checkbox",
+            "id": "open",
+            "label": "Open by default",
+            "default": false
+          }
+        ]
+      },
+      {
+        "type": "link",
+        "name": "Row with link",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question"
+          },
+          {
+            "type": "url",
+            "id": "answer",
+            "label": "Link to answer"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "TS FAQ"
+      }
+    ]
+  }
+{% endschema %}

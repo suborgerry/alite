@@ -1,0 +1,589 @@
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul, li, a, span, div {.ts-discount-popup-container.show {
+  max-height: 150px;
+  opacity: 1;
+ margin: 8px 0;
+}
+.ts-discount-popup {
+      background: #fff;
+    border-radius: 15px;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.ts-discount-popup__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.ts-discount-popup__text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  flex: 1;
+  justify-content: space-between;
+}
+.ts-discount-popup__discount-left {
+  color: #CE3040;
+  font-weight: 700;
+  font-size: 14px;
+}
+.ts-discount-popup__highlight {
+  color: #CE3040;
+  font-weight: 700;
+}
+.ts-discount-popup__close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 8px;
+  color: #8D8D8D;
+}
+  .ts-discount-popup__drag {
+  width: 40px;
+  height: 2px;
+  background: #8D8D8D;
+  border-radius: 2px;
+  margin: 0 auto 8px auto;
+  pointer-events: none;
+}
+.controlbar-content-container{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul, li, a, span, div {
+  letter-spacing: normal;
+}
+.ts-discount-control {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  z-index: 10;
+}
+.ts-controlbar {
+  touch-action: none;
+  background: #fff;
+  height: fit-content;
+  width: 100%;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+}
+.ts-controlbar:first-child{
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+}
+.ts-controlbar__container {
+  max-width: 1240px;
+  padding: 5px 37px !important;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ts-controlbar__left a {
+  display: none;
+  width: 428px;
+  height: 50px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #000;
+  text-align: center;
+  font-family: "ShopifySans" !important;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  border-radius: 109px;
+  background: #4BFE85;
+}
+.ts-controlbar__left a .ts-icon__arrow {
+  display: flex;
+  transition: transform 0.3s;
+}
+.ts-controlbar__left a:hover .ts-icon__arrow {
+  transform: translateX(5px);
+}
+.ts-controlbar__info {
+  display: block;
+}
+.ts-controlbar__info p {
+  margin: 0;
+  width: fit-content;
+  font-family: "ShopifySans" !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.ts-total {
+  color: #A9A9A9;
+  font-size: 14px;
+}
+.ts-price {
+  color: #000;
+}
+.ts-price__discount {
+  color: #C5C5C5;
+  text-decoration: line-through;
+}
+.ts-controlbar__checkout {
+  display: flex;
+  width: 428px;
+  height: 50px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-radius: 47px;
+  background: #4BFE85;
+  color: #000;
+  text-align: center;
+  font-family: "ShopifySans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transition: all .15s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+  .ts-controlbar__checkout:hover,
+  .ts-controlbar__checkout.active {
+    background: #DA9DFF;
+  }
+
+.ts-controlbar__checkout-error {
+  display: none;
+}
+
+.ts-controlbar__left[show] a {
+  display: flex;
+}
+
+.ts-controlbar__left[show] .ts-controlbar__info,
+.ts-controlbar__right[show] .ts-controlbar__checkout-success {
+  display: none;
+}
+
+.ts-controlbar__right[show] .ts-controlbar__checkout-error {
+  display: inline-block;
+}
+
+.ts-controlbar__right[show] .ts-controlbar__checkout {
+  opacity: 0.6;
+  background: #E9E9E9;
+  cursor: no-drop;
+}
+
+@media screen and (max-width: 989px) {
+  .ts-controlbar__checkout,
+  .ts-controlbar__left a {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .ts-controlbar__container {
+    
+    padding: 5px 16px !important;
+  }
+  
+}
+
+@media screen and (max-width: 550px) {
+  .ts-controlbar__left[show] + .ts-controlbar__right[show],
+  .ts-controlbar__left[show] + .ts-controlbar__right[show] .ts-controlbar__checkout {
+    width: 100%;
+  }
+  .ts-controlbar__checkout,
+  .ts-controlbar__left a {
+    width: 160px;
+  }
+}
+
+.ts-discount-control .ts-header__discount {
+  width: 100%;
+  padding: 10px 0;
+  background: #F4F4F4;
+  border-top-right-radius: 21px;
+  border-top-left-radius: 21px;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+  display:none;
+}
+
+.header-discount__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 5 37px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-discount__mesage-top p {
+  color: #000;
+  font-family: "ShopifySans" !important;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: normal;
+  margin: 0;
+}
+
+.header-discount__bar .ts-bar {
+  width: 490px;
+  height: 10px;
+  border: 1px solid #D4D4D4;
+  border-radius: 9px;
+  position: relative;
+}
+
+.header-discount__bar .ts-bar span {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 10%;
+  min-width: 10%;
+  height: 10px;
+  border-radius: 9px;
+  transition: width 0.5s, background 0.3s;
+}
+
+.header-discount__bar.error .ts-bar span {
+  background: #FE4B4B;
+}
+
+.header-discount__bar.warn .ts-bar span {
+  background: #FFC001;
+}
+
+.header-discount__bar.success .ts-bar span{
+  background: #48FA7A;
+}
+
+.header-discount__mesage-top.final .header-discount__mesage,
+.header-discount__mesage-final {
+  display: none;
+}
+
+.header-discount__mesage-top.final .header-discount__mesage-final {
+  display: block;
+}
+
+@media screen and (max-width: 989px) {
+  .header-discount__bar .ts-bar {
+    width: 130px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .header-discount__container {
+    padding: 0 16px;
+  }
+  .ts-controlbar__container {
+   display: flex;
+  flex-direction: column;
+}  
+}
+@media screen and (min-width: 750px) {
+  .ts-discount-popup-container {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 749px) {
+  .ts-discount-popup-container {
+   display:block !important;
+}
+  .ts-discount-popup-container { 
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.7s ease, opacity 0.7s ease, margin 0.7s ease, padding-bottom 0.7s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+
+}
+}
+ @media screen and (min-width: 750px) {
+  .ts-discount-popup__drag {
+    display: none !important;
+  }
+}
+  letter-spacing: normal;
+}
+
+.ts-discount-control {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.ts-controlbar {
+  background: #fff;
+  height: fit-content;
+  width: 100%;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+}
+.ts-controlbar:first-child{
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+}
+
+.ts-controlbar__container {
+  max-width: 1240px;
+  padding: 5px 37px !important;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ts-controlbar__left a {
+  display: none;
+  width: 428px;
+  height: 50px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: #000;
+  text-align: center;
+  font-family: "ShopifySans" !important;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  border-radius: 109px;
+  background: #4BFE85;
+}
+
+.ts-controlbar__left a .ts-icon__arrow {
+  display: flex;
+  transition: transform 0.3s;
+}
+
+.ts-controlbar__left a:hover .ts-icon__arrow {
+  transform: translateX(5px);
+}
+
+.ts-controlbar__info {
+  display: block;
+}
+
+.ts-controlbar__info p {
+  margin: 0;
+  width: fit-content;
+  font-family: "ShopifySans" !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.ts-total {
+  color: #A9A9A9;
+  font-size: 14px;
+}
+
+.ts-price {
+  color: #000;
+}
+
+.ts-price__discount {
+  color: #C5C5C5;
+  text-decoration: line-through;
+}
+
+.ts-controlbar__checkout {
+  display: flex;
+  width: 428px;
+  height: 50px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+  border-radius: 47px;
+  background: #4BFE85;
+  color: #000;
+  text-align: center;
+  font-family: "ShopifySans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transition: all .15s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+  .ts-controlbar__checkout:hover,
+  .ts-controlbar__checkout.active {
+    background: #DA9DFF;
+  }
+
+.ts-controlbar__checkout-error {
+  display: none;
+}
+
+.ts-controlbar__left[show] a {
+  display: flex;
+}
+
+.ts-controlbar__left[show] .ts-controlbar__info,
+.ts-controlbar__right[show] .ts-controlbar__checkout-success {
+  display: none;
+}
+
+.ts-controlbar__right[show] .ts-controlbar__checkout-error {
+  display: inline-block;
+}
+
+.ts-controlbar__right[show] .ts-controlbar__checkout {
+  opacity: 0.6;
+  background: #E9E9E9;
+  cursor: no-drop;
+}
+
+@media screen and (max-width: 989px) {
+  .ts-controlbar__checkout,
+  .ts-controlbar__left a {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .ts-controlbar__container {
+    padding: 5px 16px !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .ts-controlbar__left[show] + .ts-controlbar__right[show],
+  .ts-controlbar__left[show] + .ts-controlbar__right[show] .ts-controlbar__checkout {
+    width: 100%;
+  }
+  .ts-controlbar__checkout,
+  .ts-controlbar__left a {
+    width: 160px;
+  }
+}
+
+.ts-discount-control .ts-header__discount {
+  width: 100%;
+  padding: 10px 0;
+  background: #F4F4F4;
+  border-top-right-radius: 21px;
+  border-top-left-radius: 21px;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+  display:none;
+}
+
+.header-discount__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 5 37px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-discount__mesage-top p {
+  color: #000;
+  font-family: "ShopifySans" !important;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: normal;
+  margin: 0;
+}
+
+.header-discount__bar .ts-bar {
+  width: 490px;
+  height: 10px;
+  border: 1px solid #D4D4D4;
+  border-radius: 9px;
+  position: relative;
+}
+
+.header-discount__bar .ts-bar span {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 10%;
+  min-width: 10%;
+  height: 10px;
+  border-radius: 9px;
+  transition: width 0.5s, background 0.3s;
+}
+
+.header-discount__bar.error .ts-bar span {
+  background: #FE4B4B;
+}
+
+.header-discount__bar.warn .ts-bar span {
+  background: #FFC001;
+}
+
+.header-discount__bar.success .ts-bar span{
+  background: #48FA7A;
+}
+
+.header-discount__mesage-top.final .header-discount__mesage,
+.header-discount__mesage-final {
+  display: none;
+}
+
+.header-discount__mesage-top.final .header-discount__mesage-final {
+  display: block;
+}
+
+@media screen and (max-width: 989px) {
+  .header-discount__bar .ts-bar {
+    width: 130px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .header-discount__container {
+    padding: 0 16px;
+  }
+}

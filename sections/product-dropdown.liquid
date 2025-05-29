@@ -1,0 +1,478 @@
+{% style %}
+    @import url('https://fonts.cdnfonts.com/css/druk-wide-bold');
+    .product-dropdown_section{
+      margin-bottom:30px;
+    }
+
+    .product-information_block{
+      background-color:#F7F7F7;
+      border-radius:15px;
+      padding:27px 21px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:70px;
+    }
+    .product-information_block-content{
+      display: flex;
+      color: #000;
+      flex-direction: column;
+      justify-content: space-between;
+  }
+    .product-information_block-title{
+      text-transform:uppercase;
+      font-size:40px;
+      font-family: 'Druk Wide Bold', sans-serif;
+      margin:0 0 26px;
+      text-wrap:nowrap;
+    }
+    .product-information_block-text{
+      font-size:16px;
+      margin:0 0 26px;
+    }
+    .product-information_block-image{
+      overflow:hidden;
+      line-height: 0;
+      border-radius:15px;
+      height:224px;
+    }
+    .product-information_block-image img{
+      height:100%;
+    }
+
+    .product-information_block-link:link,.product-information_block-link:visited{
+      display: inline-block;
+      background-color:#000;
+      color:#fff;
+      border-radius:50px;
+      padding:10px 58px;
+      transition:all 0.3s;
+      margin-right:25px;
+      font-size:12px;
+      text-decoration: none;
+      font-weight:700;
+    }
+    .product-information_block-link:hover,.product-information_block-link:active{
+      background-color:#DA9DFF;
+      color:#000;
+    }
+    .product-information_block-button{
+      background: none;
+      font-size: 12px;
+      text-decoration: underline;
+      border: none;
+      cursor:pointer;
+      text-transform: capitalize;
+  }
+    .product-dropdown_block{
+      display:flex;
+      flex-direction:column;
+      max-height:0;
+      transition: all 0.5s;
+      overflow:hidden;
+      align-items:center;
+    }
+    .product-dropdown_block .svg-container{
+      margin:30px 0;
+    }
+    .product-dropdown_buy-block{
+      margin-bottom:30px;
+    }
+   .product-dropdown_buy-block p{
+     font-size:16px;
+     color:#000;
+     margin:5px 0 0;
+   }
+  .product-dropdown_buy-button:link,.product-dropdown_buy-button:visited{
+    display: flex;
+    padding: 18px 90px;
+    background-color: #4BFE85;
+    color:#000;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s;
+    line-height: 1;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    grid-column:3;
+}
+  .product-dropdown_buy-button:hover,.product-dropdown_buy-button:active{
+    background-color:#DA9DFF;
+  }
+  .product-dropdown_buy-block-title{
+    font-size:24px;
+    margin:0;
+    font-weight: 700;
+  }
+  .product-dropdown_benefits{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:12px;
+  }
+  .product-benefit{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:22px;
+    background-color:#F7F7F7;
+    border-radius:15px;
+    gap:20px;
+  }
+  .product-benefit_text{
+    margin:0;
+    font-size:20px;
+    font-weight:700;
+  }
+  .product-benefit_icon{
+    display: flex;
+  }
+  .product-dropdown-content{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:12px;
+  }
+  .product-dropdown-content-text{
+    grid-column:span 2;
+  }
+  .product-dropdown-content-text p{
+    font-size:16px;
+  }
+  .product-dropdown-content-text h4{
+    font-size:24px;
+    font-weight:700;
+    margin: 0 0 15px;
+  }
+      .product-dropdown-image{
+      overflow:hidden;
+     line-height: 0;
+        border-radius:15px;
+    }
+    .product-dropdown-image img{
+      width:100%;
+    }
+  .open{
+    max-height:1000px
+  }
+  /* .product-dropdown_block > .svg-container{
+    max-height:0px;
+    transition: all 0.5s
+  }
+  .open > .svg-container{
+    max-height:100px;
+  } */
+  @media screen and (max-width:1000px){
+        .product-information_block{
+      gap:20px;
+    }
+  }
+  @media screen and (max-width:820px){
+    .product-information_block{
+        display:flex;
+        flex-direction:column-reverse;
+        padding:0;
+        gap:0;
+            margin-bottom:20px;
+    }
+    .product-information_block-image{
+margin: 10px 10px 0 10px;
+    }
+    .product-information_block-content{
+      padding:25px 20px 20px;
+
+    }
+    .product-information_block-title{
+      font-size:32px;
+    }
+    .product-dropdown_buy-block-title{
+      font-size:20px;
+    }
+    .product-dropdown_buy-block-subtitle{
+      font-size:14px;
+    }
+    .product-benefit_text{
+      font-size:14px;
+    }
+    .product-information_block-text,.product-information_block-link,.product-information_block-button{
+      font-size:14px;
+    }
+    .product-dropdown-content-text h3{
+            font-size:20px;
+    }
+    .product-dropdown-content-text p{
+            font-size:14px;
+    }
+    .product-information_block-link{
+      padding: 15px 40px !important;
+      font-size:14px !important;
+    }
+    .product-information_block-button{
+      color:#000;
+    }
+    .product-dropdown_buy-button:link{
+      display:none;
+    }
+    .product-dropdown_buy-block{
+      display:block;
+    }
+    .product-benefit{
+      padding:17px;
+      font-size:14px;
+    }
+    .product-benefit:nth-child(3){
+      grid-column: span 2;
+    }
+    .product-benefit img{
+      max-width:20px;
+    }
+    .product-dropdown_benefits{
+      grid-template-columns:1fr 1fr;
+    }
+    .product-dropdown-content{
+        display:flex;
+        flex-direction:column-reverse;
+        padding:0;
+        gap:0;
+    }
+    .product-dropdown-content-text{
+      padding:25px 0 0;
+    }
+  }
+    @media screen and (max-width:500px){
+        .product-dropdown_benefits{
+    gap:5px;
+  }
+      .product-information_block-image{
+        height:auto;
+      }
+      .product-information_block-image img{
+        width:100%;
+        height:auto;
+      }
+      .product-benefit{
+        padding:10px;
+        gap:10px;
+      }
+      .product-benefit_text{
+        font-size:12px;
+      }
+      .product-benefit img{
+        max-width:15px;
+      }
+      .product-information_block-link:link,.product-information_block-link:visited{
+        padding:8px 25px !important;        
+        font-size:12px;
+        margin-right:10px;
+      }
+      .product-information_block-button{
+        font-size:12px
+      }
+      .product-information_block-title{
+        font-size:26px;
+      }
+    }
+      @media screen and (max-width:300px){
+      .product-information_block-title{
+        font-size:20px;
+      }
+    .product-information_block-content {
+          padding: 15px 10px 10px;
+        }
+          .product-information_block-link:link, .product-information_block-link:visited {
+    padding:
+8px 15px !important;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+      }
+{% endstyle %}
+{% if section.settings.image_first %}
+{% style %}
+ @media screen and (min-width:800px){
+ #{{section.settings.id}} .product-information_block-image{
+    grid-column:1;
+        grid-row:1;
+  }
+ #{{section.settings.id}} .product-information_block-content{
+    grid-column:2;
+    grid-row:1;
+  }
+ }
+{% endstyle %}
+    {% endif %}
+  <div class="product-dropdown_section page-width" id={{ section.settings.id }}>
+<div class="product-information_block">
+  {% if section.settings.image_first %}
+    <div class="product-information_block-image">
+      <a href="{{ section.settings.link-img }}">
+        <img src="{{ section.settings.image | image_url }}" loading="lazy">
+      </a>
+    </div>
+    <div class="product-information_block-content">
+      <h3 class="product-information_block-title">{{ section.settings.title }}</h3>
+      <div>
+        <p class="product-information_block-text">{{ section.settings.text }}</p>
+        <a class="product-information_block-link" href="{{ section.settings.link }}">
+          {{- 'ts.updated_banner.button' | t -}}
+        </a>
+        <button class="product-information_block-button">{{ 'ts.updated_banner.link' | t }}</button>
+      </div>
+    </div>
+  {% else %}
+    <div class="product-information_block-content">
+      <h3 class="product-information_block-title">{{ section.settings.title }}</h3>
+      <div>
+        <p class="product-information_block-text">{{ section.settings.text }}</p>
+        <a class="product-information_block-link" href="{{ section.settings.link }}">
+          {{- 'ts.updated_banner.button' | t -}}
+        </a>
+        <button class="product-information_block-button">{{ 'ts.updated_banner.link' | t }}</button>
+      </div>
+    </div>
+    <div class="product-information_block-image">
+      <a href="{{ section.settings.link-img }}">
+        <img src="{{ section.settings.image | image_url }}" loading="lazy">
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+  <div class="product-dropdown_block">
+    <div class="svg-container">
+    <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 12.448C0.71667 12.448 0.479337 12.3484 0.288004 12.1492C0.0966702 11.9501 0.000670115 11.7039 3.44827e-06 11.4107C-0.000663218 11.1174 0.0953369 10.8712 0.288004 10.6721C0.48067 10.4729 0.718003 10.3733 1 10.3733H17C17.2833 10.3733 17.521 10.4729 17.713 10.6721C17.905 10.8712 18.0007 11.1174 18 11.4107C17.9993 11.7039 17.9033 11.9504 17.712 12.1503C17.5207 12.3501 17.2833 12.4494 17 12.448H1ZM1 7.26132C0.71667 7.26132 0.479337 7.16174 0.288004 6.96257C0.0966702 6.7634 0.000670115 6.51721 3.44827e-06 6.22399C-0.000663218 5.93077 0.0953369 5.68458 0.288004 5.48541C0.48067 5.28624 0.718003 5.18666 1 5.18666H17C17.2833 5.18666 17.521 5.28624 17.713 5.48541C17.905 5.68458 18.0007 5.93077 18 6.22399C17.9993 6.51721 17.9033 6.76375 17.712 6.96361C17.5207 7.16347 17.2833 7.26271 17 7.26132H1ZM1 2.07466C0.71667 2.07466 0.479337 1.97508 0.288004 1.77591C0.0966702 1.57674 0.000670115 1.33055 3.44827e-06 1.03733C-0.000663218 0.744113 0.0953369 0.497919 0.288004 0.298752C0.48067 0.099584 0.718003 0 1 0H17C17.2833 0 17.521 0.099584 17.713 0.298752C17.905 0.497919 18.0007 0.744113 18 1.03733C17.9993 1.33055 17.9033 1.57709 17.712 1.77695C17.5207 1.97681 17.2833 2.07605 17 2.07466H1Z" fill="#CCCCCC"/>
+    </svg>
+      </div>
+
+    <div class="product-dropdown_block-content">
+      <div class="product-dropdown_buy-block">
+        <h4 class="product-dropdown_buy-block-title">{{ section.settings.title_description }}</h4>
+        <p class="product-dropdown_buy-block-subtitle">{{ section.settings.subtitle_description }}</p>
+      </div>
+      <div class="product-dropdown_benefits">
+        {% for block in section.blocks %}
+          <div class="product-benefit">
+            <div class="product-benefit_icon">
+              <img src="{{ block.settings.image | image_url }}" loading="lazy">
+            </div>
+            <p class="product-benefit_text">{{ block.settings.text }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="product-dropdown-content">
+        <div class="product-dropdown-content-text">
+          <h4>{{ section.settings['second-title-description'] }}</h4>
+          <p>{{ section.settings.description }}</p>
+        </div>
+        <div class="product-dropdown-image">
+          <img src="{{ section.settings.image_description | image_url }}">
+        </div>
+      </div>
+    </div>
+<div class="svg-container">
+    <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 12.448C0.71667 12.448 0.479337 12.3484 0.288004 12.1492C0.0966702 11.9501 0.000670115 11.7039 3.44827e-06 11.4107C-0.000663218 11.1174 0.0953369 10.8712 0.288004 10.6721C0.48067 10.4729 0.718003 10.3733 1 10.3733H17C17.2833 10.3733 17.521 10.4729 17.713 10.6721C17.905 10.8712 18.0007 11.1174 18 11.4107C17.9993 11.7039 17.9033 11.9504 17.712 12.1503C17.5207 12.3501 17.2833 12.4494 17 12.448H1ZM1 7.26132C0.71667 7.26132 0.479337 7.16174 0.288004 6.96257C0.0966702 6.7634 0.000670115 6.51721 3.44827e-06 6.22399C-0.000663218 5.93077 0.0953369 5.68458 0.288004 5.48541C0.48067 5.28624 0.718003 5.18666 1 5.18666H17C17.2833 5.18666 17.521 5.28624 17.713 5.48541C17.905 5.68458 18.0007 5.93077 18 6.22399C17.9993 6.51721 17.9033 6.76375 17.712 6.96361C17.5207 7.16347 17.2833 7.26271 17 7.26132H1ZM1 2.07466C0.71667 2.07466 0.479337 1.97508 0.288004 1.77591C0.0966702 1.57674 0.000670115 1.33055 3.44827e-06 1.03733C-0.000663218 0.744113 0.0953369 0.497919 0.288004 0.298752C0.48067 0.099584 0.718003 0 1 0H17C17.2833 0 17.521 0.099584 17.713 0.298752C17.905 0.497919 18.0007 0.744113 18 1.03733C17.9993 1.33055 17.9033 1.57709 17.712 1.77695C17.5207 1.97681 17.2833 2.07605 17 2.07466H1Z" fill="#CCCCCC"/>
+    </svg>
+        </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product dropdown",
+  "settings": [
+    {
+      "type": "text",
+      "id": "id",
+      "label": "Link id"
+    },
+    {
+      "type": "checkbox",
+      "id":"image_first",
+      "label":"Image first"
+    },
+    {
+      "type": "header",
+      "content": "Block settings"
+    },
+    {
+      "type": "html",
+      "id":"title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id":"text",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+     {
+      "type": "url",
+      "id": "link-img",
+      "label": "Link on image"
+    },
+    {
+      "type": "url",
+      "id":"link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Dropdown settings"
+    },
+    {
+      "type": "text",
+      "id":"title_description",
+      "label": "Description title"
+    },
+    {
+      "type": "text",
+      "id":"subtitle_description",
+      "label": "Description subtitle"
+    },
+    {
+      "type": "text",
+      "id":"second-title-description",
+      "label": "Description second title"
+    },
+    {
+      "type": "text",
+      "id":"description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_description",
+      "label": "Description image"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name":"Benefit",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "icon"
+        }
+      ]
+    }
+  ],
+    "presets": [
+  {
+    "name": "Product dropdown"
+  }
+]
+}
+{% endschema %}

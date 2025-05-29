@@ -1,0 +1,562 @@
+{{ "ts-header.css" | asset_url | stylesheet_tag }}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+    transition: transform 0.3s;
+  }
+  
+  #shopify-section-{{ section.id }}.ts-hide {
+    transform: translateY(-55px);
+  }
+
+  {% if request.locale.iso_code == 'nl' %}
+    @media screen and (min-width: 750px) {
+      .ts-header__top-content .ts-container {
+        grid-template-columns: 220px 1fr 1fr 1fr 220px;
+      }
+  
+      .ts-header__controls {
+        max-width: 220px;
+      }
+    }
+  {% endif %}
+</style>
+
+<div class="ts-header">
+  <div class="ts-header__top-content">
+    <div class="ts-container">
+      <div class="ts-header__menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+          <g clip-path="url(#clip0_44_2242)">
+            <path d="M17 0H1C0.447715 0 0 0.447715 0 1C0 1.55228 0.447715 2 1 2H17C17.5523 2 18 1.55228 18 1C18 0.447715 17.5523 0 17 0Z" fill="#1D1E1E"/>
+            <path d="M17 7H1C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9H17C17.5523 9 18 8.55228 18 8C18 7.44772 17.5523 7 17 7Z" fill="#1D1E1E"/>
+            <path d="M17 14H1C0.447715 14 0 14.4477 0 15C0 15.5523 0.447715 16 1 16H17C17.5523 16 18 15.5523 18 15C18 14.4477 17.5523 14 17 14Z" fill="#1D1E1E"/>
+          </g>
+          <defs>
+            <clipPath id="clip0_44_2242">
+              <rect width="18" height="16" fill="white"/>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+
+      <a href="{{ routes.root_url }}" class="ts-header__logo">
+        {% if section.settings.logo != blank %}
+          {{ section.settings.logo | image_url: width: 70 | image_tag }}
+        {% else %}
+          {{ shop.name }}
+        {% endif %}
+      </a>
+
+      {% if section.blocks.size > 0 %}
+        {% if template == "page.promo" or template == "page.set-up" or template == "page.faq" %}
+          <div class="ts-switcher">
+            {% for block in section.blocks %}
+              {% if block.type == "switcher" %}
+                {% if request.path == block.settings.lang_link_1 %}
+                  {% assign labelActive1 = "switcher__label--active" %}
+                {% elsif request.path == block.settings.lang_link_faq_1 %}
+                  {% assign labelActive1 = "switcher__label--active" %}                
+                {% elsif request.path == block.settings.lang_link_set_1 %}
+                  {% assign labelActive1 = "switcher__label--active" %}                
+                {% endif %}
+
+                {% if template == "page.promo" %}
+                  {% assign linkLabel1 = block.settings.lang_link_1 %}
+                {% elsif template == "page.set-up" %}
+                  {% assign linkLabel1 = block.settings.lang_link_set_1 %}
+                {% elsif template == "page.faq" %}
+                  {% assign linkLabel1 = block.settings.lang_link_faq_1 %}
+                {% endif %}
+
+
+                <a href="{{ linkLabel1 }}" class="switcher__label switcher__label--1 {{ labelActive1 }}">
+                  {% if block.settings.lang_icon_1 != blank %}
+                    <div class="switcher__media">
+                      {{ block.settings.lang_icon_1 | image_url: width: 25 | image_tag }}
+                    </div>
+                  {% endif %}
+                  <span>{{ block.settings.lang_label_short_1 }}</span>
+                </a>
+
+                {% if request.path == block.settings.lang_link_2 %}
+                  {% assign labelActive2 = "switcher__label--active" %}
+                {% elsif request.path == block.settings.lang_link_faq_2 %}
+                  {% assign labelActive2 = "switcher__label--active" %}  
+                {% elsif request.path == block.settings.lang_link_set_2 %}
+                  {% assign labelActive2 = "switcher__label--active" %}                  
+                {% endif %}
+
+                {% if template == "page.promo" %}
+                  {% assign linkLabel2 = block.settings.lang_link_2 %}
+                {% elsif template == "page.set-up" %}
+                  {% assign linkLabel2 = block.settings.lang_link_set_2 %}
+                {% elsif template == "page.faq" %}
+                  {% assign linkLabel2 = block.settings.lang_link_faq_2 %}
+                {% endif %}
+
+                <a href="{{ linkLabel2 }}" class="switcher__label switcher__label--1 {{ labelActive2 }}">
+                  {% if block.settings.lang_icon_2 != blank %}
+                    <div class="switcher__media">
+                      {{ block.settings.lang_icon_2 | image_url: width: 25 | image_tag }}
+                    </div>
+                  {% endif %}
+                  <span>{{ block.settings.lang_label_short_2 }}</span>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endif %}
+
+      <div class="ts-header__controls">
+        <a href="{{ section.settings.cart_url | default: routes.cart_url }}" class="ts-header__cart-mobile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M17 6H3C2.44772 6 2 6.44772 2 7V18C2 18.5523 2.44772 19 3 19H17C17.5523 19 18 18.5523 18 18V7C18 6.44772 17.5523 6 17 6Z" stroke="#1D1E1E" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M14 8V5C14 2.79086 12.2091 1 10 1C7.79086 1 6 2.79086 6 5V8" stroke="#1D1E1E" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="ts-cart__bubble-mob"></span>
+        </a>
+
+        {% if shop.customer_accounts_enabled == false %}
+          <a href="{{ section.settings.account_url | default: routes.account_url }}">{{ 'ts.header.account' | t}}</a>
+        {% endif %}
+
+        <a href="{{ section.settings.cart_url | default: routes.cart_url }}" class="ts-header__cart">{{ 'ts.header.cart' | t}} <span class="ts-cart__bubble"></span></a>
+      </div>
+    </div>
+  </div>
+
+  {% if template == "page.set-up" or template == "page.faq" or template == "product.discount-bar" or template == "collection.discount-bar" %}
+    <div class="ts-header__discount header-discount">
+      <div class="header-discount__container">
+        <div class="header-discount__mesage-top {% if cart.item_count >= 10 %}final{% endif %}">
+          <p class="header-discount__mesage">
+            {{ 'ts.bar.buy' | t}} <span class="header-discount__count">4</span><span style="display: none;" class="ts-header__more-text">{{ 'ts.bar.more' | t}}</span> {{ 'ts.bar.symbols' | t}}<span style="font-weight: bold; color: #f00;">{{ 'ts.bar.get' | t}}<span class="header-discount__pers">10</span>{{ 'ts.bar.off' | t}}</span>
+          </p>
+          <p class="header-discount__mesage-final">
+            {{ 'ts.bar.congratulations' | t}}<strong>{{ 'ts.bar.discount' | t}}</strong>
+          </p>
+        </div>
+        <div class="header-discount__bar error">
+          <div class="ts-bar">
+            <span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if template == "page.promo" or template == "page.set-up" or template == "page.faq" or template == "page.promo-new-york"%}
+    <div class="ts-header__bottom-content">
+      <div class="ts-container">
+        <div class="ts-header__menu-mobile">
+          <div class="ts-menu-mobile__label-container">
+            <span class="ts-menu-mobile__label">
+              {{ 'ts.header.menu_label' | t}}
+            </span>
+            <span class="ts-menu-mobile__caret">
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                <path d="M13.1337 6.80025L9.5 10.4261L5.86625 6.80025L4.75 7.9165L9.5 12.6665L14.25 7.9165L13.1337 6.80025Z" fill="white"/>
+              </svg>
+            </span>
+          </div>
+
+          <div class="ts-menu-mobile__links">
+            {% if section.settings.header_menu != blank %}
+              <ul>
+                {% for link in section.settings.header_menu.links %}
+                  <li>
+                    <a href="{{ link.url }}">
+                      {{ link.title }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+        {% if section.settings.header_menu != blank %}
+          <ul class="ts-header__menu">
+            {% for link in section.settings.header_menu.links %}
+              <li>
+                <a href="{{ link.url }}" class="ts-header__menu-link {% if link.active %}ts-header__menu-link--active{% endif %}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <a href="#ts-numbers" data-scroll class="ts-header__menu-link ts-header__menu-link--additional">
+          {{ section.settings.add_label }}
+        </a>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="ts-header__drawer ts-drawer">
+    <div class="ts-drawer__content">
+      <span class="ts-drawer__close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <path d="M11.7332 34.8332L9.1665 32.2665L19.4332 21.9998L9.1665 11.7332L11.7332 9.1665L21.9998 19.4332L32.2665 9.1665L34.8332 11.7332L24.5665 21.9998L34.8332 32.2665L32.2665 34.8332L21.9998 24.5665L11.7332 34.8332Z" fill="white"/>
+        </svg>
+      </span>
+
+      {% if section.settings.menu != blank %}
+        <div class="ts-drawer__menu">
+
+          {% if section.blocks.size > 0 %}
+            {% if template == "page.promo" or template == "page.set-up" or template == "page.faq" %}
+              <div class="ts-switcher ts-switcher--mobile">
+                {% for block in section.blocks %}
+                  {% if block.type == "switcher" %}
+                    {% if request.path == block.settings.lang_link_1 %}
+                      {% assign labelActive1 = "switcher__label--active" %}
+                    {% endif %}
+                    <a href="{{ block.settings.lang_link_1 }}" class="switcher__label switcher__label--1 {{ labelActive1 }}">
+                      {% if block.settings.lang_icon_1 != blank %}
+                        <div class="switcher__media">
+                          {{ block.settings.lang_icon_1 | image_url: width: 25 | image_tag }}
+                        </div>
+                      {% endif %}
+                      <span>{{ block.settings.lang_label_1 }}</span>
+                    </a>
+      
+                    {% if request.path == block.settings.lang_link_2 %}
+                      {% assign labelActive2 = "switcher__label--active" %}
+                    {% endif %}
+                    <a href="{{ block.settings.lang_link_2 }}" class="switcher__label switcher__label--1 {{ labelActive2 }}">
+                      {% if block.settings.lang_icon_2 != blank %}
+                        <div class="switcher__media">
+                          {{ block.settings.lang_icon_2 | image_url: width: 25 | image_tag }}
+                        </div>
+                      {% endif %}
+                      <span>{{ block.settings.lang_label_2 }}</span>
+                    </a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endif %}
+
+          <ul class="ts-drawer__links">
+            {% if template == "page.promo" or template == "page.set-up" or template == "page.faq" %}
+              {% assign drawerMenu = section.settings.menu_promo %}
+            {% else %}
+              {% assign drawerMenu = section.settings.menu %}
+            {% endif %}
+
+            {% for link in drawerMenu.links %}
+              <li class="ts-drawer__link-top">
+                {% if link.links != blank %}
+                  <p>
+                    <span class="ts-drawer__links-icon"></span>
+                    <span class="ts-drawer__label ts-drawer__label--top">{{ link.title }}</span>
+                  </p>
+  
+                  <ul class="ts-drawer__links-nested">
+                    {% for childlink in link.links %}
+                      <li class="ts-drawer__link">
+                        <a href="{{ childlink.url }}" class="">
+                          <span>{{ childlink.title }}</span>
+                          <div class="ts-drawer__marquee">
+                            <div class="ts-drawer__marquee-inner" aria-hidden="true">
+                              {% for i in (1..8) %}
+                                <span>{{- childlink.title -}}</span>
+                              {% endfor %}
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  <a href="{{ link.url }}">
+                    <span class="ts-drawer__link-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="39" viewBox="0 0 36 39" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6359 6.36816L10.6478 9.2592L24.9716 9.29901L2.64404 31.6267L4.7186 33.6961L27.0434 11.3712L27.1038 25.6745L29.9984 25.6828L29.9309 9.31254L29.9453 9.31446L29.9334 6.42345L10.6359 6.36816Z" fill="#4BFE85"/>
+                      </svg>
+                    </span>
+                    <span class="ts-drawer__label ts-drawer__label--top">{{ link.title }}</span>
+                  </a>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if section.settings.small_menu != blank %}
+        <ul class="ts-drawer__menu-small">
+          {% for link in section.settings.small_menu.links %}
+            <li>
+              <a href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if section.settings.menu_image_small != blank and section.settings.menu_image_big != blank %}
+        <div class="ts-drawer__media ts-drawer__media--small">
+          {{ section.settings.menu_image_small | image_url: width: 400 | image_tag }}
+        </div>
+          
+        <div class="ts-drawer__media ts-drawer__media--big">
+          {{ section.settings.menu_image_big | image_url: width: 600 | image_tag }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelector(".ts-header__drawer").addEventListener("mousemove", (event) => {
+    document.querySelector(".ts-drawer__media--big").style.transform = `translateX(${event.clientX / 50}px) translateY(calc(-50% + ${event.clientY / 50}px)) rotate(11.531deg)`;
+
+    document.querySelector(".ts-drawer__media--small").style.transform = `translateX(${event.clientX / 75}px) translateY(calc(-50% + ${event.clientY / 75}px)) rotate(-4.575deg)`;
+  });
+
+  document.querySelector(".ts-drawer__close").addEventListener("click", (event) => {
+    document.querySelector(".ts-header__drawer").style.opacity = "0";
+    document.body.style.overflow = null;
+
+    document.querySelector(".ts-header__drawer").removeAttribute("open");
+
+    setTimeout(() => {
+      document.querySelector(".ts-header__drawer").style.display = "none";
+    }, 400);
+  });
+
+  document.querySelector(".ts-header__menu-btn").addEventListener("click", (event) => {
+    document.querySelector(".ts-header__drawer").style.display = "block";
+    document.body.style.overflow = "hidden";
+
+    document.querySelector(".ts-header__drawer").setAttribute("open", true);
+
+    setTimeout(() => {
+      document.querySelector(".ts-header__drawer").style.opacity = "1";
+    }, 100);
+  });
+
+  document.querySelectorAll(".ts-drawer__link-top > p").forEach(link => {
+    link.addEventListener("click", (event) => {
+      const linkBlock = link.closest(".ts-drawer__link-top");
+
+      if (linkBlock.hasAttribute("open")) {
+        linkBlock.removeAttribute("open");
+        event.target.nextElementSibling.style.maxHeight = null;
+      } else {
+        if (document.querySelector(".ts-drawer__link-top[open]")) {
+          document.querySelector(".ts-drawer__link-top[open] .ts-drawer__links-nested").style.maxHeight = null;
+          document.querySelector(".ts-drawer__link-top[open]").removeAttribute("open");
+        }
+        linkBlock.setAttribute("open", true);
+        event.target.nextElementSibling.style.maxHeight = event.target.nextElementSibling.scrollHeight + 'px';
+      }
+    })
+  })
+
+  document.querySelectorAll("a[data-scroll]").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      
+      if (window.location.pathname.includes("/pages/promo")) {
+        document.querySelector(".ts-discount").scrollIntoView({ block: "center", behavior: "smooth" });
+      } else {
+        window.location = new URL(window.location.pathname.split("/pages")[0] + "/pages/promo?ts-numbers", window.location.origin).href;
+      }
+    })
+  });
+
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', function() {
+    let currentScrollY = window.scrollY;
+    const header = document.getElementById("shopify-section-{{ section.id }}");
+
+    if (window.scrollY >= 100 && window.innerWidth < 750) {        
+      if (currentScrollY > lastScrollY) {
+        header.classList.add("ts-hide");
+      } else if (currentScrollY < lastScrollY) {
+        header.classList.remove("ts-hide");
+      }
+    }
+    
+    lastScrollY = currentScrollY;
+  });
+
+  const addBar = document.querySelector(".ts-menu-mobile__label-container");
+
+  addBar?.addEventListener("click", (event) => {
+    const menu = event.target.closest(".ts-header__menu-mobile").querySelector(".ts-menu-mobile__links");
+    if (event.target.closest(".ts-header__menu-mobile").hasAttribute("open")) {
+      event.target.closest(".ts-header__menu-mobile").removeAttribute("open");
+      menu.style.maxHeight = null;
+    } else {
+      event.target.closest(".ts-header__menu-mobile").setAttribute("open", true);
+      menu.style.maxHeight = menu.scrollHeight + 'px';
+    }
+  })
+
+  function preventScroll(e) {
+    const isOpen = document.querySelector(".ts-header__drawer").hasAttribute('open');
+    if (isOpen) {
+      e.preventDefault();
+    } 
+  }
+  document.addEventListener('scroll', preventScroll, { passive: false });
+  document.addEventListener('gesturestart', preventScroll, { passive: false });
+</script>
+
+{% schema %}
+  {
+    "name": "TS Header USA",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "link_list",
+        "id": "header_menu",
+        "label": "Header link list"
+      },
+      {
+        "type": "image_picker",
+        "id": "menu_image_small",
+        "label": "Menu image small"
+      },
+      {
+        "type": "image_picker",
+        "id": "menu_image_big",
+        "label": "Menu image big"
+      },
+      {
+        "type": "link_list",
+        "id": "menu_promo",
+        "label": "Opened menu link list (Promo)"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Opened menu link list (NOT Promo)"
+      },
+      {
+        "type": "link_list",
+        "id": "small_menu",
+        "label": "Small menu link list"
+      },
+      {
+        "type": "text",
+        "id": "add_label",
+        "label": "Buy button text",
+        "default": "Buy"
+      },
+      {
+        "type": "url",
+        "id": "add_link",
+        "label": "Buy button link"
+      },
+      {
+        "type": "url",
+        "id": "cart_url",
+        "label": "Cart url" 
+      },
+      {
+        "type": "url",
+        "id": "account_url",
+        "label": "Account url" 
+      }
+    ],  
+    "blocks": [
+      {
+        "type": "switcher",
+        "limit": 1,
+        "name": "Language switcher",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Toogle 1"
+          },
+          {
+            "type": "image_picker",
+            "id": "lang_icon_1",
+            "label": "Country icon"
+          },
+          {
+            "type": "text",
+            "id": "lang_label_1",
+            "label": "Toggle label"
+          },
+          {
+            "type": "text",
+            "id": "lang_label_short_1",
+            "label": "Toggle short label"
+          },
+          {
+            "type": "url",
+            "id": "lang_link_1",
+            "label": "Toggle link"
+          },
+          {
+            "type": "url",
+            "id": "lang_link_faq_1",
+            "label": "Toggle link for FAQ page"
+          },
+          {
+            "type": "url",
+            "id": "lang_link_set_1",
+            "label": "Toggle link for Set Up page"
+          },
+          {
+            "type": "header",
+            "content": "Toogle 2"
+          },
+          {
+            "type": "image_picker",
+            "id": "lang_icon_2",
+            "label": "Country icon"
+          },
+          {
+            "type": "text",
+            "id": "lang_label_2",
+            "label": "Toggle label"
+          },
+          {
+            "type": "text",
+            "id": "lang_label_short_2",
+            "label": "Toggle short label"
+          },
+          {
+            "type": "url",
+            "id": "lang_link_2",
+            "label": "Toggle link"
+          },
+          {
+            "type": "url",
+            "id": "lang_link_faq_2",
+            "label": "Toggle link for FAQ page"
+          },
+          {
+            "type": "url",
+            "id": "lang_link_set_2",
+            "label": "Toggle link for Set Up page"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "TS Header USA"
+      }
+    ]
+  }
+{% endschema %}

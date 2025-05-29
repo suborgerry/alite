@@ -1,0 +1,211 @@
+{% if template.name == "product" or template.name == "collection" %}
+  <style>
+    #shopify-section-{{ section.id }} {
+      position: sticky;
+      top: 0;
+      z-index: 3;
+      transition: top 0.15s ease-out; 
+    }
+
+    body.show-header #shopify-section-{{ section.id }} {
+      top: 87.5px;
+    }
+
+    .ts-header__discount {
+      width: 100%;
+      padding: 6px 0;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
+      background: #fff;
+    }
+
+    .header-discount__container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-discount__mesage-top p {
+      color: #000;
+      font-family: "ShopifySans" !important;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: normal;
+      margin: 0;
+    }
+
+    .header-discount__bar .ts-bar {
+      width: 490px;
+      height: 10px;
+      border: 1px solid #D4D4D4;
+      border-radius: 9px;
+      position: relative;
+    }
+
+    .header-discount__bar .ts-bar span {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 10%;
+      min-width: 10%;
+      height: 10px;
+      border-radius: 9px;
+      transition: width 0.5s, background 0.3s;
+    }
+
+    .header-discount__bar.error .ts-bar span {
+      background: #FE4B4B;
+    }
+
+    .header-discount__bar.warn .ts-bar span {
+      background: #FFC001;
+    }
+
+    .header-discount__bar.success .ts-bar span{
+      background: #48FA7A;
+    }
+
+    .header-discount__mesage-top.final .header-discount__mesage,
+    .header-discount__mesage-final {
+      display: none;
+    }
+
+    .header-discount__mesage-top.final .header-discount__mesage-final {
+      display: block;
+    }
+
+    @media screen and (max-width: 989px) {
+      body.show-header #shopify-section-{{ section.id }} {
+        top: 67.5px;
+      }
+
+      .header-discount__bar .ts-bar {
+        width: 130px;
+      }
+    }
+
+    @media screen and (max-width: 749px) {
+      .header-discount__container {
+        padding: 0 16px;
+      }
+    }
+  </style>
+
+  <div id="ts-discount-bar" class="ts-header__discount header-discount">
+    <div class="header-discount__container">
+      <div class="header-discount__mesage-top {% if cart.item_count >= 10 %}final{% endif %}">
+        <p class="header-discount__mesage">
+          {{ 'ts.bar.buy' | t}} <span class="header-discount__count">4</span><span style="display: none;" class="ts-header__more-text">{{ 'ts.bar.more' | t}}</span> {{ 'ts.bar.symbols' | t}}<span style="font-weight: bold; color: #f00;">{{ 'ts.bar.get' | t}}<span class="header-discount__pers">10</span>{{ 'ts.bar.off' | t}}</span>
+        </p>
+        <p class="header-discount__mesage-final">
+          {{ 'ts.bar.congratulations' | t}}<strong>{{ 'ts.bar.discount' | t}}</strong>
+        </p>
+      </div>
+      <div class="header-discount__bar error">
+        <div class="ts-bar">
+          <span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateHeaderDiscount() {
+      const cartBubble = document.querySelector("#cart-icon-bubble");
+      let cartCount = 0;
+      if (cartBubble.querySelector(".ts-countspan")) {
+        cartCount = parseInt(document.querySelector("#cart-icon-bubble .ts-countspan").innerText);
+      }
+      const tsDiscountBar = document.getElementById("ts-discount-bar");
+      const headerBar = tsDiscountBar.querySelector(".header-discount__bar");
+
+      document.querySelector(".ts-header__more-text").style.display = cartCount > 0 ? "inline" : "none";
+
+      let leftToDiscount = 0;
+      let discountAmount = 10;
+
+      if (cartCount >= 10) {
+        leftToDiscount = 0;
+      } else if (cartCount >= 6) {
+        leftToDiscount = 10 - cartCount;
+        discountAmount = 30;
+      } else if (cartCount >= 4) {
+        leftToDiscount = 6 - cartCount;
+        discountAmount = 25;
+      } else {
+        leftToDiscount = 4 - cartCount;
+        discountAmount = 10;
+      }
+
+      tsDiscountBar.querySelector(".header-discount__count").innerText = leftToDiscount;
+      tsDiscountBar.querySelector(".header-discount__pers").innerText = discountAmount;
+
+      if (leftToDiscount == 0) {
+        tsDiscountBar.querySelector(".header-discount__mesage-top").classList.add("final");
+      } else {
+        tsDiscountBar.querySelector(".header-discount__mesage-top").classList.remove("final");
+      }
+
+      let message = "error";
+      let widthBar = 10;
+
+      if (cartCount == 0 || cartCount == 1 || cartCount == 4 || cartCount == 6) {
+        message = "error";
+      } else if (cartCount > 1 && cartCount < 4) {
+        message = "warn";
+      } else if (cartCount == 5) {
+        message = "warn";
+      } else if (cartCount > 6 && cartCount < 10) { 
+        message = "warn";
+      } else {
+        message = "success";
+      }
+
+      if (cartCount == 0 || cartCount == 4 || cartCount == 6) {
+        widthBar = 10;
+      } else if (cartCount == 1 || cartCount == 7) {
+        widthBar = 25;
+      } else if (cartCount == 2 || cartCount == 5 || cartCount == 8) {
+        widthBar = 50;
+      } else if (cartCount == 3 || cartCount == 9) {
+        widthBar = 75;
+      } else {
+        widthBar = 100;
+      }
+
+      headerBar.classList.remove("error");
+      headerBar.classList.remove("warn");
+      headerBar.classList.remove("success");
+
+      headerBar.classList.add(message);
+
+      if (widthBar == 100) {
+        headerBar.querySelector(".ts-bar span").style.width = `calc(100% + 2px)`;
+      } else {
+        headerBar.querySelector(".ts-bar span").style.width = widthBar + "%";
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      updateHeaderDiscount();
+    })
+  </script>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "TS Discount bar",
+    "limit": 1,
+    "settings": [],
+    "presets": [
+      {
+        "name": "TS Discount bar"
+      }
+    ]
+  }
+{% endschema %}

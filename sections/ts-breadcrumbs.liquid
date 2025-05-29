@@ -1,0 +1,338 @@
+<style>
+  p, a {
+   font-size:14px; 
+  }
+  .ts-breadcrumbs__back-icon:hover svg path{
+    transition:0.2s ease;
+    fill:#DA9DFF;
+  }
+  .ts-breadcrumbs {
+    padding: 0;
+  }
+
+  .ts-breadcrumbs__container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 31px;
+    overflow: auto;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+  }
+
+  .ts-breadcrumbs__container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ts-breadcrumbs__container,
+  .ts-breadcrumbs__back {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ts-breadcrumbs__back-icon,
+  .ts-breadcrumbs__caret {
+    display: flex;
+  }
+
+  .ts-breadcrumbs p,
+  .ts-breadcrumbs a {
+    margin: 0;
+    line-height: 1;
+    color: #000;
+    white-space: nowrap;
+    padding: 10px 0 15px 0;
+    text-decoration: none;
+  }
+
+  .ts-breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+  
+  .ts-breadcrumbs p {
+    color: #838383;
+  }
+
+  .ts-breadcrumbs__dot {
+    width: 6px;
+    min-width: 6px;
+    height: 6px;
+    background-color: #838383;
+    border-radius: 10px;
+    margin: 0 8px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ts-breadcrumbs {
+      padding: 12px 0 0;
+      margin: -5px 0;
+    }
+
+    .ts-breadcrumbs__container {
+      padding: 0 16px;
+    }
+
+    .ts-breadcrumbs__container,
+    .ts-breadcrumbs__back {
+      gap: 7px
+    }
+  }
+</style>
+
+<div class="ts-breadcrumbs">
+  <div class="ts-breadcrumbs__container">
+   
+    <div class="ts-breadcrumbs__back">
+      <a id="home-button" href="{{ routes.root_url }}"><span class="ts-breadcrumbs__back-icon">
+       <svg width="27" height="27" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.0001 5.24167L14.1667 8.99167V15.5H12.5001V10.5H7.50008V15.5H5.83341V8.99167L10.0001 5.24167ZM10.0001 3L1.66675 10.5H4.16675V17.1667H9.16675V12.1667H10.8334V17.1667H15.8334V10.5H18.3334" fill="black"/>
+        </svg>
+      </span></a>
+    </div>
+           
+            <script>
+  // Устанавливаем ссылку на прошлую страницу
+  const backButton = document.getElementById('back-button');
+  if (document.referrer) {
+    backButton.href = document.referrer; // Ставим реальную ссылку
+  } else {
+    backButton.href = '/'; // Если реферала нет, ведем на главную
+  }
+</script>
+     {% if collection.metafields.custom.year_fitler_name %}
+            {% for c in collections %}
+              {% if c.metafields.custom.australia_filter_name == collection.metafields.custom.year_fitler_name %}
+            {% assign curCol = c %}
+                {% endif %}
+              {% endfor %}
+                {% else %}
+                {% assign curCol = collection %}
+            {% endif %}
+     {% if collection.metafields.custom.year_fitler_name %}
+            {% for c in collections %}
+              {% if c.metafields.custom.canada_filter_name == collection.metafields.custom.year_fitler_name %}
+            {% assign curCol = c %}
+                {% endif %}
+              {% endfor %}
+                {% else %}
+                {% assign curCol = collection %}
+            {% endif %}
+    {% if template.name == "page" %}
+       <span class="ts-breadcrumbs__dot"></span>
+                  <p>
+            {{ page.title }}
+        </p>
+          {% endif %}
+    {% if template.name == "product" %}
+          {% for c in product.collections %}
+            {% if c.metafields.custom.australia_filter_name %}  
+                {% assign isAustralian = true %}
+            {% endif %}
+            {% if c.metafields.custom.canada_filter_name %}  
+                {% assign isCanada = true %}
+            {% endif %}
+          {% endfor %}
+      <span class="ts-breadcrumbs__dot"></span>
+          {% if template == 'product.product-new' or template == 'collection.american-states' or template == 'collection.promo'  or template == 'collection.canada-cities' or template == 'collection.australia-cities' or template == 'collection.promo-materials'%}  
+    <a href="https://alite.cc/pages/antiradar-stickers-for-license-plate">
+            Antiradar stickers
+        </a>
+          <span class="ts-breadcrumbs__caret">
+          {% render 'ts-icon-caret' %}
+        </span>
+{% endif %}
+   
+ 
+      {% for collection in product.collections %}
+        {% if collection.metafields.custom.state_filter_name %}
+           
+          
+           <a href="{{ collection.url }}">
+          {{ collection.title }}
+        </a>
+          <span class="ts-breadcrumbs__caret">
+          {% render 'ts-icon-caret' %}
+        </span>
+          {% for c in product.collections %}
+          {% if c.metafields.custom.state_year %}
+               <a href="{{ c.url }}">
+          {{ c.title }}
+        </a>
+          <span class="ts-breadcrumbs__caret">
+          {% render 'ts-icon-caret' %}
+        </span>
+            {% endif %}
+            {% endfor %}
+          {% elsif collection.metafields.custom.australia_filter_name  %}
+             
+           <a href="{{ collection.url }}">
+          {{ collection.title }}
+        </a>
+          <span class="ts-breadcrumbs__caret">
+          {% render 'ts-icon-caret' %}
+        </span>
+          {% for c in product.collections %}
+          {% if c.metafields.custom.year_fitler_name %}
+               <a href="{{ c.url}}">
+          {{ c.title }}
+        </a>
+          <span class="ts-breadcrumbs__caret">
+          {% render 'ts-icon-caret' %}
+        </span>
+            
+            {% endif %}
+            {% endfor %}
+        {% elsif collection.metafields.custom.canada_filter_name  %}
+             
+           <a href="{{ collection.url }}">
+          {{ collection.title }}
+        </a>
+          <span class="ts-breadcrumbs__caret">
+          {% render 'ts-icon-caret' %}
+        </span>
+          {% for c in product.collections %}
+          {% if c.metafields.custom.year_fitler_name %}
+               <a href="{{ c.url }}">
+          {{ c.title }}
+        </a>
+          <span class="ts-breadcrumbs__caret">
+          {% render 'ts-icon-caret' %}
+        </span>
+            
+            {% endif %}
+            {% endfor %}
+          {% elsif collection.metafields.custom.country_year %}
+          {% for c in product.collections %}
+            {% if c.metafields.custom.year_fitler_name == collection.metafields.custom.year_fitler_name  %}
+              {% unless c.title == collection.title %}
+            <a href="{{ c.url }}">
+                    {{ c.title }}
+                  </a>
+          <span class="ts-breadcrumbs__caret">
+          {% render 'ts-icon-caret' %}
+        </span>
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+          
+          {% if template == 'product.custom-license-plate' %}
+           <a href="/collections/nanofilm-ecoslick">
+         Nanofilm Ecoslick
+        </a>
+          <span class="ts-breadcrumbs__caret">
+          {% render 'ts-icon-caret' %}
+        </span>
+            {% endif %}
+          
+          {% endif %}
+        {% endfor %}
+      {% if product.collections.size == 1 %}
+        <a href="{{ product.collections.first.url }}">
+          {{ product.collections.first.title }}
+        </a>
+
+        <span class="ts-breadcrumbs__caret">
+          {% render 'ts-icon-caret' %}
+        </span>
+      {% endif %}
+
+      <p>
+        {{ product.title }}
+      </p>
+    {% elsif template.name == "blog" %}
+       <span class="ts-breadcrumbs__caret">
+        {% render 'ts-icon-caret' %}
+      </span>
+        <p>
+            {{ blog.title }}
+        </p>
+    {% elsif template.name == "article" %}
+       <span class="ts-breadcrumbs__caret">
+        {% render 'ts-icon-caret' %}
+      </span>
+        <a href="{{ blog.url }}">
+            {{ blog.title }}
+        </a>
+      <span class="ts-breadcrumbs__caret">
+        {% render 'ts-icon-caret' %}
+      </span>
+        <p>
+            {{ article.title }}
+        </p>
+    {% elsif template.name == "collection" %}
+      <span class="ts-breadcrumbs__dot"></span>
+      {% if template == 'product.product-new' or template == 'collection.american-states' or template == 'collection.promo'  or template == 'collection.canada-cities' or template == 'collection.australia-cities' or template == 'collection.promo-materials'%}  
+    <a href="https://alite.cc/pages/antiradar-stickers-for-license-plate">
+            Antiradar stickers
+        </a>
+          
+{% endif %}
+       {% unless collection.title == "USA Nanofilm" or collection.title == "Australia Nanofilm" or collection.title == "Canada Nanofilm"  or template == "collection.blackout" or template == "collection.folding-frame" or template == "collection.nanotapes"%}
+      <span class="ts-breadcrumbs__caret">
+        {% render 'ts-icon-caret' %}
+      </span>
+        {% endunless %}
+     
+      
+      {% if collection.metafields.custom.state_year %}
+        {% for c in collections %}
+          {% if c.metafields.custom.state_filter_name ==  collection.metafields.custom.year_fitler_name %}
+            {% unless  c.metafields.custom.state_year %}
+            {% assign title = c.title %}
+             {% assign url = c.url %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+        <a href="{{ url }}">
+          {{ title }}
+        </a>
+        {% elsif collection.metafields.custom.country_year %}
+         {% for c in collections %}
+          {% if c.metafields.custom.year_fitler_name ==  collection.metafields.custom.year_fitler_name or c.metafields.custom.australia_filter_name == collection.metafields.custom.year_fitler_name or c.metafields.custom.canada_filter_name == collection.metafields.custom.year_fitler_name %}
+            {% unless  c.metafields.custom.country_year %}
+            {% assign title = c.title %}
+             {% assign url = c.url %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+        <a href="{{ url }}">
+          {{ title }}
+        </a>
+      <span class="ts-breadcrumbs__caret">
+        {% render 'ts-icon-caret' %}
+      </span>
+        {% endif %}
+      {% if collection.metafields.custom.state_filter_name or collection.title == "USA Nanofilm" %}
+      
+        {% elsif collection.metafields.custom.year_fitler_name and collection.metafields.custom.state_year %}
+      <span class="ts-breadcrumbs__caret">
+        {% render 'ts-icon-caret' %}
+      </span>
+        {% endif %}
+            <p>
+        {{ collection.title }}
+      </p>
+       {% elsif template.name == "faq" or template.name == "contact" or template.name == "page" %}
+       <p>
+        {{ collection.title }}
+      </p>
+    {% endif %}
+  </div>
+</div>
+<script>
+  console.log("{{ template.name }}")
+  console.log("{{ page.title }}")
+  console.log("{{ collection.title }}")
+</script>
+          
+{% schema %}
+  {
+    "name": "TS Breadcrumbs",
+    "settings": [],
+    "presets": [
+      {
+        "name": "TS Breadcrumbs"
+      }
+    ]
+  }
+{% endschema %}

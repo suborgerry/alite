@@ -1,0 +1,728 @@
+<section class="faq-selector page-width">
+  <div class="selector-header">
+    <h2>Select the product</h2>
+    <div class="scroll-controls">
+      <a href="#" class="clear-selection">Clear filters</a>
+      <div class="faq-slider-buttons">
+        <button class="scroll-button faq-left" aria-label="Scroll left">
+          <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 6.64648C14.4142 6.64648 14.75 6.3107 14.75 5.89648C14.75 5.48227 14.4142 5.14648 14 5.14648L14 6.64648ZM0.612527 5.36615C0.319633 5.65905 0.319633 6.13392 0.612527 6.42681L5.3855 11.1998C5.67839 11.4927 6.15326 11.4927 6.44616 11.1998C6.73905 10.9069 6.73905 10.432 6.44616 10.1391L2.20352 5.89648L6.44616 1.65384C6.73905 1.36095 6.73905 0.886077 6.44616 0.593184C6.15326 0.30029 5.67839 0.30029 5.3855 0.593184L0.612527 5.36615ZM14 5.14648L1.14286 5.14648L1.14286 6.64648L14 6.64648L14 5.14648Z" fill="white"/>
+          </svg>
+        </button>
+        <button class="scroll-button faq-right button-active" aria-label="Scroll right">
+          <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 5.14648C0.585786 5.14648 0.25 5.48227 0.25 5.89648C0.25 6.3107 0.585786 6.64648 1 6.64648L1 5.14648ZM14.3875 6.42682C14.6804 6.13392 14.6804 5.65905 14.3875 5.36616L9.6145 0.593184C9.32161 0.300291 8.84674 0.300291 8.55384 0.593184C8.26095 0.886078 8.26095 1.36095 8.55384 1.65384L12.7965 5.89649L8.55384 10.1391C8.26095 10.432 8.26095 10.9069 8.55384 11.1998C8.84674 11.4927 9.32161 11.4927 9.6145 11.1998L14.3875 6.42682ZM1 6.64648L13.8571 6.64649L13.8571 5.14649L1 5.14648L1 6.64648Z" fill="white"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-selector-wrapper">
+    <div class="product-selector-slider">
+      <div class="product-selector">
+        {% for block in section.blocks %}
+          {% if block.type == 'product_tab' %}
+            <div class="scroll_year-block" data-product="{{ block.settings.product_handle }}">
+              <div class="scroll_year-block_content">
+                <h3 class="year_title">
+                  {{ block.settings.title }}
+                  <span class="check-icon-container">
+                    <svg class="check-icon-svg" width="14px" height="14px" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
+                      <g stroke-width="0" transform="translate(1.32,1.32), scale(0.89)">
+                        <rect x="-2.4" y="-2.4" width="28.80" height="28.80" rx="14.4" fill="#000000"></rect>
+                      </g>
+                      <g stroke-linecap="round" stroke-linejoin="round"></g>
+                      <g>
+                        <g clip-path="url(#clip0_429_11249)">
+                          <path d="M20 7.00018L10 17.0002L5 12.0002" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_429_11249">
+                            <rect width="24" height="24" fill="white"></rect>
+                          </clipPath>
+                        </defs>
+                      </g>
+                    </svg>
+                  </span>
+                </h3>
+                <div class="icon">{{ block.settings.icon_svg }}</div>
+              </div>
+              {% if block.settings.subtitle != blank %}
+                <p class="texture">{{ block.settings.subtitle }}</p>
+              {% endif %}
+              <div class="scroll_year-block_image">
+                <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.title }}">
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-content">
+    {% for block in section.blocks %}
+      {% if block.type == 'faq_item' %}
+        <div class="faq-item-block" data-product="{{ block.settings.product_handle }}" style="display: none;">
+          <div class="faq-item-heading">
+            <div class="title-container"><h3>{{ block.settings.main_title }} </h3><div class="button-divider"></div> <p class="faq-sub">{{ block.settings.sub_title }}</p></div>
+          </div>
+          <div class="faq-item-inner">
+            {% for i in (1..15) %}
+              {% assign q_id = 'question_' | append: i %}
+              {% assign q = block.settings[q_id] %}
+              {% assign a_id = 'answer_' | append: i %}
+              {% assign a = block.settings[a_id] %}
+              {% if q != blank and a != blank %}
+                <details class="answer-container">
+                  <summary>{{ q }} <svg width="13" height="9" viewBox="0 0 13 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.929 7.88936L0.271999 2.23236L1.686 0.818359L6.636 5.76836L11.586 0.818359L13 2.23236L7.343 7.88936C7.15547 8.07683 6.90116 8.18215 6.636 8.18215C6.37084 8.18215 6.11653 8.07683 5.929 7.88936Z" fill="#797979"/>
+</svg>
+</summary>
+                  <div class="answer-wrapper">
+                    <div class="answer-container">
+                  
+                    <div class="answer-body">
+                      <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12.5" r="12" fill="#4BFE85"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.7547 8.73228C18.9118 8.8812 19 9.08307 19 9.29354C19 9.50402 18.9118 9.70588 18.7547 9.85481L10.926 17.2677C10.7687 17.4165 10.5555 17.5 10.3333 17.5C10.111 17.5 9.89778 17.4165 9.74051 17.2677L5.26697 13.0318C5.18456 12.9591 5.11846 12.8714 5.07261 12.7739C5.02677 12.6765 5.00212 12.5713 5.00013 12.4647C4.99814 12.3581 5.01886 12.2521 5.06105 12.1532C5.10323 12.0543 5.16603 11.9645 5.24568 11.8891C5.32533 11.8137 5.4202 11.7542 5.52465 11.7143C5.62909 11.6743 5.74096 11.6547 5.85359 11.6566C5.96621 11.6585 6.07728 11.6818 6.18017 11.7252C6.28306 11.7686 6.37567 11.8312 6.45246 11.9092L10.3333 15.5839L17.5692 8.73228C17.7265 8.58354 17.9397 8.5 18.1619 8.5C18.3842 8.5 18.5974 8.58354 18.7547 8.73228Z" fill="black"/>
+</svg>
+
+                      <p>{{ a }}</p>
+                    </div>
+                  </div>
+                 </div>         
+                </details>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+              
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll('.scroll_year-block');
+  const faqs = document.querySelectorAll('.faq-item-block');
+  const container = document.querySelector('.product-selector');
+  const btnLeft = document.querySelector('.faq-left');
+  const btnRight = document.querySelector('.faq-right');
+  const blocks = document.querySelectorAll('.scroll_year-block');
+
+  let blockWidth = blocks[0]?.offsetWidth + 20 || 220;
+  let visibleCount = Math.floor(container.parentElement.offsetWidth / blockWidth);
+  let offset = 0;
+
+ const slider = document.querySelector('.product-selector-slider');
+
+// отключаем прокрутку мышью
+slider.addEventListener('mousedown', (e) => {
+  e.preventDefault();
+});
+
+let isTouching = false;
+let startX = 0;
+let startY = 0;
+let scrollLeft = 0;
+let lastX = 0;
+let velocity = 0;
+let rafID = null;
+let isScrollingHorizontally = false;
+
+function easeOutScroll() {
+  if (Math.abs(velocity) < 0.1) return;
+  slider.scrollLeft += velocity;
+  velocity *= 0.95;
+  rafID = requestAnimationFrame(easeOutScroll);
+}
+
+slider.addEventListener('touchstart', (e) => {
+  isTouching = true;
+  isScrollingHorizontally = false;
+  cancelAnimationFrame(rafID);
+  startX = e.touches[0].pageX;
+  startY = e.touches[0].pageY;
+  scrollLeft = slider.scrollLeft;
+  lastX = startX;
+});
+
+slider.addEventListener('touchmove', (e) => {
+  if (!isTouching) return;
+  const x = e.touches[0].pageX;
+  const y = e.touches[0].pageY;
+  const dx = x - lastX;
+  const dy = y - startY;
+
+  if (!isScrollingHorizontally) {
+    if (Math.abs(dx) > Math.abs(dy)) {
+      isScrollingHorizontally = true;
+    } else {
+      // Если начали скроллить вертикально — отключаем свайп
+      isTouching = false;
+      return;
+    }
+  }
+
+  e.preventDefault(); // предотвращаем вертикальный скролл
+  lastX = x;
+  velocity = -dx;
+  slider.scrollLeft -= dx;
+}, { passive: false }); // обязательно нужно указать passive: false
+
+slider.addEventListener('touchend', () => {
+  if (isScrollingHorizontally) {
+    easeOutScroll();
+    setTimeout(() => {
+      offset = getCurrentOffsetFromScroll();
+      updateScrollButtons();
+    }, 400);
+  }
+  isTouching = false;
+});
+
+
+
+
+
+  
+  // Animate dropdown height toggle
+  function slideToggle(el, duration = 300) {
+    if (!el) return;
+    const isOpen = el.classList.contains('open');
+    el.style.overflow = 'hidden';
+    if (isOpen) {
+      el.style.height = el.scrollHeight + 'px';
+      requestAnimationFrame(() => {
+        el.style.transition = `height ${duration}ms ease`;
+        el.style.height = '0';
+      });
+      setTimeout(() => {
+        el.classList.remove('open');
+        el.style.removeProperty('height');
+        el.style.removeProperty('transition');
+        el.style.removeProperty('overflow');
+      }, duration);
+    } else {
+      el.classList.add('open');
+      el.style.height = '0';
+      requestAnimationFrame(() => {
+        el.style.transition = `height ${duration}ms ease`;
+        el.style.height = el.scrollHeight + 'px';
+      });
+      setTimeout(() => {
+        el.style.removeProperty('height');
+        el.style.removeProperty('transition');
+        el.style.removeProperty('overflow');
+      }, duration);
+    }
+  }
+
+  function updateScrollButtons() {
+  const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+  const currentScroll = slider.scrollLeft;
+
+  // на несколько пикселей допускаем погрешность (например, 5)
+  const nearStart = currentScroll <= 5;
+  const nearEnd = currentScroll >= maxScrollLeft - 5;
+
+  btnLeft.classList.toggle("button-active", !nearStart);
+  btnRight.classList.toggle("button-active", !nearEnd);
+
+  btnLeft.disabled = nearStart;
+  btnRight.disabled = nearEnd;
+}
+
+
+function showFaqs(product) {
+  const container = document.querySelector('.faq-content');
+
+  // remove current visible classes
+  faqs.forEach(faq => faq.classList.remove('visible'));
+
+  // Step 1: Clone FAQ container
+  const clone = container.cloneNode(false);
+  clone.style.position = 'absolute';
+  clone.style.visibility = 'hidden';
+  clone.style.height = 'auto';
+  clone.style.pointerEvents = 'none';
+  clone.style.overflow = 'visible';
+
+  // Step 2: Add only the relevant blocks into the clone
+  faqs.forEach(faq => {
+    const faqClone = faq.cloneNode(true);
+    if (!product || faq.dataset.product === product) {
+      faqClone.style.display = 'block';
+    } else {
+      faqClone.style.display = 'none';
+    }
+    clone.appendChild(faqClone);
+  });
+
+  // Step 3: Append clone to DOM to measure its height
+  container.parentNode.appendChild(clone);
+  const targetHeight = clone.scrollHeight;
+  clone.remove();
+
+  // Step 4: Animate height of the original container
+  container.style.height = container.offsetHeight + 'px';
+  container.offsetHeight; // force reflow
+  container.style.transition = 'height 0.3s ease';
+  container.style.height = targetHeight + 'px';
+
+  // Step 5: After animation ends, show real content and clean up
+  setTimeout(() => {
+    faqs.forEach(faq => {
+      if (!product || faq.dataset.product === product) {
+        faq.style.display = 'block';
+        faq.classList.add('visible');
+      } else {
+        faq.style.display = 'none';
+      }
+    });
+
+    container.style.height = 'auto';
+    container.style.removeProperty('transition');
+  }, 300);
+}
+
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      showFaqs(tab.dataset.product);
+    });
+  });
+
+ function getCurrentOffsetFromScroll() {
+  return Math.round(slider.scrollLeft / blockWidth);
+}
+
+btnLeft.addEventListener('click', () => {
+  offset = getCurrentOffsetFromScroll();
+  if (offset <= 0) return;
+  offset--;
+  slider.scrollTo({
+    left: offset * blockWidth,
+    behavior: 'smooth'
+  });
+  setTimeout(updateScrollButtons, 400); // плавно обновляем
+});
+
+btnRight.addEventListener('click', () => {
+  offset = getCurrentOffsetFromScroll();
+  if (offset >= blocks.length - visibleCount) return;
+  offset++;
+  slider.scrollTo({
+    left: offset * blockWidth,
+    behavior: 'smooth'
+  });
+  setTimeout(updateScrollButtons, 400);
+});
+
+ window.addEventListener('resize', () => {
+  blockWidth = blocks[0]?.offsetWidth + 20 || 220;
+  visibleCount = Math.floor(container.parentElement.offsetWidth / blockWidth);
+  offset = getCurrentOffsetFromScroll();
+  updateScrollButtons();
+});
+
+
+ document.querySelector('.clear-selection').addEventListener('click', (e) => {
+  e.preventDefault();
+  tabs.forEach(t => t.classList.remove('active'));
+  showFaqs(); 
+});
+
+
+  // Dropdown animation on summary click
+  document.querySelectorAll('.faq-item-inner details summary').forEach(summary => {
+    const details = summary.parentElement;
+    const content = summary.nextElementSibling;
+  summary.addEventListener('click', function (e) {
+  e.preventDefault();
+  const icon = summary.querySelector('svg');
+
+  if (details.hasAttribute('open')) {
+    icon.classList.remove('rotated');
+    slideToggle(content, 250);
+    setTimeout(() => details.removeAttribute('open'), 250);
+  } else {
+    details.setAttribute('open', '');
+    icon.classList.add('rotated');
+    slideToggle(content, 250);
+  }
+});
+
+  });
+
+  updateScrollButtons();
+ showFaqs();
+});
+  
+  document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll('.scroll_year-block');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+});
+
+  
+</script>
+
+
+
+
+<style>
+ .faq-item-inner summary svg {
+  transition: transform 0.3s ease;
+}
+
+.faq-item-inner summary svg.rotated {
+  transform: rotate(180deg);
+}
+  .open{
+    margin-bottom: 0;
+  }
+  .answer-container{
+    padding: 10px 20px;
+    background-color: #F7F7F7;
+    border-radius: 15px;
+  }
+  .faq-item-inner summary svg{
+    flex-shrink: 0;
+  }
+  .answer-body svg {
+   flex-shrink: 0;
+  }
+  .check-icon-container {
+    display: none;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .scroll_year-block.active .check-icon-container {
+    display: inline-block;
+  }
+  .year_title{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .selector-header h2{
+    font-weight: 700;
+    margin: 0;
+    font-size: 24px;
+  }
+.title-container{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .button-divider {
+    display: block !important;
+    height: 20px;
+    width: 2px !important;
+    border-radius: 20px;
+    background-color: #000;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    transform: translateZ(0);
+    will-change: transform;
+    margin: 0;
+}
+  .answer-container{
+    margin-top: 10px;
+  }
+   .answer-wrapper {
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+  details[open] .answer-wrapper {
+    animation: fadeIn 0.3s ease forwards;
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-5px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .answer-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   color: #000;
+}
+
+.answer-body {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.answer-body .check-icon {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.answer-body p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #000;
+}
+
+  .faq-content {
+  transition: height 0.3s ease;
+  overflow: hidden;
+}
+  .faq-item-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+   .faq-item-block {
+    margin-bottom: 40px;
+      opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .faq-item-heading h3 {
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Grtsk !important;
+    margin: 0;
+  }
+  .faq-sub {
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+  }
+  .faq-item-heading{
+        margin-bottom: 12px;
+  }
+  .faq-item-inner summary {
+        font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    list-style: none;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .faq-item-inner .answer {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #222;
+    overflow: hidden;
+    height: auto;
+    transition: height 0.3s ease;
+    border-radius: 15px;
+    padding: 10px 20px;
+    background-color: #F7F7F7;
+  }
+  .faq-slider-buttons{
+    display: flex;
+    gap: 10px;
+  }
+   .product-selector-slider {
+    overflow: hidden;
+    position: relative;
+  }
+  .product-selector {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 20px;
+    will-change: transform;
+  }
+  .faq-slider-buttons .scroll-button {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: 0.3s ease;
+  }
+  .faq-slider-buttons .button-active {
+    background-color: #000000;
+    cursor: pointer;
+  }
+  .faq-slider-buttons .button-active:hover {
+    background-color: #DA9DFF;
+  }
+  .faq-slider-buttons .button-active:hover svg path {
+    fill: #000;
+    transition: 0.3s ease;
+  }
+  .selector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+        margin: 30px 0px 12px 0px;
+  }
+  .scroll-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .scroll-controls button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .clear-selection {
+    font-size: 12px;
+    color: #222;
+    text-decoration: underline;
+  }
+  .product-selector-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .product-selector {
+    display: flex;
+    gap: 1rem;
+    width: fit-content;
+  margin-bottom: 30px;
+  }
+  .scroll_year-block {
+    height: 100%;
+    width: 200px;
+    flex-shrink: 0;
+    display: grid;
+    padding: 20px 26px;
+    border: 1px rgba(0, 0, 0, 0.2) solid;
+    border-radius: 18px;
+    background-color: #f4f4f4;
+    cursor: pointer;
+  }
+  .scroll_year-block.active .scroll_year-block_image {
+   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+  }
+  .scroll_year-block.active {
+  background-color: #DA9DFF;
+}
+
+  .scroll_year-block_content {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 15px 0;
+  }
+  .scroll_year-block .texture {
+    margin: 0 0 25px 0;
+    color: #000;
+    font-size: 14px;
+  }
+  .scroll_year-block_image {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    align-self: end;
+  }
+  .scroll_year-block_image img {
+    width: 100%;
+    height: auto;
+  }
+  .faq-item {
+    margin-bottom: 1rem;
+  }
+  details {
+ 
+  }
+  summary {
+    font-weight: bold;
+    cursor: pointer;
+  }
+@media(max-width:768px){
+ 
+</style>
+
+
+{% schema %}
+{
+  "name": "Product FAQ Selector",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product_tab",
+      "name": "Product Tab",
+      "settings": [
+        {"type": "text", "id": "product_handle", "label": "Product Handle (e.g. ecoslick)"},
+        {"type": "text", "id": "title", "label": "Title"},
+        {"type": "text", "id": "subtitle", "label": "Subtitle"},
+        {"type": "image_picker", "id": "image", "label": "Image"},
+        {"type": "textarea", "id": "icon_svg", "label": "Icon SVG"}
+      ]
+    },
+    {
+  "type": "faq_item",
+  "name": "FAQ Item",
+  "settings": [
+    { "type": "text", "id": "product_handle", "label": "Product Handle (e.g. ecoslick)" },
+    { "type": "text", "id": "main_title", "label": "Main Title" },
+    { "type": "text", "id": "sub_title", "label": "Sub Title" },
+    { "type": "text", "id": "question_1", "label": "Question 1" },
+    { "type": "textarea", "id": "answer_1", "label": "Answer 1" },
+    { "type": "text", "id": "question_2", "label": "Question 2" },
+    { "type": "textarea", "id": "answer_2", "label": "Answer 2" },
+    { "type": "text", "id": "question_3", "label": "Question 3" },
+    { "type": "textarea", "id": "answer_3", "label": "Answer 3" },
+    { "type": "text", "id": "question_4", "label": "Question 4" },
+    { "type": "textarea", "id": "answer_4", "label": "Answer 4" },
+    { "type": "text", "id": "question_5", "label": "Question 5" },
+    { "type": "textarea", "id": "answer_5", "label": "Answer 5" },
+    { "type": "text", "id": "question_6", "label": "Question 6" },
+    { "type": "textarea", "id": "answer_6", "label": "Answer 6" },
+    { "type": "text", "id": "question_7", "label": "Question 7" },
+    { "type": "textarea", "id": "answer_7", "label": "Answer 7" },
+    { "type": "text", "id": "question_8", "label": "Question 8" },
+    { "type": "textarea", "id": "answer_8", "label": "Answer 8" },
+    { "type": "text", "id": "question_9", "label": "Question 9" },
+    { "type": "textarea", "id": "answer_9", "label": "Answer 9" },
+    { "type": "text", "id": "question_10", "label": "Question 10" },
+    { "type": "textarea", "id": "answer_10", "label": "Answer 10" },
+    { "type": "text", "id": "question_11", "label": "Question 11" },
+    { "type": "textarea", "id": "answer_11", "label": "Answer 11" },
+    { "type": "text", "id": "question_12", "label": "Question 12" },
+    { "type": "textarea", "id": "answer_12", "label": "Answer 12" },
+    { "type": "text", "id": "question_13", "label": "Question 13" },
+    { "type": "textarea", "id": "answer_13", "label": "Answer 13" },
+    { "type": "text", "id": "question_14", "label": "Question 14" },
+    { "type": "textarea", "id": "answer_14", "label": "Answer 14" },
+    { "type": "text", "id": "question_15", "label": "Question 15" },
+    { "type": "textarea", "id": "answer_15", "label": "Answer 15" }
+  ]
+}
+
+  ],
+  "max_blocks": 50,
+  "presets": [
+    {"name": "FAQ by Product", "category": "Custom"}
+  ]
+}
+{% endschema %}

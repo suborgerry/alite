@@ -1,0 +1,720 @@
+{% style %}
+@import url('https://fonts.cdnfonts.com/css/druk-wide-bold');
+  .updated-banner_section {
+    background-color: #000;
+    justify-content: center;
+    margin-bottom:32px;
+    width: 100%;
+  }
+  
+  .banner-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s;
+    height:calc(100vh - 80px);
+    min-height:600px;
+    opacity:0;
+  }
+
+  .updated-banner {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    flex-shrink: 0;
+    width: 33%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    transition:all 0.3s;
+  }
+
+  .banner-image_container img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+
+  .slider-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap:40%;
+    transform: translateY(-60%);
+  }
+  .slider-buttons button,.mobile-button_container div {
+    background: rgba(255, 255, 255, 1);
+    border: none;
+    cursor: pointer;
+    height:24px;
+    width:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 50%;
+  }
+  .banner-title{
+    font-family: 'Druk Wide Bold', sans-serif;
+    color:#fff;
+    font-size:40px;
+    line-height:1;
+    margin:0 0 30px;
+    text-wrap:nowrap;
+  }
+  .banner-text{
+    color:#fff;
+    font-size:16px;
+    margin: 0 auto;
+    max-width:400px;
+  }
+  .banner_content{
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+    max-height: 0px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+      .slider-buttons button svg:last-child{
+      display:none
+    }
+    .slider-buttons button svg:first-child{
+      display:block
+    }
+    .active-banner .banner_content{
+    max-height: 500px;
+    opacity: 1;
+  }
+  .active-banner{
+    right:50%;
+    transform:translate(50%,-50%);
+
+  }
+  .next-banner{
+    right:0%;
+    transform:translate(50%,-50%);
+  }
+  .previous-banner{
+    right:100%;
+    transform:translate(50%,-50%);
+  }
+  .previous-banner::after,
+.next-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+  .previous-banner::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.next-banner::after {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
+}
+  .hidden-clone-prev {
+  right: 200%;
+  transform: translate(50%, -50%);
+  position: absolute;
+  top: 50%;
+}
+
+.hidden-clone-next {
+  right: -100%;
+  transform: translate(50%, -50%);
+  position: absolute;
+  top: 50%;
+}
+  .banner-text span{
+    position:relative;
+    color:#000;
+    font-weight:600;
+      z-index: 1;
+        text-wrap: nowrap;
+  }
+  .banner-text span::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5%;
+  width: 110%;
+  height: 100%;
+  background-color: #DA9DFF; 
+  z-index: -1;
+  transform:rotate(358deg);
+  border-radius: 2px;
+  padding: 2px 6px;
+  }
+  .banner_button:link,.banner_button:visited{
+    display:inline-block;
+    color:#000;
+    font-size:14px;
+    padding:10px 50px;
+    text-decoration:none;
+    font-weight:700;
+    background-color:#4BFE85;
+    border-radius:40px;
+    transition:all 0.3s;
+    margin:36px 0 20px;
+  }
+  .banner_button:hover,.banner_button:active{
+    background-color:#DA9DFF;
+  }
+  .banner_link{
+    display:inline-block;
+    color:#fff;
+    font-size:14px;
+    text-decoration:underline;
+  }
+  .mobile-button_container{
+     display:none; 
+  }
+  .slider-progress{
+    display:none;
+  }
+  @media screen and (max-width:1000px){
+      .banner-viewport {
+    height:calc(90vh - 80px);
+  }
+      .banner_button:link,.banner_button:visited{
+        font-size:14px;
+        padding:20px 90px;
+        line-height: 1;
+      }
+    .banner-title{
+      font-size:32px;
+    }
+    .banner-text{
+      font-size:14px;
+    }
+    .banner-scroll{
+        align-items: center;
+        flex-direction: column;
+    }
+    .updated-banner_section{
+      overflow:hidden;
+      padding:0;
+    }
+     .updated-banner .banner_content{
+    max-height: 500px;
+    opacity: 1;
+  }
+    .slider-buttons button{
+      background: rgb(255 255 255 / 0%);
+      height: initial;
+      width: initial;
+      padding:12px;
+    }
+       .slider-buttons{
+         justify-content:space-between;
+       }
+    .slider-buttons button svg:last-child{
+      display:block
+    }
+    .slider-buttons button svg:first-child{
+      display:none
+    }
+    .updated-banner{
+      width:100%;
+      padding: 60px;
+    }
+  .next-banner{
+    right:-100%;
+    transform:translate(50%,-50%);
+  }
+  .previous-banner{
+    right:200%;
+    transform:translate(50%,-50%);
+  }
+    .slider-progress {
+      height:4px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  width: 100%;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding:0 40px;
+}
+
+.progress-bar {
+  width: 100%px;
+  height: 0px;
+  background: white;
+  border-radius: 999px;
+  overflow: hidden;
+  transition:all 0.5s;
+}
+
+.progress-bar .fill {
+  height: 100%;
+  width: 0%;
+  background: #4BFE85;
+  border-radius: 999px;
+  transition: width 0s;
+  display:block;
+}
+    .updated-banner{
+      width:500px;
+    }
+  }
+    @media screen and (max-width:650px){
+    .updated-banner{
+      width:100%;
+    }
+    }
+  @media screen and (max-width:500px){
+    .banner-title{
+      font-size:26px;
+      margin: 0 0 15px;
+    }
+    .banner_button:link, .banner_button:visited{
+      padding: 18px 65px;
+      font-size:12px;
+    }
+    .banner-text {
+    font-size: 12px;
+    line-height: 1.3;
+    }
+    .banner_link{
+      font-size:12px;
+    }
+  }
+  @media screen and (max-width:300px){
+    .banner-title{
+      font-size:20px;
+      margin: 0 0 15px;
+    }
+    .banner_button:link, .banner_button:visited{
+      padding: 18px 50px;
+      font-size:12px;
+    }
+    .banner-text {
+    font-size: 12px;
+    line-height: 1.3;
+    }
+    .banner_link{
+      font-size:12px;
+    }
+  }
+
+{% endstyle %}
+
+<section class="updated-banner_section">
+  <div class="banner-viewport">
+      {% for banner in section.blocks %}
+        <article data-index="{{ forloop.index0 }}" class="updated-banner {% if banner.settings.isActive %}active-banner{% endif %}">
+          <div class="banner-image_container">
+            <a href="{{ banner.settings.link-img }}">
+              <img src="{{ banner.settings.image | image_url }}">
+            </a>
+          </div>
+          <div class="banner_content">
+          <h3 class="banner-title">{{ banner.settings.title }}</h3>
+          <p class="banner-text">{{ banner.settings.text }}</p>
+          <a class="banner_button" href="{{ banner.settings.link }}">{{ "ts.updated_banner.button" | t }}</a>
+          <a class="banner_link" href="#{{ banner.settings.links_to }}">{{ "ts.updated_banner.link" | t }}</a>
+          </div>
+        </article>
+      {% endfor %}
+  </div>
+    <div class="slider-buttons">
+      <button id="prevSlide"><svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.8574 6.75C14.2716 6.75 14.6074 6.41421 14.6074 6C14.6074 5.58579 14.2716 5.25 13.8574 5.25L13.8574 6.75ZM0.469949 5.46967C0.177055 5.76256 0.177055 6.23744 0.469949 6.53033L5.24292 11.3033C5.53581 11.5962 6.01069 11.5962 6.30358 11.3033C6.59647 11.0104 6.59647 10.5355 6.30358 10.2426L2.06094 6L6.30358 1.75736C6.59647 1.46447 6.59647 0.989593 6.30358 0.696699C6.01069 0.403806 5.53581 0.403806 5.24292 0.696699L0.469949 5.46967ZM13.8574 5.25L1.00028 5.25L1.00028 6.75L13.8574 6.75L13.8574 5.25Z" fill="black"/>
+</svg>
+  <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 7.25C21.4142 7.25 21.75 6.91421 21.75 6.5C21.75 6.08579 21.4142 5.75 21 5.75L21 7.25ZM0.469669 5.96967C0.176777 6.26256 0.176777 6.73744 0.469669 7.03033L5.24264 11.8033C5.53553 12.0962 6.01041 12.0962 6.3033 11.8033C6.59619 11.5104 6.59619 11.0355 6.3033 10.7426L2.06066 6.5L6.3033 2.25736C6.59619 1.96447 6.59619 1.48959 6.3033 1.1967C6.01041 0.903806 5.53553 0.903806 5.24264 1.1967L0.469669 5.96967ZM21 5.75L1 5.75L1 7.25L21 7.25L21 5.75Z" fill="white"/>
+</svg>
+
+</button>
+      <button id="nextSlide"><svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.14258 5.25C0.728365 5.25 0.392578 5.58579 0.392578 6C0.392578 6.41421 0.728364 6.75 1.14258 6.75L1.14258 5.25ZM14.5301 6.53033C14.8229 6.23744 14.8229 5.76256 14.5301 5.46967L9.75708 0.6967C9.46419 0.403806 8.98931 0.403806 8.69642 0.6967C8.40353 0.989593 8.40353 1.46447 8.69642 1.75736L12.9391 6L8.69642 10.2426C8.40353 10.5355 8.40353 11.0104 8.69642 11.3033C8.98931 11.5962 9.46419 11.5962 9.75708 11.3033L14.5301 6.53033ZM1.14258 6.75L13.9997 6.75L13.9997 5.25L1.14258 5.25L1.14258 6.75Z" fill="black"/>
+</svg>
+  <svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 5.75C0.585786 5.75 0.25 6.08579 0.25 6.5C0.25 6.91421 0.585786 7.25 1 7.25L1 5.75ZM21.5303 7.03033C21.8232 6.73744 21.8232 6.26256 21.5303 5.96967L16.7574 1.1967C16.4645 0.903807 15.9896 0.903807 15.6967 1.1967C15.4038 1.48959 15.4038 1.96447 15.6967 2.25736L19.9393 6.5L15.6967 10.7426C15.4038 11.0355 15.4038 11.5104 15.6967 11.8033C15.9896 12.0962 16.4645 12.0962 16.7574 11.8033L21.5303 7.03033ZM1 7.25L21 7.25L21 5.75L1 5.75L1 7.25Z" fill="white"/>
+</svg>
+
+</button>
+    </div>
+  <div class="slider-progress">
+    {% for block in section.blocks %}
+    <div class="progress-bar"><div class="fill"></div></div>
+      {% endfor %}
+</div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".updated-banner")
+    const totalSlides = slides.length;
+    const progressBarsContainers = document.querySelectorAll(".progress-bar");
+    let nextIndexToAppend = 0;
+    const slidesContainer = document.querySelector(".banner-viewport");
+    let activeSlide = document.querySelector(".active-banner");
+    const progressBars = document.querySelectorAll(".progress-bar .fill");
+    let progressInterval;
+    let progressTimeout;
+    const autoScrollTime = {{ section.settings.autoscroll }} * 1000;
+    function getActiveSlideIndex() {
+  const active = document.querySelector(".updated-banner.active-banner");
+  return active ? parseInt(active.dataset.index) : 0;
+}
+    function addSlideClones(direсtion) {
+      console.log(direсtion)
+      if(direсtion ==="prev"){
+        for(let i = totalSlides - 1; i>=0;i--){
+        const slide = slides[i]
+        const slideCopy = slide.cloneNode(true);
+        slideCopy.classList.remove("active-banner");
+        slideCopy.classList.remove("next-banner");
+        slideCopy.classList.remove("previous-banner");
+        slideCopy.classList.remove("hidden-clone-next");
+        slideCopy.classList.add("hidden-clone-prev");
+        slidesContainer.insertBefore(slideCopy, slidesContainer.firstChild);
+        }
+
+      }
+      if(direсtion ==="next"){
+      slides.forEach(slide=>{
+        const slideCopy = slide.cloneNode(true);
+        slideCopy.classList.remove("active-banner");
+        slideCopy.classList.remove("next-banner");
+        slideCopy.classList.remove("previous-banner");
+        slideCopy.classList.remove("hidden-clone-prev");
+        slideCopy.classList.add("hidden-clone-next");
+        slidesContainer.appendChild(slideCopy);
+      })
+      }
+  }
+function showNextSlide() {
+  const current = document.querySelector(".active-banner");
+  const next = document.querySelector(".next-banner");
+  const prev = document.querySelector(".previous-banner");
+
+  if (!current || !next || !prev) return;
+
+  prev.classList.remove("previous-banner");
+  current.classList.remove("active-banner");
+  next.classList.remove("next-banner");
+
+  prev.classList.add("hidden-clone-prev");
+  current.classList.add("previous-banner");
+  next.classList.add("active-banner");
+
+let newNext = next.nextElementSibling;
+while (newNext && !newNext.classList.contains("updated-banner")) {
+  newNext = newNext.nextElementSibling;
+}
+
+let preloadNext = newNext?.nextElementSibling;
+while (preloadNext && !preloadNext.classList.contains("updated-banner")) {
+  preloadNext = preloadNext.nextElementSibling;
+}
+
+if (!preloadNext) {
+  const currentIndex = +document.querySelector(".active-banner").dataset.index;
+  const preloadIndex = (currentIndex + 2) % totalSlides;
+  const preloadOriginal = document.querySelector(`.updated-banner[data-index='${preloadIndex}']`);
+  if (preloadOriginal) {
+    const preloadClone = preloadOriginal.cloneNode(true);
+    preloadClone.classList.remove("active-banner", "next-banner", "previous-banner", "hidden-clone-prev");
+    preloadClone.classList.add("updated-banner", "hidden-clone-next");
+    slidesContainer.appendChild(preloadClone);
+      const firstSlide = slidesContainer.querySelector(".updated-banner");
+      if (firstSlide) slidesContainer.removeChild(firstSlide);
+  }
+}
+
+  if (newNext) {
+    newNext.classList.remove("hidden-clone-next");
+    newNext.classList.add("next-banner");
+  } else {
+    const activeIndex = document.querySelector(".active-banner").dataset.index;
+    const nextIndex = (+activeIndex + totalSlides + 1) % totalSlides
+      let firstOriginal = document.querySelector(`.updated-banner[data-index='${nextIndex}']`);
+      const slideCopy = firstOriginal.cloneNode(true);
+      slideCopy.classList.remove("active-banner", "previous-banner", "next-banner","hidden-clone-next","hidden-clone-prev");
+      slideCopy.classList.add("updated-banner", "hidden-clone-next");
+      slidesContainer.appendChild(slideCopy);
+      const firstSlide = slidesContainer.querySelector(".updated-banner");
+      if (firstSlide) slidesContainer.removeChild(firstSlide);
+      requestAnimationFrame(() => {
+        slideCopy.classList.remove("hidden-clone-next");
+        slideCopy.classList.add("next-banner");
+      });
+  }
+}
+
+
+function showPrevSlide() {
+  const current = document.querySelector(".active-banner");
+  const prev = document.querySelector(".previous-banner");
+  const next = document.querySelector(".next-banner");
+
+  if (!current || !prev || !next) return;
+
+  next.classList.remove("next-banner");
+  current.classList.remove("active-banner");
+  prev.classList.remove("previous-banner");
+
+  next.classList.add("hidden-clone-next");
+  current.classList.add("next-banner");
+  prev.classList.add("active-banner");
+
+  let newPrev = prev.previousElementSibling;
+while (newPrev && !newPrev.classList.contains("updated-banner")) {
+  newPrev = newPrev.previousElementSibling;
+}
+
+let preloadPrev = newPrev?.previousElementSibling;
+while (preloadPrev && !preloadPrev.classList.contains("updated-banner")) {
+  preloadPrev = preloadPrev.previousElementSibling;
+}
+
+if (!preloadPrev) {
+  const currentIndex = +document.querySelector(".active-banner").dataset.index;
+  const preloadIndex = (currentIndex - 2 + totalSlides) % totalSlides;
+  const preloadOriginal = document.querySelector(`.updated-banner[data-index='${preloadIndex}']`);
+  if (preloadOriginal) {
+    const preloadClone = preloadOriginal.cloneNode(true);
+    preloadClone.classList.remove("active-banner", "next-banner", "previous-banner", "hidden-clone-next");
+    preloadClone.classList.add("updated-banner", "hidden-clone-prev");
+    slidesContainer.insertBefore(preloadClone, slidesContainer.firstChild);
+    const banners = slidesContainer.querySelectorAll(".updated-banner");
+    const lastSlide = banners[banners.length - 1];
+    if (lastSlide) slidesContainer.removeChild(lastSlide);
+  }
+}
+
+  if (newPrev) {
+    newPrev.classList.remove("hidden-clone-prev");
+    newPrev.classList.add("previous-banner");
+  } else {
+    const activeIndex = document.querySelector(".active-banner").dataset.index;
+    const nextIndex = (+activeIndex + totalSlides -1) % totalSlides
+      let lastOriginal = document.querySelector(`.updated-banner[data-index='${nextIndex}']`);
+      const slideCopy = lastOriginal.cloneNode(true);
+      slideCopy.classList.remove("active-banner", "previous-banner", "next-banner","hidden-clone-next","hidden-clone-prev");
+      slideCopy.classList.add("updated-banner", "hidden-clone-prev");
+      slidesContainer.insertBefore(slideCopy, slidesContainer.firstChild);
+      const banners = slidesContainer.querySelectorAll(".updated-banner");
+      const lastSlide = banners[banners.length - 1];
+      if (lastSlide) slidesContainer.removeChild(lastSlide);
+      requestAnimationFrame(() => {
+        slideCopy.classList.remove("hidden-clone-prev");
+        slideCopy.classList.add("previous-banner");
+      });
+  }
+}
+
+
+    let previousSlide = activeSlide.previousElementSibling;
+    let nextSlide = activeSlide.nextElementSibling;
+    
+    previousSlide.classList.add("previous-banner")
+    nextSlide.classList.add("next-banner")
+    document.querySelectorAll(".updated-banner").forEach((el,i)=>{
+      const activeI = document.querySelector(".active-banner").dataset.index;
+      if(i < +activeI && !el.classList.contains("previous-banner")){
+        el.classList.add("hidden-clone-prev")
+      }
+      if(i > +activeI && !el.classList.contains("next-banner")){
+        el.classList.add("hidden-clone-next")
+      }
+    })
+    addSlideClones("prev")
+    addSlideClones("next")
+    
+   function startProgress() {
+  resetProgressBars();
+
+  const currentIndex = getActiveSlideIndex();
+  const currentBar = progressBars[currentIndex];
+
+  currentBar.style.transition = `width ${autoScrollTime}ms linear`;
+  currentBar.style.width = "100%";
+
+  progressTimeout = setTimeout(() => {
+    showNextSlide();
+    startProgress();
+  }, autoScrollTime);
+}
+
+function resetProgressBars() {
+  progressBars.forEach(bar => {
+    bar.style.transition = "none";
+    bar.style.width = "0%";
+  });
+  clearTimeout(progressTimeout);
+}
+
+document.getElementById("nextSlide").addEventListener("click", () => {
+  resetProgressBars();
+  showNextSlide();
+  startProgress();
+});
+
+document.getElementById("prevSlide").addEventListener("click", () => {
+  resetProgressBars();
+  showPrevSlide();
+  startProgress();
+});
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleTouchStart(event) {
+  touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchEnd(event) {
+  touchEndX = event.changedTouches[0].clientX;
+  handleSwipeGesture();
+}
+
+function handleSwipeGesture() {
+  const swipeThreshold = 80;
+
+  if (touchEndX < touchStartX - swipeThreshold) {
+  resetProgressBars();
+  showNextSlide();
+  startProgress();
+  }
+
+  if (touchEndX > touchStartX + swipeThreshold) {
+  resetProgressBars();
+  showPrevSlide();
+  startProgress();
+  }
+}
+    slidesContainer.addEventListener("touchstart", handleTouchStart, false);
+slidesContainer.addEventListener("touchend", handleTouchEnd, false);
+
+if (slidesContainer) {
+  slidesContainer.style.opacity = "1";
+}
+progressBarsContainers.forEach(bar => {
+  bar.style.height = "4px";
+});
+
+      startProgress();
+
+function scrollToBlockAndOpenDropdown(id) {
+  const target = document.getElementById(id);
+  if (!target) return;
+
+  const button = target.querySelector(".product-information_block-button");
+  const dropdown = target.querySelector(".product-dropdown_block");
+
+  const rect = target.getBoundingClientRect();
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const elementY = rect.top + scrollTop;
+  const centerOffset = window.innerHeight / 2 - rect.height / 2;
+
+  window.scrollTo({
+    top: elementY - centerOffset,
+    behavior: 'smooth'
+  });
+
+  setTimeout(() => {
+    if (!dropdown) return;
+
+    // Всегда открываем
+    dropdown.classList.add('open');
+
+    // Всегда обновляем текст
+    if (button) {
+      button.textContent = "{{ 'ts.updated_banner.close' | t }}";
+    }
+  }, 600);
+}
+
+
+document.querySelectorAll('.banner_link').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const id = this.getAttribute('href').substring(1);
+    const block = document.getElementById(id);
+    if (block) {
+      e.preventDefault();
+      scrollToBlockAndOpenDropdown(id);
+    }
+  });
+});
+
+
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Updated banner",
+  "settings": [
+    {
+      "type": "number",
+      "id": "autoscroll",
+      "label": "Seconds to autoscroll",
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name":"banner",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id":"isActive",
+          "label": "Active"
+        },
+        {
+          "type": "text",
+          "id": "links_to",
+          "label": "Links to"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "html",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "liquid",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id":"link",
+          "label": "Page"
+        },
+        {
+        "type": "url",
+        "id": "link-img",
+        "label": "Link on image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Updated banner"
+    }
+  ]
+}
+{% endschema %}

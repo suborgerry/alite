@@ -1,0 +1,40 @@
+{
+  "ts": {
+    "bottom_bar": {
+      "choose": "Odaberite simbole",
+      "choose-products": "Odaberite proizvode",
+      "total": "Ukupno: ",
+      "items": " stavke",
+      "min": "Min. naručiti 2 kom",
+      "checkout": "Provjeri"
+    },
+    "footer": {
+      "sign_up": "Prijaviti se",
+      "email": "Unesite svoju e-poštu"
+    },
+    "products": {
+      "add_cart": "Dodaj u korpu"
+    },
+    "header": {
+      "account": "Račun",
+      "cart": "Cart",
+      "menu_label": "Nanofilm na registarskim tablicama"
+    },
+    "bar": {
+      "buy": "Kupi",
+      "more": " više",
+      "symbols": "simboli i",
+      "get": " DOBITI ",
+      "off": "% ISKLJUČENO",
+      "congratulations": "🥳 Čestitamo! ",
+      "discount": "Imate 30% POPUSTA",
+      "right_discount": "% POPUSTA"
+    }
+  },
+  "sections": {
+    "ts-breadcrumbs": {
+      "back": "Povratak na prethodnu stranicu",
+      "catalog": "Katalog"
+    }
+  }
+}

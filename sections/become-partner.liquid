@@ -1,0 +1,139 @@
+{% style %}
+    .become-partner_section{
+      margin-top:30px;
+      margin-bottom:30px;
+    }
+  .become-partner_title{
+    font-size:24px;
+    font-weight:700;
+    color:#000;
+  }
+  .become-partner_text{
+    font-size:14px;
+    color:#000;
+  }
+  .become-partner_buttons{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+  }
+  .become-partner_button:link,.become-partner_button:visited{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    text-decoration:none;
+    background-color:#F7F7F7;
+    border-radius:15px;
+    width:100%;
+    padding: 17px 20px;
+  }
+  .button-divider{
+    display: block !important;
+    height: 20px;
+    width:2px;
+    border-radius:10px;
+    background-color:#000;
+  }
+  .become-partner_button-title{
+    font-size:16px;
+    font-weight:700;
+    color:#000;
+  }
+  .become-partner_button-text{
+    font-size:16px;
+    color:#000;
+  }
+  .become-partner_button > div:first-child{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    justify-content:center;
+  }
+  .button-arrow{
+    height:24px;
+    width:24px;
+    background-color:#000000;
+    border-radius:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all 0.3s;
+  }
+  .become-partner_button:hover .button-arrow,.become-partner_button:active .button-arrow{
+        background-color:#DA9DFF;
+  }
+  .become-partner_button:hover .button-arrow path,.become-partner_button:active .button-arrow path{
+        fill:#000;
+  }
+  @media screen and (max-width:1000px){
+      .become-partner_buttons{
+    grid-template-columns: 1fr;
+  }
+  }
+    @media screen and (max-width:500px){
+.become-partner_button-title,.become-partner_button-text{
+  font-size:12px;
+}
+  .become-partner_button:link, .become-partner_button:visited{
+    padding:12px;
+  }
+  }
+{% endstyle %}
+<section class="become-partner_section page-width">
+  <h2 class="become-partner_title">{{ section.settings.title }}</h2>
+  <p class="become-partner_text">{{ section.settings.text }}</p>
+  <div class="become-partner_buttons">
+    {% for block in section.blocks %}
+      <a href="{{ block.settings.link }}" class="become-partner_button"><div><span class="become-partner_button-title">{{ block.settings.title }}</span> <div class="button-divider"></div><span class="become-partner_button-text">{{ block.settings.text }}</span></div>  <div class="button-arrow"><svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 5.64648C0.585786 5.64648 0.25 5.98227 0.25 6.39648C0.25 6.8107 0.585786 7.14648 1 7.14648L1 5.64648ZM14.3875 6.92682C14.6804 6.63392 14.6804 6.15905 14.3875 5.86616L9.6145 1.09318C9.32161 0.800291 8.84674 0.800291 8.55384 1.09318C8.26095 1.38608 8.26095 1.86095 8.55384 2.15384L12.7965 6.39649L8.55384 10.6391C8.26095 10.932 8.26095 11.4069 8.55384 11.6998C8.84674 11.9927 9.32161 11.9927 9.6145 11.6998L14.3875 6.92682ZM1 7.14648L13.8571 7.14649L13.8571 5.64649L1 5.64648L1 7.14648Z" fill="white"/>
+</svg>
+</div></a>
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Become partner",
+    "settings": [
+      {
+        "type": "text",
+        "id":"title",
+        "label": "title",
+      },
+      {
+        "type": "text",
+        "id":"text",
+        "label": "text",
+      },
+    ],
+    "blocks": [
+      {
+        "type": "link",
+        "name":"link",
+        "limit": 2,
+        "settings": [
+          {
+            "type": "text",
+            "id":"title",
+            "label":"title",
+          },
+          {
+            "type": "text",
+            "id":"text",
+            "label":"text",
+          },
+          {
+            "type": "url",
+            "id":"link",
+            "label": "link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Become partner"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,488 @@
+<style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul, li, a, span, div {
+    letter-spacing: normal;
+  }
+
+  .ts-discount-control {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .ts-controlbar:not(.ts-controlbar--collection) {
+    background: #fff;
+    height: fit-content;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 1;
+  }
+
+  .ts-controlbar__container {
+    max-width: 1240px;
+    padding: 0 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ts-controlbar__left a {
+    display: none;
+    width: 428px;
+    height: 50px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: #000;
+    text-align: center;
+    font-family: "ShopifySans" !important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    border-radius: 109px;
+    background: #4BFE85;
+  }
+
+  .ts-controlbar__left a .ts-icon__arrow {
+    display: flex;
+    transition: transform 0.3s;
+  }
+
+  .ts-controlbar__left a:hover .ts-icon__arrow {
+    transform: translateX(5px);
+  }
+
+  .ts-controlbar__info {
+    display: block;
+  }
+
+  .ts-controlbar__info p {
+    margin: 0;
+    width: fit-content;
+    font-family: "ShopifySans" !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .ts-total {
+    color: #A9A9A9;
+    font-size: 14px;
+  }
+
+  .ts-price {
+    color: #000;
+  }
+
+  .ts-price__discount {
+    color: #C5C5C5;
+    text-decoration: line-through;
+  }
+
+  .ts-controlbar__checkout {
+    display: flex;
+    width: 428px;
+    height: 50px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    cursor: pointer;
+    border-radius: 47px;
+    background: #4BFE85;
+    color: #000;
+    text-align: center;
+    font-family: "ShopifySans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .ts-controlbar__checkout-error {
+    display: none;
+  }
+
+  .ts-controlbar__left[show] a {
+    display: flex;
+  }
+
+  .ts-controlbar__left[show] .ts-controlbar__info,
+  .ts-controlbar__right[show] .ts-controlbar__checkout-success {
+    display: none;
+  }
+
+  .ts-controlbar__right[show] .ts-controlbar__checkout-error {
+    display: inline-block;
+  }
+
+  .ts-controlbar__right[show] .ts-controlbar__checkout {
+    opacity: 0.6;
+    background: #E9E9E9;
+    cursor: no-drop;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ts-controlbar__checkout,
+    .ts-controlbar__left a {
+      width: 180px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ts-controlbar__container {
+      padding: 0 16px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .ts-controlbar__checkout,
+    .ts-controlbar__left a {
+      width: 160px;
+    }
+  }
+</style>
+
+<style>
+  .ts-discount-control .ts-header__discount {
+    width: 100%;
+    padding: 10px 0;
+    background: #F4F4F4;
+    border-top-right-radius: 21px;
+    border-top-left-radius: 21px;
+    box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .header-discount__container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-discount__mesage-top p {
+    color: #000;
+    font-family: "ShopifySans" !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: normal;
+    margin: 0;
+  }
+
+  .header-discount__bar .ts-bar {
+    width: 490px;
+    height: 10px;
+    border: 1px solid #D4D4D4;
+    border-radius: 9px;
+    position: relative;
+  }
+
+  .header-discount__bar .ts-bar span {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 10%;
+    min-width: 10%;
+    height: 10px;
+    border-radius: 9px;
+    transition: width 0.5s, background 0.3s;
+  }
+
+  .header-discount__bar.error .ts-bar span {
+    background: #FE4B4B;
+  }
+
+  .header-discount__bar.warn .ts-bar span {
+    background: #FFC001;
+  }
+
+  .header-discount__bar.success .ts-bar span{
+    background: #48FA7A;
+  }
+
+  .header-discount__mesage-top.final .header-discount__mesage,
+  .header-discount__mesage-final {
+    display: none;
+  }
+
+  .header-discount__mesage-top.final .header-discount__mesage-final {
+    display: block;
+  }
+
+  @media screen and (max-width: 989px) {
+    .header-discount__bar .ts-bar {
+      width: 130px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .header-discount__container {
+      padding: 0 16px;
+    }
+  }
+</style>
+
+<div class="ts-discount-control">
+  <div id="ts-discount-bar" class="ts-header__discount header-discount">
+    <div class="header-discount__container">
+      <div class="header-discount__mesage-top {% if cart.item_count >= 10 %}final{% endif %}">
+        <p class="header-discount__mesage">
+          {{ 'ts.bar.buy' | t}} <span class="header-discount__count">4</span><span style="display: none;" class="ts-header__more-text">{{ 'ts.bar.more' | t}}</span> {{ 'ts.bar.symbols' | t}}<span style="font-weight: bold; color: #f00;">{{ 'ts.bar.get' | t}}<span class="header-discount__pers">10</span>{{ 'ts.bar.off' | t}}</span>
+        </p>
+        <p class="header-discount__mesage-final">
+          {{ 'ts.bar.congratulations' | t}}<strong>{{ 'ts.bar.discount' | t}}</strong>
+        </p>
+      </div>
+      <div class="header-discount__bar error">
+        <div class="ts-bar">
+          <span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ts-controlbar" data-items="{{ cart.item_count }}">
+    <div class="ts-controlbar__container">
+      <div class="ts-controlbar__left" {% if cart.item_count < 2 %}show{% endif %}>
+        <a href="#ts-numbers" data-scroll>
+          <span>{{ 'ts.bottom_bar.choose' | t }}</span>
+          <span class="ts-icon__arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8" fill="none">
+              <path d="M13.8536 4.35355C14.0488 4.15829 14.0488 3.84171 13.8536 3.64645L10.6716 0.464466C10.4763 0.269204 10.1597 0.269204 9.96447 0.464466C9.7692 0.659728 9.7692 0.976311 9.96447 1.17157L12.7929 4L9.96447 6.82843C9.7692 7.02369 9.7692 7.34027 9.96447 7.53553C10.1597 7.7308 10.4763 7.7308 10.6716 7.53553L13.8536 4.35355ZM0.5 4.5H13.5V3.5H0.5V4.5Z" fill="black"/>
+            </svg>
+          </span>
+        </a>
+        <div class="ts-controlbar__info">
+          <p class="ts-total">{{ 'ts.bottom_bar.total' | t }}<span class="ts-icon__count">{{ cart.item_count }}</span>{{ 'ts.bottom_bar.items' | t }}</p>
+          <p class="ts-price">
+            <span class="ts-price__original" {% if cart.item_count > 3 %}style="color: #EC4545;"{% endif %}>
+              {% if cart.item_count >= 10 %}
+                {% assign tsDiscount = 0.7 %}
+              {% elsif cart.item_count >= 6 %}
+                {% assign tsDiscount = 0.75 %}
+              {% elsif cart.item_count >= 4 %}
+                {% assign tsDiscount = 0.9 %}
+              {% else %}
+                {% assign tsDiscount = 1 %}
+              {% endif %}
+              {{ cart.original_total_price | times: tsDiscount | money }}
+            </span>
+            
+            <span class="ts-price__discount">
+              {{ cart.original_total_price | money }}
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="ts-controlbar__right" {% if cart.item_count < 2 %}show{% endif %}>
+        <div class="ts-controlbar__checkout">
+          <span class="ts-controlbar__checkout-error">{{ 'ts.bottom_bar.min' | t }}</span>
+          <span class="ts-controlbar__checkout-success">{{ 'ts.bottom_bar.checkout' | t }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function tsUpdateCounts(cart) {
+    const controlBar = document.querySelector(".ts-controlbar:not(.ts-controlbar--collection)");
+
+    fetch(window.Shopify.routes.root + 'cart.js').then(res => res.json()).then(cart => {
+      if (cart.item_count > 1) {
+        controlBar.querySelector(".ts-controlbar__right").removeAttribute('show');
+        controlBar.querySelector(".ts-controlbar__left").removeAttribute('show');
+      } else if (cart.item_count > 0) {
+        controlBar.querySelector(".ts-controlbar__left").removeAttribute('show');
+      } else {
+        controlBar.querySelector(".ts-controlbar__right").setAttribute('show', true);
+        controlBar.querySelector(".ts-controlbar__left").setAttribute('show', true);
+      }
+
+      document.querySelector(".ts-cart__bubble").innerHTML = cart.item_count > 0 ? ` (${cart.item_count})` : ``;
+
+      if (cart.item_count > 0) {
+        document.querySelector(".ts-cart__bubble-mob").style.display = "flex";
+        document.querySelector(".ts-cart__bubble-mob").innerHTML = `${cart.item_count}`;
+        if (document.querySelector(".ts-header__more-text")) {
+          document.querySelector(".ts-header__more-text").style.display = "inline";
+        }
+      } 
+
+      let discountRate = 1;
+      let leftToDiscount = 0;
+
+      if (cart.item_count >= 10) {
+        discountRate = 0.7;
+        leftToDiscount = 0;
+      } else if (cart.item_count >= 6) {
+        discountRate = 0.75;
+        leftToDiscount = 10 - cart.item_count;
+      } else if (cart.item_count >= 4) {
+        discountRate = 0.9; 
+        leftToDiscount = 6 - cart.item_count;
+      } else {
+        leftToDiscount = 4 - cart.item_count;
+        discountRate = 1;
+      }
+
+      let originalPrice = controlBar.querySelector(".ts-price__original");
+      let discountPrice = controlBar.querySelector(".ts-price__discount");
+      let symbol = originalPrice.innerText.replace(/[0-9]/g, '').replaceAll(",", "").replaceAll(".", "").trim();
+
+      let discountAmount = 10;
+      if (cart.item_count >= 6) {
+        discountAmount = 30
+      } else if (cart.item_count >= 4) {
+        discountAmount = 25;
+      } else {
+        discountAmount = 10;
+      }
+              
+      const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+      });
+
+      const price = formatter.format(cart.original_total_price / 100).replace("$", "");
+
+      if (discountRate == 1) {
+        originalPrice.innerText = symbol + price;
+      } else {
+        discountPrice.innerText = symbol + price;
+      }
+
+      if (discountRate !== 1) {
+        originalPrice.style.color = "#EC4545";
+        discountPrice.style.display = "inline-block";
+
+        const priceDiscounted = formatter.format((cart.original_total_price * discountRate) / 100).replace("$", "");
+        originalPrice.innerText = symbol + priceDiscounted;
+      } else {
+        discountPrice.style.display = "none";
+      }
+
+      // header
+
+      document.querySelector(".header-discount__count").innerText = leftToDiscount;
+      document.querySelector(".header-discount__pers").innerText = discountAmount;
+
+      if (leftToDiscount == 0) {
+        document.querySelector(".header-discount__mesage-top").classList.add("final");
+      }
+
+      // Calculate bar 
+
+      const sectionBar = document.querySelector(".ts-discount__bar");
+
+      let sectionDiscountMessage = document.querySelector(".ts-discount__message-2");
+      if (sectionDiscountMessage && sectionDiscountMessage.innerText.includes("{count_left}")) {
+        sectionDiscountMessage.innerHTML = `${sectionDiscountMessage.innerText.split("{count_left}")[0]}<span class="ts-left-count">${leftToDiscount}</span>${sectionDiscountMessage.innerText.split("{count_left}")[1]}`;
+      } else {
+        if(sectionDiscountMessage && sectionDiscountMessage.querySelector(".ts-left-count")) {
+          sectionDiscountMessage.querySelector(".ts-left-count").innerText = leftToDiscount;
+        }
+      }
+
+      if (leftToDiscount == 0 && document.querySelector(".ts-discount__main")) {
+        document.querySelector(".ts-discount__main").classList.add("final");
+      }
+
+      let message = "error";
+      let widthBar = 10;
+
+      if (cart.item_count == 0 || cart.item_count == 1 || cart.item_count == 4 || cart.item_count == 6) {
+        message = "error";
+      } else if (cart.item_count > 1 && cart.item_count < 4) {
+        message = "warn";
+      } else if (cart.item_count == 5) {
+        message = "warn";
+      } else if (cart.item_count > 6 && cart.item_count < 10) { 
+        message = "warn";
+      } else {
+        message = "success";
+      }
+
+      if (cart.item_count == 0 || cart.item_count == 4 || cart.item_count == 6) {
+        widthBar = 10;
+      } else if (cart.item_count == 1 || cart.item_count == 7) {
+        widthBar = 25;
+      } else if (cart.item_count == 2 || cart.item_count == 5 || cart.item_count == 8) {
+        widthBar = 50;
+      } else if (cart.item_count == 3 || cart.item_count == 9) {
+        widthBar = 75;
+      } else {
+        widthBar = 100;
+      }
+
+      const headerBar = document.querySelector(".header-discount__bar");
+
+      if(sectionBar) {
+        sectionBar.classList.remove("error");
+        sectionBar.classList.remove("warn");
+        sectionBar.classList.remove("success");
+        sectionBar.classList.add(message);
+      }
+
+      if(headerBar) {
+        headerBar.classList.remove("error");
+        headerBar.classList.remove("warn");
+        headerBar.classList.remove("success");
+        headerBar.classList.add(message);
+      }
+
+
+      if (widthBar == 100) {
+        if(sectionBar) {
+          sectionBar.querySelector(".ts-bar span").style.width = `calc(100% + 2px)`;
+        }
+        if(headerBar) {
+          headerBar.querySelector(".ts-bar span").style.width = `calc(100% + 2px)`;
+        }
+      } else {
+        if(sectionBar) {
+          sectionBar.querySelector(".ts-bar span").style.width = widthBar + "%";
+        }
+        if(headerBar){
+          headerBar.querySelector(".ts-bar span").style.width = widthBar + "%";
+        }
+      }
+
+      if(sectionBar) {
+        sectionBar.querySelector("span[data-discount]").innerText = discountAmount + "{{ 'ts.bar.right_discount' | t }}";
+      }
+
+      controlBar.querySelector(".ts-icon__count").innerText = cart.item_count;
+      controlBar.setAttribute("data-items", cart.item_count);
+    })
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    tsUpdateCounts();
+  })
+
+  document.querySelector(".ts-controlbar__checkout").addEventListener("click", (e) => {
+    if (!e.target.closest(".ts-controlbar__right").hasAttribute("show")) {
+      window.location.pathname = "/checkout";
+    }
+  })
+</script>
