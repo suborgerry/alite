@@ -53,3 +53,5 @@ dev/yarn.lock
 converter/processed
 converter/original
 .shopify
+
+shopify
