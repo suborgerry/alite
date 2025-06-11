@@ -12,6 +12,14 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  .description-wrapper.collapsed {
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  max-height: 130px;
+}
+  p, a{
+    font-size:16px;
+  }
 {%- endstyle -%}
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">

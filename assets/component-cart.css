@@ -297,7 +297,7 @@ font-weight: 700;
   cursor: pointer;
 }
 .subtotals_product{
-  margin:30px 0;
+  margin:12px 0;
 }
 .subtotals_product_text{
   font-size: 16px;
@@ -335,6 +335,9 @@ font-weight: 700;
 .subtotals_product-card button:hover{
   background: #DA9DFF;
   color: #000;
+}
+.price--end{
+  text-align: left !important;
 }
 @media screen and (max-width: 750px) {
   .cart-items_list{

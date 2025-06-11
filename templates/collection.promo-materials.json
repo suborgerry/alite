@@ -1,1 +1,563 @@
-{"sections":{"ts_breadcrumbs_wnGETP":{"type":"ts-breadcrumbs","settings":{}},"rich_text_CeHneg":{"type":"rich-text","blocks":{"heading_RTAiY7":{"type":"heading","settings":{"heading":"<strong>Material Nanofilm Ecoslick™<\/strong>","heading_size":"h2"}},"text_6ixhx9":{"type":"text","settings":{"text":"<p>Ultimate solution against radars<\/p>"}}},"block_order":["heading_RTAiY7","text_6ixhx9"],"custom_css":[".rich-text__blocks > * + * {margin-top: 1rem;}",".show-more-description {display: none;}","@media (max-width: 768px) {.rich-text {padding-bottom: 0px; }}",".rich-text {padding-top: 0px; padding-bottom: 20px;}"],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"background-1","full_width":true,"padding_top":40,"padding_bottom":32}},"product-grid":{"type":"main-collection-product-grid","custom_css":[".scroll_year-block_content {gap: 0px;}",".active {border: 1px rgba(0, 0, 0, 1) solid;}",".ts-product__media {min-height: 130px !important;}"],"settings":{"show_progress_bar":true,"products_per_page":48,"columns_desktop":6,"custom_cards":true,"custom_param_height":"Material Size","custom_param_suitable_for":"Suitable for","custom_param_color":"Color","param_color":"Black","custom_param_color_svg":"<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" shape-rendering=\"geometricPrecision\">\n<rect x=\"1\" y=\"1\" width=\"22\" height=\"22\" rx=\"7\" fill=\"url(#paint0_linear_6451_470)\" stroke=\"#EDEDED\" stroke-width=\"2\"><\/rect>\n<rect x=\"0.25\" y=\"0.25\" width=\"23.5\" height=\"23.5\" rx=\"7.75\" stroke=\"#65666A\" stroke-width=\"0.5\"><\/rect>\n<defs>\n<lineargradient id=\"paint0_linear_6451_470\" x1=\"12\" y1=\"0\" x2=\"12\" y2=\"24\" gradientunits=\"userSpaceOnUse\">\n<stop><\/stop>\n<stop offset=\"0.37\" stop-color=\"#282828\" stop-opacity=\"0.74\"><\/stop>\n<stop offset=\"1\"><\/stop>\n<\/lineargradient>\n<\/defs>\n<\/svg>","alt_size_icon_svg":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n<g clip-path=\"url(#clip0_40000276_79)\">\n<path d=\"M13.875 15.4277V21.1875C13.875 22.223 13.0355 23.0625 12 23.0625H2.8125C1.77698 23.0625 0.9375 22.223 0.9375 21.1875V12C0.9375 10.9645 1.77698 10.125 2.8125 10.125H8.57227\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M6.375 0.9375H3.75C2.1967 0.9375 0.9375 2.1967 0.9375 3.75V6.375\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M10.125 0.9375H13.875\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M17.625 0.9375H20.25C21.8033 0.9375 23.0625 2.1967 23.0625 3.75V6.375\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M23.0625 17.625V20.25C23.0625 21.8033 21.8033 23.0625 20.25 23.0625H17.625\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M23.0625 10.125V13.875\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M6.92383 17.0758L18.763 5.23669\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M6.375 14.8125V17.625H9.1875\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<path d=\"M16.5 4.6875H19.3125V7.5\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/g>\n<defs>\n<clippath id=\"clip0_40000276_79\">\n<rect width=\"24\" height=\"24\" fill=\"white\"><\/rect>\n<\/clippath>\n<\/defs>\n<\/svg>","alt_version_icon_svg":"<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M9.21557 14.1033H2.50352C2.29435 14.1042 2.094 14.1923 1.94609 14.3484C1.79819 14.5045 1.71472 14.716 1.71387 14.9367V22.024C1.71387 22.4851 2.06824 22.8574 2.50352 22.8574H9.21881C9.6557 22.8574 10.0085 22.4834 10.0085 22.024V14.9367C10.0076 14.716 9.92414 14.5045 9.77623 14.3484C9.62833 14.1923 9.42797 14.1042 9.21881 14.1033H9.21557ZM21.4956 14.1033H14.7804C14.5712 14.1042 14.3708 14.1923 14.2229 14.3484C14.075 14.5045 13.9916 14.716 13.9907 14.9367V22.024C13.9907 22.4851 14.3435 22.8574 14.7804 22.8574H21.4956C21.9325 22.8574 22.2853 22.4834 22.2853 22.024V14.9367C22.2844 14.716 22.201 14.5045 22.0531 14.3484C21.9052 14.1923 21.7048 14.1042 21.4956 14.1033ZM9.21557 1.14477H2.50352C2.29435 1.14567 2.094 1.23377 1.94609 1.38986C1.79819 1.54596 1.71472 1.75741 1.71387 1.97817V9.06541C1.71387 9.52651 2.06824 9.8988 2.50352 9.8988H9.21881C9.6557 9.8988 10.0085 9.5248 10.0085 9.06541V1.97646C10.0076 1.75571 9.92414 1.54425 9.77623 1.38815C9.62833 1.23206 9.42797 1.14397 9.21881 1.14307L9.21557 1.14477ZM13.8532 6.16732C13.3661 6.07852 13.3661 5.34247 13.8532 5.25196C14.7145 5.09387 15.5116 4.66867 16.143 4.03056C16.7745 3.39245 17.2115 2.57035 17.3985 1.66906L17.4276 1.52731C17.5328 1.02011 18.2173 1.01498 18.3273 1.52219L18.3629 1.68784C18.5569 2.58528 18.9979 3.4022 19.6304 4.036C20.2629 4.66981 21.0587 5.09225 21.918 5.25025C22.4067 5.33906 22.4067 6.08023 21.918 6.17074C21.0587 6.32875 20.2629 6.75118 19.6304 7.38499C18.9979 8.01879 18.5569 8.83571 18.3629 9.73315L18.3273 9.89709C18.2173 10.4043 17.5344 10.4009 17.4276 9.89368L17.3985 9.75193C17.2118 8.85033 16.7749 8.02786 16.1434 7.38942C15.512 6.75099 14.7147 6.32553 13.8532 6.16732Z\" stroke=\"black\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path>\n<\/svg>","custom_param_color_svg_mob":"<svg width=\"25\" height=\"24\" viewbox=\"0 0 25 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<rect x=\"1.5\" y=\"1\" width=\"22\" height=\"22\" rx=\"7\" fill=\"url(#paint0_linear_6451_2426)\" stroke=\"#EDEDED\" stroke-width=\"2\"><\/rect>\n<defs>\n<lineargradient id=\"paint0_linear_6451_2426\" x1=\"12.5\" y1=\"0\" x2=\"12.5\" y2=\"24\" gradientunits=\"userSpaceOnUse\">\n<stop><\/stop>\n<stop offset=\"0.37\" stop-color=\"#282828\" stop-opacity=\"0.74\"><\/stop>\n<stop offset=\"1\"><\/stop>\n<\/lineargradient>\n<\/defs>\n<\/svg>","custom_param_version":"Version","custom_short_desc1":"<p><strong>The material<\/strong> is solid black and not transparent. To use it, you'll need to carefully cut along the outlines of the letters on your license plate to ensure a precise fit.<\/p>","custom_short_desc2":"","enable_states":false,"enable_cities":false,"enable_product_details":false,"states_json":"","custom_element_text":"This is a custom element","state_placeholder":"State","state_collection":"","image_ratio":"square","show_secondary_image":true,"show_vendor":false,"show_rating":false,"enable_quick_add":true,"enable_filtering":false,"filter_type":"vertical","enable_sorting":true,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"also_like_eUEcDT":{"type":"also-like","custom_css":[".ts-products-list .ts-container {padding: 0px 20px 0px 20px; margin-top: 30px;}",".ts-products__title {font-size: 30px;}","@media screen and (max-width: 900px) {.ts-products__title {font-size: 24px; }}"],"name":"Also like","settings":{"title":"You may also like","products":["blackout-license-plate-hider-for-usa-single","blackout-license-plate-hider-for-europe-single","folding-frame-on-license-plate-on-a-cable","alite-nanotapes-license-plate-frame-for-1-license-plate-us-version","alite-nanotapes-license-plate-frame-for-1-license-plate-eu-version"],"custom_id":""}},"ts_video_slider_3NcDg7":{"type":"ts-video-slider","blocks":{"video_MmKhzn":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/ugc 2 material.mp4","text_line_1":"Recorded by","text_line_2":"Sophia Smith, United States","flag":"shopify:\/\/shop_images\/Frame_1_2_43f9b440-c7b0-46f4-a08d-201dc75c31ed.png","flag_width":25}},"video_wzETCB":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/ugc 1 material.mp4","text_line_1":"Recorded by","text_line_2":"Olivia Williams, United States","flag":"shopify:\/\/shop_images\/Frame_1_2_35493091-1c8c-45c7-a61b-8ece55a00b82.png","flag_width":25}},"video_h9fkga":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/ugc 3 material.mp4","text_line_1":"Recorded by","text_line_2":"William Garcia, United States","flag":"shopify:\/\/shop_images\/Frame_1_2_8abc5fc5-ce7a-44fa-999a-1d61b00eefb4.png","flag_width":25}}},"block_order":["video_MmKhzn","video_wzETCB","video_h9fkga"],"custom_css":[".ts-video__inner {max-height: 550px; display: block; cursor: pointer;}",".ts-videos__title {margin-top: 30px;}",".ts-videos {max-height: 700px; border-bottom: 0;}","@media screen and (max-width: 1220px) {.ts-video__inner {max-height: 400px; display: block; cursor: pointer; } .ts-videos {max-height: 600px; border-bottom: 0; } .ts-videos__container::after {opacity: 0; }}"],"settings":{"title":"Testimonials","description":""}},"trustpilot_reviews_MWjBL3":{"type":"trustpilot-reviews","blocks":{"review_Hzp8M8":{"type":"review","settings":{"author":"Caresse Lessard","review_text":"The installation was quick and effortless, yet the results were outstanding. I highly recommend this product to anyone looking to protect their plates.","review_title":"Excellent quality and fast shipping","review_date":"05-02-2025"}},"review_QCTL8i":{"type":"review","settings":{"author":"Armand Savard","review_text":"Delivery was a bit delayed, but great customer service and quality made up for it.","review_title":"Works like a charm!","review_date":"04-18-2025"}},"review_MYUYEm":{"type":"review","settings":{"author":"Vallis Gilbert","review_text":"The film is easy to cut to the perfect size and fits my plates flawlessly. It’s a really cool product!","review_title":"Fast delivery and great product","review_date":"04-02-2025"}},"review_mxQL4E":{"type":"review","settings":{"author":"Germain Daoust","review_text":"The delivery was slightly delayed, but the customer service was great, and the quality of the film made up for the wait. Definitely worth it!","review_title":"Highly recommend!","review_date":"05-21-2025"}},"review_RAicpf":{"type":"review","settings":{"author":"Dalila Pisano","review_text":"I’ve been using this film for several months now without any issues, even though I wash my car frequently. The quality is top-notch!","review_title":"Perfect for my needs","review_date":"03-20-2025"}},"review_EapPWd":{"type":"review","settings":{"author":"Sydney Cinq-Mars","review_text":"I’ve taken my car through the car wash multiple times, and the film is holding up perfectly. This is honestly an incredible product!","review_title":"Best on the market!","review_date":"03-17-2025"}}},"block_order":["review_Hzp8M8","review_QCTL8i","review_MYUYEm","review_mxQL4E","review_RAicpf","review_EapPWd"],"custom_css":[".reviews-section {padding: 0; margin-bottom: 20px;}"],"settings":{}},"faq_pUUU3z":{"type":"faq","blocks":{"product_tab_9D9jQK":{"type":"product_tab","settings":{"product_handle":"1","title":"NANOFILM","subtitle":"Anti-radar Stickers","image":"shopify:\/\/shop_images\/main_nanofilm1.png","icon_svg":""}},"product_tab_Ft3fAd":{"type":"product_tab","settings":{"product_handle":"2","title":"MATERIAL","subtitle":"Universal material","image":"shopify:\/\/shop_images\/material_mainnn_e5c8dcb0-9b30-40cd-8c9d-06d41f2f6fd5.png","icon_svg":""}},"product_tab_tg9TUP":{"type":"product_tab","settings":{"product_handle":"3","title":"BLACKOUT","subtitle":"Stealth in a сlick","image":"shopify:\/\/shop_images\/blackout_mainnn.png","icon_svg":""}},"product_tab_9Xb4jC":{"type":"product_tab","settings":{"product_handle":"4","title":"FLIPPER+","subtitle":"Stealth in a сlick","image":"shopify:\/\/shop_images\/flipper_mainnn1.png","icon_svg":""}},"product_tab_iejiWz":{"type":"product_tab","settings":{"product_handle":"5","title":"NANOTAPES","subtitle":"Click and Stick","image":"shopify:\/\/shop_images\/nanotape_mainnn.png","icon_svg":""}},"faq_item_V8e88E":{"type":"faq_item","disabled":true,"settings":{"product_handle":"1","main_title":"","sub_title":"","question_1":"What does the nanofilm include?","answer_1":"When you order one nanofilm, you get a one-digit sticker. You can add the necessary symbols to the cart on website.","question_2":"What happens if the nanofilm is scratched?","answer_2":"It is quite difficult to damage the Ecoslick® sticker because it is attached very firmly, forming an almost inseparable bond with the license plate. Even if there are scratches, it will be very difficult for the speed camera to determine which symbol is covered.","question_3":"What happens to the nanofilm after washing?","answer_3":"Ecoslick nanofilm is not afraid of washing, any type of car wash. The film is almost impossible to tear off with water pressure. Therefore, be extremely careful and precise when gluing.","question_4":"Is it necessary to put a film on the rear license plate of a car?","answer_4":"Depending on the terrain, speed cameras may be located in two directions and will record your car from both sides. We recommend gluing the film on both sides.","question_5":"How is Ecoslick® nanofilm installed?","answer_5":"The sticker should be applied very carefully, since it will be impossible to change the position of the pasted film - it fits tightly to the surface of the number. You can see visual instructions on our set up page.","question_6":"How many symbols are best covered with film?","answer_6":"The more symbols are hidden under the nanofilm, the less opportunities there are to decipher the number from the camera recording. It is recommended to cover all front and back license plates symbols.","question_7":"How long will nanofilm last?","answer_7":"Ecoslick® film is designed for many years of use, since it is created from durable, wear-resistant materials designed to withstand difficult weather conditions, temperature changes and varying degrees of mechanical impact. The warranty period is 5 years.","question_8":"What is the difference between an infrared flash and a camera flash?","answer_8":"Infrared light is highly focused rays that are invisible to the human eye and are different from the bright flash of a camera. It is in the infrared spectrum that automatic speed cameras operate. It is against this spectrum that Ecoslick® film acts.","question_9":"What does the camera see when using nanofilm?","answer_9":"The camera only sees the illuminated area where the symbols are hidden under the Ecoslick® stickers, which blends into the white background. Accordingly, the digital system does not recognize the number and does not record it in the database of traffic violations. There is no one to give a fine!","question_10":"Does nanofilm work during the day?","answer_10":"The infrared beams of speed cameras work both day and night.","question_11":"Why should I buy your product?","answer_11":"Our Ecoslick® nanofilm is manufactured in Germany and is therefore reliable and effective. All numbers and symbols comply with the national standards of each country. On the market you can find offers with a suspiciously low price - accordingly, such a film will not protect you from the eyes of a traffic cop or simply will not fit the size of your license plate.","question_12":"","answer_12":"","question_13":"","answer_13":"","question_14":"","answer_14":"","question_15":"","answer_15":""}},"faq_item_kgYQJz":{"type":"faq_item","settings":{"product_handle":"2","main_title":"FAQ","sub_title":"","question_1":"What does a nano-film include?","answer_1":"When ordering one nano-film, you receive a piece of material from which you can cut out the letters you need on your own.","question_2":"What happens if the nanofilm is scratched?","answer_2":"It is quite difficult to damage the Ecoslick® because it is attached very firmly, forming an almost inseparable bond with the license plate. Even if there are scratches, it will be very difficult for the speed camera to determine which symbol is covered.","question_3":"What happens to the nanofilm after washing?","answer_3":"Ecoslick nanofilm is not afraid of washing, any type of car wash. The film is almost impossible to tear off with water pressure. Therefore, be extremely careful and precise when gluing.","question_4":"Is it necessary to put a film on the rear license plate of a car?","answer_4":"Depending on the terrain, speed cameras may be located in two directions and will record your car from both sides. We recommend gluing the film on both sides.","question_5":"","answer_5":"","question_6":"How many symbols are best covered with film?","answer_6":"The more symbols are hidden under the nanofilm, the less opportunities there are to decipher the number from the camera recording. It is recommended to cover all front and back license plates symbols.","question_7":"How long will nanofilm last?","answer_7":"Ecoslick® film is designed for many years of use, since it is created from durable, wear-resistant materials designed to withstand difficult weather conditions, temperature changes and varying degrees of mechanical impact. The warranty period is 5 years.","question_8":"What is the difference between an infrared flash and a camera flash?","answer_8":"Infrared light is highly focused rays that are invisible to the human eye and are different from the bright flash of a camera. It is in the infrared spectrum that automatic speed cameras operate. It is against this spectrum that Ecoslick® film acts.","question_9":"What does the camera see when using nanofilm?","answer_9":"The camera only sees the illuminated area where the symbols are hidden under the Ecoslick® stickers, which blends into the white background. Accordingly, the digital system does not recognize the number and does not record it in the database of traffic violations. There is no one to give a fine!","question_10":"Does nanofilm work during the day?","answer_10":"The infrared beams of speed cameras work both day and night.","question_11":"Why should I buy your product?","answer_11":"Our Ecoslick® nanofilm is manufactured in Germany and is therefore reliable and effective. All numbers and symbols comply with the national standards of each country. On the market you can find offers with a suspiciously low price - accordingly, such a film will not protect you from the eyes of a traffic cop or simply will not fit the size of your license plate.","question_12":"Our Ecoslick® nanofilm is manufactured in Germany and is therefore reliable and effective. All numbers and symbols comply with the national standards of each country. On the market you can find offers with a suspiciously low price - accordingly, such a film will not protect you from the eyes of a traffic cop or simply will not fit the size of your license plate.","answer_12":"Easily attach the frame using included screws or adhesive — you can read the full instructions <a href=\"https:\/\/alite.cc\/pages\/user-manual\"><strong>here<\/strong><\/a>.","question_13":"How is Ecoslick® nanofilm installed?","answer_13":"Easily attach the frame using included screws or adhesive — you can read the full instructions <a href=\"https:\/\/alite.cc\/pages\/user-manual\"><strong>here<\/strong><\/a>.","question_14":"","answer_14":"","question_15":"","answer_15":""}},"faq_item_yDF33f":{"type":"faq_item","disabled":true,"settings":{"product_handle":"3","main_title":"BLACKOUT","sub_title":"Stealth license plate","question_1":"What versions of the Alite Blackout License Plate Hider are available?","answer_1":"We offer multiple versions of the Alite Blackout, designed to accommodate both USA and European license plate sizes.\nUSA Versions: <br>\n- Alite Blackout License Plate Hider - for 1 license plate (US version)<br>\n- Alite Blackout License Plate Hider - for 2 license plates (US version)<br>\nEuropean Versions:<br>\n- Alite Blackout License Plate Hider - for 1 license plate (EU version)<br>\n- Alite Blackout License Plate Hider - for 2 license plates (EU version)<br>\nEach version ensures a perfect fit for its designated region, providing a seamless and discreet look.","question_2":"What does nanofilm include","answer_2":"Use the alcohol wipes provided in the kit to thoroughly clean the surface of the license plate. Ensure the plate is free from dust, dirt, and grease. Use the alcohol wipes provided in the kit to thoroughly clean the surface of the license plate.","question_3":"What is included in the Alite Blackout kit?","answer_3":"Each kit contains:<br>\n✅ One or two Alite Blackout frames (depending on the selected version).<br>\n✅ Mounting hardware for secure installation.<br>\n✅ Electrical cables required for installation.<br>\n✅ Installation manual for easy setup.","question_4":"How does the Alite Blackout work?","answer_4":"When activated, the mechanism obscures the license plate, reducing its visibility to cameras. It is designed for controlled use and provides a discreet, seamless effect.","question_5":"Can the frames be visually distinguished from regular license plate holders?","answer_5":"No, the Alite Blackout is designed to be discreet. It looks like a standard license plate holder when not activated.","question_6":"Will the plate fold back due to wind or force?","answer_6":"No, the mechanism is built to withstand wind pressure and external force. It remains secure even during high-speed driving or attempts to manipulate it.","question_7":"What happens if the remote control is lost?","answer_7":"Each kit includes two remote controls for convenience. If both are lost, you may need to contact customer support for replacement.","question_8":"Can I use the Alite Blackout in extreme weather conditions?","answer_8":"Yes, the Alite Blackout is made with durable materials to withstand various weather conditions, including rain, snow, and heat.","question_9":"","answer_9":"","question_10":"","answer_10":"","question_11":"","answer_11":"","question_12":"","answer_12":"","question_13":"","answer_13":"","question_14":"","answer_14":"","question_15":"","answer_15":""}},"faq_item_NiGHFW":{"type":"faq_item","disabled":true,"settings":{"product_handle":"4","main_title":"FLIPPER+","sub_title":"Folding license plate frame","question_1":"What versions of the Alite Flipper+ license plate frames are available?","answer_1":"We offer two versions:\n- A hard traction mechanism for the front plate.\n- A 1-meter cable version for the rear plate.\nAdditionally, you can purchase a bundle that includes frames for both plates.","question_2":"What is included in the Alite Flipper+ kit?","answer_2":"The kit includes:\n- One or two frames (depending on the selected bundle).\n- A remote control unit.\n- Two remote controls.\n*Note: Electric cables for installing the frames are not included in the kit.*","question_3":"How does the Alite Flipper+ work?","answer_3":"When you press the button on the remote, the mechanism folds the license plate downward by 90 degrees, making it face the ground. This prevents cameras from reading the plate.","question_4":"Can the frames be visually distinguished from regular license plate holders?","answer_4":"No. The Alite Flipper+ is designed to be discreet, with all mechanisms and construction hidden within the car body. It looks like a standard license plate holder.","question_5":"Will the plate fold back due to wind or force?","answer_5":"No. The mechanism is designed to resist wind pressure and cannot be folded back by external force. It remains secure during fast driving or under physical attempts to manipulate it.","question_6":"What happens if the remote control is lost?","answer_6":"Each kit includes two remote controls for convenience. If both are lost, you may need to contact customer support for replacement.","question_7":"Can I use the Alite Flipper+ in extreme weather conditions?","answer_7":"Yes, the Alite Flipper+ is built with durable materials designed to withstand various weather conditions, including rain, snow, and heat.","question_8":"","answer_8":"","question_9":"","answer_9":"","question_10":"","answer_10":"","question_11":"","answer_11":"","question_12":"","answer_12":"","question_13":"","answer_13":"","question_14":"","answer_14":"","question_15":"","answer_15":""}},"faq_item_4PYQNE":{"type":"faq_item","disabled":true,"settings":{"product_handle":"5","main_title":"NANOTAPES","sub_title":"Click and stick","question_1":"What is Alite Nanotape?","answer_1":"Alite Nanotape is a frameless license plate mounting system that uses high-strength Velcro and 3M adhesive to securely attach your plate without screws or drilling.","question_2":"What versions of the Alite Nanotape License Plate Holder are available?","answer_2":"There are two versions: one sized for EU plates and one for US plates, ensuring a perfect fit.","question_3":"Will it hold my plate securely?","answer_3":"The 3M adhesive and Velcro system can hold up to 50 kg, providing a rock-solid grip in all conditions.","question_4":"Can I remove and reattach my license plate easily?","answer_4":"The Velcro-based system allows for quick removal and reattachment whenever needed, without losing its strength.","question_5":"Won't it peel off in the rain?","answer_5":"Alite Nanotape is weatherproof, heat-resistant, and durable, ensuring a firm hold in rain, snow, and high temperatures","question_6":"Does it damage the car or license plate?","answer_6":"Each kit includes two remote controls for convenience. If both are lost, you may need to contact customer support for replacement.","question_7":"How long does the adhesive last?","answer_7":"The 3M adhesive is designed for long-term durability, providing a strong bond for years without weakening.","question_8":"How do I install Alite Nanotape?","answer_8":"Installation is simple: <br>\n\nClean the mounting surface thoroughly. <br>\nPeel off the 3M adhesive backing from one side of the Nanotape and stick it to the car body. <br>\nPeel off the backing from the other side and attach the Velcro-mounted license plate. <br>\nPress firmly to secure.","question_9":"","answer_9":"","question_10":"","answer_10":"","question_11":"","answer_11":"","question_12":"","answer_12":"","question_13":"","answer_13":"","question_14":"","answer_14":"","question_15":"","answer_15":""}}},"block_order":["product_tab_9D9jQK","product_tab_Ft3fAd","product_tab_tg9TUP","product_tab_9Xb4jC","product_tab_iejiWz","faq_item_V8e88E","faq_item_kgYQJz","faq_item_yDF33f","faq_item_NiGHFW","faq_item_4PYQNE"],"custom_css":[".selector-header {display: none;}",".product-selector-wrapper {display: none;}",".button-divider {display: none !important;}",".faq-item-heading h3 {font-size: 32px; font-family: \"ShopifySans\" !important;}"],"name":"FAQ by Product","settings":{}},"banner":{"type":"main-collection-banner","custom_css":["@media screen and (min-width: 750px) {.collection-hero__title + .collection-hero__description {font-size: 1.5rem; }}"],"settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"background-1"}},"ts_sticky_col_JNrzpw":{"type":"ts-sticky-col","settings":{"material":true}},"popup_LgzdWn":{"type":"popup","disabled":true,"custom_css":[".pop-up {bottom: 100px !important;}"],"settings":{"bg_image":"shopify:\/\/shop_images\/Frame_1000002982.svg","bg_gradient":"radial-gradient(circle, #DA9DFF, #a567cb);","top_svg":"shopify:\/\/shop_images\/entypo_flower.svg","top_svg_width":48,"top_svg_height":48,"top_text":"🤍 Happy Women’s Day 🤍","top_text_size":24,"top_text_margin_top":0,"top_text_margin_bottom":0,"sub_text":"We prepared a gift for you","sub_text_size":16,"sub_text_margin_top":0,"sub_text_margin_bottom":15,"promo_svg_width":150,"promo_svg_height":60,"promo_svg_margin_bottom":0,"promo_code":"","discount_text":"Get up to","discount_value":"-50% OFF"}}},"order":["ts_breadcrumbs_wnGETP","rich_text_CeHneg","product-grid","also_like_eUEcDT","ts_video_slider_3NcDg7","trustpilot_reviews_MWjBL3","faq_pUUU3z","banner","ts_sticky_col_JNrzpw","popup_LgzdWn"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ts_breadcrumbs_wnGETP": {
+      "type": "ts-breadcrumbs",
+      "settings": {}
+    },
+    "rich_text_CeHneg": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RTAiY7": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Material Nanofilm Ecoslick™</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_6ixhx9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ultimate solution against radars</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RTAiY7",
+        "text_6ixhx9"
+      ],
+      "custom_css": [
+        ".rich-text__blocks > * + * {margin-top: 1rem;}",
+        ".show-more-description {display: none;}",
+        "@media (max-width: 768px) {.rich-text {padding-bottom: 0px; }}",
+        ".rich-text {padding-top: 0px; padding-bottom: 20px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 32
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        ".scroll_year-block_content {gap: 0px;}",
+        ".active {border: 1px rgba(0, 0, 0, 1) solid;}",
+        ".ts-product__media {min-height: 130px !important;}"
+      ],
+      "settings": {
+        "show_progress_bar": true,
+        "products_per_page": 48,
+        "columns_desktop": 6,
+        "custom_cards": true,
+        "custom_param_height": "Material Size",
+        "custom_param_suitable_for": "Suitable for",
+        "custom_param_color": "Color",
+        "param_color": "Black",
+        "custom_param_color_svg": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" shape-rendering=\"geometricPrecision\">\n<rect x=\"1\" y=\"1\" width=\"22\" height=\"22\" rx=\"7\" fill=\"url(#paint0_linear_6451_470)\" stroke=\"#EDEDED\" stroke-width=\"2\"></rect>\n<rect x=\"0.25\" y=\"0.25\" width=\"23.5\" height=\"23.5\" rx=\"7.75\" stroke=\"#65666A\" stroke-width=\"0.5\"></rect>\n<defs>\n<lineargradient id=\"paint0_linear_6451_470\" x1=\"12\" y1=\"0\" x2=\"12\" y2=\"24\" gradientunits=\"userSpaceOnUse\">\n<stop></stop>\n<stop offset=\"0.37\" stop-color=\"#282828\" stop-opacity=\"0.74\"></stop>\n<stop offset=\"1\"></stop>\n</lineargradient>\n</defs>\n</svg>",
+        "alt_size_icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n<g clip-path=\"url(#clip0_40000276_79)\">\n<path d=\"M13.875 15.4277V21.1875C13.875 22.223 13.0355 23.0625 12 23.0625H2.8125C1.77698 23.0625 0.9375 22.223 0.9375 21.1875V12C0.9375 10.9645 1.77698 10.125 2.8125 10.125H8.57227\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M6.375 0.9375H3.75C2.1967 0.9375 0.9375 2.1967 0.9375 3.75V6.375\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M10.125 0.9375H13.875\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M17.625 0.9375H20.25C21.8033 0.9375 23.0625 2.1967 23.0625 3.75V6.375\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M23.0625 17.625V20.25C23.0625 21.8033 21.8033 23.0625 20.25 23.0625H17.625\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M23.0625 10.125V13.875\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M6.92383 17.0758L18.763 5.23669\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M6.375 14.8125V17.625H9.1875\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n<path d=\"M16.5 4.6875H19.3125V7.5\" stroke=\"black\" stroke-width=\"1.875\" stroke-miterlimit=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</g>\n<defs>\n<clippath id=\"clip0_40000276_79\">\n<rect width=\"24\" height=\"24\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+        "alt_version_icon_svg": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M9.21557 14.1033H2.50352C2.29435 14.1042 2.094 14.1923 1.94609 14.3484C1.79819 14.5045 1.71472 14.716 1.71387 14.9367V22.024C1.71387 22.4851 2.06824 22.8574 2.50352 22.8574H9.21881C9.6557 22.8574 10.0085 22.4834 10.0085 22.024V14.9367C10.0076 14.716 9.92414 14.5045 9.77623 14.3484C9.62833 14.1923 9.42797 14.1042 9.21881 14.1033H9.21557ZM21.4956 14.1033H14.7804C14.5712 14.1042 14.3708 14.1923 14.2229 14.3484C14.075 14.5045 13.9916 14.716 13.9907 14.9367V22.024C13.9907 22.4851 14.3435 22.8574 14.7804 22.8574H21.4956C21.9325 22.8574 22.2853 22.4834 22.2853 22.024V14.9367C22.2844 14.716 22.201 14.5045 22.0531 14.3484C21.9052 14.1923 21.7048 14.1042 21.4956 14.1033ZM9.21557 1.14477H2.50352C2.29435 1.14567 2.094 1.23377 1.94609 1.38986C1.79819 1.54596 1.71472 1.75741 1.71387 1.97817V9.06541C1.71387 9.52651 2.06824 9.8988 2.50352 9.8988H9.21881C9.6557 9.8988 10.0085 9.5248 10.0085 9.06541V1.97646C10.0076 1.75571 9.92414 1.54425 9.77623 1.38815C9.62833 1.23206 9.42797 1.14397 9.21881 1.14307L9.21557 1.14477ZM13.8532 6.16732C13.3661 6.07852 13.3661 5.34247 13.8532 5.25196C14.7145 5.09387 15.5116 4.66867 16.143 4.03056C16.7745 3.39245 17.2115 2.57035 17.3985 1.66906L17.4276 1.52731C17.5328 1.02011 18.2173 1.01498 18.3273 1.52219L18.3629 1.68784C18.5569 2.58528 18.9979 3.4022 19.6304 4.036C20.2629 4.66981 21.0587 5.09225 21.918 5.25025C22.4067 5.33906 22.4067 6.08023 21.918 6.17074C21.0587 6.32875 20.2629 6.75118 19.6304 7.38499C18.9979 8.01879 18.5569 8.83571 18.3629 9.73315L18.3273 9.89709C18.2173 10.4043 17.5344 10.4009 17.4276 9.89368L17.3985 9.75193C17.2118 8.85033 16.7749 8.02786 16.1434 7.38942C15.512 6.75099 14.7147 6.32553 13.8532 6.16732Z\" stroke=\"black\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>",
+        "custom_param_color_svg_mob": "<svg width=\"25\" height=\"24\" viewbox=\"0 0 25 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect x=\"1.5\" y=\"1\" width=\"22\" height=\"22\" rx=\"7\" fill=\"url(#paint0_linear_6451_2426)\" stroke=\"#EDEDED\" stroke-width=\"2\"></rect>\n<defs>\n<lineargradient id=\"paint0_linear_6451_2426\" x1=\"12.5\" y1=\"0\" x2=\"12.5\" y2=\"24\" gradientunits=\"userSpaceOnUse\">\n<stop></stop>\n<stop offset=\"0.37\" stop-color=\"#282828\" stop-opacity=\"0.74\"></stop>\n<stop offset=\"1\"></stop>\n</lineargradient>\n</defs>\n</svg>",
+        "custom_param_version": "Version",
+        "custom_short_desc1": "<p><strong>The material</strong> is solid black and not transparent. To use it, you'll need to carefully cut along the outlines of the letters on your license plate to ensure a precise fit.</p>",
+        "custom_short_desc2": "",
+        "enable_states": false,
+        "enable_cities": false,
+        "enable_product_details": false,
+        "states_json": "",
+        "custom_element_text": "This is a custom element",
+        "state_placeholder": "State",
+        "state_collection": "",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "also_like_eUEcDT": {
+      "type": "also-like",
+      "custom_css": [
+        ".ts-products-list .ts-container {padding: 0px 20px 0px 20px; margin-top: 30px;}",
+        ".ts-products__title {font-size: 30px;}",
+        "@media screen and (max-width: 900px) {.ts-products__title {font-size: 24px; }}"
+      ],
+      "name": "Also like",
+      "settings": {
+        "title": "You may also like",
+        "products": [
+          "blackout-license-plate-hider-for-usa-single",
+          "blackout-license-plate-hider-for-europe-single",
+          "folding-frame-on-license-plate-on-a-cable",
+          "nanotape-license-plate-frame-for-1-license-plate-us-version",
+          "nanotape-license-plate-frame-for-1-license-plate-eu-version"
+        ],
+        "custom_id": ""
+      }
+    },
+    "ts_video_slider_3NcDg7": {
+      "type": "ts-video-slider",
+      "blocks": {
+        "video_MmKhzn": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ugc 2 material.mp4",
+            "text_line_1": "Recorded by",
+            "text_line_2": "Sophia Smith, United States",
+            "flag": "shopify://shop_images/Frame_1_2_43f9b440-c7b0-46f4-a08d-201dc75c31ed.png",
+            "flag_width": 25
+          }
+        },
+        "video_wzETCB": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ugc 1 material.mp4",
+            "text_line_1": "Recorded by",
+            "text_line_2": "Olivia Williams, United States",
+            "flag": "shopify://shop_images/Frame_1_2_35493091-1c8c-45c7-a61b-8ece55a00b82.png",
+            "flag_width": 25
+          }
+        },
+        "video_h9fkga": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ugc 3 material.mp4",
+            "text_line_1": "Recorded by",
+            "text_line_2": "William Garcia, United States",
+            "flag": "shopify://shop_images/Frame_1_2_8abc5fc5-ce7a-44fa-999a-1d61b00eefb4.png",
+            "flag_width": 25
+          }
+        }
+      },
+      "block_order": [
+        "video_MmKhzn",
+        "video_wzETCB",
+        "video_h9fkga"
+      ],
+      "custom_css": [
+        ".ts-video__inner {max-height: 550px; display: block; cursor: pointer;}",
+        ".ts-videos__title {margin-top: 30px;}",
+        ".ts-videos {max-height: 700px; border-bottom: 0;}",
+        "@media screen and (max-width: 1220px) {.ts-video__inner {max-height: 400px; display: block; cursor: pointer; } .ts-videos {max-height: 600px; border-bottom: 0; } .ts-videos__container::after {opacity: 0; }}"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "description": ""
+      }
+    },
+    "trustpilot_reviews_MWjBL3": {
+      "type": "trustpilot-reviews",
+      "blocks": {
+        "review_Hzp8M8": {
+          "type": "review",
+          "settings": {
+            "author": "Caresse Lessard",
+            "review_text": "The installation was quick and effortless, yet the results were outstanding. I highly recommend this product to anyone looking to protect their plates.",
+            "review_title": "Excellent quality and fast shipping",
+            "review_date": "05-02-2025"
+          }
+        },
+        "review_QCTL8i": {
+          "type": "review",
+          "settings": {
+            "author": "Armand Savard",
+            "review_text": "Delivery was a bit delayed, but great customer service and quality made up for it.",
+            "review_title": "Works like a charm!",
+            "review_date": "04-18-2025"
+          }
+        },
+        "review_MYUYEm": {
+          "type": "review",
+          "settings": {
+            "author": "Vallis Gilbert",
+            "review_text": "The film is easy to cut to the perfect size and fits my plates flawlessly. It’s a really cool product!",
+            "review_title": "Fast delivery and great product",
+            "review_date": "04-02-2025"
+          }
+        },
+        "review_mxQL4E": {
+          "type": "review",
+          "settings": {
+            "author": "Germain Daoust",
+            "review_text": "The delivery was slightly delayed, but the customer service was great, and the quality of the film made up for the wait. Definitely worth it!",
+            "review_title": "Highly recommend!",
+            "review_date": "05-21-2025"
+          }
+        },
+        "review_RAicpf": {
+          "type": "review",
+          "settings": {
+            "author": "Dalila Pisano",
+            "review_text": "I’ve been using this film for several months now without any issues, even though I wash my car frequently. The quality is top-notch!",
+            "review_title": "Perfect for my needs",
+            "review_date": "03-20-2025"
+          }
+        },
+        "review_EapPWd": {
+          "type": "review",
+          "settings": {
+            "author": "Sydney Cinq-Mars",
+            "review_text": "I’ve taken my car through the car wash multiple times, and the film is holding up perfectly. This is honestly an incredible product!",
+            "review_title": "Best on the market!",
+            "review_date": "03-17-2025"
+          }
+        }
+      },
+      "block_order": [
+        "review_Hzp8M8",
+        "review_QCTL8i",
+        "review_MYUYEm",
+        "review_mxQL4E",
+        "review_RAicpf",
+        "review_EapPWd"
+      ],
+      "custom_css": [
+        ".reviews-section {padding: 0; margin-bottom: 20px;}"
+      ],
+      "settings": {}
+    },
+    "faq_pUUU3z": {
+      "type": "faq",
+      "blocks": {
+        "product_tab_9D9jQK": {
+          "type": "product_tab",
+          "settings": {
+            "product_handle": "1",
+            "title": "NANOFILM",
+            "subtitle": "Anti-radar Stickers",
+            "image": "shopify://shop_images/main_nanofilm1.png",
+            "icon_svg": ""
+          }
+        },
+        "product_tab_Ft3fAd": {
+          "type": "product_tab",
+          "settings": {
+            "product_handle": "2",
+            "title": "MATERIAL",
+            "subtitle": "Universal material",
+            "image": "shopify://shop_images/material_mainnn_e5c8dcb0-9b30-40cd-8c9d-06d41f2f6fd5.png",
+            "icon_svg": ""
+          }
+        },
+        "product_tab_tg9TUP": {
+          "type": "product_tab",
+          "settings": {
+            "product_handle": "3",
+            "title": "BLACKOUT",
+            "subtitle": "Stealth in a сlick",
+            "image": "shopify://shop_images/blackout_mainnn.png",
+            "icon_svg": ""
+          }
+        },
+        "product_tab_9Xb4jC": {
+          "type": "product_tab",
+          "settings": {
+            "product_handle": "4",
+            "title": "FLIPPER+",
+            "subtitle": "Stealth in a сlick",
+            "image": "shopify://shop_images/flipper_mainnn1.png",
+            "icon_svg": ""
+          }
+        },
+        "product_tab_iejiWz": {
+          "type": "product_tab",
+          "settings": {
+            "product_handle": "5",
+            "title": "NANOTAPES",
+            "subtitle": "Click and Stick",
+            "image": "shopify://shop_images/nanotape_mainnn.png",
+            "icon_svg": ""
+          }
+        },
+        "faq_item_V8e88E": {
+          "type": "faq_item",
+          "disabled": true,
+          "settings": {
+            "product_handle": "1",
+            "main_title": "",
+            "sub_title": "",
+            "question_1": "What does the nanofilm include?",
+            "answer_1": "When you order one nanofilm, you get a one-digit sticker. You can add the necessary symbols to the cart on website.",
+            "question_2": "What happens if the nanofilm is scratched?",
+            "answer_2": "It is quite difficult to damage the Ecoslick® sticker because it is attached very firmly, forming an almost inseparable bond with the license plate. Even if there are scratches, it will be very difficult for the speed camera to determine which symbol is covered.",
+            "question_3": "What happens to the nanofilm after washing?",
+            "answer_3": "Ecoslick nanofilm is not afraid of washing, any type of car wash. The film is almost impossible to tear off with water pressure. Therefore, be extremely careful and precise when gluing.",
+            "question_4": "Is it necessary to put a film on the rear license plate of a car?",
+            "answer_4": "Depending on the terrain, speed cameras may be located in two directions and will record your car from both sides. We recommend gluing the film on both sides.",
+            "question_5": "How is Ecoslick® nanofilm installed?",
+            "answer_5": "The sticker should be applied very carefully, since it will be impossible to change the position of the pasted film - it fits tightly to the surface of the number. You can see visual instructions on our set up page.",
+            "question_6": "How many symbols are best covered with film?",
+            "answer_6": "The more symbols are hidden under the nanofilm, the less opportunities there are to decipher the number from the camera recording. It is recommended to cover all front and back license plates symbols.",
+            "question_7": "How long will nanofilm last?",
+            "answer_7": "Ecoslick® film is designed for many years of use, since it is created from durable, wear-resistant materials designed to withstand difficult weather conditions, temperature changes and varying degrees of mechanical impact. The warranty period is 5 years.",
+            "question_8": "What is the difference between an infrared flash and a camera flash?",
+            "answer_8": "Infrared light is highly focused rays that are invisible to the human eye and are different from the bright flash of a camera. It is in the infrared spectrum that automatic speed cameras operate. It is against this spectrum that Ecoslick® film acts.",
+            "question_9": "What does the camera see when using nanofilm?",
+            "answer_9": "The camera only sees the illuminated area where the symbols are hidden under the Ecoslick® stickers, which blends into the white background. Accordingly, the digital system does not recognize the number and does not record it in the database of traffic violations. There is no one to give a fine!",
+            "question_10": "Does nanofilm work during the day?",
+            "answer_10": "The infrared beams of speed cameras work both day and night.",
+            "question_11": "Why should I buy your product?",
+            "answer_11": "Our Ecoslick® nanofilm is manufactured in Germany and is therefore reliable and effective. All numbers and symbols comply with the national standards of each country. On the market you can find offers with a suspiciously low price - accordingly, such a film will not protect you from the eyes of a traffic cop or simply will not fit the size of your license plate.",
+            "question_12": "",
+            "answer_12": "",
+            "question_13": "",
+            "answer_13": "",
+            "question_14": "",
+            "answer_14": "",
+            "question_15": "",
+            "answer_15": ""
+          }
+        },
+        "faq_item_kgYQJz": {
+          "type": "faq_item",
+          "settings": {
+            "product_handle": "2",
+            "main_title": "FAQ",
+            "sub_title": "",
+            "question_1": "What does a nano-film include?",
+            "answer_1": "When ordering one nano-film, you receive a piece of material from which you can cut out the letters you need on your own.",
+            "question_2": "What happens if the nanofilm is scratched?",
+            "answer_2": "It is quite difficult to damage the Ecoslick® because it is attached very firmly, forming an almost inseparable bond with the license plate. Even if there are scratches, it will be very difficult for the speed camera to determine which symbol is covered.",
+            "question_3": "What happens to the nanofilm after washing?",
+            "answer_3": "Ecoslick nanofilm is not afraid of washing, any type of car wash. The film is almost impossible to tear off with water pressure. Therefore, be extremely careful and precise when gluing.",
+            "question_4": "Is it necessary to put a film on the rear license plate of a car?",
+            "answer_4": "Depending on the terrain, speed cameras may be located in two directions and will record your car from both sides. We recommend gluing the film on both sides.",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "How many symbols are best covered with film?",
+            "answer_6": "The more symbols are hidden under the nanofilm, the less opportunities there are to decipher the number from the camera recording. It is recommended to cover all front and back license plates symbols.",
+            "question_7": "How long will nanofilm last?",
+            "answer_7": "Ecoslick® film is designed for many years of use, since it is created from durable, wear-resistant materials designed to withstand difficult weather conditions, temperature changes and varying degrees of mechanical impact. The warranty period is 5 years.",
+            "question_8": "What is the difference between an infrared flash and a camera flash?",
+            "answer_8": "Infrared light is highly focused rays that are invisible to the human eye and are different from the bright flash of a camera. It is in the infrared spectrum that automatic speed cameras operate. It is against this spectrum that Ecoslick® film acts.",
+            "question_9": "What does the camera see when using nanofilm?",
+            "answer_9": "The camera only sees the illuminated area where the symbols are hidden under the Ecoslick® stickers, which blends into the white background. Accordingly, the digital system does not recognize the number and does not record it in the database of traffic violations. There is no one to give a fine!",
+            "question_10": "Does nanofilm work during the day?",
+            "answer_10": "The infrared beams of speed cameras work both day and night.",
+            "question_11": "Why should I buy your product?",
+            "answer_11": "Our Ecoslick® nanofilm is manufactured in Germany and is therefore reliable and effective. All numbers and symbols comply with the national standards of each country. On the market you can find offers with a suspiciously low price - accordingly, such a film will not protect you from the eyes of a traffic cop or simply will not fit the size of your license plate.",
+            "question_12": "Our Ecoslick® nanofilm is manufactured in Germany and is therefore reliable and effective. All numbers and symbols comply with the national standards of each country. On the market you can find offers with a suspiciously low price - accordingly, such a film will not protect you from the eyes of a traffic cop or simply will not fit the size of your license plate.",
+            "answer_12": "Easily attach the frame using included screws or adhesive — you can read the full instructions <a href=\"https://alite.cc/pages/user-manual\"><strong>here</strong></a>.",
+            "question_13": "How is Ecoslick® nanofilm installed?",
+            "answer_13": "Easily attach the frame using included screws or adhesive — you can read the full instructions <a href=\"https://alite.cc/pages/user-manual\"><strong>here</strong></a>.",
+            "question_14": "",
+            "answer_14": "",
+            "question_15": "",
+            "answer_15": ""
+          }
+        },
+        "faq_item_yDF33f": {
+          "type": "faq_item",
+          "disabled": true,
+          "settings": {
+            "product_handle": "3",
+            "main_title": "BLACKOUT",
+            "sub_title": "Stealth license plate",
+            "question_1": "What versions of the Alite Blackout License Plate Hider are available?",
+            "answer_1": "We offer multiple versions of the Alite Blackout, designed to accommodate both USA and European license plate sizes.\nUSA Versions: <br>\n- Alite Blackout License Plate Hider - for 1 license plate (US version)<br>\n- Alite Blackout License Plate Hider - for 2 license plates (US version)<br>\nEuropean Versions:<br>\n- Alite Blackout License Plate Hider - for 1 license plate (EU version)<br>\n- Alite Blackout License Plate Hider - for 2 license plates (EU version)<br>\nEach version ensures a perfect fit for its designated region, providing a seamless and discreet look.",
+            "question_2": "What does nanofilm include",
+            "answer_2": "Use the alcohol wipes provided in the kit to thoroughly clean the surface of the license plate. Ensure the plate is free from dust, dirt, and grease. Use the alcohol wipes provided in the kit to thoroughly clean the surface of the license plate.",
+            "question_3": "What is included in the Alite Blackout kit?",
+            "answer_3": "Each kit contains:<br>\n✅ One or two Alite Blackout frames (depending on the selected version).<br>\n✅ Mounting hardware for secure installation.<br>\n✅ Electrical cables required for installation.<br>\n✅ Installation manual for easy setup.",
+            "question_4": "How does the Alite Blackout work?",
+            "answer_4": "When activated, the mechanism obscures the license plate, reducing its visibility to cameras. It is designed for controlled use and provides a discreet, seamless effect.",
+            "question_5": "Can the frames be visually distinguished from regular license plate holders?",
+            "answer_5": "No, the Alite Blackout is designed to be discreet. It looks like a standard license plate holder when not activated.",
+            "question_6": "Will the plate fold back due to wind or force?",
+            "answer_6": "No, the mechanism is built to withstand wind pressure and external force. It remains secure even during high-speed driving or attempts to manipulate it.",
+            "question_7": "What happens if the remote control is lost?",
+            "answer_7": "Each kit includes two remote controls for convenience. If both are lost, you may need to contact customer support for replacement.",
+            "question_8": "Can I use the Alite Blackout in extreme weather conditions?",
+            "answer_8": "Yes, the Alite Blackout is made with durable materials to withstand various weather conditions, including rain, snow, and heat.",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": "",
+            "question_11": "",
+            "answer_11": "",
+            "question_12": "",
+            "answer_12": "",
+            "question_13": "",
+            "answer_13": "",
+            "question_14": "",
+            "answer_14": "",
+            "question_15": "",
+            "answer_15": ""
+          }
+        },
+        "faq_item_NiGHFW": {
+          "type": "faq_item",
+          "disabled": true,
+          "settings": {
+            "product_handle": "4",
+            "main_title": "FLIPPER+",
+            "sub_title": "Folding license plate frame",
+            "question_1": "What versions of the Alite Flipper+ license plate frames are available?",
+            "answer_1": "We offer two versions:\n- A hard traction mechanism for the front plate.\n- A 1-meter cable version for the rear plate.\nAdditionally, you can purchase a bundle that includes frames for both plates.",
+            "question_2": "What is included in the Alite Flipper+ kit?",
+            "answer_2": "The kit includes:\n- One or two frames (depending on the selected bundle).\n- A remote control unit.\n- Two remote controls.\n*Note: Electric cables for installing the frames are not included in the kit.*",
+            "question_3": "How does the Alite Flipper+ work?",
+            "answer_3": "When you press the button on the remote, the mechanism folds the license plate downward by 90 degrees, making it face the ground. This prevents cameras from reading the plate.",
+            "question_4": "Can the frames be visually distinguished from regular license plate holders?",
+            "answer_4": "No. The Alite Flipper+ is designed to be discreet, with all mechanisms and construction hidden within the car body. It looks like a standard license plate holder.",
+            "question_5": "Will the plate fold back due to wind or force?",
+            "answer_5": "No. The mechanism is designed to resist wind pressure and cannot be folded back by external force. It remains secure during fast driving or under physical attempts to manipulate it.",
+            "question_6": "What happens if the remote control is lost?",
+            "answer_6": "Each kit includes two remote controls for convenience. If both are lost, you may need to contact customer support for replacement.",
+            "question_7": "Can I use the Alite Flipper+ in extreme weather conditions?",
+            "answer_7": "Yes, the Alite Flipper+ is built with durable materials designed to withstand various weather conditions, including rain, snow, and heat.",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": "",
+            "question_11": "",
+            "answer_11": "",
+            "question_12": "",
+            "answer_12": "",
+            "question_13": "",
+            "answer_13": "",
+            "question_14": "",
+            "answer_14": "",
+            "question_15": "",
+            "answer_15": ""
+          }
+        },
+        "faq_item_4PYQNE": {
+          "type": "faq_item",
+          "disabled": true,
+          "settings": {
+            "product_handle": "5",
+            "main_title": "NANOTAPES",
+            "sub_title": "Click and stick",
+            "question_1": "What is Alite Nanotape?",
+            "answer_1": "Alite Nanotape is a frameless license plate mounting system that uses high-strength Velcro and 3M adhesive to securely attach your plate without screws or drilling.",
+            "question_2": "What versions of the Alite Nanotape License Plate Holder are available?",
+            "answer_2": "There are two versions: one sized for EU plates and one for US plates, ensuring a perfect fit.",
+            "question_3": "Will it hold my plate securely?",
+            "answer_3": "The 3M adhesive and Velcro system can hold up to 50 kg, providing a rock-solid grip in all conditions.",
+            "question_4": "Can I remove and reattach my license plate easily?",
+            "answer_4": "The Velcro-based system allows for quick removal and reattachment whenever needed, without losing its strength.",
+            "question_5": "Won't it peel off in the rain?",
+            "answer_5": "Alite Nanotape is weatherproof, heat-resistant, and durable, ensuring a firm hold in rain, snow, and high temperatures",
+            "question_6": "Does it damage the car or license plate?",
+            "answer_6": "Each kit includes two remote controls for convenience. If both are lost, you may need to contact customer support for replacement.",
+            "question_7": "How long does the adhesive last?",
+            "answer_7": "The 3M adhesive is designed for long-term durability, providing a strong bond for years without weakening.",
+            "question_8": "How do I install Alite Nanotape?",
+            "answer_8": "Installation is simple: <br>\n\nClean the mounting surface thoroughly. <br>\nPeel off the 3M adhesive backing from one side of the Nanotape and stick it to the car body. <br>\nPeel off the backing from the other side and attach the Velcro-mounted license plate. <br>\nPress firmly to secure.",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": "",
+            "question_11": "",
+            "answer_11": "",
+            "question_12": "",
+            "answer_12": "",
+            "question_13": "",
+            "answer_13": "",
+            "question_14": "",
+            "answer_14": "",
+            "question_15": "",
+            "answer_15": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_tab_9D9jQK",
+        "product_tab_Ft3fAd",
+        "product_tab_tg9TUP",
+        "product_tab_9Xb4jC",
+        "product_tab_iejiWz",
+        "faq_item_V8e88E",
+        "faq_item_kgYQJz",
+        "faq_item_yDF33f",
+        "faq_item_NiGHFW",
+        "faq_item_4PYQNE"
+      ],
+      "custom_css": [
+        ".selector-header {display: none;}",
+        ".product-selector-wrapper {display: none;}",
+        ".button-divider {display: none !important;}",
+        ".faq-item-heading h3 {font-size: 32px; font-family: \"ShopifySans\" !important;}"
+      ],
+      "name": "FAQ by Product",
+      "settings": {}
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        "@media screen and (min-width: 750px) {.collection-hero__title + .collection-hero__description {font-size: 1.5rem; }}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "ts_sticky_col_JNrzpw": {
+      "type": "ts-sticky-col",
+      "settings": {
+        "material": true
+      }
+    },
+    "popup_LgzdWn": {
+      "type": "popup",
+      "disabled": true,
+      "custom_css": [
+        ".pop-up {bottom: 100px !important;}"
+      ],
+      "settings": {
+        "bg_image": "shopify://shop_images/Frame_1000002982.svg",
+        "bg_gradient": "radial-gradient(circle, #DA9DFF, #a567cb);",
+        "top_svg": "shopify://shop_images/entypo_flower.svg",
+        "top_svg_width": 48,
+        "top_svg_height": 48,
+        "top_text": "🤍 Happy Women’s Day 🤍",
+        "top_text_size": 24,
+        "top_text_margin_top": 0,
+        "top_text_margin_bottom": 0,
+        "sub_text": "We prepared a gift for you",
+        "sub_text_size": 16,
+        "sub_text_margin_top": 0,
+        "sub_text_margin_bottom": 15,
+        "promo_svg_width": 150,
+        "promo_svg_height": 60,
+        "promo_svg_margin_bottom": 0,
+        "promo_code": "",
+        "discount_text": "Get up to",
+        "discount_value": "-50% OFF"
+      }
+    }
+  },
+  "order": [
+    "ts_breadcrumbs_wnGETP",
+    "rich_text_CeHneg",
+    "product-grid",
+    "also_like_eUEcDT",
+    "ts_video_slider_3NcDg7",
+    "trustpilot_reviews_MWjBL3",
+    "faq_pUUU3z",
+    "banner",
+    "ts_sticky_col_JNrzpw",
+    "popup_LgzdWn"
+  ]
+}

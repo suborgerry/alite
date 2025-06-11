@@ -790,6 +790,14 @@
 });
 
 </script>
+    {% unless template.name == "cart" %}
+    <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    sessionStorage.setItem('lastVisitedURL', window.location.href);
+  });
+</script>
+    {% endunless %}
+
   </body>
 </html>
 

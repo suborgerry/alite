@@ -1,1 +1,89 @@
-{"sections":{"cart-items":{"type":"main-cart-items","custom_css":[".title--primary {font-size: 24px !important;}",".cart-item__info {justify-content: start;}",".caption-with-letter-spacing {font-size: 12px;}",".cart-columns {margin-bottom: 12px;}"],"settings":{"padding_top":12,"padding_bottom":0}},"cart-footer":{"type":"main-cart-footer","blocks":{"product_LA6qEr":{"type":"product","disabled":true,"settings":{"title":"Special offer","text":"Add Alite Nanotape and get <span>extra 10% OFF<\/span>","product":"alite-nanotapes-license-plate-frame-for-1-license-plate-eu-version"}},"subtotal":{"type":"subtotal","settings":{}},"buttons":{"type":"buttons","settings":{}}},"block_order":["product_LA6qEr","subtotal","buttons"],"custom_css":[".totals {padding-bottom: 12px;}",".cart__footer-wrapper {padding-top: 50px;}",".cart__footer {padding: 0;}",".js-contents h3 {font-size: 24px;}",".new-progress-bar-cont h3 {margin-bottom: 39px;}","@media screen and (max-width: 750px) {.new-progress-bar-cont h3 {margin-top: 3px; }}"],"settings":{}},"ts_products_XHrbHw":{"type":"ts-products","custom_css":[".ts-products__title {font-size: 24px; font-weight: 700;}",".ts-products-list .ts-container {padding: 0;}",".ts-products-list {margin: 0 0 0px;}","@media screen and (max-width: 750px) {.ts-products {overflow: scroll; }}"],"settings":{"title":"You may also like","products":["hinged-frame-on-a-pull-rod","alite-flipper-folding-frame-for-both-license-plates","blackout-license-plate-hider-for-usa-single","blackout-license-plate-hider-for-europe-single","blackout-license-plate-hider-for-usa-double","folding-frame-on-license-plate-on-a-cable"],"products_show":4,"custom_id":""}}},"order":["cart-items","cart-footer","ts_products_XHrbHw"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "custom_css": [
+        ".title--primary {font-size: 24px !important;}",
+        ".cart-item__info {justify-content: start;}",
+        ".caption-with-letter-spacing {font-size: 12px;}",
+        ".cart-columns {margin-bottom: 12px;}"
+      ],
+      "settings": {
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "product_LA6qEr": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "title": "Special offer",
+            "text": "Add Alite Nanotape and get <span>extra 10% OFF</span>",
+            "product": "nanotape-license-plate-frame-for-1-license-plate-eu-version"
+          }
+        },
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "product_LA6qEr",
+        "subtotal",
+        "buttons"
+      ],
+      "custom_css": [
+        ".totals {padding-bottom: 12px;}",
+        ".cart__footer-wrapper {padding-top: 50px;}",
+        ".cart__footer {padding: 0;}",
+        ".js-contents h3 {font-size: 24px;}",
+        ".new-progress-bar-cont h3 {margin-bottom: 39px;}",
+        "@media screen and (max-width: 750px) {.new-progress-bar-cont h3 {margin-top: 3px; }}"
+      ],
+      "settings": {}
+    },
+    "ts_products_XHrbHw": {
+      "type": "ts-products",
+      "custom_css": [
+        ".ts-products__title {font-size: 24px; font-weight: 700;}",
+        ".ts-products-list .ts-container {padding: 0;}",
+        ".ts-products-list {margin: 0 0 50px;}",
+        "@media screen and (max-width: 750px) {.ts-products {overflow: scroll; }}"
+      ],
+      "settings": {
+        "title": "You may also like",
+        "products": [
+          "hinged-frame-on-a-pull-rod",
+          "alite-flipper-folding-frame-for-both-license-plates",
+          "blackout-license-plate-hider-for-usa-single",
+          "blackout-license-plate-hider-for-europe-single",
+          "blackout-license-plate-hider-for-usa-double",
+          "folding-frame-on-license-plate-on-a-cable"
+        ],
+        "products_show": 4,
+        "custom_id": ""
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "cart-footer",
+    "ts_products_XHrbHw"
+  ]
+}

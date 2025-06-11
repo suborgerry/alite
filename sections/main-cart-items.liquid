@@ -29,7 +29,7 @@
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-    <a href="javascript:history.back()" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
+    <a href="javascript:history.back()" class="underlined-link link-continue_shoppings">{{ 'general.continue_shopping' | t }}</a>
   </div>
 
   <div class="cart__warnings">
@@ -233,11 +233,11 @@
                       </label>
                       <quantity-input class="quantity cart-quantity">
 
-                      <button class="quantity__button no-js-hidden" name="plus" type="button">
+                     <button class="quantity__button no-js-hidden" name="minus" type="button">
                           <span class="visually-hidden">
-                            {{- 'products.product.quantity.increase' | t: product: item.product.title | escape -}}
+                            {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
                           </span>
-                          {% render 'icon-plus' %}
+                          {% render 'icon-minus' %}
                         </button>
                         <input
                           class="quantity__input"
@@ -257,12 +257,13 @@
                           id="Quantity-{{ item.index | plus: 1 }}"
                           data-index="{{ item.index | plus: 1 }}"
                         >
-                        <button class="quantity__button no-js-hidden" name="minus" type="button">
+                         <button class="quantity__button no-js-hidden" name="plus" type="button">
                           <span class="visually-hidden">
-                            {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
+                            {{- 'products.product.quantity.increase' | t: product: item.product.title | escape -}}
                           </span>
-                          {% render 'icon-minus' %}
+                          {% render 'icon-plus' %}
                         </button>
+                        
                       </quantity-input>
    <div class="cart-item__totals small-hide">
                     <div class="loading-overlay hidden">
@@ -388,6 +389,8 @@
       lineItemsWrapper.classList.toggle("cart-items_open")
       if(lineItemsWrapper.classList.contains("cart-items_open")){
         button.querySelector("span").textContent = "{{ 'general.cart.show_more_button_close' | t }}"
+      }else{
+                button.querySelector("span").textContent = "{{ 'general.cart.show_more_button' | t }}"
       }
     })
 
@@ -397,6 +400,22 @@
     }
   })
 </script>
+  <script>
+  (()=>{    
+      const lastURL = sessionStorage.getItem('lastVisitedURL');
+      const buttons = document.querySelectorAll("[class*='button-continue_shoppings']")
+      if (lastURL) {
+        buttons.forEach(button =>{
+          button.setAttribute("href",lastUrl)
+        })
+      } else {
+                buttons.forEach(button =>{
+          button.setAttribute("href","{{ routes.root_url }}")
+        })
+      }
+  })()
+</script>
+
 {% schema %}
 {
   "name": "t:sections.main-cart-items.name",

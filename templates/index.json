@@ -1,1 +1,678 @@
-{"sections":{"ts_announcement_YF9aUr":{"type":"ts-announcement","settings":{"title":"Black Friday to 11\/29","background":"#ff0000","color":"#ea4242","btn_label":"Learn more","btn_link":"shopify:\/\/pages\/black-friday"}},"featured_collection":{"type":"featured-collection","disabled":true,"settings":{"title":"Featured products","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"nanofilm-ecoslick","products_to_show":8,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"outline","enable_desktop_slider":false,"color_scheme":"background-1","image_ratio":"portrait","show_secondary_image":true,"show_vendor":false,"show_rating":false,"enable_quick_add":true,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":44,"padding_bottom":36}},"1722937778166a67fa":{"type":"apps","disabled":true,"custom_css":[".Vtl-ReviewsCarousel__Title {font-weight: bold; margin-left: -45px;}","@media (min-width: 769px) {.Vtl-ReviewsCarousel__Widget {padding: 0 45px; }}","@media (max-width: 769px) {.Vtl-ReviewsCarousel__Title {margin-left: -16px; }}"],"settings":{"include_margins":true}},"popup_NMC9kA":{"type":"popup","disabled":true,"settings":{"bg_image":"shopify:\/\/shop_images\/Frame_1000002982.svg","bg_gradient":"radial-gradient(circle, #DA9DFF, #a567cb);","top_svg":"shopify:\/\/shop_images\/entypo_flower.svg","top_svg_width":48,"top_svg_height":48,"top_text":"🤍 Happy Women’s Day 🤍","top_text_size":24,"top_text_margin_top":0,"top_text_margin_bottom":0,"sub_text":"We prepared a gift for you","sub_text_size":16,"sub_text_margin_top":0,"sub_text_margin_bottom":15,"promo_svg_width":150,"promo_svg_height":60,"promo_svg_margin_bottom":0,"promo_code":"","discount_text":"Get up to","discount_value":"-50% OFF"}},"updated_banner_7tDrUm":{"type":"updated-banner","blocks":{"banner_HxX6yx":{"type":"banner","settings":{"isActive":false,"links_to":"blackout","image":"shopify:\/\/shop_images\/blackout_main.webp","title":"ALITE<br>BLACKOUT","text":"Instantly darken your plate! Sleek, <span>compact<\/span>, and easy to use.","link":"shopify:\/\/collections\/blackout-license-plate-hiders","link-img":"https:\/\/alite.cc\/collections\/alite-blackout-license-plate-hiders"}},"banner_MKmXgL":{"type":"banner","settings":{"isActive":true,"links_to":"ecoslick","image":"shopify:\/\/shop_images\/main_nanofilm_9e79da1c-1764-4281-a5c8-977b3a6b3a8a.webp","title":"ALITE<br>NANOFILM","text":"<span>Block<\/span> speed cameras invisibly! Easy to apply, long-lasting, and discreet.","link":"shopify:\/\/pages\/antiradar-stickers-for-license-plate","link-img":"https:\/\/alite.cc\/pages\/antiradar-stickers-for-license-plate"}},"banner_mpBaQL":{"type":"banner","settings":{"isActive":false,"links_to":"flipper","image":"shopify:\/\/shop_images\/flipper_main.webp","title":"ALITE<br>FLIPPER+","text":"<span>Hide<\/span> your plate in seconds! Smooth mechanism, easy install, total control.","link":"shopify:\/\/collections\/folding-frames","link-img":"https:\/\/alite.cc\/collections\/folding-frames"}},"banner_NV4pDK":{"type":"banner","settings":{"isActive":false,"links_to":"Nanotapes","image":"shopify:\/\/shop_images\/nanotape_main_90ce5fb2-da33-424c-b613-b2743168340b.webp","title":"ALITE<br>NANOTAPES","text":"Mount without <span>drilling!<\/span> Strong hold, easy removal, no damage.","link":"shopify:\/\/collections\/alite-nanotapes","link-img":"https:\/\/alite.cc\/collections\/alite-nanotapes"}}},"block_order":["banner_HxX6yx","banner_MKmXgL","banner_mpBaQL","banner_NV4pDK"],"settings":{"autoscroll":5}},"product_dropdown_NjUPF9":{"type":"product-dropdown","blocks":{"benefit_wFgYTg":{"type":"benefit","settings":{"text":"Fully legal","image":"shopify:\/\/shop_images\/shield.svg"}},"benefit_QnLzWx":{"type":"benefit","settings":{"text":"Easy Installation","image":"shopify:\/\/shop_images\/Vector-2.svg"}},"benefit_7eAVh3":{"type":"benefit","settings":{"text":"Invisible to the Human Eye","image":"shopify:\/\/shop_images\/Vector-1.svg"}}},"block_order":["benefit_wFgYTg","benefit_QnLzWx","benefit_7eAVh3"],"custom_css":[],"settings":{"id":"ecoslick","image_first":false,"title":"Alite<br>nanofilm","text":"Protect your plate from cameras – Invisible and effective, these stickers block radar flashes. Easy to apply, long-lasting protection","image":"shopify:\/\/shop_images\/main_nanofilm_9e79da1c-1764-4281-a5c8-977b3a6b3a8a.png","link-img":"shopify:\/\/pages\/antiradar-stickers-for-license-plate","link":"shopify:\/\/pages\/antiradar-stickers-for-license-plate","title_description":"Alite Nanofilm","subtitle_description":"Ultimate solution against radars","second-title-description":"Description","description":"Stay one step ahead of traffic cameras with these nearly invisible antiradar stickers. Designed to block flash reflections from speed cameras, they keep your license plate unreadable without altering its appearance. Easy to apply and long-lasting, these stickers provide reliable protection without interfering with normal visibility. A simple, effective, and discreet solution for anyone looking to reduce fines and maintain privacy on the road.","image_description":"shopify:\/\/shop_images\/nanofilm_3b476e2c-e7bf-4d65-bce8-e20f8e75e4d0.gif"}},"product_dropdown_W6PFzF":{"type":"product-dropdown","blocks":{"benefit_UVLJiG":{"type":"benefit","settings":{"text":"Remote Control","image":"shopify:\/\/shop_images\/Vector-1_865c6d8d-a961-4004-b2c5-98b1c79fe5b1.svg"}},"benefit_TLxBPm":{"type":"benefit","settings":{"text":"Instant Effect","image":"shopify:\/\/shop_images\/Mask_group_61f0a117-733d-467c-8bd4-6031cc261f22.svg"}},"benefit_n3E8Xf":{"type":"benefit","settings":{"text":"Any Vehicle Compatibility","image":"shopify:\/\/shop_images\/Vector_ee3167df-2cef-4e6d-b806-c3e3e2aa887f.svg"}}},"block_order":["benefit_UVLJiG","benefit_TLxBPm","benefit_n3E8Xf"],"settings":{"id":"blackout","image_first":true,"title":"ALITE<br>BLACKOUT","text":"Instantly darkens your plate – Reliable camera protection with a sleek, compact design","image":"shopify:\/\/shop_images\/blackout_main.png","link-img":"shopify:\/\/collections\/blackout-license-plate-hiders","link":"shopify:\/\/collections\/blackout-license-plate-hiders","title_description":"Alite Blackout","subtitle_description":"Stealth in a сlick","second-title-description":"Description","description":"Block prying eyes and traffic cameras with this blackout plate hider. With the push of a button, your license plate becomes unreadable, protecting your privacy instantly. The sleek, compact design ensures a seamless fit, and installation is quick and easy. Whether you’re avoiding unnecessary fines or just want an added layer of discretion, this device is the perfect solution for drivers who value security and convenience.","image_description":"shopify:\/\/shop_images\/blackout_32a0eec4-f7a1-467e-8257-d847b9d93419.gif"}},"product_dropdown_jBH3gD":{"type":"product-dropdown","blocks":{"benefit_ebAkJj":{"type":"benefit","settings":{"text":"No Bulky Frame","image":"shopify:\/\/shop_images\/Vector-1_a09c7711-6c6d-4df7-a4ac-7e9bd22367f2.svg"}},"benefit_Q8qEFP":{"type":"benefit","settings":{"text":"Durable Mechanism","image":"shopify:\/\/shop_images\/Vector-2_d70c3393-4d19-469c-812d-30dca37cf1c3.svg"}},"benefit_d8VEzX":{"type":"benefit","settings":{"text":"Invisible Construction","image":"shopify:\/\/shop_images\/Vector_b2d1a7a3-4913-4310-a51d-4a8a1a4852bc.svg"}}},"block_order":["benefit_ebAkJj","benefit_Q8qEFP","benefit_d8VEzX"],"settings":{"id":"flipper","image_first":false,"title":"ALITE<br>FLIPPER+","text":"Hide your plate in seconds – A simple pull retracts the plate. Durable mechanism, easy installation","image":"shopify:\/\/shop_images\/flipper_main.png","link-img":"shopify:\/\/collections\/folding-frames","link":"shopify:\/\/collections\/folding-frames","title_description":"Alite Flipper+","subtitle_description":"Stealth in a сlick","second-title-description":"Description","description":"Need to hide your license plate instantly? This folding frame with a cable lets you retract or reveal your plate in just seconds. The sturdy mechanism ensures smooth operation every time, and the easy installation process makes it suitable for any vehicle. Whether you're parking privately or looking for an added layer of discretion, this plate cover gives you full control over your visibility. Durable, reliable, and built for convenience.","image_description":"shopify:\/\/shop_images\/flipper_3.gif"}},"product_dropdown_KHTeRJ":{"type":"product-dropdown","blocks":{"benefit_WJJwYV":{"type":"benefit","settings":{"text":"Perfect Fit","image":"shopify:\/\/shop_images\/Vector-2_8b70f7c4-55fa-4339-ba7b-f95752998e1a.svg"}},"benefit_kGTKAy":{"type":"benefit","settings":{"text":"Frameless Mount","image":"shopify:\/\/shop_images\/Vector_3afbdaa8-57a4-4234-bbeb-a4658b8763bc.svg"}},"benefit_y93RER":{"type":"benefit","settings":{"text":"Easy Replacement","image":"shopify:\/\/shop_images\/Vector-1_bed6e6a3-8e38-4e42-873e-9c64b6c0b303.svg"}}},"block_order":["benefit_WJJwYV","benefit_kGTKAy","benefit_y93RER"],"settings":{"id":"Nanotapes","image_first":true,"title":"Alite<br>Nanotapes","text":"Mount your plate with no drilling – strong nano-tapes hold securely and remove cleanly","image":"shopify:\/\/shop_images\/nanotape_main_90ce5fb2-da33-424c-b613-b2743168340b.png","link-img":"shopify:\/\/collections\/alite-nanotapes","link":"shopify:\/\/collections\/alite-nanotapes","title_description":"Alite Nanotapes","subtitle_description":"Frameless Plate holder","second-title-description":"Description","description":"Secure your license plate without drilling holes or using screws! This innovative frame uses ultra-strong nanotape to firmly hold your plate in place while allowing easy removal without leaving marks. Designed for durability and reliability, it’s resistant to weather, vibrations, and everyday wear. Ideal for those who want a clean, hassle-free mounting solution that’s both effective and removable when needed. Safe, simple, and highly convenient.","image_description":"shopify:\/\/shop_images\/nanotape.gif"}},"grid_section_86ER4P":{"type":"grid-section","blocks":{"cell_pVWzea":{"type":"cell","settings":{"icon":"shopify:\/\/shop_images\/Vector_31f0bc4b-095f-4809-8fd1-f6b1698961e5.svg","title":"Tested & Proven Products","text":"Everything we sell is field-tested and built to withstand real-world conditions","position-x":1,"width":1,"position-y":1,"height":1,"position-x_mob":1,"width_mob":1,"position-y_mob":1,"height_mob":1}},"cell_QNJx8H":{"type":"cell","settings":{"icon":"shopify:\/\/shop_images\/shield_2_dbdfd2a4-e406-4cf3-bb46-be2aa31336e5.svg","image":"shopify:\/\/shop_images\/main_mail.gif","title":"Fast Worldwide Shipping","text":"Delivery is available to 204+ countries. 87% of orders arrive within 10 days to most locations","position-x":2,"width":2,"position-y":1,"height":1,"position-x_mob":1,"width_mob":2,"position-y_mob":2,"height_mob":1}},"cell_88PhN6":{"type":"cell","settings":{"icon":"shopify:\/\/shop_images\/Vector_1.svg","image":"shopify:\/\/shop_images\/production_1.gif","title":"In-House Production","text":"We manufacture our products ourselves, and constantly monitor the quality","position-x":1,"width":2,"position-y":2,"height":1,"position-x_mob":1,"width_mob":2,"position-y_mob":3,"height_mob":1}},"cell_XzE3gd":{"type":"cell","settings":{"icon":"shopify:\/\/shop_images\/Vector-1_949e8534-da29-4583-a200-12d05ba94a3b.svg","title":"30,000+ Orders","text":"94% customer satisfaction rate over time","position-x":3,"width":1,"position-y":2,"height":1,"position-x_mob":2,"width_mob":1,"position-y_mob":1,"height_mob":1}}},"block_order":["cell_pVWzea","cell_QNJx8H","cell_88PhN6","cell_XzE3gd"],"custom_css":[".title {font-size: 24px; margin-top: 30px;}",".main-grid {margin-top: 12px; margin-bottom: 30px;}","@media screen and (max-width: 900px) {.title {margin-top: -20px; }}"],"name":"Grid section","settings":{"title":"Key Benefits"}},"ts_video_slider_hpPmCr":{"type":"ts-video-slider","blocks":{"video_AYP7XE":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/UGC FLIPPER 3.mp4","text_line_1":"Recorded by","text_line_2":"John Davis, United States","flag":"shopify:\/\/shop_images\/Frame_1_11_430x_ea81d6b4-3167-421e-99df-b5e1885e88a3.png","flag_width":25}},"video_dzaXge":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/ugc 3 material.mp4","text_line_1":"Recorded by","text_line_2":"William Garcia, United States","flag":"shopify:\/\/shop_images\/Frame_1_11_430x_ea81d6b4-3167-421e-99df-b5e1885e88a3.png","flag_width":25}},"video_JLHKKU":{"type":"video","settings":{"video":"shopify:\/\/files\/videos\/ugc 1 stickers.mp4","text_line_1":"Recorded by","text_line_2":"Emma Brown, United States","flag":"shopify:\/\/shop_images\/Frame_1_11_430x_ea81d6b4-3167-421e-99df-b5e1885e88a3.png","flag_width":25}}},"block_order":["video_AYP7XE","video_dzaXge","video_JLHKKU"],"custom_css":[".ts-video__inner {max-height: 550px; display: block; cursor: pointer;}",".ts-videos {max-height: 700px; border-bottom: 0;}",".ts-videos__title {font-size: 24px; font-style: normal; font-weight: 700; margin: 0 0 12px;}","@media screen and (max-width: 1220px) {.ts-video__inner {max-height: 400px; display: block; cursor: pointer; } .ts-videos__title {text-align: left; } .ts-videos {max-height: 600px; border-bottom: 0; }}"],"settings":{"title":"Testimonials","description":""}},"174366452352af455e":{"type":"apps","settings":{"include_margins":true}},"trustpilot_reviews_qbygr3":{"type":"trustpilot-reviews","blocks":{"review_pN8iYX":{"type":"review","settings":{"author":"Caresse Lessard","review_text":"The installation was quick and effortless, yet the results were outstanding. I highly recommend this product to anyone looking to protect their plates.","review_title":"Excellent quality and fast shipping","review_date":"05-02-2025"}},"review_Qi8ACz":{"type":"review","settings":{"author":"Armand Savard","review_text":"Delivery was a bit delayed, but great customer service and quality made up for it.","review_title":"Works like a charm!","review_date":"04-18-2025"}},"review_F7pkFU":{"type":"review","settings":{"author":"Vallis Gilbert","review_text":"The film is easy to cut to the perfect size and fits my plates flawlessly. It’s a really cool product!","review_title":"Fast delivery and great product","review_date":"04-02-2025"}},"review_WyyP3B":{"type":"review","settings":{"author":"Germain Daoust","review_text":"The delivery was slightly delayed, but the customer service was great, and the quality of the film made up for the wait. Definitely worth it!","review_title":"Highly recommend!","review_date":"05-21-2025"}},"review_CNNiee":{"type":"review","settings":{"author":"Dalila Pisano","review_text":"I’ve been using this film for several months now without any issues, even though I wash my car frequently. The quality is top-notch!","review_title":"Perfect for my needs","review_date":"03-20-2025"}},"review_BjJG7t":{"type":"review","settings":{"author":"Sydney Cinq-Mars","review_text":"I’ve taken my car through the car wash multiple times, and the film is holding up perfectly. This is honestly an incredible product!","review_title":"Best on the market!","review_date":"03-17-2025"}}},"block_order":["review_pN8iYX","review_Qi8ACz","review_F7pkFU","review_WyyP3B","review_CNNiee","review_BjJG7t"],"custom_css":[".reviews-section {padding: 0;}"],"settings":{}},"become_partner_3RrFFP":{"type":"become-partner","blocks":{"link_AcDK7y":{"type":"link","settings":{"title":"Affiliate","text":"Get % from the sales","link":"https:\/\/partners.alite.cc\/"}},"link_MWYY6Q":{"type":"link","settings":{"title":"B2B","text":"Get wholesale prices","link":"shopify:\/\/pages\/partner-b2b"}}},"block_order":["link_AcDK7y","link_MWYY6Q"],"custom_css":[".become-partner_section {margin-top: 10px;}"],"settings":{"title":"Partner with Alite","text":"Hey, wanna team up with us? Join our Partner Program! Make money by sharing our products or snag sweet discounts on bulk buys. Whether you’re a creator, shop owner, or car buff, we’ve got you covered. Let’s make it happen together!"}},"blog_posts_4q394R":{"type":"blog-posts","blocks":{"article_q9P4Px":{"type":"article","settings":{"article":"news\/how-can-i-avoid-a-speeding-ticket"}},"article_8kaq7R":{"type":"article","settings":{"article":"news\/how-to-stop-cameras-reading-your-number-plate"}},"article_HmpFc6":{"type":"article","settings":{"article":"news\/how-to-hide-license-plate-from-speed-cameras"}},"article_zYfpAJ":{"type":"article","settings":{"article":"news\/is-it-legal-to-cover-your-license-plate"}},"article_wap4eW":{"type":"article","settings":{"article":"news\/do-license-plate-anti-camera-covers-really-work"}}},"block_order":["article_q9P4Px","article_8kaq7R","article_HmpFc6","article_zYfpAJ","article_wap4eW"],"settings":{"label":"Check out our blog","link":"View all →","link_text":""}},"rich_text_x3WAfM":{"type":"rich-text","blocks":{"heading_xFVebe":{"type":"heading","settings":{"heading":"<strong>Alite - Your Way to Fines Prevention<\/strong>","heading_size":"h1"}},"text_nqTVc9":{"type":"text","settings":{"text":"<p>Welcome to <strong>Alite<\/strong>, the leading innovator in license plate protection solutions. Whether you’re looking to shield your vehicle from speed cameras or enhance your privacy on the road, our range of cutting-edge products has you covered. From <a href=\"https:\/\/alite.cc\/pages\/antiradar-stickers-for-license-plate\"><span style=\"text-decoration:underline\"><strong>Antiradar Stickers<\/strong><\/span><\/a> to <strong>license plate flippers<\/strong>, <strong>Alite<\/strong> offers everything you need to drive with confidence. Let’s explore our top products, including <strong>Nanofilm Ecoslick<\/strong>, <a href=\"https:\/\/alite.cc\/collections\/alite-nanotapes\"><span style=\"text-decoration:underline\"><strong>Alite Nanotapes<\/strong><\/span><\/a>, <a href=\"https:\/\/alite.cc\/collections\/folding-frames\"><span style=\"text-decoration:underline\"><strong>Alite Flipper<\/strong><\/span><\/a>, and <a href=\"https:\/\/alite.cc\/collections\/alite-blackout-license-plate-hiders\"><span style=\"text-decoration:underline\"><strong>Alite Blackout<\/strong><\/span><\/a>, designed to keep your license plate secure and discreet.<\/p><h2><strong>Discover Nanofilm Ecoslick - The Invisible Licence Plate Technology<\/strong><\/h2><p>One of our flagship products, <strong>Nanofilm Ecoslick<\/strong>, is a game-changer for drivers seeking an <strong>invisible licence plate<\/strong> solution. This <strong>nanofilm license plate sticker<\/strong> uses advanced nanotechnology to reflect infrared light, making your license plate unreadable to speed cameras while remaining completely visible to the human eye. With <strong>Antiradar Stickers<\/strong> like <strong>Nanofilm Ecoslick<\/strong>, <strong>Alite<\/strong> ensures you can avoid unwanted fines without compromising on legality or aesthetics. Easy to install and weatherproof, this <strong>nanofilm license plate sticker<\/strong> is a must-have for any driver looking to stay under the radar.<\/p><h2><strong>Protect Your Privacy with Alite Blackout - The Ultimate License Plate Hider<\/strong><\/h2><p>For those who need a more robust solution, <strong>Alite Blackout <\/strong>offers the perfect <strong>License Plate Hider<\/strong>. This innovative <strong>license plate hider with remote<\/strong> allows you to conceal your license plate at the touch of a button, ensuring maximum privacy when you need it most. Whether you’re parking in a high-surveillance area or simply want to keep your vehicle discreet, <strong>Alite Blackout <\/strong>provides a seamless way to protect your identity. At <strong>Alite<\/strong>, we’ve designed this <strong>License Plate Hider<\/strong> to be durable, easy to use, and compatible with most vehicles, making it a top choice for privacy-conscious drivers.<\/p><h2><strong>Alite Flipper - The Smart Flipping License Plate Solution<\/strong><\/h2><p>Looking for a dynamic way to manage your license plate visibility? The <strong>Alite Flipper <\/strong>is a state-of-the-art <strong>license plate flipper<\/strong> that lets you switch between showing and hiding your plate in seconds. Ideal for car shows, exhibitions, or private events, this <strong>flipping license plate<\/strong> device offers a sleek and professional way to control your vehicle’s appearance. Note that the <strong>Alite Flipper<\/strong> is not intended for use on public roads, but it’s perfect for controlled environments where you want to make a statement. With <strong>Alite<\/strong>, you’re getting a <strong>license plate flipper<\/strong> that’s reliable, stylish, and built to last.<\/p><h2><strong>Alite Nanotapes - The Frameless License Plate Holder You’ll Love<\/strong><\/h2><p>Say goodbye to bulky frames with <strong>Alite Nanotapes<\/strong>, the ultimate <strong>frameless license plate holder<\/strong>. These high-strength nanotapes provide a secure, weatherproof mounting solution for your license plate without the need for a traditional <strong>License Plate Frame<\/strong>. <strong>Alite Nanotapes<\/strong> are ultra-thin, ensuring a clean and minimalist look for your vehicle while keeping your plate firmly in place. Whether you’re upgrading your car’s aesthetics or replacing an old <strong>License Plate Frame<\/strong>, <strong>Alite<\/strong> offers a modern solution that combines functionality with style.<\/p><h2><strong>Why Choose Alite for License Plate Protection?<\/strong><\/h2><p>At <strong>Alite<\/strong>, we’re committed to delivering innovative products that prioritize your privacy and convenience. Here’s why drivers worldwide trust us:<\/p><ul><li><strong>Discreet Solutions<\/strong>: From the <strong>invisible licence plate<\/strong> technology of <strong>Nanofilm Ecoslick<\/strong> to the remote-controlled <strong>Alite Blackout<\/strong>, our products are designed to be subtle yet effective.<\/li><li><strong>Versatility<\/strong>: Whether you need <strong>Antiradar Stickers<\/strong>, a <strong>flipping license plate<\/strong>, or a <strong>frameless license plate holder<\/strong>, <strong>Alite<\/strong> has a solution for every need.<\/li><li><strong>Durability<\/strong>: Products like <strong>Alite Nanotapes<\/strong> and <strong>Alite Flipper<\/strong> are built to withstand harsh weather conditions, ensuring long-lasting performance.<\/li><li><strong>Fast Global Shipping<\/strong>: Order from <strong>Alite<\/strong> and enjoy quick delivery, so you can start protecting your vehicle right away.<\/li><\/ul><h2><strong>How Our Products Work Together<\/strong><\/h2><p>Imagine combining the power of <strong>Nanofilm Ecoslick<\/strong> with the <strong>Alite Blackout<\/strong> for ultimate protection. Use the <strong>nanofilm license plate sticker<\/strong> for everyday driving to avoid speed cameras, and activate the <strong>license plate hider with remote<\/strong> when you need extra privacy. For car enthusiasts, the <strong>Alite Flipper<\/strong> adds a dynamic touch to your vehicle, while <strong>Alite Nanotapes<\/strong> ensure your license plate stays secure without a clunky <strong>License Plate Frame<\/strong>. With <strong>Alite<\/strong>, you can mix and match our products to create a customized solution that fits your driving style.<\/p><h2><strong>Frequently Asked Questions About Alite Products<\/strong><\/h2><h3><strong>Are Antiradar Stickers legal?<\/strong><\/h3><p>Yes, <strong>Antiradar Stickers<\/strong> like <strong>Nanofilm Ecoslick<\/strong> are fully legal and designed to comply with regulations worldwide. They don’t obscure the license plate to the human eye, ensuring your vehicle meets all legal standards while providing effective protection from speed cameras.<\/p><h3><strong>Can I use the Alite Blackout on public roads?<\/strong><\/h3><p>The <strong>Alite Flipper<\/strong> is a fully legal accessory for your vehicle. It’s designed for versatile use, including on public roads, offering a convenient way to manage your license plate visibility while adhering to all legal requirements.<\/p><h3><strong>How durable is the Alite Blackout?<\/strong><\/h3><p>The <strong>Alite Blackout License Plate Hider<\/strong> is engineered for durability, built to withstand various weather conditions while delivering reliable performance. Rest assured, it’s a legal and robust solution for protecting your privacy on the road.<\/p><h3><strong>What makes Alite Nanotapes different from a traditional License Plate Frame?<\/strong><\/h3><p><strong>Alite Nanotapes<\/strong> provide a legal, <strong>frameless license plate holder<\/strong> option that’s sleeker and more modern than a traditional <strong>License Plate Frame<\/strong>. They ensure a minimalist look with maximum security, fully complying with vehicle regulations.<\/p><h2><strong>Order Your Alite Products Today<\/strong><\/h2><p>Ready to take control of your vehicle’s privacy? At <strong>Alite<\/strong>, we make it easy to order top-quality products like <strong>Nanofilm Ecoslick<\/strong>, <strong>Alite Nanotapes<\/strong>, <strong>Alite Flipper<\/strong>, and <strong>Alite Blackout<\/strong>. Our prices are competitive—starting at just $16.90 for the <strong>nanofilm license plate sticker<\/strong>—and our fast global shipping ensures you’ll receive your order in no time. Protect your license plate from cameras, enhance your vehicle’s look with a <strong>frameless license plate holder<\/strong>, or make a statement with a <strong>flipping license plate<\/strong>. Whatever your goal, <strong>Alite<\/strong> has the perfect solution.<\/p><p>Don’t let speed cameras or surveillance systems compromise your privacy. Shop now at <strong>Alite<\/strong> and discover why drivers worldwide trust our <strong>Antiradar Stickers<\/strong>, <strong>License Plate Hider<\/strong>, and <strong>license plate flipper<\/strong> solutions. Drive smarter, safer, and more discreetly with <strong>Alite<\/strong>.<\/p>"}}},"block_order":["heading_xFVebe","text_nqTVc9"],"custom_css":[],"settings":{"desktop_content_position":"left","content_alignment":"left","color_scheme":"background-1","full_width":true,"padding_top":40,"padding_bottom":52}}},"order":["ts_announcement_YF9aUr","featured_collection","1722937778166a67fa","popup_NMC9kA","updated_banner_7tDrUm","product_dropdown_NjUPF9","product_dropdown_W6PFzF","product_dropdown_jBH3gD","product_dropdown_KHTeRJ","grid_section_86ER4P","ts_video_slider_hpPmCr","174366452352af455e","trustpilot_reviews_qbygr3","become_partner_3RrFFP","blog_posts_4q394R","rich_text_x3WAfM"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ts_announcement_YF9aUr": {
+      "type": "ts-announcement",
+      "settings": {
+        "title": "Black Friday to 11/29",
+        "background": "#ff0000",
+        "color": "#ea4242",
+        "btn_label": "Learn more",
+        "btn_link": "shopify://pages/black-friday"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "nanofilm-ecoslick",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "outline",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "1722937778166a67fa": {
+      "type": "apps",
+      "disabled": true,
+      "custom_css": [
+        ".Vtl-ReviewsCarousel__Title {font-weight: bold; margin-left: -45px;}",
+        "@media (min-width: 769px) {.Vtl-ReviewsCarousel__Widget {padding: 0 45px; }}",
+        "@media (max-width: 769px) {.Vtl-ReviewsCarousel__Title {margin-left: -16px; }}"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "popup_NMC9kA": {
+      "type": "popup",
+      "disabled": true,
+      "settings": {
+        "bg_image": "shopify://shop_images/Frame_1000002982.svg",
+        "bg_gradient": "radial-gradient(circle, #DA9DFF, #a567cb);",
+        "top_svg": "shopify://shop_images/entypo_flower.svg",
+        "top_svg_width": 48,
+        "top_svg_height": 48,
+        "top_text": "🤍 Happy Women’s Day 🤍",
+        "top_text_size": 24,
+        "top_text_margin_top": 0,
+        "top_text_margin_bottom": 0,
+        "sub_text": "We prepared a gift for you",
+        "sub_text_size": 16,
+        "sub_text_margin_top": 0,
+        "sub_text_margin_bottom": 15,
+        "promo_svg_width": 150,
+        "promo_svg_height": 60,
+        "promo_svg_margin_bottom": 0,
+        "promo_code": "",
+        "discount_text": "Get up to",
+        "discount_value": "-50% OFF"
+      }
+    },
+    "updated_banner_7tDrUm": {
+      "type": "updated-banner",
+      "blocks": {
+        "banner_HxX6yx": {
+          "type": "banner",
+          "settings": {
+            "isActive": false,
+            "links_to": "blackout",
+            "image": "shopify://shop_images/blackout_main.webp",
+            "title": "ALITE<br>BLACKOUT",
+            "text": "Instantly darken your plate! Sleek, <span>compact</span>, and easy to use.",
+            "link": "shopify://collections/blackout-license-plate-hiders",
+            "link-img": "https://alite.cc/collections/alite-blackout-license-plate-hiders"
+          }
+        },
+        "banner_MKmXgL": {
+          "type": "banner",
+          "settings": {
+            "isActive": true,
+            "links_to": "ecoslick",
+            "image": "shopify://shop_images/main_nanofilm_9e79da1c-1764-4281-a5c8-977b3a6b3a8a.webp",
+            "title": "ALITE<br>NANOFILM",
+            "text": "<span>Block</span> speed cameras invisibly! Easy to apply, long-lasting, and discreet.",
+            "link": "shopify://pages/antiradar-stickers-for-license-plate",
+            "link-img": "https://alite.cc/pages/antiradar-stickers-for-license-plate"
+          }
+        },
+        "banner_mpBaQL": {
+          "type": "banner",
+          "settings": {
+            "isActive": false,
+            "links_to": "flipper",
+            "image": "shopify://shop_images/flipper_main.webp",
+            "title": "ALITE<br>FLIPPER+",
+            "text": "<span>Hide</span> your plate in seconds! Smooth mechanism, easy install, total control.",
+            "link": "shopify://collections/folding-frames",
+            "link-img": "https://alite.cc/collections/folding-frames"
+          }
+        },
+        "banner_NV4pDK": {
+          "type": "banner",
+          "settings": {
+            "isActive": false,
+            "links_to": "Nanotapes",
+            "image": "shopify://shop_images/nanotape_main_90ce5fb2-da33-424c-b613-b2743168340b.webp",
+            "title": "ALITE<br>NANOTAPES",
+            "text": "Mount without <span>drilling!</span> Strong hold, easy removal, no damage.",
+            "link": "shopify://collections/nanotape",
+            "link-img": "https://alite.cc/collections/alite-nanotapes"
+          }
+        }
+      },
+      "block_order": [
+        "banner_HxX6yx",
+        "banner_MKmXgL",
+        "banner_mpBaQL",
+        "banner_NV4pDK"
+      ],
+      "settings": {
+        "autoscroll": 5
+      }
+    },
+    "product_dropdown_NjUPF9": {
+      "type": "product-dropdown",
+      "blocks": {
+        "benefit_wFgYTg": {
+          "type": "benefit",
+          "settings": {
+            "text": "Fully legal",
+            "image": "shopify://shop_images/shield.svg"
+          }
+        },
+        "benefit_QnLzWx": {
+          "type": "benefit",
+          "settings": {
+            "text": "Easy Installation",
+            "image": "shopify://shop_images/Vector-2.svg"
+          }
+        },
+        "benefit_7eAVh3": {
+          "type": "benefit",
+          "settings": {
+            "text": "Invisible to the Human Eye",
+            "image": "shopify://shop_images/Vector-1.svg"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_wFgYTg",
+        "benefit_QnLzWx",
+        "benefit_7eAVh3"
+      ],
+      "custom_css": [],
+      "settings": {
+        "id": "ecoslick",
+        "image_first": false,
+        "title": "Alite<br>nanofilm",
+        "text": "Protect your plate from cameras – Invisible and effective, these stickers block radar flashes. Easy to apply, long-lasting protection",
+        "image": "shopify://shop_images/main_nanofilm_9e79da1c-1764-4281-a5c8-977b3a6b3a8a.png",
+        "link-img": "shopify://pages/antiradar-stickers-for-license-plate",
+        "link": "shopify://pages/antiradar-stickers-for-license-plate",
+        "title_description": "Alite Nanofilm",
+        "subtitle_description": "Ultimate solution against radars",
+        "second-title-description": "Description",
+        "description": "Stay one step ahead of traffic cameras with these nearly invisible antiradar stickers. Designed to block flash reflections from speed cameras, they keep your license plate unreadable without altering its appearance. Easy to apply and long-lasting, these stickers provide reliable protection without interfering with normal visibility. A simple, effective, and discreet solution for anyone looking to reduce fines and maintain privacy on the road.",
+        "image_description": "shopify://shop_images/nanofilm_3b476e2c-e7bf-4d65-bce8-e20f8e75e4d0.gif"
+      }
+    },
+    "product_dropdown_W6PFzF": {
+      "type": "product-dropdown",
+      "blocks": {
+        "benefit_UVLJiG": {
+          "type": "benefit",
+          "settings": {
+            "text": "Remote Control",
+            "image": "shopify://shop_images/Vector-1_865c6d8d-a961-4004-b2c5-98b1c79fe5b1.svg"
+          }
+        },
+        "benefit_TLxBPm": {
+          "type": "benefit",
+          "settings": {
+            "text": "Instant Effect",
+            "image": "shopify://shop_images/Mask_group_61f0a117-733d-467c-8bd4-6031cc261f22.svg"
+          }
+        },
+        "benefit_n3E8Xf": {
+          "type": "benefit",
+          "settings": {
+            "text": "Any Vehicle Compatibility",
+            "image": "shopify://shop_images/Vector_ee3167df-2cef-4e6d-b806-c3e3e2aa887f.svg"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_UVLJiG",
+        "benefit_TLxBPm",
+        "benefit_n3E8Xf"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 1000px) {.product-information_block {flex-direction: column; }}"
+      ],
+      "settings": {
+        "id": "blackout",
+        "image_first": true,
+        "title": "ALITE<br>BLACKOUT",
+        "text": "Instantly darkens your plate – Reliable camera protection with a sleek, compact design",
+        "image": "shopify://shop_images/blackout_main.png",
+        "link-img": "shopify://collections/blackout-license-plate-hiders",
+        "link": "shopify://collections/blackout-license-plate-hiders",
+        "title_description": "Alite Blackout",
+        "subtitle_description": "Stealth in a сlick",
+        "second-title-description": "Description",
+        "description": "Block prying eyes and traffic cameras with this blackout plate hider. With the push of a button, your license plate becomes unreadable, protecting your privacy instantly. The sleek, compact design ensures a seamless fit, and installation is quick and easy. Whether you’re avoiding unnecessary fines or just want an added layer of discretion, this device is the perfect solution for drivers who value security and convenience.",
+        "image_description": "shopify://shop_images/blackout_32a0eec4-f7a1-467e-8257-d847b9d93419.gif"
+      }
+    },
+    "product_dropdown_jBH3gD": {
+      "type": "product-dropdown",
+      "blocks": {
+        "benefit_ebAkJj": {
+          "type": "benefit",
+          "settings": {
+            "text": "No Bulky Frame",
+            "image": "shopify://shop_images/Vector-1_a09c7711-6c6d-4df7-a4ac-7e9bd22367f2.svg"
+          }
+        },
+        "benefit_Q8qEFP": {
+          "type": "benefit",
+          "settings": {
+            "text": "Durable Mechanism",
+            "image": "shopify://shop_images/Vector-2_d70c3393-4d19-469c-812d-30dca37cf1c3.svg"
+          }
+        },
+        "benefit_d8VEzX": {
+          "type": "benefit",
+          "settings": {
+            "text": "Invisible Construction",
+            "image": "shopify://shop_images/Vector_b2d1a7a3-4913-4310-a51d-4a8a1a4852bc.svg"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_ebAkJj",
+        "benefit_Q8qEFP",
+        "benefit_d8VEzX"
+      ],
+      "settings": {
+        "id": "flipper",
+        "image_first": false,
+        "title": "ALITE<br>FLIPPER+",
+        "text": "Hide your plate in seconds – A simple pull retracts the plate. Durable mechanism, easy installation",
+        "image": "shopify://shop_images/flipper_main.png",
+        "link-img": "shopify://collections/folding-frames",
+        "link": "shopify://collections/folding-frames",
+        "title_description": "Alite Flipper+",
+        "subtitle_description": "Stealth in a сlick",
+        "second-title-description": "Description",
+        "description": "Need to hide your license plate instantly? This folding frame with a cable lets you retract or reveal your plate in just seconds. The sturdy mechanism ensures smooth operation every time, and the easy installation process makes it suitable for any vehicle. Whether you're parking privately or looking for an added layer of discretion, this plate cover gives you full control over your visibility. Durable, reliable, and built for convenience.",
+        "image_description": "shopify://shop_images/flipper_3.gif"
+      }
+    },
+    "product_dropdown_KHTeRJ": {
+      "type": "product-dropdown",
+      "blocks": {
+        "benefit_WJJwYV": {
+          "type": "benefit",
+          "settings": {
+            "text": "Perfect Fit",
+            "image": "shopify://shop_images/Vector-2_8b70f7c4-55fa-4339-ba7b-f95752998e1a.svg"
+          }
+        },
+        "benefit_kGTKAy": {
+          "type": "benefit",
+          "settings": {
+            "text": "Frameless Mount",
+            "image": "shopify://shop_images/Vector_3afbdaa8-57a4-4234-bbeb-a4658b8763bc.svg"
+          }
+        },
+        "benefit_y93RER": {
+          "type": "benefit",
+          "settings": {
+            "text": "Easy Replacement",
+            "image": "shopify://shop_images/Vector-1_bed6e6a3-8e38-4e42-873e-9c64b6c0b303.svg"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_WJJwYV",
+        "benefit_kGTKAy",
+        "benefit_y93RER"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 1000px) {.product-information_block {flex-direction: column; }}"
+      ],
+      "settings": {
+        "id": "Nanotapes",
+        "image_first": true,
+        "title": "Alite<br>Nanotape",
+        "text": "Mount your plate with no drilling – strong nano-tapes hold securely and remove cleanly",
+        "image": "shopify://shop_images/nanotape_main_90ce5fb2-da33-424c-b613-b2743168340b.png",
+        "link-img": "shopify://collections/nanotape",
+        "link": "shopify://collections/nanotape",
+        "title_description": "Alite Nanotape",
+        "subtitle_description": "Frameless Plate holder",
+        "second-title-description": "Description",
+        "description": "Secure your license plate without drilling holes or using screws! This innovative frame uses ultra-strong nanotape to firmly hold your plate in place while allowing easy removal without leaving marks. Designed for durability and reliability, it’s resistant to weather, vibrations, and everyday wear. Ideal for those who want a clean, hassle-free mounting solution that’s both effective and removable when needed. Safe, simple, and highly convenient.",
+        "image_description": "shopify://shop_images/nanotape.gif"
+      }
+    },
+    "grid_section_86ER4P": {
+      "type": "grid-section",
+      "blocks": {
+        "cell_pVWzea": {
+          "type": "cell",
+          "settings": {
+            "icon": "shopify://shop_images/Vector_31f0bc4b-095f-4809-8fd1-f6b1698961e5.svg",
+            "title": "Tested & Proven Products",
+            "text": "Everything we sell is field-tested and built to withstand real-world conditions",
+            "position-x": 1,
+            "width": 1,
+            "position-y": 1,
+            "height": 1,
+            "position-x_mob": 1,
+            "width_mob": 1,
+            "position-y_mob": 1,
+            "height_mob": 1
+          }
+        },
+        "cell_QNJx8H": {
+          "type": "cell",
+          "settings": {
+            "icon": "shopify://shop_images/shield_2_dbdfd2a4-e406-4cf3-bb46-be2aa31336e5.svg",
+            "image": "shopify://shop_images/main_mail.gif",
+            "title": "Fast Worldwide Shipping",
+            "text": "Delivery is available to 204+ countries. 87% of orders arrive within 10 days to most locations",
+            "position-x": 2,
+            "width": 2,
+            "position-y": 1,
+            "height": 1,
+            "position-x_mob": 1,
+            "width_mob": 2,
+            "position-y_mob": 2,
+            "height_mob": 1
+          }
+        },
+        "cell_88PhN6": {
+          "type": "cell",
+          "settings": {
+            "icon": "shopify://shop_images/Vector_1.svg",
+            "image": "shopify://shop_images/production_1.gif",
+            "title": "In-House Production",
+            "text": "We manufacture our products ourselves, and constantly monitor the quality",
+            "position-x": 1,
+            "width": 2,
+            "position-y": 2,
+            "height": 1,
+            "position-x_mob": 1,
+            "width_mob": 2,
+            "position-y_mob": 3,
+            "height_mob": 1
+          }
+        },
+        "cell_XzE3gd": {
+          "type": "cell",
+          "settings": {
+            "icon": "shopify://shop_images/Vector-1_949e8534-da29-4583-a200-12d05ba94a3b.svg",
+            "title": "30,000+ Orders",
+            "text": "94% customer satisfaction rate over time",
+            "position-x": 3,
+            "width": 1,
+            "position-y": 2,
+            "height": 1,
+            "position-x_mob": 2,
+            "width_mob": 1,
+            "position-y_mob": 1,
+            "height_mob": 1
+          }
+        }
+      },
+      "block_order": [
+        "cell_pVWzea",
+        "cell_QNJx8H",
+        "cell_88PhN6",
+        "cell_XzE3gd"
+      ],
+      "custom_css": [
+        ".title {font-size: 24px; margin-top: 30px;}",
+        ".main-grid {margin-top: 12px; margin-bottom: 30px;}",
+        "@media screen and (max-width: 900px) {.title {margin-top: -20px; }}"
+      ],
+      "name": "Grid section",
+      "settings": {
+        "title": "Key Benefits"
+      }
+    },
+    "ts_video_slider_hpPmCr": {
+      "type": "ts-video-slider",
+      "blocks": {
+        "video_AYP7XE": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/UGC FLIPPER 3.mp4",
+            "text_line_1": "Recorded by",
+            "text_line_2": "John Davis, United States",
+            "flag": "shopify://shop_images/Frame_1_11_430x_ea81d6b4-3167-421e-99df-b5e1885e88a3.png",
+            "flag_width": 25
+          }
+        },
+        "video_dzaXge": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ugc 3 material.mp4",
+            "text_line_1": "Recorded by",
+            "text_line_2": "William Garcia, United States",
+            "flag": "shopify://shop_images/Frame_1_11_430x_ea81d6b4-3167-421e-99df-b5e1885e88a3.png",
+            "flag_width": 25
+          }
+        },
+        "video_JLHKKU": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/ugc 1 stickers.mp4",
+            "text_line_1": "Recorded by",
+            "text_line_2": "Emma Brown, United States",
+            "flag": "shopify://shop_images/Frame_1_11_430x_ea81d6b4-3167-421e-99df-b5e1885e88a3.png",
+            "flag_width": 25
+          }
+        }
+      },
+      "block_order": [
+        "video_AYP7XE",
+        "video_dzaXge",
+        "video_JLHKKU"
+      ],
+      "custom_css": [
+        ".ts-video__inner {max-height: 550px; display: block; cursor: pointer;}",
+        ".ts-videos {max-height: 700px; border-bottom: 0;}",
+        ".ts-videos__title {font-size: 24px; font-style: normal; font-weight: 700; margin: 0 0 12px;}",
+        "@media screen and (max-width: 1220px) {.ts-video__inner {max-height: 400px; display: block; cursor: pointer; } .ts-videos__title {text-align: left; } .ts-videos {max-height: 600px; border-bottom: 0; }}"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "description": ""
+      }
+    },
+    "174366452352af455e": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "trustpilot_reviews_qbygr3": {
+      "type": "trustpilot-reviews",
+      "blocks": {
+        "review_pN8iYX": {
+          "type": "review",
+          "settings": {
+            "author": "Caresse Lessard",
+            "review_text": "The installation was quick and effortless, yet the results were outstanding. I highly recommend this product to anyone looking to protect their plates.",
+            "review_title": "Excellent quality and fast shipping",
+            "review_date": "05-02-2025"
+          }
+        },
+        "review_Qi8ACz": {
+          "type": "review",
+          "settings": {
+            "author": "Armand Savard",
+            "review_text": "Delivery was a bit delayed, but great customer service and quality made up for it.",
+            "review_title": "Works like a charm!",
+            "review_date": "04-18-2025"
+          }
+        },
+        "review_F7pkFU": {
+          "type": "review",
+          "settings": {
+            "author": "Vallis Gilbert",
+            "review_text": "The film is easy to cut to the perfect size and fits my plates flawlessly. It’s a really cool product!",
+            "review_title": "Fast delivery and great product",
+            "review_date": "04-02-2025"
+          }
+        },
+        "review_WyyP3B": {
+          "type": "review",
+          "settings": {
+            "author": "Germain Daoust",
+            "review_text": "The delivery was slightly delayed, but the customer service was great, and the quality of the film made up for the wait. Definitely worth it!",
+            "review_title": "Highly recommend!",
+            "review_date": "05-21-2025"
+          }
+        },
+        "review_CNNiee": {
+          "type": "review",
+          "settings": {
+            "author": "Dalila Pisano",
+            "review_text": "I’ve been using this film for several months now without any issues, even though I wash my car frequently. The quality is top-notch!",
+            "review_title": "Perfect for my needs",
+            "review_date": "03-20-2025"
+          }
+        },
+        "review_BjJG7t": {
+          "type": "review",
+          "settings": {
+            "author": "Sydney Cinq-Mars",
+            "review_text": "I’ve taken my car through the car wash multiple times, and the film is holding up perfectly. This is honestly an incredible product!",
+            "review_title": "Best on the market!",
+            "review_date": "03-17-2025"
+          }
+        }
+      },
+      "block_order": [
+        "review_pN8iYX",
+        "review_Qi8ACz",
+        "review_F7pkFU",
+        "review_WyyP3B",
+        "review_CNNiee",
+        "review_BjJG7t"
+      ],
+      "custom_css": [
+        ".reviews-section {padding: 0;}"
+      ],
+      "settings": {}
+    },
+    "become_partner_3RrFFP": {
+      "type": "become-partner",
+      "blocks": {
+        "link_AcDK7y": {
+          "type": "link",
+          "settings": {
+            "title": "Affiliate",
+            "text": "Get % from the sales",
+            "link": "https://partners.alite.cc/"
+          }
+        },
+        "link_MWYY6Q": {
+          "type": "link",
+          "settings": {
+            "title": "B2B",
+            "text": "Get wholesale prices",
+            "link": "shopify://pages/partner-b2b"
+          }
+        }
+      },
+      "block_order": [
+        "link_AcDK7y",
+        "link_MWYY6Q"
+      ],
+      "custom_css": [
+        ".become-partner_section {margin-top: 10px;}"
+      ],
+      "settings": {
+        "title": "Partner with Alite",
+        "text": "Hey, wanna team up with us? Join our Partner Program! Make money by sharing our products or snag sweet discounts on bulk buys. Whether you’re a creator, shop owner, or car buff, we’ve got you covered. Let’s make it happen together!"
+      }
+    },
+    "blog_posts_4q394R": {
+      "type": "blog-posts",
+      "blocks": {
+        "article_fxKzV7": {
+          "type": "article",
+          "settings": {
+            "article": "news/frameless-license-plate"
+          }
+        },
+        "article_zrD9xw": {
+          "type": "article",
+          "settings": {
+            "article": "news/choosing-the-best-license-plate-frame-for-your-car"
+          }
+        },
+        "article_Kr4pqa": {
+          "type": "article",
+          "settings": {
+            "article": "news/how-to-protect-your-license-plates-from-traffic-cameras"
+          }
+        },
+        "article_dbp7k8": {
+          "type": "article",
+          "settings": {
+            "article": "news/b2b-vs-b2c-key-differences-explained"
+          }
+        },
+        "article_edNNAF": {
+          "type": "article",
+          "settings": {
+            "article": "news/automotive-affiliate-programs"
+          }
+        }
+      },
+      "block_order": [
+        "article_fxKzV7",
+        "article_zrD9xw",
+        "article_Kr4pqa",
+        "article_dbp7k8",
+        "article_edNNAF"
+      ],
+      "settings": {
+        "label": "Check out our blog",
+        "link": "View all →",
+        "link_text": ""
+      }
+    },
+    "rich_text_x3WAfM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xFVebe": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Alite - Your Way to Fines Prevention</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_nqTVc9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to <strong>Alite</strong>, the leading innovator in license plate protection solutions. Whether you’re looking to shield your vehicle from speed cameras or enhance your privacy on the road, our range of cutting-edge products has you covered. From <a href=\"https://alite.cc/pages/antiradar-stickers-for-license-plate\"><span style=\"text-decoration:underline\"><strong>Antiradar Stickers</strong></span></a> to <strong>license plate flippers</strong>, <strong>Alite</strong> offers everything you need to drive with confidence. Let’s explore our top products, including <strong>Nanofilm Ecoslick</strong>, <a href=\"https://alite.cc/collections/alite-nanotapes\"><span style=\"text-decoration:underline\"><strong>Alite Nanotapes</strong></span></a>, <a href=\"https://alite.cc/collections/folding-frames\"><span style=\"text-decoration:underline\"><strong>Alite Flipper</strong></span></a>, and <a href=\"https://alite.cc/collections/alite-blackout-license-plate-hiders\"><span style=\"text-decoration:underline\"><strong>Alite Blackout</strong></span></a>, designed to keep your license plate secure and discreet.</p><h2><strong>Discover Nanofilm Ecoslick - The Invisible Licence Plate Technology</strong></h2><p>One of our flagship products, <strong>Nanofilm Ecoslick</strong>, is a game-changer for drivers seeking an <strong>invisible licence plate</strong> solution. This <strong>nanofilm license plate sticker</strong> uses advanced nanotechnology to reflect infrared light, making your license plate unreadable to speed cameras while remaining completely visible to the human eye. With <strong>Antiradar Stickers</strong> like <strong>Nanofilm Ecoslick</strong>, <strong>Alite</strong> ensures you can avoid unwanted fines without compromising on legality or aesthetics. Easy to install and weatherproof, this <strong>nanofilm license plate sticker</strong> is a must-have for any driver looking to stay under the radar.</p><h2><strong>Protect Your Privacy with Alite Blackout - The Ultimate License Plate Hider</strong></h2><p>For those who need a more robust solution, <strong>Alite Blackout </strong>offers the perfect <strong>License Plate Hider</strong>. This innovative <strong>license plate hider with remote</strong> allows you to conceal your license plate at the touch of a button, ensuring maximum privacy when you need it most. Whether you’re parking in a high-surveillance area or simply want to keep your vehicle discreet, <strong>Alite Blackout </strong>provides a seamless way to protect your identity. At <strong>Alite</strong>, we’ve designed this <strong>License Plate Hider</strong> to be durable, easy to use, and compatible with most vehicles, making it a top choice for privacy-conscious drivers.</p><h2><strong>Alite Flipper - The Smart Flipping License Plate Solution</strong></h2><p>Looking for a dynamic way to manage your license plate visibility? The <strong>Alite Flipper </strong>is a state-of-the-art <strong>license plate flipper</strong> that lets you switch between showing and hiding your plate in seconds. Ideal for car shows, exhibitions, or private events, this <strong>flipping license plate</strong> device offers a sleek and professional way to control your vehicle’s appearance. Note that the <strong>Alite Flipper</strong> is not intended for use on public roads, but it’s perfect for controlled environments where you want to make a statement. With <strong>Alite</strong>, you’re getting a <strong>license plate flipper</strong> that’s reliable, stylish, and built to last.</p><h2><strong>Alite Nanotapes - The Frameless License Plate Holder You’ll Love</strong></h2><p>Say goodbye to bulky frames with <strong>Alite Nanotapes</strong>, the ultimate <strong>frameless license plate holder</strong>. These high-strength nanotapes provide a secure, weatherproof mounting solution for your license plate without the need for a traditional <strong>License Plate Frame</strong>. <strong>Alite Nanotapes</strong> are ultra-thin, ensuring a clean and minimalist look for your vehicle while keeping your plate firmly in place. Whether you’re upgrading your car’s aesthetics or replacing an old <strong>License Plate Frame</strong>, <strong>Alite</strong> offers a modern solution that combines functionality with style.</p><h2><strong>Why Choose Alite for License Plate Protection?</strong></h2><p>At <strong>Alite</strong>, we’re committed to delivering innovative products that prioritize your privacy and convenience. Here’s why drivers worldwide trust us:</p><ul><li><strong>Discreet Solutions</strong>: From the <strong>invisible licence plate</strong> technology of <strong>Nanofilm Ecoslick</strong> to the remote-controlled <strong>Alite Blackout</strong>, our products are designed to be subtle yet effective.</li><li><strong>Versatility</strong>: Whether you need <strong>Antiradar Stickers</strong>, a <strong>flipping license plate</strong>, or a <strong>frameless license plate holder</strong>, <strong>Alite</strong> has a solution for every need.</li><li><strong>Durability</strong>: Products like <strong>Alite Nanotapes</strong> and <strong>Alite Flipper</strong> are built to withstand harsh weather conditions, ensuring long-lasting performance.</li><li><strong>Fast Global Shipping</strong>: Order from <strong>Alite</strong> and enjoy quick delivery, so you can start protecting your vehicle right away.</li></ul><h2><strong>How Our Products Work Together</strong></h2><p>Imagine combining the power of <strong>Nanofilm Ecoslick</strong> with the <strong>Alite Blackout</strong> for ultimate protection. Use the <strong>nanofilm license plate sticker</strong> for everyday driving to avoid speed cameras, and activate the <strong>license plate hider with remote</strong> when you need extra privacy. For car enthusiasts, the <strong>Alite Flipper</strong> adds a dynamic touch to your vehicle, while <strong>Alite Nanotapes</strong> ensure your license plate stays secure without a clunky <strong>License Plate Frame</strong>. With <strong>Alite</strong>, you can mix and match our products to create a customized solution that fits your driving style.</p><h2><strong>Frequently Asked Questions About Alite Products</strong></h2><h3><strong>Are Antiradar Stickers legal?</strong></h3><p>Yes, <strong>Antiradar Stickers</strong> like <strong>Nanofilm Ecoslick</strong> are fully legal and designed to comply with regulations worldwide. They don’t obscure the license plate to the human eye, ensuring your vehicle meets all legal standards while providing effective protection from speed cameras.</p><h3><strong>Can I use the Alite Blackout on public roads?</strong></h3><p>The <strong>Alite Flipper</strong> is a fully legal accessory for your vehicle. It’s designed for versatile use, including on public roads, offering a convenient way to manage your license plate visibility while adhering to all legal requirements.</p><h3><strong>How durable is the Alite Blackout?</strong></h3><p>The <strong>Alite Blackout License Plate Hider</strong> is engineered for durability, built to withstand various weather conditions while delivering reliable performance. Rest assured, it’s a legal and robust solution for protecting your privacy on the road.</p><h3><strong>What makes Alite Nanotapes different from a traditional License Plate Frame?</strong></h3><p><strong>Alite Nanotapes</strong> provide a legal, <strong>frameless license plate holder</strong> option that’s sleeker and more modern than a traditional <strong>License Plate Frame</strong>. They ensure a minimalist look with maximum security, fully complying with vehicle regulations.</p><h2><strong>Order Your Alite Products Today</strong></h2><p>Ready to take control of your vehicle’s privacy? At <strong>Alite</strong>, we make it easy to order top-quality products like <strong>Nanofilm Ecoslick</strong>, <strong>Alite Nanotapes</strong>, <strong>Alite Flipper</strong>, and <strong>Alite Blackout</strong>. Our prices are competitive—starting at just $16.90 for the <strong>nanofilm license plate sticker</strong>—and our fast global shipping ensures you’ll receive your order in no time. Protect your license plate from cameras, enhance your vehicle’s look with a <strong>frameless license plate holder</strong>, or make a statement with a <strong>flipping license plate</strong>. Whatever your goal, <strong>Alite</strong> has the perfect solution.</p><p>Don’t let speed cameras or surveillance systems compromise your privacy. Shop now at <strong>Alite</strong> and discover why drivers worldwide trust our <strong>Antiradar Stickers</strong>, <strong>License Plate Hider</strong>, and <strong>license plate flipper</strong> solutions. Drive smarter, safer, and more discreetly with <strong>Alite</strong>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xFVebe",
+        "text_nqTVc9"
+      ],
+      "custom_css": [],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "ts_announcement_YF9aUr",
+    "featured_collection",
+    "1722937778166a67fa",
+    "popup_NMC9kA",
+    "updated_banner_7tDrUm",
+    "product_dropdown_NjUPF9",
+    "product_dropdown_W6PFzF",
+    "product_dropdown_jBH3gD",
+    "product_dropdown_KHTeRJ",
+    "grid_section_86ER4P",
+    "ts_video_slider_hpPmCr",
+    "174366452352af455e",
+    "trustpilot_reviews_qbygr3",
+    "become_partner_3RrFFP",
+    "blog_posts_4q394R",
+    "rich_text_x3WAfM"
+  ]
+}

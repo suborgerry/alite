@@ -1,1 +1,165 @@
-{"sections":{"ts_breadcrumbs_UgRpKp":{"type":"ts-breadcrumbs","settings":{}},"main":{"type":"main-article","blocks":{"title":{"type":"title","settings":{"blog_show_date":true,"blog_show_author":true,"show_links":true}},"featured_image":{"type":"featured_image","settings":{"image_height":"adapt"}},"read_time_r4VPF3":{"type":"read-time","settings":{"show_links":true}},"short_summary_GXWaCw":{"type":"short-summary","settings":{}},"content":{"type":"content","settings":{}},"ad_UMthFN":{"type":"ad","disabled":true,"settings":{}},"other_blogs_PNc6m3":{"type":"other-blogs","disabled":true,"settings":{"blog_show_date":true,"label":"Read also","link":"View all >"}},"side_ad_LwKWEL":{"type":"side-ad","settings":{}},"products_LecJNt":{"type":"products","settings":{"image_1":"shopify:\/\/shop_images\/nano.png","title_1":"Nanofilm Ecoslick Symbols","description_1":"Anti-radar stickers","link_1":"shopify:\/\/pages\/antiradar-stickers-for-license-plate","image_2":"shopify:\/\/shop_images\/material.png","title_2":"Nanofilm Ecoslick Material","description_2":"Anti-radar material","link_2":"shopify:\/\/collections\/nanofilm-ecoslick","image_3":"shopify:\/\/shop_images\/image-1.png","title_3":"Folding frame Alite Flipper","description_3":"Stealth in a сlick","link_3":"shopify:\/\/collections\/folding-frames","image_4":"shopify:\/\/shop_images\/main_blackout_f5b54ad4-b7f5-4221-9800-5138dde573e2.png","title_4":"Alite Blackout","description_4":"Stealth in a сlick","link_4":"shopify:\/\/collections\/blackout-license-plate-hiders"}}},"block_order":["title","featured_image","read_time_r4VPF3","short_summary_GXWaCw","content","ad_UMthFN","other_blogs_PNc6m3","side_ad_LwKWEL","products_LecJNt"],"custom_css":["ul li {font-size: 14px;}","ol li {font-size: 14px;}"],"settings":{}},"blog_posts_8mrgGa":{"type":"blog-posts","blocks":{"article_MQANMk":{"type":"article","settings":{"article":"news\/why-the-plate-switcher-is-becoming-a-popular-choice-among-american-drivers"}},"article_kdmfiC":{"type":"article","settings":{"article":"news\/modern-license-plate-frames"}},"article_BitXJh":{"type":"article","settings":{"article":"news\/how-to-protect-your-license-plates-from-traffic-cameras"}},"article_cFxT4n":{"type":"article","settings":{"article":"news\/safety-on-the-road-tips"}},"article_kC7Rjk":{"type":"article","settings":{"article":"news\/plate-flipper-review-new-technology-for-cars"}}},"block_order":["article_MQANMk","article_kdmfiC","article_BitXJh","article_cFxT4n","article_kC7Rjk"],"custom_css":[],"settings":{"label":"Read also","link":"View all >","link_text":""}},"sticky_panel_DqMJ6G":{"type":"sticky-panel","settings":{}}},"order":["ts_breadcrumbs_UgRpKp","main","blog_posts_8mrgGa","sticky_panel_DqMJ6G"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "ts_breadcrumbs_UgRpKp": {
+      "type": "ts-breadcrumbs",
+      "custom_css": [],
+      "settings": {}
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": true,
+            "show_links": true
+          }
+        },
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "read_time_r4VPF3": {
+          "type": "read-time",
+          "settings": {
+            "show_links": true
+          }
+        },
+        "short_summary_GXWaCw": {
+          "type": "short-summary",
+          "settings": {}
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        },
+        "ad_UMthFN": {
+          "type": "ad",
+          "disabled": true,
+          "settings": {}
+        },
+        "other_blogs_PNc6m3": {
+          "type": "other-blogs",
+          "disabled": true,
+          "settings": {
+            "blog_show_date": true,
+            "label": "Read also",
+            "link": "View all >"
+          }
+        },
+        "side_ad_LwKWEL": {
+          "type": "side-ad",
+          "settings": {}
+        },
+        "products_LecJNt": {
+          "type": "products",
+          "settings": {
+            "image_1": "shopify://shop_images/nano.png",
+            "title_1": "Nanofilm Ecoslick Symbols",
+            "description_1": "Anti-radar stickers",
+            "link_1": "shopify://pages/antiradar-stickers-for-license-plate",
+            "image_2": "shopify://shop_images/material.png",
+            "title_2": "Nanofilm Ecoslick Material",
+            "description_2": "Anti-radar material",
+            "link_2": "shopify://collections/nanofilm-ecoslick",
+            "image_3": "shopify://shop_images/image-1.png",
+            "title_3": "Folding frame Alite Flipper",
+            "description_3": "Stealth in a сlick",
+            "link_3": "shopify://collections/folding-frames",
+            "image_4": "shopify://shop_images/main_blackout_f5b54ad4-b7f5-4221-9800-5138dde573e2.png",
+            "title_4": "Alite Blackout",
+            "description_4": "Stealth in a сlick",
+            "link_4": "shopify://collections/blackout-license-plate-hiders"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "featured_image",
+        "read_time_r4VPF3",
+        "short_summary_GXWaCw",
+        "content",
+        "ad_UMthFN",
+        "other_blogs_PNc6m3",
+        "side_ad_LwKWEL",
+        "products_LecJNt"
+      ],
+      "custom_css": [
+        "ul li {font-size: 14px;}",
+        "ol li {font-size: 14px;}",
+        "@media screen and (max-width: 1000px) {.article-template > *:first-child:not(.article-template__hero-container) {margin-top: 0px; }}"
+      ],
+      "settings": {}
+    },
+    "blog_posts_8mrgGa": {
+      "type": "blog-posts",
+      "blocks": {
+        "article_MQANMk": {
+          "type": "article",
+          "settings": {
+            "article": "news/frameless-license-plate"
+          }
+        },
+        "article_kdmfiC": {
+          "type": "article",
+          "settings": {
+            "article": "news/choosing-the-best-license-plate-frame-for-your-car"
+          }
+        },
+        "article_BitXJh": {
+          "type": "article",
+          "settings": {
+            "article": "news/how-to-protect-your-license-plates-from-traffic-cameras"
+          }
+        },
+        "article_cFxT4n": {
+          "type": "article",
+          "settings": {
+            "article": "news/b2b-vs-b2c-key-differences-explained"
+          }
+        },
+        "article_kC7Rjk": {
+          "type": "article",
+          "settings": {
+            "article": "news/automotive-affiliate-programs"
+          }
+        }
+      },
+      "block_order": [
+        "article_MQANMk",
+        "article_kdmfiC",
+        "article_BitXJh",
+        "article_cFxT4n",
+        "article_kC7Rjk"
+      ],
+      "custom_css": [],
+      "settings": {
+        "label": "Read also",
+        "link": "View all >",
+        "link_text": ""
+      }
+    },
+    "sticky_panel_DqMJ6G": {
+      "type": "sticky-panel",
+      "settings": {}
+    }
+  },
+  "order": [
+    "ts_breadcrumbs_UgRpKp",
+    "main",
+    "blog_posts_8mrgGa",
+    "sticky_panel_DqMJ6G"
+  ]
+}
