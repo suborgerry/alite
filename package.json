@@ -1,5 +1,5 @@
 {
-  "name": "hellolittlefox",
+  "name": "alite",
   "version": "1.2.0",
   "scripts": {
     "start": "bun gulp & bun dev",
@@ -8,5 +8,8 @@
     "push": "shopify theme push -s `cat var.store.env`",
     "push:new": "shopify theme push -s `cat var.store.env` --unpublished",
     "pull": "shopify theme pull -s `cat var.store.env`"
+  },
+  "dependencies": {
+    "css-minify": "^2.1.0"
   }
 }

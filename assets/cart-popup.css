@@ -42,14 +42,14 @@
 .cart-popup.show-popup-cart {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0); /* анимация вверх при показе */
+  transform: translateY(0); /* fade up animation */
 }
 
 .cart-popup__button {
   background: none;
   color: #8D8D8D;
   border: none;
-  padding: 8px 0px;
+  padding: 8px 0;
   border-radius: 20px;
   font-weight: 600;
   font-size: 14px;
@@ -62,17 +62,11 @@
 
 @media screen and (max-width: 989px) {
   .cart-popup-container {
-    position: fixed;
-    display: flex;
-    align-items: center;
     justify-content: normal;
     padding: 5px 10px;
-    bottom: auto; /* отключаем фикс */
+    bottom: auto; /* turn off position: fixed */
     transition: bottom 0.3s ease;
-    left: 50%;
-    width: 100%;
     max-width: 1240px;
-    transform: translateX(-50%);
   }
   .cart-popup {
     width: 100%;

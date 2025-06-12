@@ -1,5 +1,7 @@
 body{
   overflow-x:hidden !important;
+  --color-dark: #000;
+  --color-white: #fff
 }
 .price-item--sale {
   color: #e0103a;
@@ -8,10 +10,6 @@ body{
 [id*="__ts_products"] {
   overflow: hidden;
 }
-.badge {
-  vertical-align: middle;
-  margin: 0 auto;
-}
 .button-continue_shopping{
     display: flex;
     width: 200px;
@@ -19,9 +17,9 @@ body{
     align-items: center;
     justify-content: center;
     border-radius: 35px;
-    background: #000;
+    background: var(--color-dark);
     height: 35px;
-    color: #FFF;
+    color: var(--color-white);
     font-family: "ShopifySans" !important;
     font-size: 12px;
     font-style: normal;
@@ -34,7 +32,7 @@ body{
 }
 
 .button-continue_shopping:hover, .button-continue_shopping:active{
-    color: #000;
+    color: var(--color-dark);
     background: #DA9DFF;
 }
 
@@ -42,7 +40,7 @@ body{
     line-height:0;
 }
 .g-stickybar[selected="selected"] {
-  background-color: white;
+  background-color: var(--color-white);
 }
 .announcement-bar__message {
   font-weight: 600;
@@ -95,14 +93,14 @@ iframe#dummy-chat-button-iframe {
   max-width: 125rem;
 }
 .mega-menu__list--condensed .mega-menu__link .mega-menu__link--level-2 {
-  color: #fff;
+  color: var(--color-white);
 }
 .mega-menu__link:hover,
 .mega-menu__link--active {
   color: #fca907;
 }
 .mega-menu__link {
-  color: white;
+  color: var(--color-white);
 }
 @media screen and (min-width: 320px) and (max-width: 768px) {
    h1 {
@@ -396,22 +394,21 @@ html.no-js .no-js-hidden {
 
 
 
-  .header.page-width {
-    padding-left: 3.2rem;
-    padding-right: 3.2rem;
-  }
+.header.page-width {
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+}
 
-  .page-width--narrow {
-    padding: 0 9rem;
-  }
+.page-width--narrow {
+  padding: 0 9rem;
+}
 
-  .page-width-desktop {
-    padding: 0;
-  }
+.page-width-desktop {
+  padding: 0;
+}
 
-  .page-width-tablet {
-    padding: 0 5rem;
-  }
+.page-width-tablet {
+  padding: 0 5rem;
 }
 
 @media screen and (min-width: 990px) {
@@ -2990,6 +2987,8 @@ details-disclosure > details {
 }
 
 .badge {
+  vertical-align: middle;
+  margin: 0 auto;
   border: 1px solid transparent;
   border-radius: var(--badge-corner-radius);
   display: inline-block;
@@ -3279,18 +3278,18 @@ details-disclosure > details {
   }
 }
 #r--carousel-theme #show-modal {
-background: #000 !important;
+  background: var(--color-dark) !important;
 }
-<style>
-    #voiceflow-chat { display: block !important; }
+
+#voiceflow-chat { display: block !important; }
 
 .small-card_img {
     width: 100%;
 }
+
 @media screen and (max-width: 1000px) {
   .ts-products {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
-</style>
 
