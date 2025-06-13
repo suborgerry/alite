@@ -16,9 +16,13 @@
   gap: 50px;
 }
 
+.collection-list__item .card:not(.ratio) {
+  display: initial;
+}
+
 .card.card--horizontal {
   --text-alignment: left;
-  --image-padding: 0rem;
+  --image-padding: 0;
   flex-direction: row;
   align-items: flex-start;
   gap: 1.5rem;
@@ -63,7 +67,6 @@
 
 .card .card__inner .card__media {
   overflow: hidden;
-  /* Fix for Safari border bug on hover */
   z-index: 0;
   border-radius: calc(var(--border-radius) - var(--border-width) - var(--image-padding));
 }
@@ -104,16 +107,18 @@
 
 .card__inner {
   width: 100%;
-  border-radius: 10px; 
+  border-radius: 10px
 }
-.read--time{
-    margin: 0 auto;
-  font-weight:700;
-  font-family:ShopifySans, sans-serif;
-  color:#797979;
-  font-size:16px;
-  text-transform: none!important;
+
+.read--time {
+  margin: 0 auto;
+  font-weight: 700;
+  font-family: ShopifySans, sans-serif;
+  color: #797979;
+  font-size: 16px;
+  text-transform: none !important;
 }
+
 .card--media .card__inner .card__content {
   position: relative;
   padding: calc(var(--image-padding) + 1rem);
@@ -121,7 +126,7 @@
 
 .card__content {
   display: grid;
-  grid-template-rows: minmax(0,1fr) max-content minmax(0,1fr);
+  grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
   padding: 1rem;
   width: 100%;
   flex-grow: 1;
@@ -129,7 +134,7 @@
 }
 
 .card__content--auto-margins {
-  grid-template-rows: minmax(0,auto) max-content minmax(0,auto);
+  grid-template-rows: minmax(0, auto) max-content minmax(0, auto);
 }
 
 .card__information {
@@ -137,14 +142,14 @@
   padding: 1.3rem 1rem;
 }
 
-.card:not(.ratio) > .card__content {
-  grid-template-rows: max-content minmax(0,1fr) max-content auto;
+.card:not(.ratio)>.card__content {
+  grid-template-rows: max-content minmax(0, 1fr) max-content auto;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width:750px) {
   .card__information {
     padding-bottom: 1.7rem;
-    padding-top: 1.7rem;
+    padding-top: 1.7rem
   }
 }
 
@@ -163,7 +168,7 @@
   justify-self: flex-end;
 }
 
-.card:not(.card--horizontal) > .card__content > .card__badge {
+.card:not(.card--horizontal)>.card__content>.card__badge {
   margin: 1.3rem;
 }
 
@@ -174,24 +179,25 @@
   width: 100%;
 }
 
-.card__inner:not(.ratio) > .card__content {
+.card__inner:not(.ratio)>.card__content {
   height: 100%;
 }
 
 .card__heading {
   margin-top: 0;
   margin-bottom: 0;
-  font-weight:700;
+  font-weight: 700;
   margin-bottom: 20px !important;
 }
 
 .card__heading:last-child {
   margin-bottom: 0;
 }
-.article-card__excerpt{
-  margin-top:20px!important;
-  color:#000!important;
-  font-size:16px!important;
+
+.article-card__excerpt {
+  margin-top: 20px !important;
+  color: #000 !important;
+  font-size: 16px !important;
 }
 
 .card--horizontal .card__heading,
@@ -200,7 +206,7 @@
   font-size: calc(var(--font-heading-scale) * 1.2rem);
 }
 
-.card--horizontal .card-information > *:not(.visually-hidden:first-child) + *:not(.rating) {
+.card--horizontal .card-information>*:not(.visually-hidden:first-child)+*:not(.rating) {
   margin-top: 0;
 }
 
@@ -208,16 +214,17 @@
   box-shadow: none;
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width:750px) {
+
   .card--horizontal .card__heading,
   .card--horizontal .price__container .price-item,
   .card--horizontal__quick-add {
-    font-size: calc(var(--font-heading-scale) * 1.3rem);
+    font-size: calc(var(--font-heading-scale) * 1.3rem)
   }
 }
 
-.card--card.card--media > .card__content {
-  margin-top: calc(0rem - var(--image-padding));
+.card--card.card--media>.card__content {
+  margin-top: calc(0 - var(--image-padding));
 }
 
 .card--standard.card--text a::after,
@@ -239,17 +246,17 @@
 }
 
 .card__heading a:after {
-  outline-offset: 0.3rem;
+  outline-offset: .3rem;
 }
 
 .card__heading a:focus:after {
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  box-shadow: 0 0 0 .3rem rgb(var(--color-background)), 0 0 .5rem .4rem rgba(var(--color-foreground), .3);
+  outline: .2rem solid rgba(var(--color-foreground), .5);
 }
 
 .card__heading a:focus-visible:after {
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+  box-shadow: 0 0 0 .3rem rgb(var(--color-background)), 0 0 .5rem .4rem rgba(var(--color-foreground), .3);
+  outline: .2rem solid rgba(var(--color-foreground), .5);
 }
 
 .card__heading a:focus:not(:focus-visible):after {
@@ -262,49 +269,46 @@
   outline: 0;
 }
 
-@media screen and (min-width: 990px) {
-  .card .media.media--hover-effect > img:only-child,
-  .card-wrapper .media.media--hover-effect > img:only-child {
-    transition: transform var(--duration-long) ease;
+@media screen and (min-width:990px) {
+
+  .card .media.media--hover-effect>img:only-child,
+  .card-wrapper .media.media--hover-effect>img:only-child {
+    transition: transform var(--duration-long) ease
   }
 
-  .card:hover .media.media--hover-effect > img:first-child:only-child,
-  .card-wrapper:hover .media.media--hover-effect > img:first-child:only-child {
-    transform: scale(1.03);
+  .card:hover .media.media--hover-effect>img:first-child:only-child,
+  .card-wrapper:hover .media.media--hover-effect>img:first-child:only-child {
+    transform: scale(1.03)
   }
 
-  .card-wrapper:hover
-    .media.media--hover-effect
-    > img:first-child:not(:only-child) {
-    opacity: 0;
+  .card-wrapper:hover .media.media--hover-effect>img:first-child:not(:only-child) {
+    opacity: 0
   }
 
-  .card-wrapper:hover .media.media--hover-effect > img + img {
+  .card-wrapper:hover .media.media--hover-effect>img+img {
     opacity: 1;
     transition: transform var(--duration-long) ease;
-    transform: scale(1.03);
+    transform: scale(1.03)
   }
 
   .underline-links-hover:hover a {
     text-decoration: underline;
-    text-underline-offset: 0.3rem;
+    text-underline-offset: .3rem
   }
 }
 
-
-
-.card--standard > .card__content {
+.card--standard>.card__content {
   padding: 0;
 }
 
-.card--standard > .card__content .card__information {
+.card--standard>.card__content .card__information {
   padding-left: 0;
   padding-right: 0;
 }
 
 .card--card.card--media .card__inner .card__information,
 .card--card.card--text .card__inner,
-.card--card.card--media > .card__content .card__badge {
+.card--card.card--media>.card__content .card__badge {
   display: none;
 }
 
@@ -329,41 +333,39 @@
 }
 
 .card .icon-wrap {
-  margin-left: 0.8rem;
+  margin-left: .8rem;
   white-space: nowrap;
   transition: transform var(--duration-short) ease;
   overflow: hidden;
 }
 
-.card-information > * + * {
-  margin-top: 0.5rem;
+.card-information>*+* {
+  margin-top: .5rem;
 }
 
 .card-information {
   width: 100%;
 }
 
-.card-information > * {
-  line-height: calc(1 + 0.4 / var(--font-body-scale));
+.card-information>* {
+  line-height: calc(1 + .4 / var(--font-body-scale));
   color: rgb(var(--color-foreground));
 }
 
-.card-information > .price {
+.card-information>.price {
   color: rgb(var(--color-foreground));
 }
 
-.card--horizontal .card-information > .price {
-  color: rgba(var(--color-foreground), 0.75);
+.card--horizontal .card-information>.price {
+  color: rgba(var(--color-foreground), .75);
 }
 
-.card-information > .rating {
-  margin-top: 0.4rem;
+.card-information>.rating {
+  margin-top: .4rem;
 }
 
-.card-information
-  > *:not(.visually-hidden:first-child)
-  + *:not(.rating) {
-  margin-top: 0.7rem;
+.card-information>*:not(.visually-hidden:first-child)+*:not(.rating) {
+  margin-top: .7rem;
 }
 
 .card-information .caption {
@@ -373,13 +375,15 @@
 .card-article-info {
   margin-top: 1rem;
 }
-.separator{
-    height: 1px;
-    background-color:#D9D9D9; 
+
+.separator {
+  height: 1px;
+  background-color: #D9D9D9;
   margin-top: 20px;
-    margin-bottom: 24px;
-  display:block!important;
+  margin-bottom: 24px;
+  display: block !important;
 }
-.article-card__image-wrapper .card__information{
-  display:none !important;
+
+.article-card__image-wrapper .card__information {
+  display: none !important;
 }

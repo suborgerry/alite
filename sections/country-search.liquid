@@ -1,132 +1,136 @@
 {% style %}
-  .product-text{
+  .product-text {
     font-weight: 400;
     font-size: 16px;
     color: #000;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 12px;
   }
-  .region-title-container{
-    display:flex;
+  .region-title-container {
+    display: flex;
     flex-direction: column;
   }
-  
-  .regions-section{
-    margin-bottom:30px;
-    position:relative;
+
+  .regions-section {
+    margin-bottom: 30px;
+    position: relative;
   }
-  .region-picker_block{
-    display:flex;
-    gap:10px;
+  .region-picker_block {
+    display: flex;
+    gap: 10px;
     margin: 0 auto 30px;
-    align-items:center;
+    align-items: center;
     flex-wrap: wrap;
   }
-  .region-button{
-    border:1px solid #CCCCCC;
-    background:#fff;
-    border-radius:100px;
-    padding:10px 20px;
-    font-size:12px;
-    transition:all 0.3s;
-    border:1px solid #000;
-    color:#000;
-    cursor:pointer;
+  .region-button {
+    border: 1px solid #CCCCCC;
+    background: #fff;
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-size: 12px;
+    transition: all 0.3s;
+    border: 1px solid #000;
+    color: #000;
+    cursor: pointer;
   }
-  .clear_button{
-    padding:10px;
-    font-size:12px;
-    text-decoration:underline;
-    color:#000;
-    cursor:pointer;
+  .clear_button {
+    padding: 10px;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
   }
-    .region-button:hover,.region-button:active{
-      background:#DA9DFF;
-      border:1px solid #000;
-      color:#000;
-    }
-      .active-button{
-      background:#000;
-      border:1px solid #000;
-      color:#fff;
-    }
-  #region-search{
-    padding:17px 24px;
-    width:100%;
-    border-radius:15px;
-    transition:all 0.3s;
-    border:2px solid #CCCCCC;
+  .region-button:hover,
+  .region-button:active {
+    background: #DA9DFF;
+    border: 1px solid #000;
+    color: #000;
   }
-#region-search:focus {
-  outline: none;
-  box-shadow: none;
-  border: 2px solid #CCCCCC;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  background-color: #fff;
-  -webkit-tap-highlight-color: transparent;
-}
+  .active-button {
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+  }
+  #region-search {
+    padding: 17px 24px;
+    width: 100%;
+    border-radius: 15px;
+    transition: all 0.3s;
+    border: 2px solid #CCCCCC;
+  }
+  #region-search:focus {
+    outline: none;
+    box-shadow: none;
+    border: 2px solid #CCCCCC;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    background-color: #fff;
+    -webkit-tap-highlight-color: transparent;
+  }
 
-  .region-container:not(:last-child){
-    margin-bottom:30px;
+  .region-container:not(:last-child) {
+    margin-bottom: 30px;
   }
-  .region-title{
-    font-size:24px;
-    font-weight:700;
+  .region-title {
+    font-size: 24px;
+    font-weight: 700;
     margin-top: 10px;
     margin-bottom: 12px;
 
   }
-  .region-cities{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr 1fr;
-    gap:10px;
-    overflow:hidden;
+  .region-cities {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    overflow: hidden;
     transition: all 0.5s;
   }
-  .region-cities a:link,.region-cities a:visited{
-    padding:12px;
-    display:block;
-    font-size:16px;
-    text-decoration:none;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background-color:#E8E8E8;
-    color:#000;
-    border-radius:15px;
+  .region-cities a:link,
+  .region-cities a:visited {
+    padding: 12px;
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E8E8E8;
+    color: #000;
+    border-radius: 15px;
   }
-  .region-icon_container{
-    max-width:24px;
+  .region-icon_container {
+    max-width: 24px;
     flex-grow: 0;
     display: flex;
   }
-  .region-icon_container img{
-    width:100%;
+  .region-icon_container img {
+    width: 100%;
   }
-  .region-city-content{
-    display:flex;
-    justify-content:start;
-    align-items:center;
-    gap:14px;
+  .region-city-content {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 14px;
   }
-  .region-arrow{
-    width:24px;
-    height:24px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:50px;
-    background-color:#000;
-    transition:all 0.3s;
+  .region-arrow {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #000;
+    transition: all 0.3s;
   }
-    .region-cities a:hover .region-arrow,.region-cities a:active .region-arrow{
-          background-color:#DA9DFF;
-    }
-    .region-cities a:hover .region-arrow path,.region-cities a:active .region-arrow path{
-          fill:#000;
-    }
-.regions-dropdown {
+  .region-cities a:hover .region-arrow,
+  .region-cities a:active .region-arrow {
+    background-color: #DA9DFF;
+  }
+  .region-cities a:hover .region-arrow path,
+  .region-cities a:active .region-arrow path {
+    fill: #000;
+  }
+  .regions-dropdown {
     position: absolute;
     top: 70px;
     left: 50%;
@@ -140,54 +144,57 @@
     background-color: #fff !important;
     opacity: 0;
     pointer-events: none;
-    transition: transform .5s, opacity .3s;
-    border:none !important;
-}
- .regions-dropdown.active {
-  opacity: 1;
-  pointer-events: all;
-}
+    transition: transform 0.5s
+    , opacity 0.3s;
+    border: none !important;
+  }
+  .regions-dropdown.active {
+    opacity: 1;
+    pointer-events: all;
+  }
 
-    .region-dropdown{
+  .region-dropdown {
     width: 100%;
     border-bottom: 1px solid rgba(204, 204, 204, 1);
     font-size: 16px;
     display: none;
     align-items: center;
     padding: 12px 8px;
-    cursor:pointer;
-}
+    cursor: pointer;
+  }
   input::-webkit-search-decoration,
-input::-webkit-search-cancel-button,
-input::-webkit-search-results-button,
-input::-webkit-search-results-decoration {
-  display: none;
-}
-  .show-city_button,.hide-city_button{
+  input::-webkit-search-cancel-button,
+  input::-webkit-search-results-button,
+  input::-webkit-search-results-decoration {
+    display: none;
+  }
+  .show-city_button,
+  .hide-city_button {
     padding: 12px;
     display: block;
     font-size: 16px;
     text-decoration: underline;
-    cursor:pointer;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
     color: #000;
     border-radius: 15px;
-    border:1px solid #000;
+    border: 1px solid #000;
   }
-  .show-city_button{
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    transition:all 0.5s;
+  .show-city_button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
   }
 
-  .more-arrow,.less-arrow{
-    transform:rotate(90deg);
+  .more-arrow,
+  .less-arrow {
+    transform: rotate(90deg);
     width: 24px;
     height: 24px;
     display: flex;
@@ -197,202 +204,230 @@ input::-webkit-search-results-decoration {
     background-color: #000;
     transition: all 0.3s;
   }
-  .open-city-dropdown .region-cities{
-    max-height:5000px !important
+  .open-city-dropdown .region-cities {
+    max-height: 5000px !important
   }
-  .less-arrow{
-        transform:rotate(270deg);
+  .less-arrow {
+    transform: rotate(270deg);
   }
-  @media screen and (max-width:1000px){
-      .region-cities{
-    grid-template-columns:1fr 1fr;
-  }
-      .region-picker_block{
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    width:100%;
-  }
-    .region-cities a:link,.region-cities a:visited{
-      font-size:14px;
+  @media screen and (max-width: 1000px) {
+    .region-cities {
+      grid-template-columns: 1fr 1fr;
+    }
+    .region-picker_block {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+    }
+    .region-cities a:link,
+    .region-cities a:visited {
+      font-size: 14px;
     }
   }
-   @media screen and (max-width:768px){
-     .regions-dropdown {
-    top: 125px;
-     }
-   }
-  @media screen and (max-width:400px){
-    .region-cities a:link, .region-cities a:visited{
-      padding:10px;
-      font-size:12px
-    }
-    .region-city-content{
-      gap:5px
-    }
-    .show-city_button,.hide-city_button{
-            padding:10px;
-      font-size:12px
+  @media screen and (max-width: 768px) {
+    .regions-dropdown {
+      top: 125px;
     }
   }
-  .no-found-alert{
-    background-color:#F7F7F7;
-    display:none;
-    align-items:center;
-    padding:15px 20px;
-    border-radius:15px;
-    gap:20px;
+  @media screen and (max-width: 400px) {
+    .region-cities a:link,
+    .region-cities a:visited {
+      padding: 10px;
+      font-size: 12px
+    }
+    .region-city-content {
+      gap: 5px
+    }
+    .show-city_button,
+    .hide-city_button {
+      padding: 10px;
+      font-size: 12px
+    }
+  }
+  .no-found-alert {
+    background-color: #F7F7F7;
+    display: none;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 15px;
+    gap: 20px;
   }
   .no-found-alert > div {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
   }
-  .no-found_text{
-    color:#000;
-    font-size:16px;
-    margin:0;
+  .no-found_text {
+    color: #000;
+    font-size: 16px;
+    margin: 0;
   }
   .region-dropdown:link,
-.region-dropdown:visited {
-  color: #000 !important;
-  text-decoration: none !important;
-}
-#region-search:focus{
-  border:2px solid #DA9DFF;
-}
-  .search-container {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-}
-
-.transport-switcher {
-  position: relative;
-  flex: 1;
-  display: flex;
-  border: 2px solid #ccc;
-  border-radius: 15px;
-  background: white;
-  overflow: hidden;
-}
-
-.switch-option {
-  flex: 1;
-  text-align: center;
-  z-index: 2;
-  font-weight: 500;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: black;
-  transition: color 0.3s;
-  position: relative;
-  padding: 0 8px;
-  gap:10px;
-}
-
-.switch-option.switch-active {
-  color: white !important;
-}
-.switch-option.switch-active svg path {
-  fill: white !important;
-}
-.switch-indicator {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: black;
-  color: white;
-  border-radius: 15px;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: left 0.3s ease;
-  pointer-events: none;
-}
-
-.switch-indicator span {
-  display: inline-block;
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-#region-search {
-  flex: 1;
-  padding: 17px 24px;
-  width: 100%;
-  border-radius: 15px;
-  transition: all 0.3s;
-  border: 2px solid #CCCCCC;
-}
-.switch-option p{
-  font-size:16px;
-  font-weight: 400;
-}
-.region-title-icon-container{
-  display: flex;
-   align-items: center;
-  gap: 20px;
+  .region-dropdown:visited {
+    color: #000 !important;
+    text-decoration: none !important;
   }
-  @media (max-width: 768px){
-    .switch-option p{
-      font-size:14px;
-      
+  #region-search:focus {
+    border: 2px solid #DA9DFF;
+  }
+  .search-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .transport-switcher {
+    position: relative;
+    flex: 1;
+    display: flex;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    background: white;
+    overflow: hidden;
+  }
+
+  .switch-option {
+    flex: 1;
+    text-align: center;
+    z-index: 2;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: black;
+    transition: color 0.3s;
+    position: relative;
+    padding: 0 8px;
+    gap: 10px;
+  }
+
+  .switch-option.switch-active {
+    color: white !important;
+  }
+  .switch-option.switch-active svg path {
+    fill: white !important;
+  }
+  .switch-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: black;
+    color: white;
+    border-radius: 15px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: left 0.3s ease;
+    pointer-events: none;
+  }
+
+  .switch-indicator span {
+    display: inline-block;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  #region-search {
+    flex: 1;
+    padding: 17px 24px;
+    width: 100%;
+    border-radius: 15px;
+    transition: all 0.3s;
+    border: 2px solid #CCCCCC;
+  }
+  .switch-option p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .region-title-icon-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  @media (max-width: 768px) {
+    .switch-option p {
+      font-size: 14px;
+
     }
-    .search-container{
+    .search-container {
       flex-direction: column;
     }
   }
 {% endstyle %}
 <div class="regions-section page-width">
- <div class="search-container">
-  <div class="transport-switcher" id="transportSwitcher">
-    <div class="switch-indicator" id="switchIndicator">
-      <p></p>
+  <div class="search-container">
+    <div class="transport-switcher" id="transportSwitcher">
+      <div class="switch-indicator" id="switchIndicator">
+        <p></p>
+      </div>
+      <div
+        class="switch-option switch-active"
+        data-type="car"
+        data-label="For car">
+        <svg
+          width="24"
+          height="19"
+          viewBox="0 0 24 19"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.2857 6.94062H23.1429C23.616 6.94062 24 6.55842 24 6.0875C24 5.61657 23.616 5.23438 23.1429 5.23438H21.0566L19.7331 3.03928C18.9634 1.76216 17.5551 0.96875 16.0586 0.96875H7.94143C6.44486 0.96875 5.03657 1.76216 4.26686 3.03928L2.94343 5.23438H0.857143C0.384 5.23438 0 5.61657 0 6.0875C0 6.55842 0.384 6.94062 0.857143 6.94062H1.71429L1.2 7.62313C0.426 8.65029 0 9.9223 0 11.2062V15.4719C0 16.8829 1.15371 18.0312 2.57143 18.0312H4.28571C5.70343 18.0312 6.85714 16.8829 6.85714 15.4719H17.1429C17.1429 16.8829 18.2966 18.0312 19.7143 18.0312H21.4286C22.8463 18.0312 24 16.8829 24 15.4719V11.2062C24 9.9223 23.574 8.64943 22.8 7.62313L22.2857 6.94062ZM5.73686 3.918C6.19886 3.1519 7.04314 2.675 7.94143 2.675H16.0594C16.9577 2.675 17.802 3.15104 18.264 3.918L19.416 5.829L18.8203 6.224C18.114 6.69237 17.292 6.94062 16.4426 6.94062H7.55657C6.708 6.94062 5.886 6.69322 5.17971 6.22485L4.584 5.829L5.736 3.91715L5.73686 3.918ZM22.2866 15.4719C22.2866 15.9419 21.9017 16.325 21.4294 16.325H19.7151C19.2429 16.325 18.858 15.9419 18.858 15.4719V14.6187C18.858 14.1478 18.474 13.7656 18.0009 13.7656H6C5.52686 13.7656 5.14286 14.1478 5.14286 14.6187V15.4719C5.14286 15.9419 4.758 16.325 4.28571 16.325H2.57143C2.09914 16.325 1.71429 15.9419 1.71429 15.4719V11.2062C1.71429 10.2891 2.01857 9.37971 2.57143 8.64687L3.62743 7.24519L4.22914 7.64445C5.21829 8.30051 6.36857 8.64687 7.55657 8.64687H16.4426C17.6314 8.64687 18.7817 8.29965 19.7709 7.6436L20.3717 7.24519L21.4277 8.64687C21.9806 9.37971 22.2849 10.2891 22.2849 11.2062V15.4719H22.2866Z" fill="black" />
+        </svg>
+        <p>For car</p>
+      </div>
+      <div
+        class="switch-option"
+        data-type="moto"
+        data-label="For moto">
+        <svg
+          width="27"
+          height="15"
+          viewBox="0 0 27 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M22.4345 7.10526C22.2099 7.10576 21.9858 7.12391 21.7642 7.15954L21.1732 5.66546C21.5869 5.57315 22.01 5.52648 22.4345 5.52631C22.65 5.52631 22.8566 5.44314 23.009 5.29508C23.1613 5.14703 23.2469 4.94622 23.2469 4.73684C23.2469 4.52746 23.1613 4.32665 23.009 4.1786C22.8566 4.03054 22.65 3.94737 22.4345 3.94737H20.4928L19.131 0.50625C19.0721 0.357225 18.968 0.229066 18.8326 0.138685C18.6971 0.0483048 18.5367 -5.04586e-05 18.3724 3.95115e-08H15.1227C14.9073 3.95115e-08 14.7006 0.0831766 14.5482 0.231232C14.3959 0.379286 14.3103 0.580092 14.3103 0.789473C14.3103 0.998855 14.3959 1.19966 14.5482 1.34772C14.7006 1.49577 14.9073 1.57895 15.1227 1.57895H17.8149L18.7522 3.94737H15.9351C14.0564 3.94737 12.5331 4.37269 11.5308 5.17697C11.2949 5.36187 11.0106 5.47899 10.7098 5.51509C10.409 5.55118 10.1039 5.50482 9.82879 5.38125C8.75437 4.90658 3.6605 2.89441 3.21164 2.72368L2.63177 2.50263C2.47021 2.43393 2.29912 2.38871 2.12401 2.36842C1.9346 2.36886 1.75131 2.4336 1.60581 2.55145C1.46032 2.66929 1.36177 2.83283 1.3272 3.01379C1.29263 3.19476 1.32421 3.38177 1.41649 3.54251C1.50876 3.70325 1.65593 3.8276 1.83255 3.89408C1.87927 3.91184 6.62481 5.7 9.15753 6.81809C9.70996 7.06231 10.3215 7.15207 10.9235 7.07729C11.5255 7.00251 12.0942 6.76614 12.5656 6.39473C13.0592 6 14.0452 5.52631 15.9362 5.52631H17.8474C16.6614 6.45147 15.8031 7.7141 15.3928 9.13717C15.2946 9.46396 15.0893 9.7507 14.8082 9.95389C14.527 10.1571 14.1854 10.2657 13.835 10.2632H8.54212C8.34079 9.3047 7.78041 8.45303 6.96961 7.87326C6.15882 7.29349 5.15537 7.02693 4.15382 7.12525C3.15227 7.22357 2.22396 7.67977 1.54887 8.4054C0.873778 9.13103 0.5 10.0744 0.5 11.0526C0.5 12.0308 0.873778 12.9742 1.54887 13.6999C2.22396 14.4255 3.15227 14.8817 4.15382 14.98C5.15537 15.0783 6.15882 14.8118 6.96961 14.232C7.78041 13.6522 8.34079 12.8006 8.54212 11.8421H13.835C14.5397 11.8436 15.2256 11.6219 15.7889 11.2105C16.3522 10.7992 16.7622 10.2206 16.9568 9.56249C17.1594 8.86247 17.5022 8.20819 17.9656 7.63716C18.429 7.06614 19.0038 6.5896 19.657 6.23487L20.2481 7.72796C19.4246 8.24011 18.8189 9.02366 18.5421 9.9348C18.2652 10.846 18.3358 11.8236 18.7409 12.6882C19.146 13.5528 19.8584 14.2465 20.7473 14.6419C21.6363 15.0373 22.6422 15.1079 23.5804 14.8407C24.5185 14.5735 25.3261 13.9864 25.8548 13.1873C26.3835 12.3882 26.5978 11.4305 26.4585 10.4902C26.3193 9.54986 25.8356 8.68989 25.0965 8.06811C24.3573 7.44633 23.4121 7.10446 22.4345 7.10526ZM4.56127 11.8421H6.85838C6.66674 12.3688 6.28963 12.8128 5.79372 13.0955C5.29781 13.3782 4.71503 13.4814 4.14837 13.3869C3.58171 13.2925 3.06766 13.0064 2.69709 12.5792C2.32651 12.152 2.12326 11.6113 2.12326 11.0526C2.12326 10.4939 2.32651 9.95321 2.69709 9.52605C3.06766 9.09889 3.58171 8.81279 4.14837 8.71832C4.71503 8.62384 5.29781 8.72707 5.79372 9.00976C6.28963 9.29245 6.66674 9.7364 6.85838 10.2632H4.56127C4.3458 10.2632 4.13916 10.3463 3.9868 10.4944C3.83444 10.6424 3.74885 10.8432 3.74885 11.0526C3.74885 11.262 3.83444 11.4628 3.9868 11.6109C4.13916 11.7589 4.3458 11.8421 4.56127 11.8421ZM22.4345 13.421C21.9367 13.4204 21.4509 13.2717 21.0427 12.9948C20.6344 12.718 20.3232 12.3263 20.1509 11.8724C19.9786 11.4185 19.9534 10.9243 20.0788 10.4561C20.2042 9.9879 20.4742 9.56827 20.8523 9.25361L21.6759 11.3358C21.7532 11.5314 21.9072 11.689 22.1042 11.7742C22.3011 11.8593 22.5248 11.8649 22.7259 11.7898C22.9271 11.7147 23.0894 11.565 23.177 11.3736C23.2646 11.1823 23.2704 10.9649 23.1931 10.7694L22.3685 8.68421H22.4345C23.0809 8.68421 23.7008 8.93373 24.1579 9.3779C24.615 9.82206 24.8717 10.4245 24.8717 11.0526C24.8717 11.6808 24.615 12.2832 24.1579 12.7274C23.7008 13.1715 23.0809 13.421 22.4345 13.421Z" fill="black" />
+        </svg>
+        <p>For moto</p>
+      </div>
     </div>
-    <div class="switch-option switch-active" data-type="car" data-label="For car" ><svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M22.2857 6.94062H23.1429C23.616 6.94062 24 6.55842 24 6.0875C24 5.61657 23.616 5.23438 23.1429 5.23438H21.0566L19.7331 3.03928C18.9634 1.76216 17.5551 0.96875 16.0586 0.96875H7.94143C6.44486 0.96875 5.03657 1.76216 4.26686 3.03928L2.94343 5.23438H0.857143C0.384 5.23438 0 5.61657 0 6.0875C0 6.55842 0.384 6.94062 0.857143 6.94062H1.71429L1.2 7.62313C0.426 8.65029 0 9.9223 0 11.2062V15.4719C0 16.8829 1.15371 18.0312 2.57143 18.0312H4.28571C5.70343 18.0312 6.85714 16.8829 6.85714 15.4719H17.1429C17.1429 16.8829 18.2966 18.0312 19.7143 18.0312H21.4286C22.8463 18.0312 24 16.8829 24 15.4719V11.2062C24 9.9223 23.574 8.64943 22.8 7.62313L22.2857 6.94062ZM5.73686 3.918C6.19886 3.1519 7.04314 2.675 7.94143 2.675H16.0594C16.9577 2.675 17.802 3.15104 18.264 3.918L19.416 5.829L18.8203 6.224C18.114 6.69237 17.292 6.94062 16.4426 6.94062H7.55657C6.708 6.94062 5.886 6.69322 5.17971 6.22485L4.584 5.829L5.736 3.91715L5.73686 3.918ZM22.2866 15.4719C22.2866 15.9419 21.9017 16.325 21.4294 16.325H19.7151C19.2429 16.325 18.858 15.9419 18.858 15.4719V14.6187C18.858 14.1478 18.474 13.7656 18.0009 13.7656H6C5.52686 13.7656 5.14286 14.1478 5.14286 14.6187V15.4719C5.14286 15.9419 4.758 16.325 4.28571 16.325H2.57143C2.09914 16.325 1.71429 15.9419 1.71429 15.4719V11.2062C1.71429 10.2891 2.01857 9.37971 2.57143 8.64687L3.62743 7.24519L4.22914 7.64445C5.21829 8.30051 6.36857 8.64687 7.55657 8.64687H16.4426C17.6314 8.64687 18.7817 8.29965 19.7709 7.6436L20.3717 7.24519L21.4277 8.64687C21.9806 9.37971 22.2849 10.2891 22.2849 11.2062V15.4719H22.2866Z" fill="black"/>
-</svg>
-<p>For car</p></div>
-    <div class="switch-option" data-type="moto" data-label="For moto" ><svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M22.4345 7.10526C22.2099 7.10576 21.9858 7.12391 21.7642 7.15954L21.1732 5.66546C21.5869 5.57315 22.01 5.52648 22.4345 5.52631C22.65 5.52631 22.8566 5.44314 23.009 5.29508C23.1613 5.14703 23.2469 4.94622 23.2469 4.73684C23.2469 4.52746 23.1613 4.32665 23.009 4.1786C22.8566 4.03054 22.65 3.94737 22.4345 3.94737H20.4928L19.131 0.50625C19.0721 0.357225 18.968 0.229066 18.8326 0.138685C18.6971 0.0483048 18.5367 -5.04586e-05 18.3724 3.95115e-08H15.1227C14.9073 3.95115e-08 14.7006 0.0831766 14.5482 0.231232C14.3959 0.379286 14.3103 0.580092 14.3103 0.789473C14.3103 0.998855 14.3959 1.19966 14.5482 1.34772C14.7006 1.49577 14.9073 1.57895 15.1227 1.57895H17.8149L18.7522 3.94737H15.9351C14.0564 3.94737 12.5331 4.37269 11.5308 5.17697C11.2949 5.36187 11.0106 5.47899 10.7098 5.51509C10.409 5.55118 10.1039 5.50482 9.82879 5.38125C8.75437 4.90658 3.6605 2.89441 3.21164 2.72368L2.63177 2.50263C2.47021 2.43393 2.29912 2.38871 2.12401 2.36842C1.9346 2.36886 1.75131 2.4336 1.60581 2.55145C1.46032 2.66929 1.36177 2.83283 1.3272 3.01379C1.29263 3.19476 1.32421 3.38177 1.41649 3.54251C1.50876 3.70325 1.65593 3.8276 1.83255 3.89408C1.87927 3.91184 6.62481 5.7 9.15753 6.81809C9.70996 7.06231 10.3215 7.15207 10.9235 7.07729C11.5255 7.00251 12.0942 6.76614 12.5656 6.39473C13.0592 6 14.0452 5.52631 15.9362 5.52631H17.8474C16.6614 6.45147 15.8031 7.7141 15.3928 9.13717C15.2946 9.46396 15.0893 9.7507 14.8082 9.95389C14.527 10.1571 14.1854 10.2657 13.835 10.2632H8.54212C8.34079 9.3047 7.78041 8.45303 6.96961 7.87326C6.15882 7.29349 5.15537 7.02693 4.15382 7.12525C3.15227 7.22357 2.22396 7.67977 1.54887 8.4054C0.873778 9.13103 0.5 10.0744 0.5 11.0526C0.5 12.0308 0.873778 12.9742 1.54887 13.6999C2.22396 14.4255 3.15227 14.8817 4.15382 14.98C5.15537 15.0783 6.15882 14.8118 6.96961 14.232C7.78041 13.6522 8.34079 12.8006 8.54212 11.8421H13.835C14.5397 11.8436 15.2256 11.6219 15.7889 11.2105C16.3522 10.7992 16.7622 10.2206 16.9568 9.56249C17.1594 8.86247 17.5022 8.20819 17.9656 7.63716C18.429 7.06614 19.0038 6.5896 19.657 6.23487L20.2481 7.72796C19.4246 8.24011 18.8189 9.02366 18.5421 9.9348C18.2652 10.846 18.3358 11.8236 18.7409 12.6882C19.146 13.5528 19.8584 14.2465 20.7473 14.6419C21.6363 15.0373 22.6422 15.1079 23.5804 14.8407C24.5185 14.5735 25.3261 13.9864 25.8548 13.1873C26.3835 12.3882 26.5978 11.4305 26.4585 10.4902C26.3193 9.54986 25.8356 8.68989 25.0965 8.06811C24.3573 7.44633 23.4121 7.10446 22.4345 7.10526ZM4.56127 11.8421H6.85838C6.66674 12.3688 6.28963 12.8128 5.79372 13.0955C5.29781 13.3782 4.71503 13.4814 4.14837 13.3869C3.58171 13.2925 3.06766 13.0064 2.69709 12.5792C2.32651 12.152 2.12326 11.6113 2.12326 11.0526C2.12326 10.4939 2.32651 9.95321 2.69709 9.52605C3.06766 9.09889 3.58171 8.81279 4.14837 8.71832C4.71503 8.62384 5.29781 8.72707 5.79372 9.00976C6.28963 9.29245 6.66674 9.7364 6.85838 10.2632H4.56127C4.3458 10.2632 4.13916 10.3463 3.9868 10.4944C3.83444 10.6424 3.74885 10.8432 3.74885 11.0526C3.74885 11.262 3.83444 11.4628 3.9868 11.6109C4.13916 11.7589 4.3458 11.8421 4.56127 11.8421ZM22.4345 13.421C21.9367 13.4204 21.4509 13.2717 21.0427 12.9948C20.6344 12.718 20.3232 12.3263 20.1509 11.8724C19.9786 11.4185 19.9534 10.9243 20.0788 10.4561C20.2042 9.9879 20.4742 9.56827 20.8523 9.25361L21.6759 11.3358C21.7532 11.5314 21.9072 11.689 22.1042 11.7742C22.3011 11.8593 22.5248 11.8649 22.7259 11.7898C22.9271 11.7147 23.0894 11.565 23.177 11.3736C23.2646 11.1823 23.2704 10.9649 23.1931 10.7694L22.3685 8.68421H22.4345C23.0809 8.68421 23.7008 8.93373 24.1579 9.3779C24.615 9.82206 24.8717 10.4245 24.8717 11.0526C24.8717 11.6808 24.615 12.2832 24.1579 12.7274C23.7008 13.1715 23.0809 13.421 22.4345 13.421Z" fill="black"/>
-</svg>
-<p>For moto</p></div>
+
+    <input
+      autocomplete="off"
+      type="search"
+      id="region-search"
+      name="region-search"
+      placeholder="{{ section.settings.select_placeholder }}" />
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const switcher = document.getElementById("transportSwitcher");
+      const options = switcher.querySelectorAll(".switch-option");
+      const indicator = document.getElementById("switchIndicator");
 
-  <input autocomplete="off" type="search" id="region-search" name="region-search" placeholder="{{ section.settings.select_placeholder }}" />
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const switcher = document.getElementById("transportSwitcher");
-  const options = switcher.querySelectorAll(".switch-option");
-  const indicator = document.getElementById("switchIndicator");
-
-  // Найти активный элемент при загрузке
-  let activeIndex = 0;
-  options.forEach((option, index) => {
+      // Найти активный элемент при загрузке
+      let activeIndex = 0;
+      options.forEach((option, index) => {
     if (option.classList.contains("switch-active")) {
       activeIndex = index;
     }
-  });
+      });
 
-  // Установить положение индикатора при загрузке
-  indicator.style.left = `${activeIndex * 50}%`;
+      // Установить положение индикатора при загрузке
+      indicator.style.left = `${activeIndex * 50}%`;
 
-  // Фильтрация при загрузке
-  const selectedType = options[activeIndex].dataset.type;
-  document.querySelectorAll('.region-container').forEach(block => {
+      // Фильтрация при загрузке
+      const selectedType = options[activeIndex].dataset.type;
+      document.querySelectorAll('.region-container').forEach(block => {
     const vehicle = block.dataset.vehicle;
     block.style.display = (!vehicle || vehicle === selectedType) ? "block" : "none";
-  });
+      });
 
-  // Обработчик клика
-  options.forEach((option, index) => {
+      // Обработчик клика
+      options.forEach((option, index) => {
     option.addEventListener("click", () => {
       options.forEach(o => o.classList.remove("switch-active"));
       option.classList.add("switch-active");
@@ -405,119 +440,178 @@ document.addEventListener("DOMContentLoaded", function () {
         block.style.display = (!vehicle || vehicle === selectedType) ? "block" : "none";
       });
     });
-  });
-});
-</script>
-<div class="regions-dropdown">
-  {% for block in section.blocks %}
-    {% for city in block.settings.region_collections %}
-      {% assign words = city.title | split: ' ' %}
-      {% assign length = words.size | minus: 1 %}
-      {% assign words_except_last = words | slice: 0, length %}
-      {% assign suitable_for = city.metafields.custom.suitable_for | join: ',' | escape | default: 'car' %}
-      {% assign test_filter = city.metafields.custom.test_filter_value | join: ',' | escape | default: '' %}
-      {% assign combined_filter = suitable_for | append: ',' | append: test_filter | split: ',' | uniq | join: ',' %}
-      <a class="region-dropdown"
-         href="{{ city.url }}"
-         data-region="{{ block.settings.region }}"
-         data-city="{{ words_except_last | join: ' ' }}"
-         data-filter="{{ combined_filter }}"
-      >
-        {{ words_except_last | join: ' ' }}
-      </a>
+      });
+    });
+  </script>
+  <div class="regions-dropdown">
+    {% for block in section.blocks %}
+      {% for city in block.settings.region_collections %}
+        {% assign words = city.title | split: ' ' %}
+        {% assign length = words.size | minus: 1 %}
+        {% assign words_except_last = words | slice: 0, length %}
+        {% assign suitable_for = city.metafields.custom.suitable_for | join: ',' | escape | default: 'car' %}
+        {% assign test_filter = city.metafields.custom.test_filter_value | join: ',' | escape | default: '' %}
+        {% assign combined_filter = suitable_for | append: ',' | append: test_filter | split: ',' | uniq | join: ',' %}
+        <a
+          class="region-dropdown"
+          href="{{ city.url }}"
+          data-region="{{ block.settings.region }}"
+          data-city="{{ words_except_last | join: ' ' }}"
+          data-filter="{{ combined_filter }}">
+          {{ words_except_last | join: ' ' }}
+        </a>
+      {% endfor %}
     {% endfor %}
-  {% endfor %}
-</div>
-<div><p style="margin: 6px 0px 12px 10px;color: #000;">{{ section.settings.example }}</p></div>
-<div class="region-picker_block">
-  {% assign region_vehicles = '' %}
-  {% for block in section.blocks %}
-    {% assign region_name = block.settings.region %}
-    {% assign vehicle_type = block.settings.vehicle-type %}
-    {% if vehicle_type %}
-      {% assign region_vehicles = region_vehicles | append: region_name | append: ':' | append: vehicle_type | append: ',' %}
-    {% endif %}
-    <button class="region-button {% if block.settings.isDropdown %}dropdown-button{% endif %}" data-region="{{ block.settings.region }}" data-vehicle="{{ vehicle_type }}">{{ block.settings.region }}</button>
-  {% endfor %}
-  <button class="region-button" data-region="universal" data-vehicle="car,moto">{{ "ts.nanofilm.universal_material" | t }}</button>
-  <div class="clear_button">{{ "ts.updated_banner.clear"| t }}</div>
-</div>
+  </div>
+  <div>
+    <p style="margin: 6px 0px 12px 10px;color: #000;">{{ section.settings.example }}</p>
+  </div>
+  <div class="region-picker_block">
+    {% assign region_vehicles = '' %}
+    {% for block in section.blocks %}
+      {% assign region_name = block.settings.region %}
+      {% assign vehicle_type = block.settings.vehicle-type %}
+      {% if vehicle_type %}
+        {% assign region_vehicles = region_vehicles | append: region_name | append: ':' | append: vehicle_type | append: ',' %}
+      {% endif %}
+      <button
+        class="region-button {% if block.settings.isDropdown %}dropdown-button{% endif %}"
+        data-region="{{ block.settings.region }}"
+        data-vehicle="{{ vehicle_type }}">{{ block.settings.region }}</button>
+    {% endfor %}
+    <button
+      class="region-button"
+      data-region="universal"
+      data-vehicle="car,moto">{{ "ts.nanofilm.universal_material" | t }}</button>
+    <div class="clear_button">{{ "ts.updated_banner.clear" | t }}</div>
+  </div>
   <div class="regions-list">
     <div class="no-found-alert">
-      <div class="no-found_smile"><svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 21.5C16.5228 21.5 21 17.0228 21 11.5C21 5.97715 16.5228 1.5 11 1.5C5.47715 1.5 1 5.97715 1 11.5C1 17.0228 5.47715 21.5 11 21.5Z" stroke="black" stroke-width="2" stroke-linecap="round"/>
-<path d="M6.88086 15.7441C7.37386 15.3171 8.02286 15.0091 8.72286 14.8071C9.46396 14.5997 10.2303 14.4964 10.9999 14.5001C11.7859 14.5001 12.5699 14.6031 13.2769 14.8071C13.9769 15.0091 14.6269 15.3171 15.1189 15.7441" stroke="black" stroke-width="2" stroke-linecap="round"/>
-<path d="M8 10.75C8.69036 10.75 9.25 10.1904 9.25 9.5C9.25 8.80964 8.69036 8.25 8 8.25C7.30964 8.25 6.75 8.80964 6.75 9.5C6.75 10.1904 7.30964 10.75 8 10.75Z" fill="black" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-<path d="M14 10.75C14.6904 10.75 15.25 10.1904 15.25 9.5C15.25 8.80964 14.6904 8.25 14 8.25C13.3096 8.25 12.75 8.80964 12.75 9.5C12.75 10.1904 13.3096 10.75 14 10.75Z" fill="black" stroke="black" stroke-width="0.5" stroke-linecap="round"/>
-</svg>
-  </div><p class="no-found_text">{{ section.settings.alert-text }}</p><div class="no-found_arrow"><svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M6.75 1.07227C6.75 0.658052 6.41421 0.322266 6 0.322266C5.58579 0.322266 5.25 0.658052 5.25 1.07227L6.75 1.07227ZM5.46967 14.4597C5.76256 14.7526 6.23744 14.7526 6.53033 14.4597L11.3033 9.68677C11.5962 9.39388 11.5962 8.919 11.3033 8.62611C11.0104 8.33321 10.5355 8.33321 10.2426 8.62611L6 12.8687L1.75736 8.62611C1.46447 8.33321 0.989592 8.33321 0.696699 8.62611C0.403805 8.919 0.403805 9.39387 0.696699 9.68677L5.46967 14.4597ZM6 1.07227L5.25 1.07227L5.25 13.9294L6 13.9294L6.75 13.9294L6.75 1.07227L6 1.07227Z" fill="black"/>
-</svg>
-</div>
+      <div class="no-found_smile">
+        <svg
+          width="22"
+          height="23"
+          viewBox="0 0 22 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11 21.5C16.5228 21.5 21 17.0228 21 11.5C21 5.97715 16.5228 1.5 11 1.5C5.47715 1.5 1 5.97715 1 11.5C1 17.0228 5.47715 21.5 11 21.5Z"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round" />
+          <path
+            d="M6.88086 15.7441C7.37386 15.3171 8.02286 15.0091 8.72286 14.8071C9.46396 14.5997 10.2303 14.4964 10.9999 14.5001C11.7859 14.5001 12.5699 14.6031 13.2769 14.8071C13.9769 15.0091 14.6269 15.3171 15.1189 15.7441"
+            stroke="black"
+            stroke-width="2"
+            stroke-linecap="round" />
+          <path
+            d="M8 10.75C8.69036 10.75 9.25 10.1904 9.25 9.5C9.25 8.80964 8.69036 8.25 8 8.25C7.30964 8.25 6.75 8.80964 6.75 9.5C6.75 10.1904 7.30964 10.75 8 10.75Z"
+            fill="black"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-linecap="round" />
+          <path
+            d="M14 10.75C14.6904 10.75 15.25 10.1904 15.25 9.5C15.25 8.80964 14.6904 8.25 14 8.25C13.3096 8.25 12.75 8.80964 12.75 9.5C12.75 10.1904 13.3096 10.75 14 10.75Z"
+            fill="black"
+            stroke="black"
+            stroke-width="0.5"
+            stroke-linecap="round" />
+        </svg>
+      </div>
+      <p class="no-found_text">{{ section.settings.alert-text }}</p>
+      <div class="no-found_arrow">
+        <svg
+          width="12"
+          height="15"
+          viewBox="0 0 12 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.75 1.07227C6.75 0.658052 6.41421 0.322266 6 0.322266C5.58579 0.322266 5.25 0.658052 5.25 1.07227L6.75 1.07227ZM5.46967 14.4597C5.76256 14.7526 6.23744 14.7526 6.53033 14.4597L11.3033 9.68677C11.5962 9.39388 11.5962 8.919 11.3033 8.62611C11.0104 8.33321 10.5355 8.33321 10.2426 8.62611L6 12.8687L1.75736 8.62611C1.46447 8.33321 0.989592 8.33321 0.696699 8.62611C0.403805 8.919 0.403805 9.39387 0.696699 9.68677L5.46967 14.4597ZM6 1.07227L5.25 1.07227L5.25 13.9294L6 13.9294L6.75 13.9294L6.75 1.07227L6 1.07227Z" fill="black" />
+        </svg>
+      </div>
     </div>
     {% for block in section.blocks %}
-      <div class="region-container {% if block.settings.isDropdown %}city-dropdown{% endif %}" data-region="{{ block.settings.region }}" data-vehicle="{{ block.settings.vehicle-type }}">
-          <div class="region-title-container">
-            <div class="region-title-icon-container">
-            <h3 class="region-title">{{ block.settings.region }}</h3> 
-              {{ block.settings.vehicle-icon }}
-            </div>
-      <p class="product-text">{{ block.settings.product }}</p></div>
-          <div class="region-cities">
-            {% for city in block.settings.region_collections %}
-              <div style="position:relative">
+      <div
+        class="region-container {% if block.settings.isDropdown %}city-dropdown{% endif %}"
+        data-region="{{ block.settings.region }}"
+        data-vehicle="{{ block.settings.vehicle-type }}">
+        <div class="region-title-container">
+          <div class="region-title-icon-container">
+            <h3 class="region-title">{{ block.settings.region }}</h3>
+            {{ block.settings.vehicle-icon }}
+          </div>
+          <p class="product-text">{{ block.settings.product }}</p>
+        </div>
+        <div class="region-cities">
+          {% for city in block.settings.region_collections %}
+            <div style="position:relative">
               {% if block.settings.isDropdown and forloop.index == 8 %}
-            <button class="show-city_button" >
-              <div class="region-city-content">
+                <button class="show-city_button">
+                  <div class="region-city-content">
                     <span>{{ "ts.nanofilm.showMore" | t }}</span>
-              </div>
-                <div class="more-arrow">
-                  <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.14258 5.25C0.728365 5.25 0.392578 5.58579 0.392578 6C0.392578 6.41421 0.728364 6.75 1.14258 6.75L1.14258 5.25ZM14.5301 6.53033C14.8229 6.23744 14.8229 5.76256 14.5301 5.46967L9.75708 0.6967C9.46419 0.403806 8.98931 0.403806 8.69642 0.6967C8.40353 0.989593 8.40353 1.46447 8.69642 1.75736L12.9391 6L8.69642 10.2426C8.40353 10.5355 8.40353 11.0104 8.69642 11.3033C8.98931 11.5962 9.46419 11.5962 9.75708 11.3033L14.5301 6.53033ZM1.14258 6.75L13.9997 6.75L13.9997 5.25L1.14258 5.25L1.14258 6.75Z" fill="white"/>
-                  </svg>
-                </div>
-              </button>
+                  </div>
+                  <div class="more-arrow">
+                    <svg
+                      width="15"
+                      height="12"
+                      viewBox="0 0 15 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.14258 5.25C0.728365 5.25 0.392578 5.58579 0.392578 6C0.392578 6.41421 0.728364 6.75 1.14258 6.75L1.14258 5.25ZM14.5301 6.53033C14.8229 6.23744 14.8229 5.76256 14.5301 5.46967L9.75708 0.6967C9.46419 0.403806 8.98931 0.403806 8.69642 0.6967C8.40353 0.989593 8.40353 1.46447 8.69642 1.75736L12.9391 6L8.69642 10.2426C8.40353 10.5355 8.40353 11.0104 8.69642 11.3033C8.98931 11.5962 9.46419 11.5962 9.75708 11.3033L14.5301 6.53033ZM1.14258 6.75L13.9997 6.75L13.9997 5.25L1.14258 5.25L1.14258 6.75Z" fill="white" />
+                    </svg>
+                  </div>
+                </button>
               {% endif %}
-                    {% assign words = city.title | split: ' ' %}
-                    {% assign length = words.size | minus: 1 %}
-                    {% assign words_except_last = words | slice: 0, length %}
-              <a href="{{ city.url }}" data-city="{{ words_except_last | join: ' ' }}"
-                 data-filter="{{ city.metafields.custom.test_filter_value | join: ',' | escape }}"
-
->
-              <div class="region-city-content">
+              {% assign words = city.title | split: ' ' %}
+              {% assign length = words.size | minus: 1 %}
+              {% assign words_except_last = words | slice: 0, length %}
+              <a
+                href="{{ city.url }}"
+                data-city="{{ words_except_last | join: ' ' }}"
+                data-filter="{{ city.metafields.custom.test_filter_value | join: ',' | escape }}">
+                <div class="region-city-content">
                   <div class="region-icon_container"><img src="{{ city.metafields.custom.collection_flag | image_url: height: 500,width: 500}}"></div>
-                    <span>{{ words_except_last | join: ' ' }}</span>
+                  <span>{{ words_except_last | join: ' ' }}</span>
 
-              </div>
+                </div>
                 <div class="region-arrow">
-                  <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.14258 5.25C0.728365 5.25 0.392578 5.58579 0.392578 6C0.392578 6.41421 0.728364 6.75 1.14258 6.75L1.14258 5.25ZM14.5301 6.53033C14.8229 6.23744 14.8229 5.76256 14.5301 5.46967L9.75708 0.6967C9.46419 0.403806 8.98931 0.403806 8.69642 0.6967C8.40353 0.989593 8.40353 1.46447 8.69642 1.75736L12.9391 6L8.69642 10.2426C8.40353 10.5355 8.40353 11.0104 8.69642 11.3033C8.98931 11.5962 9.46419 11.5962 9.75708 11.3033L14.5301 6.53033ZM1.14258 6.75L13.9997 6.75L13.9997 5.25L1.14258 5.25L1.14258 6.75Z" fill="white"/>
-</svg>
+                  <svg
+                    width="15"
+                    height="12"
+                    viewBox="0 0 15 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.14258 5.25C0.728365 5.25 0.392578 5.58579 0.392578 6C0.392578 6.41421 0.728364 6.75 1.14258 6.75L1.14258 5.25ZM14.5301 6.53033C14.8229 6.23744 14.8229 5.76256 14.5301 5.46967L9.75708 0.6967C9.46419 0.403806 8.98931 0.403806 8.69642 0.6967C8.40353 0.989593 8.40353 1.46447 8.69642 1.75736L12.9391 6L8.69642 10.2426C8.40353 10.5355 8.40353 11.0104 8.69642 11.3033C8.98931 11.5962 9.46419 11.5962 9.75708 11.3033L14.5301 6.53033ZM1.14258 6.75L13.9997 6.75L13.9997 5.25L1.14258 5.25L1.14258 6.75Z" fill="white" />
+                  </svg>
                 </div>
               </a>
-  </div>
-            {% endfor %}
+            </div>
+          {% endfor %}
           {% if block.settings.isDropdown %}
-            <button class="hide-city_button" >
+            <button class="hide-city_button">
               <div class="region-city-content">
-                    <span>{{ "ts.nanofilm.showLess" | t }}</span>
+                <span>{{ "ts.nanofilm.showLess" | t }}</span>
               </div>
-                <div class="less-arrow">
-                  <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.14258 5.25C0.728365 5.25 0.392578 5.58579 0.392578 6C0.392578 6.41421 0.728364 6.75 1.14258 6.75L1.14258 5.25ZM14.5301 6.53033C14.8229 6.23744 14.8229 5.76256 14.5301 5.46967L9.75708 0.6967C9.46419 0.403806 8.98931 0.403806 8.69642 0.6967C8.40353 0.989593 8.40353 1.46447 8.69642 1.75736L12.9391 6L8.69642 10.2426C8.40353 10.5355 8.40353 11.0104 8.69642 11.3033C8.98931 11.5962 9.46419 11.5962 9.75708 11.3033L14.5301 6.53033ZM1.14258 6.75L13.9997 6.75L13.9997 5.25L1.14258 5.25L1.14258 6.75Z" fill="white"/>
-                  </svg>
-                </div>
-              </button>
-        {% endif %}
-          </div>
+              <div class="less-arrow">
+                <svg
+                  width="15"
+                  height="12"
+                  viewBox="0 0 15 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.14258 5.25C0.728365 5.25 0.392578 5.58579 0.392578 6C0.392578 6.41421 0.728364 6.75 1.14258 6.75L1.14258 5.25ZM14.5301 6.53033C14.8229 6.23744 14.8229 5.76256 14.5301 5.46967L9.75708 0.6967C9.46419 0.403806 8.98931 0.403806 8.69642 0.6967C8.40353 0.989593 8.40353 1.46447 8.69642 1.75736L12.9391 6L8.69642 10.2426C8.40353 10.5355 8.40353 11.0104 8.69642 11.3033C8.98931 11.5962 9.46419 11.5962 9.75708 11.3033L14.5301 6.53033ZM1.14258 6.75L13.9997 6.75L13.9997 5.25L1.14258 5.25L1.14258 6.75Z" fill="white" />
+                </svg>
+              </div>
+            </button>
+          {% endif %}
         </div>
+      </div>
     {% endfor %}
   </div>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
   const switcher = document.getElementById("transportSwitcher");
   const options = switcher.querySelectorAll(".switch-option");
   const indicator = document.getElementById("switchIndicator");
@@ -533,13 +627,13 @@ document.addEventListener("DOMContentLoaded", function () {
     dropdownHeight = document.querySelector(".region-cities a").scrollHeight * 4 + 35;
   }
 
- let selectedRegion = ""
+   let selectedRegion = ""
     let params = new URLSearchParams(document.location.search);
     const urlRegion = params.get("region");
   const urlVehicle = params.get("vehicle");
-if (urlVehicle) {
+  if (urlVehicle) {
   setVehicleManually(urlVehicle);
-}
+  }
   if (urlRegion) {
   setRegionManually(urlRegion); // ✅ активируем все одинаковые кнопки
 
@@ -563,7 +657,7 @@ if (urlVehicle) {
     
     filterRegions();
 
-}
+  }
 
 
 
@@ -626,7 +720,7 @@ if (urlVehicle) {
 
       const isVisible = matchesSearch && matchesVehicle && matchesRegion;
       region.style.display = isVisible ? "block" : "none";
-      console.log(`City: ${cityName}, Filters: ${filters.join(",")}, Selected Vehicle: ${selectedVehicle}, Matches Vehicle: ${matchesVehicle}, Visible: ${isVisible}`);
+      // console.log(`City: ${cityName}, Filters: ${filters.join(",")}, Selected Vehicle: ${selectedVehicle}, Matches Vehicle: ${matchesVehicle}, Visible: ${isVisible}`);
       if (isVisible) anyVisible = true;
     });
 
@@ -709,7 +803,7 @@ if (urlVehicle) {
 
     filterRegions(); // Вызываем фильтрацию после изменения региона
   }
- function setVehicleManually(vehicleType) {
+   function setVehicleManually(vehicleType) {
   const switchButtons = document.querySelectorAll(".switch-option");
   switchButtons.forEach((button, index) => {
     if (button.dataset.type.toLowerCase() === vehicleType.toLowerCase()) {
@@ -718,11 +812,11 @@ if (urlVehicle) {
       document.getElementById("switchIndicator").style.left = `${index * 50}%`;
     }
   });
-}
+  }
 
 
-// Активирует все кнопки с нужным регионом без сброса других
-function setRegionManually(region) {
+  // Активирует все кнопки с нужным регионом без сброса других
+  function setRegionManually(region) {
   const normalizedRegion = region.toLowerCase().trim();
   regionPickers.forEach(button => {
     const btnRegion = button.dataset.region?.toLowerCase().trim();
@@ -730,7 +824,7 @@ function setRegionManually(region) {
       button.classList.add("active-button");
     }
   });
-}
+  }
 
 
   regionPickers.forEach(button => {
@@ -800,13 +894,13 @@ function setRegionManually(region) {
       section.style.display = "none";
     }
   });
-}
+  }
 
   // Вызываем фильтрацию при загрузке страницы
   filterRegions();
   filterProductListsByTransport();
 
-});
+  });
 </script>
 {% schema %}
   {
@@ -816,17 +910,15 @@ function setRegionManually(region) {
         "type": "text",
         "id": "select_placeholder",
         "label": "Input placeholder"
-      },
-      {
+      }, {
         "type": "text",
         "id": "alert-text",
         "label": "No Found Alert Text"
-      },
-      {
+      }, {
         "type": "text",
         "id": "example",
         "label": "Input example"
-      },
+      }
     ],
     "presets": [
       {
@@ -836,7 +928,7 @@ function setRegionManually(region) {
     "blocks": [
       {
         "type": "Region",
-        "name":"Region",
+        "name": "Region",
         "settings": [
           {
             "type": "text",
@@ -854,16 +946,14 @@ function setRegionManually(region) {
             "label": "vehicle Type"
           },
           {
-          "type": "textarea",
-          "id": "vehicle-icon",
-          "label": "vehicle Icon",
-          },
-          {
+            "type": "textarea",
+            "id": "vehicle-icon",
+            "label": "vehicle Icon"
+          }, {
             "type": "collection_list",
             "id": "region_collections",
-            "label": "Collections",
-          },
-          {
+            "label": "Collections"
+          }, {
             "type": "checkbox",
             "id": "isDropdown",
             "label": "Is Dropdown?"

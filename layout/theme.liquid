@@ -1,234 +1,224 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
   <head>
-{% if request.path == '/products' or request.path == '/collections/all' %}
-  <meta name="robots" content="noindex">
-{% endif %}
-{% if request.path == '/partner-b2b' and form.posted_successfully? %}
-  <script>
-    if (typeof window !== "undefined") {
-      const url = new URL(window.location);
-      url.searchParams.set("contact_posted", "true");
-      window.history.replaceState({}, document.title, url.toString());
-    }
-  </script>
-{% endif %}
+    {% if request.path == '/products' or request.path == '/collections/all' %}
+      <meta name="robots" content="noindex">
+    {% endif %}
+    {% if request.path == '/partner-b2b' and form.posted_successfully? %}
+      <script>
+            if (typeof window !== "undefined") {
+              const url = new URL(window.location);
+              url.searchParams.set("contact_posted", "true");
+              window.history.replaceState({}, document.title, url.toString());
+            }
+      </script>
+    {% endif %}
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Alite LTD",
-  "url": "https://alite.cc",
-  "logo": "https://cdn.shopify.com/s/files/1/0761/7943/9962/files/logo.svg?v=1735136041",
-  "description": "Alite LTD is a pioneer in license plate protection. We offer cutting-edge solutions like Nanofilm Ecoslick, Nanotapes, Blackout, and Flipper devices to help protect your privacy and defend against speed and surveillance cameras. Our products are legal, effective, and trusted worldwide.",
-  "email": "hello@alite.cc",
-  "telephone": "+1 (585) 672-9988",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "UK"
-  },
-  "sameAs": [
-    "https://www.facebook.com/alite.it",
-    "https://instagram.com/alite.it/",
-    "https://www.tiktok.com/@alite_it"
-  ],
-  "paymentAccepted": [
-    "Credit Card",
-    "Debit Card",
-    "American Express",
-    "China Union Pay",
-    "Mastercard",
-    "VISA"
-  ],
-  "availableLanguage": [
-    "English",
-    "Portuguese",
-    "Italian",
-    "Dutch",
-    "Spanish",
-    "German",
-    "Russian",
-    "Estonian",
-    "Irish",
-    "Greek",
-    "Bulgarian",
-    "French",
-    "Bosnian",
-    "Czech",
-    "Hindi",
-    "Croatian"
-  ],
-  "areaServed": "Worldwide",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "License Plate Protection Solutions",
-    "itemListElement": [
       {
-        "@type": "Product",
-        "name": "Nanofilm Ecoslick",
-        "description": "Anti-camera nanofilm for license plates that protects from surveillance and speed cameras while remaining invisible to the naked eye.",
-        "url": "https://alite.cc/pages/nanofilm",
-        "image": "https://cdn.shopify.com/s/files/1/0761/7943/9962/files/main_nanofilm_9e79da1c-1764-4281-a5c8-977b3a6b3a8a.png?v=1743664542",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "16.90",
-          "availability": "http://schema.org/InStock"
-        }
-      },
-      {
-        "@type": "Product",
-        "name": "Alite Nanotapes",
-        "description": "Advanced nanotape for secure, weatherproof license plate mounting with ultra-thin profile and high durability.",
-        "url": "https://alite.cc/collections/alite-nanotapes",
-        "image": "https://cdn.shopify.com/s/files/1/0761/7943/9962/files/nanotape_main.png?v=1744109552",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "19.90",
-          "availability": "http://schema.org/InStock"
-        }
-      },
-      {
-        "@type": "Product",
-        "name": "Alite Blackout",
-        "description": "Alite Blackout License Plate Hider: Conceal your plate to protect privacy and avoid camera detection.",
-        "url": "https://alite.cc/collections/alite-blackout-license-plate-hiders",
-        "image": "https://cdn.shopify.com/s/files/1/0761/7943/9962/files/blackout_main.png?v=1744109552",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "179.90",
-          "availability": "http://schema.org/InStock"
-        }
-      },
-      {
-        "@type": "Product",
-        "name": "Flipper",
-        "description": "Electronic license plate flipper device for temporary concealment. Ideal for shows and exhibitions. Not for public road use.",
-        "url": "https://alite.cc/collections/folding-frames",
-        "image": "https://cdn.shopify.com/s/files/1/0761/7943/9962/files/flipper_main.png?v=1744109552",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "349.90",
-          "availability": "http://schema.org/InStock"
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Alite LTD",
+        "url": "https://alite.cc",
+        "logo": "https://cdn.shopify.com/s/files/1/0761/7943/9962/files/logo.svg?v=1735136041",
+        "description": "Alite LTD is a pioneer in license plate protection. We offer cutting-edge solutions like Nanofilm Ecoslick, Nanotapes, Blackout, and Flipper devices to help protect your privacy and defend against speed and surveillance cameras. Our products are legal, effective, and trusted worldwide.",
+        "email": "hello@alite.cc",
+        "telephone": "+1 (585) 672-9988",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "UK"
+        },
+        "sameAs": ["https://www.facebook.com/alite.it", "https://instagram.com/alite.it/", "https://www.tiktok.com/@alite_it"],
+        "paymentAccepted": [
+          "Credit Card",
+          "Debit Card",
+          "American Express",
+          "China Union Pay",
+          "Mastercard",
+          "VISA"
+        ],
+        "availableLanguage": [
+          "English",
+          "Portuguese",
+          "Italian",
+          "Dutch",
+          "Spanish",
+          "German",
+          "Russian",
+          "Estonian",
+          "Irish",
+          "Greek",
+          "Bulgarian",
+          "French",
+          "Bosnian",
+          "Czech",
+          "Hindi",
+          "Croatian"
+        ],
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "License Plate Protection Solutions",
+          "itemListElement": [
+            {
+              "@type": "Product",
+              "name": "Nanofilm Ecoslick",
+              "description": "Anti-camera nanofilm for license plates that protects from surveillance and speed cameras while remaining invisible to the naked eye.",
+              "url": "https://alite.cc/pages/nanofilm",
+              "image": "https://cdn.shopify.com/s/files/1/0761/7943/9962/files/main_nanofilm_9e79da1c-1764-4281-a5c8-977b3a6b3a8a.png?v=1743664542",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "USD",
+                "price": "16.90",
+                "availability": "http://schema.org/InStock"
+              }
+            }, {
+              "@type": "Product",
+              "name": "Alite Nanotapes",
+              "description": "Advanced nanotape for secure, weatherproof license plate mounting with ultra-thin profile and high durability.",
+              "url": "https://alite.cc/collections/alite-nanotapes",
+              "image": "https://cdn.shopify.com/s/files/1/0761/7943/9962/files/nanotape_main.png?v=1744109552",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "USD",
+                "price": "19.90",
+                "availability": "http://schema.org/InStock"
+              }
+            }, {
+              "@type": "Product",
+              "name": "Alite Blackout",
+              "description": "Alite Blackout License Plate Hider: Conceal your plate to protect privacy and avoid camera detection.",
+              "url": "https://alite.cc/collections/alite-blackout-license-plate-hiders",
+              "image": "https://cdn.shopify.com/s/files/1/0761/7943/9962/files/blackout_main.png?v=1744109552",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "USD",
+                "price": "179.90",
+                "availability": "http://schema.org/InStock"
+              }
+            }, {
+              "@type": "Product",
+              "name": "Flipper",
+              "description": "Electronic license plate flipper device for temporary concealment. Ideal for shows and exhibitions. Not for public road use.",
+              "url": "https://alite.cc/collections/folding-frames",
+              "image": "https://cdn.shopify.com/s/files/1/0761/7943/9962/files/flipper_main.png?v=1744109552",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "USD",
+                "price": "349.90",
+                "availability": "http://schema.org/InStock"
+              }
+            }
+          ]
+        },
+        "shippingDetails": {
+          "@type": "DeliveryTimeSettings",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 3,
+            "unitCode": "d"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 7,
+            "maxValue": 21,
+            "unitCode": "d"
+          }
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Alex M."
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Nanofilm Ecoslick really works! I haven’t had any problems with speed cameras since using it. Totally recommend it."
+          }, {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Sarah D."
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "4.8",
+              "bestRating": "5"
+            },
+            "reviewBody": "Fast delivery and great customer support. The blackout are top notch and easy to apply."
+          }, {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Jamal K."
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Flipper is fun to use at exhibitions and works smoothly. A cool addition to my show car!"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "152"
         }
       }
-    ]
-  },
-  "shippingDetails": {
-    "@type": "DeliveryTimeSettings",
-    "handlingTime": {
-      "@type": "QuantitativeValue",
-      "minValue": 1,
-      "maxValue": 3,
-      "unitCode": "d"
-    },
-    "transitTime": {
-      "@type": "QuantitativeValue",
-      "minValue": 7,
-      "maxValue": 21,
-      "unitCode": "d"
-    }
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Alex M."
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Nanofilm Ecoslick really works! I haven’t had any problems with speed cameras since using it. Totally recommend it."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Sarah D."
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "4.8",
-        "bestRating": "5"
-      },
-      "reviewBody": "Fast delivery and great customer support. The blackout are top notch and easy to apply."
-    },
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Jamal K."
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Flipper is fun to use at exhibitions and works smoothly. A cool addition to my show car!"
-    }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "152"
-  }
-}
-</script>
- 
-    <!-- RedTrack integration-->
+    </script>
+
+    <!-- RedTrack integration -->
 
     <script src="https://glassy.glassybot.com/uniclick.js?attribution=lastpaid&cookiedomain=alite.cc&cookieduration=90&defaultcampaignid=67ed8c6a5126420cd348b1c9&regviewonce=false"></script>
     <script src="https://glassy.glassybot.com/eventsv2.js"></script>
 
-    <!-- RedTrack integration-->
+    <!-- RedTrack integration -->
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16907331930">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16907331930"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'AW-16907331930');
-</script>
+        gtag('config', 'AW-16907331930');
+    </script>
     <style>
-    @media (max-width: 750px) {
-       
-  .promo{
-    margin-bottom:15px;
-  }
-  
-}
-    @keyframes fade-in {
+      @media (max-width: 750px) {
+
+        .promo {
+          margin-bottom: 15px;
+        }
+
+      }
+      @keyframes fade-in {
         from {
-            opacity: 0;
-            transform: translateY(20px); /* Slightly slide up from bottom */
+          opacity: 0;
+          transform: translateY(20px);
+          /* Slightly slide up from bottom */
         }
         to {
-            opacity: 1;
-            transform: translateY(0);
+          opacity: 1;
+          transform: translateY(0);
         }
-    }
+      }
 
-    
-    
-</style>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16907331930"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-16907331930');
-</script>
- 
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16907331930"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-16907331930');
+    </script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -238,18 +228,27 @@
     <!-- <link rel="preconnect" href="https://cdn.shopify.com" crossorigin> -->
 
     {%- if settings.favicon != blank -%}
-      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+      <link
+        rel="icon"
+        type="image/png"
+        href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
 
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
-      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+      <link
+        rel="preconnect"
+        href="https://fonts.shopifycdn.com"
+        crossorigin>
     {%- endunless -%}
 
     <title>
       {{ page_title }}
-      {%- if current_tags %} – tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-      {%- if current_page != 1 %} – Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} – {{ shop.name }}{% endunless -%}
+      {%- if current_tags %}
+        – tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %}
+        – Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %}
+        – {{ shop.name }}{% endunless -%}
     </title>
 
     {% if page_description %}
@@ -272,247 +271,299 @@
     {% style %}
       {% if localization.language.iso_code == "ru" or localization.language.iso_code == "el" %}
         .gradient p {
-  font-family: "ShopifySans", sans-serif !important;
-}
-.gradient h1 {
-  font-family: "ShopifySans", sans-serif !important;
-}
-.gradient h2 {
-  font-family: "ShopifySans", sans-serif !important;
-}
-.gradient h3 {
-  font-family: "ShopifySans", sans-serif !important;
-}
-.gradient h4 {
-  font-family: "ShopifySans", sans-serif !important;
-}
-.gradient h5 {
-  font-family: "ShopifySans", sans-serif !important;
-}
-.gradient h6 {
-  font-family: "ShopifySans", sans-serif !important;
-}
-.gradient a {
-  font-family: "ShopifySans", sans-serif !important;
-}
-.gradient div {
-  font-family: "ShopifySans", sans-serif !important;
-}
-.gradient span {
-  font-family: "ShopifySans", sans-serif !important;
-}
-.gradient .ts-products-list h3.ts-product__title a {
-  font-family: "ShopifySans", sans-serif !important;
-}
-        {% endif %}
-      {{ settings.type_body_font | font_face: font_display: 'swap' }}
-      {{ body_font_bold | font_face: font_display: 'swap' }}
-      {{ body_font_italic | font_face: font_display: 'swap' }}
-      {{ body_font_bold_italic | font_face: font_display: 'swap' }}
-      {{ settings.type_header_font | font_face: font_display: 'swap' }}
-
-      :root {
-        --font-body-family: "ShopifySans", {{ settings.type_body_font.fallback_families }};
+          font-family: "ShopifySans"
+          , sans-serif !important;
+        }
+        .gradient h1 {
+          font-family: "ShopifySans"
+          , sans-serif !important;
+        }
+        .gradient h2 {
+          font-family: "ShopifySans"
+          , sans-serif !important;
+        }
+        .gradient h3 {
+          font-family: "ShopifySans"
+          , sans-serif !important;
+        }
+        .gradient h4 {
+          font-family: "ShopifySans"
+          , sans-serif !important;
+        }
+        .gradient h5 {
+          font-family: "ShopifySans"
+          , sans-serif !important;
+        }
+        .gradient h6 {
+          font-family: "ShopifySans"
+          , sans-serif !important;
+        }
+        .gradient a {
+          font-family: "ShopifySans"
+          , sans-serif !important;
+        }
+        .gradient div {
+          font-family: "ShopifySans"
+          , sans-serif !important;
+        }
+        .gradient span {
+          font-family: "ShopifySans"
+          , sans-serif !important;
+        }
+        .gradient .ts-products-list h3.ts-product__title a {
+          font-family: "ShopifySans"
+          , sans-serif !important;
+        }
+      {% endif %}
+      {{ settings.type_body_font | font_face: font_display: 'swap' }}{{ body_font_bold | font_face: font_display: 'swap' }}{{ body_font_italic | font_face: font_display: 'swap' }}{{ body_font_bold_italic | font_face: font_display: 'swap' }}{{ settings.type_header_font | font_face: font_display: 'swap' }}:root {
+        --font-body-family: "ShopifySans", 
+        {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
 
-        --font-heading-family: "ShopifySans", {{ settings.type_header_font.fallback_families }};
+        --font-heading-family: "ShopifySans", 
+        {{ settings.type_header_font.fallback_families }};
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: {{ settings.type_header_font.weight }};
 
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
 
-        --color-base-text: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
-        --color-shadow: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
-        --color-base-background-1: {{ settings.colors_background_1.red }}, {{ settings.colors_background_1.green }}, {{ settings.colors_background_1.blue }};
-        --color-base-background-2: {{ settings.colors_background_2.red }}, {{ settings.colors_background_2.green }}, {{ settings.colors_background_2.blue }};
-        --color-base-solid-button-labels: {{ settings.colors_solid_button_labels.red }}, {{ settings.colors_solid_button_labels.green }}, {{ settings.colors_solid_button_labels.blue }};
-        --color-base-outline-button-labels: {{ settings.colors_outline_button_labels.red }}, {{ settings.colors_outline_button_labels.green }}, {{ settings.colors_outline_button_labels.blue }};
-        --color-base-accent-1: {{ settings.colors_accent_1.red }}, {{ settings.colors_accent_1.green }}, {{ settings.colors_accent_1.blue }};
-        --color-base-accent-2: {{ settings.colors_accent_2.red }}, {{ settings.colors_accent_2.green }}, {{ settings.colors_accent_2.blue }};
+        --color-base-text: {{ settings.colors_text.red }}, 
+        {{ settings.colors_text.green }}, 
+        {{ settings.colors_text.blue }};
+        --color-shadow: {{ settings.colors_text.red }}, 
+        {{ settings.colors_text.green }}, 
+        {{ settings.colors_text.blue }};
+        --color-base-background-1: {{ settings.colors_background_1.red }}, 
+        {{ settings.colors_background_1.green }}, 
+        {{ settings.colors_background_1.blue }};
+        --color-base-background-2: {{ settings.colors_background_2.red }}, 
+        {{ settings.colors_background_2.green }}, 
+        {{ settings.colors_background_2.blue }};
+        --color-base-solid-button-labels: {{ settings.colors_solid_button_labels.red }}, 
+        {{ settings.colors_solid_button_labels.green }}, 
+        {{ settings.colors_solid_button_labels.blue }};
+        --color-base-outline-button-labels: {{ settings.colors_outline_button_labels.red }}, 
+        {{ settings.colors_outline_button_labels.green }}, 
+        {{ settings.colors_outline_button_labels.blue }};
+        --color-base-accent-1: {{ settings.colors_accent_1.red }}, 
+        {{ settings.colors_accent_1.green }}, 
+        {{ settings.colors_accent_1.blue }};
+        --color-base-accent-2: {{ settings.colors_accent_2.red }}, 
+        {{ settings.colors_accent_2.green }}, 
+        {{ settings.colors_accent_2.blue }};
         --payment-terms-background-color: {{ settings.colors_background_1 }};
 
-        --gradient-base-background-1: {% if settings.gradient_background_1 != blank %}{{ settings.gradient_background_1 }}{% else %}{{ settings.colors_background_1 }}{% endif %};
-        --gradient-base-background-2: {% if settings.gradient_background_2 != blank %}{{ settings.gradient_background_2 }}{% else %}{{ settings.colors_background_2 }}{% endif %};
-        --gradient-base-accent-1: {% if settings.gradient_accent_1 != blank %}{{ settings.gradient_accent_1 }}{% else %}{{ settings.colors_accent_1 }}{% endif %};
-        --gradient-base-accent-2: {% if settings.gradient_accent_2 != blank %}{{ settings.gradient_accent_2 }}{% else %}{{ settings.colors_accent_2 }}{% endif %};
+        --gradient-base-background-1: {% if settings.gradient_background_1 != blank %}{{ settings.gradient_background_1 }}
+      {% else %}{{ settings.colors_background_1 }}
+    {% endif %};
+      --gradient-base-background-2: {% if settings.gradient_background_2 != blank %}{{ settings.gradient_background_2 }}
+    {% else %}{{ settings.colors_background_2 }}
+  {% endif %};
+    --gradient-base-accent-1: {% if settings.gradient_accent_1 != blank %}{{ settings.gradient_accent_1 }}
+  {% else %}{{ settings.colors_accent_1 }}
+{% endif %};
+  --gradient-base-accent-2: {% if settings.gradient_accent_2 != blank %}{{ settings.gradient_accent_2 }}
+{% else %}{{ settings.colors_accent_2 }}
+{% endif %};
 
-        --media-padding: {{ settings.media_padding }}px;
-        --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
-        --media-border-width: {{ settings.media_border_thickness }}px;
-        --media-radius: {{ settings.media_radius }}px;
-        --media-shadow-opacity: {{ settings.media_shadow_opacity | divided_by: 100.0 }};
-        --media-shadow-horizontal-offset: {{ settings.media_shadow_horizontal_offset }}px;
-        --media-shadow-vertical-offset: {{ settings.media_shadow_vertical_offset }}px;
-        --media-shadow-blur-radius: {{ settings.media_shadow_blur }}px;
-        --media-shadow-visible: {% if settings.media_shadow_opacity > 0 %}1{% else %}0{% endif %};
+  --media-padding: {{ settings.media_padding }}px;
+  --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
+  --media-border-width: {{ settings.media_border_thickness }}px;
+  --media-radius: {{ settings.media_radius }}px;
+  --media-shadow-opacity: {{ settings.media_shadow_opacity | divided_by: 100.0 }};
+  --media-shadow-horizontal-offset: {{ settings.media_shadow_horizontal_offset }}px;
+  --media-shadow-vertical-offset: {{ settings.media_shadow_vertical_offset }}px;
+  --media-shadow-blur-radius: {{ settings.media_shadow_blur }}px;
+  --media-shadow-visible: {% if settings.media_shadow_opacity > 0 %}1{% else %}0{% endif %};
 
-        --page-width: {{ settings.page_width | divided_by: 10 }}rem;
-        --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
+  --page-width: {{ settings.page_width | divided_by: 10 }}rem;
+  --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
 
-        --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
-        --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
-        --product-card-text-alignment: {{ settings.card_text_alignment }};
-        --product-card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
-        --product-card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
-        --product-card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
-        --product-card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --product-card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --product-card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --product-card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
+  --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
+  --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
+  --product-card-text-alignment: {{ settings.card_text_alignment }};
+  --product-card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
+  --product-card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
+  --product-card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
+  --product-card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+  --product-card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+  --product-card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+  --product-card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
 
-        --collection-card-image-padding: {{ settings.collection_card_image_padding | divided_by: 10.0 }}rem;
-        --collection-card-corner-radius: {{ settings.collection_card_corner_radius | divided_by: 10.0 }}rem;
-        --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
-        --collection-card-border-width: {{ settings.collection_card_border_thickness | divided_by: 10.0 }}rem;
-        --collection-card-border-opacity: {{ settings.collection_card_border_opacity | divided_by: 100.0 }};
-        --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
-        --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
+  --collection-card-image-padding: {{ settings.collection_card_image_padding | divided_by: 10.0 }}rem;
+  --collection-card-corner-radius: {{ settings.collection_card_corner_radius | divided_by: 10.0 }}rem;
+  --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
+  --collection-card-border-width: {{ settings.collection_card_border_thickness | divided_by: 10.0 }}rem;
+  --collection-card-border-opacity: {{ settings.collection_card_border_opacity | divided_by: 100.0 }};
+  --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
+  --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+  --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+  --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+  --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
 
-        --blog-card-image-padding: {{ settings.blog_card_image_padding | divided_by: 10.0 }}rem;
-        --blog-card-corner-radius: {{ settings.blog_card_corner_radius | divided_by: 10.0 }}rem;
-        --blog-card-text-alignment: {{ settings.blog_card_text_alignment }};
-        --blog-card-border-width: {{ settings.blog_card_border_thickness | divided_by: 10.0 }}rem;
-        --blog-card-border-opacity: {{ settings.blog_card_border_opacity | divided_by: 100.0 }};
-        --blog-card-shadow-opacity: {{ settings.blog_card_shadow_opacity | divided_by: 100.0 }};
-        --blog-card-shadow-visible: {% if settings.blog_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --blog-card-shadow-horizontal-offset: {{ settings.blog_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --blog-card-shadow-vertical-offset: {{ settings.blog_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --blog-card-shadow-blur-radius: {{ settings.blog_card_shadow_blur | divided_by: 10.0 }}rem;
+  --blog-card-image-padding: {{ settings.blog_card_image_padding | divided_by: 10.0 }}rem;
+  --blog-card-corner-radius: {{ settings.blog_card_corner_radius | divided_by: 10.0 }}rem;
+  --blog-card-text-alignment: {{ settings.blog_card_text_alignment }};
+  --blog-card-border-width: {{ settings.blog_card_border_thickness | divided_by: 10.0 }}rem;
+  --blog-card-border-opacity: {{ settings.blog_card_border_opacity | divided_by: 100.0 }};
+  --blog-card-shadow-opacity: {{ settings.blog_card_shadow_opacity | divided_by: 100.0 }};
+  --blog-card-shadow-visible: {% if settings.blog_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+  --blog-card-shadow-horizontal-offset: {{ settings.blog_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
+  --blog-card-shadow-vertical-offset: {{ settings.blog_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
+  --blog-card-shadow-blur-radius: {{ settings.blog_card_shadow_blur | divided_by: 10.0 }}rem;
 
-        --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
+  --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
 
-        --popup-border-width: {{ settings.popup_border_thickness }}px;
-        --popup-border-opacity: {{ settings.popup_border_opacity | divided_by: 100.0 }};
-        --popup-corner-radius: {{ settings.popup_corner_radius }}px;
-        --popup-shadow-opacity: {{ settings.popup_shadow_opacity | divided_by: 100.0 }};
-        --popup-shadow-horizontal-offset: {{ settings.popup_shadow_horizontal_offset }}px;
-        --popup-shadow-vertical-offset: {{ settings.popup_shadow_vertical_offset }}px;
-        --popup-shadow-blur-radius: {{ settings.popup_shadow_blur }}px;
+  --popup-border-width: {{ settings.popup_border_thickness }}px;
+  --popup-border-opacity: {{ settings.popup_border_opacity | divided_by: 100.0 }};
+  --popup-corner-radius: {{ settings.popup_corner_radius }}px;
+  --popup-shadow-opacity: {{ settings.popup_shadow_opacity | divided_by: 100.0 }};
+  --popup-shadow-horizontal-offset: {{ settings.popup_shadow_horizontal_offset }}px;
+  --popup-shadow-vertical-offset: {{ settings.popup_shadow_vertical_offset }}px;
+  --popup-shadow-blur-radius: {{ settings.popup_shadow_blur }}px;
 
-        --drawer-border-width: {{ settings.drawer_border_thickness }}px;
-        --drawer-border-opacity: {{ settings.drawer_border_opacity | divided_by: 100.0 }};
-        --drawer-shadow-opacity: {{ settings.drawer_shadow_opacity | divided_by: 100.0 }};
-        --drawer-shadow-horizontal-offset: {{ settings.drawer_shadow_horizontal_offset }}px;
-        --drawer-shadow-vertical-offset: {{ settings.drawer_shadow_vertical_offset }}px;
-        --drawer-shadow-blur-radius: {{ settings.drawer_shadow_blur }}px;
+  --drawer-border-width: {{ settings.drawer_border_thickness }}px;
+  --drawer-border-opacity: {{ settings.drawer_border_opacity | divided_by: 100.0 }};
+  --drawer-shadow-opacity: {{ settings.drawer_shadow_opacity | divided_by: 100.0 }};
+  --drawer-shadow-horizontal-offset: {{ settings.drawer_shadow_horizontal_offset }}px;
+  --drawer-shadow-vertical-offset: {{ settings.drawer_shadow_vertical_offset }}px;
+  --drawer-shadow-blur-radius: {{ settings.drawer_shadow_blur }}px;
 
-        --spacing-sections-desktop: {{ settings.spacing_sections }}px;
-        --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}{{ settings.spacing_sections }}{% else %}{{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}{% endif %}px;
+  --spacing-sections-desktop: {{ settings.spacing_sections }}px;
+  --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}{{ settings.spacing_sections }}
+{% else %}{{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}
+{% endif %}px;
 
-        --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
-        --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
-        --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 2 }}px;
-        --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
+  --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
+  --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
+  --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 2 }}px;
+  --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
 
-        --text-boxes-border-opacity: {{ settings.text_boxes_border_opacity | divided_by: 100.0 }};
-        --text-boxes-border-width: {{ settings.text_boxes_border_thickness }}px;
-        --text-boxes-radius: {{ settings.text_boxes_radius }}px;
-        --text-boxes-shadow-opacity: {{ settings.text_boxes_shadow_opacity | divided_by: 100.0 }};
-        --text-boxes-shadow-visible: {% if settings.text_boxes_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --text-boxes-shadow-horizontal-offset: {{ settings.text_boxes_shadow_horizontal_offset }}px;
-        --text-boxes-shadow-vertical-offset: {{ settings.text_boxes_shadow_vertical_offset }}px;
-        --text-boxes-shadow-blur-radius: {{ settings.text_boxes_shadow_blur }}px;
+  --text-boxes-border-opacity: {{ settings.text_boxes_border_opacity | divided_by: 100.0 }};
+  --text-boxes-border-width: {{ settings.text_boxes_border_thickness }}px;
+  --text-boxes-radius: {{ settings.text_boxes_radius }}px;
+  --text-boxes-shadow-opacity: {{ settings.text_boxes_shadow_opacity | divided_by: 100.0 }};
+  --text-boxes-shadow-visible: {% if settings.text_boxes_shadow_opacity > 0 %}1{% else %}0{% endif %};
+  --text-boxes-shadow-horizontal-offset: {{ settings.text_boxes_shadow_horizontal_offset }}px;
+  --text-boxes-shadow-vertical-offset: {{ settings.text_boxes_shadow_vertical_offset }}px;
+  --text-boxes-shadow-blur-radius: {{ settings.text_boxes_shadow_blur }}px;
 
-        --buttons-radius: {{ settings.buttons_radius }}px;
-        --buttons-radius-outset: {% if settings.buttons_radius > 0 %}{{ settings.buttons_radius | plus: settings.buttons_border_thickness }}{% else %}0{% endif %}px;
-        --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}{{ settings.buttons_border_thickness }}{% else %}0{% endif %}px;
-        --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }};
-        --buttons-shadow-opacity: {{ settings.buttons_shadow_opacity | divided_by: 100.0 }};
-        --buttons-shadow-visible: {% if settings.buttons_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --buttons-shadow-horizontal-offset: {{ settings.buttons_shadow_horizontal_offset }}px;
-        --buttons-shadow-vertical-offset: {{ settings.buttons_shadow_vertical_offset }}px;
-        --buttons-shadow-blur-radius: {{ settings.buttons_shadow_blur }}px;
-        --buttons-border-offset: {% if settings.buttons_radius > 0 or settings.buttons_shadow_opacity > 0 %}0.3{% else %}0{% endif %}px;
+  --buttons-radius: {{ settings.buttons_radius }}px;
+  --buttons-radius-outset: {% if settings.buttons_radius > 0 %}{{ settings.buttons_radius | plus: settings.buttons_border_thickness }}
+{% else %}0{% endif %}px;
+  --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}{{ settings.buttons_border_thickness }}
+{% else %}0{% endif %}px;
+  --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }};
+  --buttons-shadow-opacity: {{ settings.buttons_shadow_opacity | divided_by: 100.0 }};
+  --buttons-shadow-visible: {% if settings.buttons_shadow_opacity > 0 %}1{% else %}0{% endif %};
+  --buttons-shadow-horizontal-offset: {{ settings.buttons_shadow_horizontal_offset }}px;
+  --buttons-shadow-vertical-offset: {{ settings.buttons_shadow_vertical_offset }}px;
+  --buttons-shadow-blur-radius: {{ settings.buttons_shadow_blur }}px;
+  --buttons-border-offset: {% if settings.buttons_radius > 0 or settings.buttons_shadow_opacity > 0 %}0.3{% else %}0{% endif %}px;
 
-        --inputs-radius: {{ settings.inputs_radius }}px;
-        --inputs-border-width: {{ settings.inputs_border_thickness }}px;
-        --inputs-border-opacity: {{ settings.inputs_border_opacity | divided_by: 100.0 }};
-        --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
-        --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
-        --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}{% else %}0{% endif %}px;
-        --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
-        --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
-        --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}0{% endif %}px;
+  --inputs-radius: {{ settings.inputs_radius }}px;
+  --inputs-border-width: {{ settings.inputs_border_thickness }}px;
+  --inputs-border-opacity: {{ settings.inputs_border_opacity | divided_by: 100.0 }};
+  --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
+  --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
+  --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}
+{% else %}0{% endif %}px;
+  --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
+  --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
+  --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}
+{% else %}0{% endif %}px;
 
-        --variant-pills-radius: {{ settings.variant_pills_radius }}px;
-        --variant-pills-border-width: {{ settings.variant_pills_border_thickness }}px;
-        --variant-pills-border-opacity: {{ settings.variant_pills_border_opacity | divided_by: 100.0 }};
-        --variant-pills-shadow-opacity: {{ settings.variant_pills_shadow_opacity | divided_by: 100.0 }};
-        --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
-        --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
-        --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
-      }
+  --variant-pills-radius: {{ settings.variant_pills_radius }}px;
+  --variant-pills-border-width: {{ settings.variant_pills_border_thickness }}px;
+  --variant-pills-border-opacity: {{ settings.variant_pills_border_opacity | divided_by: 100.0 }};
+  --variant-pills-shadow-opacity: {{ settings.variant_pills_shadow_opacity | divided_by: 100.0 }};
+  --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
+  --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
+  --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
+}
 
-      *,
-      *::before,
-      *::after {
-        box-sizing: inherit;
-      }
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
-      html {
-        box-sizing: border-box;
-        font-size: calc(var(--font-body-scale) * 62.5%);
-        height: 100%;
-      }
+html {
+  box-sizing: border-box;
+  font-size: calc(var(--font-body-scale) * 62.5%);
+  height: 100%;
+}
 
-      body {
-        display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        grid-template-columns: 100%;
-        min-height: 100%;
-        margin: 0;
-        font-size: 1.5rem;
-        letter-spacing: normal;
-        line-height: calc(1 + 0.8 / var(--font-body-scale));
-        font-family: var(--font-body-family);
-        font-style: var(--font-body-style);
-        font-weight: var(--font-body-weight);
-      }
+body {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100%;
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: normal;
+  line-height: calc(1 + 0.8 / var(--font-body-scale));
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
+}
 
-      @font-face {
-        font-family: 'Bidcorn';
-        src: url(https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Shopify_Sans_Web_Medium_Regular.woff2?v=1701170174) format('woff2');
-      }
-      
-      @media screen and (min-width: 750px) {
-        body {
-          font-size: 1.6rem;
-        }
-      }
+@font-face {
+  font-family: 'Bidcorn';
+  src: url('https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Shopify_Sans_Web_Medium_Regular.woff2?v=1701170174') format('woff2');
+}
+
+@media screen and (min-width: 750px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
-      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
+      <link
+        rel="preload"
+        as="font"
+        href="{{ settings.type_body_font | font_url }}"
+        type="font/woff2"
+        crossorigin>
     {%- endunless -%}
     {%- unless settings.type_header_font.system? -%}
-      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
+      <link
+        rel="preload"
+        as="font"
+        href="{{ settings.type_header_font | font_url }}"
+        type="font/woff2"
+        crossorigin>
     {%- endunless -%}
 
     {%- if settings.predictive_search_enabled -%}
-      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
+      <link
+        rel="stylesheet"
+        href="{{ 'component-predictive-search.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'">
     {%- endif -%}
 
-    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+    <script>
+      document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
       if (Shopify.designMode) {
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
     <meta name="google-site-verification" content="1tQkZGLxfn5cXDMDkWHPaNgUjCGmwZHF6K7N5fW3RB4" />
 
-	  {{ shop.metafields.loox["global_html_head"] }}
+    {{ shop.metafields.loox["global_html_head"] }}
 
     <style>
       @font-face {
         font-family: 'ShopifySans';
-        src: url({{ "ShopifySans--regular.woff2" | asset_url }}) format('woff2');
+        src: url('{{ "ShopifySans--regular.woff2" | asset_url }}') format('woff2');
         font-weight: 400;
         font-style: normal;
         font-display: swap;
@@ -520,7 +571,7 @@
 
       @font-face {
         font-family: 'ShopifySans';
-        src: url({{ "ShopifySans--medium.woff2" | asset_url }}) format('woff2');
+        src: url('{{ "ShopifySans--medium.woff2" | asset_url }}') format('woff2');
         font-weight: 500;
         font-style: normal;
         font-display: swap;
@@ -528,7 +579,7 @@
 
       @font-face {
         font-family: 'ShopifySans';
-        src: url({{ "ShopifySans--bold.woff2" | asset_url }}) format('woff2');
+        src: url('{{ "ShopifySans--bold.woff2" | asset_url }}') format('woff2');
         font-weight: 700;
         font-style: normal;
         font-display: swap;
@@ -536,7 +587,7 @@
 
       @font-face {
         font-family: 'Grtsk';
-        src: url({{ "grtsk.woff2" | asset_url }}) format('woff2');
+        src: url('{{ "grtsk.woff2" | asset_url }}') format('woff2');
         font-weight: 400;
         font-style: normal;
         font-display: swap;
@@ -561,9 +612,9 @@
         max-width: 100vw;
         overflow: hidden;
       }
-      
+
       body {
-        min-height: 100lvh;
+        min-height: 100 lvh;
       }
 
       {% if template == "page.promo" or template == "page.promo-new-york" or template == "page.set-up" or template == "page.faq" %}
@@ -581,53 +632,62 @@
           }
         }
       {% else %}
-        .ts-header {
-          box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.1);
-        }
-      {% endif %}
-       #ShopifyChat{
-          z-index:5 !important;
-        }
-      .interstitial-view.is-mobile {
-    position: relative !important;
-    top: 55px!important;
-}
-      .chat-app--is-mobile {
-    margin: 0;
-    position: relative;
-    top: 55px;
-}
+      .ts-header {
+        box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.1);
+      }
+    {% endif %}
+    #ShopifyChat {
+      z-index: 5 !important;
+    }
+    .interstitial-view.is-mobile {
+      position: relative !important;
+      top: 55px !important;
+    }
+    .chat-app--is-mobile {
+      margin: 0;
+      position: relative;
+      top: 55px;
+    }
     </style>
-   
 
-</head>
+
+  </head>
   <body class="gradient">
     <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-WKP33PCV"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GT-WKP33PCV"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
-    </a>
+  </a>
 
     {% comment %} {%- if settings.cart_type == 'drawer' -%}
-      {%- render 'cart-drawer' -%}
-    {%- endif -%} {% endcomment %}
+                        {%- render 'cart-drawer' -%}
+                {%- endif -%} {% endcomment %}
 
     {% comment %} {% if template == "page.promo" %}
-      {% section 'ts-announcement' %} 
-    {% else %}
-    {% endif %} {% endcomment %}
+                        {% section 'ts-announcement' %} 
+                      {% else %}
+                {% endif %} {% endcomment %}
 
     {% sections 'header-group' %}
 
-    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <main
+      id="MainContent"
+      class="content-for-layout focus-none"
+      role="main"
+      tabindex="-1">
       {{ content_for_layout }}
-      
+
     </main>
 
-    {% section 'ts-footer' %} 
+    {% section 'ts-footer' %}
 
     {% comment %} {% sections 'footer-group' %} {% endcomment %}
 
@@ -636,7 +696,7 @@
       <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
     </ul>
 
-    
+
     <script>
       window.shopUrl = '{{ request.origin }}';
       window.routes = {
@@ -668,10 +728,11 @@
     </script>
 
     {%- if settings.predictive_search_enabled -%}
+      <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    {%- render "ecom_footer"-%}
+    {%- render "ecom_footer" - %}
     {% render 'ts-scrollbar' %}
 
     <script>
@@ -685,12 +746,12 @@
     </script>
 
 
-            <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  const dropdownBlocks = document.querySelectorAll(".product-dropdown_section")
-    dropdownBlocks.forEach(block =>{
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const dropdownBlocks = document.querySelectorAll(".product-dropdown_section")
+          dropdownBlocks.forEach(block =>{
       block.addEventListener("click",function(e){
-    console.log(e.target)
+          // console.log(e.target)
       if(e.target.classList.contains("product-information_block-button")){
       const dropdown = block.querySelector(".product-dropdown_block");
       dropdown.classList.toggle("open")
@@ -700,106 +761,101 @@
           e.target.textContent = "{{ 'ts.updated_banner.link' | t }}"
         }
         }
-    })
-    })
-  })
-</script>
-    
+          })
+          })
+        })
+    </script>
+
     <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('bixgrow-sign-up-form');
-    if (form) {
+        document.addEventListener('DOMContentLoaded', function () {
+          const form = document.getElementById('bixgrow-sign-up-form');
+          if (form) {
       form.addEventListener('submit', function () {
         if (typeof fbq === 'function') {
           fbq('track', 'Lead');
         }
       });
-    }
-  });
-</script>
+          }
+        });
+    </script>
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const allElements = document.querySelectorAll("body *");
+        document.addEventListener("DOMContentLoaded", function () {
+          const allElements = document.querySelectorAll("body *");
 
-    allElements.forEach(el => {
+          allElements.forEach(el => {
       const font = getComputedStyle(el).fontFamily;
       if (font && font.toLowerCase().includes("grtsk")) {
         el.style.letterSpacing = "-0.05em";
       }
-    });
-  });
+          });
+        });
+    </script>
+    <script>
+      (function forceTopWhenOpen() {
+        const waitForEl = setInterval(() => {
+          const chatEl = document.getElementById('ShopifyChat');
+          if (!chatEl) return;
 
-  
-</script>
-<script>
-(function forceTopWhenOpen() {
-  const waitForEl = setInterval(() => {
-    const chatEl = document.getElementById('ShopifyChat');
-    if (!chatEl) return;
+          clearInterval(waitForEl);
 
-    clearInterval(waitForEl);
-
-    const updateTop = () => {
+          const updateTop = () => {
       if (chatEl.getAttribute('is-open') === 'true') {
         chatEl.style.setProperty('top', '80px', 'important');
         chatEl.style.removeProperty('bottom');
       } else {
         chatEl.style.removeProperty('top');
       }
-    };
+          };
 
-    const attrObserver = new MutationObserver(updateTop);
-    attrObserver.observe(chatEl, {
+          const attrObserver = new MutationObserver(updateTop);
+          attrObserver.observe(chatEl, {
       attributes: true,
       attributeFilter: ['is-open', 'style']
-    });
+          });
 
-    updateTop();
+          updateTop();
 
-    setInterval(updateTop, 500);
-  }, 300);
-})();
-</script>
+          setInterval(updateTop, 500);
+        }, 300);
+      })();
+    </script>
     <script>
-  document.addEventListener("DOMContentLoaded", function () {
-  {% if template.name != "cart" %}
-  const cartLink = document.querySelector(".ts-header__cart");
+        document.addEventListener("DOMContentLoaded", function () {
+        {% if template.name != "cart" %}
+        const cartLink = document.querySelector(".ts-header__cart");
 
-  if (cartLink) {
-    cartLink.addEventListener("click", function () {
+        if (cartLink) {
+          cartLink.addEventListener("click", function () {
       localStorage.setItem("lastCartClickPage", window.location.href);
-    });
-  }
-    {% endif %}
-  {% if template.name == "cart" %}
-  const lastPage = localStorage.getItem("lastCartClickPage");
+          });
+        }
+          {% endif %}
+        {% if template.name == "cart" %}
+        const lastPage = localStorage.getItem("lastCartClickPage");
 
-  if (lastPage) {
-    const underlinedLink = document.querySelector(".underlined-link");
-    const continueShoppingBtn = document.querySelector(".button-continue_shoppings");
+        if (lastPage) {
+          const underlinedLink = document.querySelector(".underlined-link");
+          const continueShoppingBtn = document.querySelector(".button-continue_shoppings");
 
-    if (underlinedLink) {
+          if (underlinedLink) {
       underlinedLink.setAttribute("href", lastPage);
-    }
+          }
 
-    if (continueShoppingBtn) {
+          if (continueShoppingBtn) {
       continueShoppingBtn.setAttribute("href", lastPage);
-    }
-  }
-    {% endif %}
-});
+          }
+        }
+          {% endif %}
+      });
 
-</script>
+    </script>
     {% unless template.name == "cart" %}
-    <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    sessionStorage.setItem('lastVisitedURL', window.location.href);
-  });
-</script>
+      <script>
+          window.addEventListener('DOMContentLoaded', () => {
+            sessionStorage.setItem('lastVisitedURL', window.location.href);
+          });
+      </script>
     {% endunless %}
 
   </body>
 </html>
-
-    
-    

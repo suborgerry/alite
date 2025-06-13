@@ -369,9 +369,10 @@
 </cart-items>
 <script>
   document.addEventListener("DOMContentLoaded",function(){
-    const lineItems = document.querySelectorAll(".cart-item-container")
-    const button = document.querySelector(".show-more_items")
-    const lineItemsWrapper = document.querySelector(".cart-items_list")
+    const lineItems = document.querySelectorAll(".cart-item-container");
+    const button = document.querySelector(".show-more_items");
+    const lineItemsWrapper = document.querySelector(".cart-items_list");
+
     lineItems.forEach(lineItem =>{
       const popup = lineItem.querySelector(".cart-item-popup")
       const openPopup = lineItem.querySelector(".discounts__discount")
@@ -385,7 +386,7 @@
       })
     }
     })
-    button.addEventListener("click",function(){
+    button && button.addEventListener("click",function(){
       lineItemsWrapper.classList.toggle("cart-items_open")
       if(lineItemsWrapper.classList.contains("cart-items_open")){
         button.querySelector("span").textContent = "{{ 'general.cart.show_more_button_close' | t }}"
@@ -394,7 +395,7 @@
       }
     })
 
-    if(lineItemsWrapper.children.length <= 3){
+    if(lineItemsWrapper && lineItemsWrapper.children.length <= 3){
          lineItemsWrapper.classList.add("cart-items_open")
         button.style.display = "none" 
     }
@@ -403,10 +404,11 @@
   <script>
   (()=>{    
       const lastURL = sessionStorage.getItem('lastVisitedURL');
-      const buttons = document.querySelectorAll("[class*='button-continue_shoppings']")
+      const buttons = document.querySelectorAll("[class*='button-continue_shoppings']");
+
       if (lastURL) {
         buttons.forEach(button =>{
-          button.setAttribute("href",lastUrl)
+          button.setAttribute("href",lastURL)
         })
       } else {
                 buttons.forEach(button =>{

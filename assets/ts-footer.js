@@ -1,0 +1,1 @@
+document.querySelector(".ts-social__card p").addEventListener("click",(e=>{navigator.clipboard.writeText(window.location.href);const t=document.querySelector(".ts-footer__tooltip");t.style.display="block",setTimeout((()=>{t.setAttribute("open",!0)}),100),setTimeout((()=>{t.removeAttribute("open")}),1600),setTimeout((()=>{t.style.display="none"}),1700)}));

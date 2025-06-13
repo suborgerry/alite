@@ -1,0 +1,1 @@
+document.querySelectorAll(".ts-faq__question:not(.ts-faq__question--link)").forEach((t=>{t.addEventListener("click",(()=>{const e=t.nextElementSibling;t.classList.toggle("open"),e.style.maxHeight=t.classList.contains("open")?e.scrollHeight+"px":"0"}))}));

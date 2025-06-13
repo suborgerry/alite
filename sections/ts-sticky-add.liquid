@@ -4,48 +4,56 @@
 <div class="ts-sticky-add ">
   {% if product %}
     <div class="sticky-add__container">
-{% if template == "collection.american-states" or template == "collection.promo" or template == "collection.canada-cities" or template == "collection.australia-cities" or template == "product.product-new" %}      <div class="ts-discount-popup__drag"><p></p></div>
+      {% if template == "collection.american-states" or template == "collection.promo" or template == "collection.canada-cities" or template == "collection.australia-cities" or template == "product.product-new" %}
+        <div class="ts-discount-popup__drag">
+          <p></p>
+        </div>
       {% endif %}
       <div class="sticky-add_content_container">
-      <div class="sticky-add__price">
-        {% if product.compare_at_price and product.compare_at_price > product.price %}
-          {% assign hasCompare = ' has-compare' %}
-        {% endif %}
-        <span class="sticky-add__price-original{{ hasCompare }}" data-price="{{ product.price }}">
-          {{ product.price | money }}
-        </span>
-
-        {% if product.compare_at_price and product.compare_at_price > product.price %}
-          <span class="sticky-add__price-compare" data-price="{{ product.compare_at_price }}">
-            {{ product.compare_at_price | money }}
+        <div class="sticky-add__price">
+          {% if product.compare_at_price and product.compare_at_price > product.price %}
+            {% assign hasCompare = ' has-compare' %}
+          {% endif %}
+          <span class="sticky-add__price-original{{ hasCompare }}" data-price="{{ product.price }}">
+            {{ product.price | money }}
           </span>
-        {% endif %}
-      </div>
 
-      <div class="sticky-add__button">
-        {{ 'ts.products.add_cart' | t }}
-      </div>
+          {% if product.compare_at_price and product.compare_at_price > product.price %}
+            <span class="sticky-add__price-compare" data-price="{{ product.compare_at_price }}">
+              {{ product.compare_at_price | money }}
+            </span>
+          {% endif %}
         </div>
+
+        <div class="sticky-add__button">
+          {{ 'ts.products.add_cart' | t }}
+        </div>
+      </div>
       {% if template == "collection.american-states" or template == "collection.promo" or template == "collection.canada-cities" or template == "collection.australia-cities" or template == "product.product-new" %}
-      <div class="ts-discount-popup-container">
-        <div id="ts-discount-popup" class="ts-discount-popup">
-          <div class="ts-discount-popup__content">
-           <div class="ts-discount-popup__text">
-             <div style="display: flex; gap: 10px; align-items: center;">
-              <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 12.5C24 19.1274 18.6274 24.5 12 24.5C5.37258 24.5 0 19.1274 0 12.5C0 5.87258 5.37258 0.5 12 0.5C18.6274 0.5 24 5.87258 24 12.5Z" fill="#CE3040"/>
-                <path d="M8.625 12.25C7.9 12.25 7.28125 11.9938 6.76875 11.4813C6.25625 10.9688 6 10.35 6 9.625C6 8.9 6.25625 8.28125 6.76875 7.76875C7.28125 7.25625 7.9 7 8.625 7C9.35 7 9.96875 7.25625 10.4813 7.76875C10.9938 8.28125 11.25 8.9 11.25 9.625C11.25 10.35 10.9938 10.9688 10.4813 11.4813C9.96875 11.9938 9.35 12.25 8.625 12.25ZM8.625 10.75C8.9375 10.75 9.20325 10.6407 9.42225 10.4222C9.64125 10.2037 9.7505 9.938 9.75 9.625C9.7495 9.312 9.64025 9.0465 9.42225 8.8285C9.20425 8.6105 8.9385 8.501 8.625 8.5C8.3115 8.499 8.046 8.6085 7.8285 8.8285C7.611 9.0485 7.5015 9.314 7.5 9.625C7.4985 9.936 7.608 10.2017 7.8285 10.4222C8.049 10.6427 8.3145 10.752 8.625 10.75ZM15.375 19C14.65 19 14.0312 18.7438 13.5187 18.2313C13.0062 17.7188 12.75 17.1 12.75 16.375C12.75 15.65 13.0062 15.0312 13.5187 14.5187C14.0312 14.0062 14.65 13.75 15.375 13.75C16.1 13.75 16.7188 14.0062 17.2313 14.5187C17.7438 15.0312 18 15.65 18 16.375C18 17.1 17.7438 17.7188 17.2313 18.2313C16.7188 18.7438 16.1 19 15.375 19ZM15.375 17.5C15.6875 17.5 15.9532 17.3907 16.1722 17.1722C16.3912 16.9537 16.5005 16.688 16.5 16.375C16.4995 16.062 16.3903 15.7965 16.1722 15.5785C15.9542 15.3605 15.6885 15.251 15.375 15.25C15.0615 15.249 14.796 15.3585 14.5785 15.5785C14.361 15.7985 14.2515 16.064 14.25 16.375C14.2485 16.686 14.358 16.9517 14.5785 17.1722C14.799 17.3927 15.0645 17.502 15.375 17.5ZM6.525 18.475C6.3875 18.3375 6.31875 18.1625 6.31875 17.95C6.31875 17.7375 6.3875 17.5625 6.525 17.425L16.425 7.525C16.5625 7.3875 16.7375 7.31875 16.95 7.31875C17.1625 7.31875 17.3375 7.3875 17.475 7.525C17.6125 7.6625 17.6813 7.8375 17.6813 8.05C17.6813 8.2625 17.6125 8.4375 17.475 8.575L7.575 18.475C7.4375 18.6125 7.2625 18.6813 7.05 18.6813C6.8375 18.6813 6.6625 18.6125 6.525 18.475Z" fill="white"/>
-              </svg>
-              <span class="ts-discount-popup__discount-left"></span> 
+        <div class="ts-discount-popup-container">
+          <div id="ts-discount-popup" class="ts-discount-popup">
+            <div class="ts-discount-popup__content">
+              <div class="ts-discount-popup__text">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                  <svg
+                    width="24"
+                    height="25"
+                    viewBox="0 0 24 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 12.5C24 19.1274 18.6274 24.5 12 24.5C5.37258 24.5 0 19.1274 0 12.5C0 5.87258 5.37258 0.5 12 0.5C18.6274 0.5 24 5.87258 24 12.5Z" fill="#CE3040" />
+                    <path d="M8.625 12.25C7.9 12.25 7.28125 11.9938 6.76875 11.4813C6.25625 10.9688 6 10.35 6 9.625C6 8.9 6.25625 8.28125 6.76875 7.76875C7.28125 7.25625 7.9 7 8.625 7C9.35 7 9.96875 7.25625 10.4813 7.76875C10.9938 8.28125 11.25 8.9 11.25 9.625C11.25 10.35 10.9938 10.9688 10.4813 11.4813C9.96875 11.9938 9.35 12.25 8.625 12.25ZM8.625 10.75C8.9375 10.75 9.20325 10.6407 9.42225 10.4222C9.64125 10.2037 9.7505 9.938 9.75 9.625C9.7495 9.312 9.64025 9.0465 9.42225 8.8285C9.20425 8.6105 8.9385 8.501 8.625 8.5C8.3115 8.499 8.046 8.6085 7.8285 8.8285C7.611 9.0485 7.5015 9.314 7.5 9.625C7.4985 9.936 7.608 10.2017 7.8285 10.4222C8.049 10.6427 8.3145 10.752 8.625 10.75ZM15.375 19C14.65 19 14.0312 18.7438 13.5187 18.2313C13.0062 17.7188 12.75 17.1 12.75 16.375C12.75 15.65 13.0062 15.0312 13.5187 14.5187C14.0312 14.0062 14.65 13.75 15.375 13.75C16.1 13.75 16.7188 14.0062 17.2313 14.5187C17.7438 15.0312 18 15.65 18 16.375C18 17.1 17.7438 17.7188 17.2313 18.2313C16.7188 18.7438 16.1 19 15.375 19ZM15.375 17.5C15.6875 17.5 15.9532 17.3907 16.1722 17.1722C16.3912 16.9537 16.5005 16.688 16.5 16.375C16.4995 16.062 16.3903 15.7965 16.1722 15.5785C15.9542 15.3605 15.6885 15.251 15.375 15.25C15.0615 15.249 14.796 15.3585 14.5785 15.5785C14.361 15.7985 14.2515 16.064 14.25 16.375C14.2485 16.686 14.358 16.9517 14.5785 17.1722C14.799 17.3927 15.0645 17.502 15.375 17.5ZM6.525 18.475C6.3875 18.3375 6.31875 18.1625 6.31875 17.95C6.31875 17.7375 6.3875 17.5625 6.525 17.425L16.425 7.525C16.5625 7.3875 16.7375 7.31875 16.95 7.31875C17.1625 7.31875 17.3375 7.3875 17.475 7.525C17.6125 7.6625 17.6813 7.8375 17.6813 8.05C17.6813 8.2625 17.6125 8.4375 17.475 8.575L7.575 18.475C7.4375 18.6125 7.2625 18.6813 7.05 18.6813C6.8375 18.6813 6.6625 18.6125 6.525 18.475Z" fill="white" />
+                  </svg>
+                  <span class="ts-discount-popup__discount-left"></span>
+                </div>
+                <span class="ts-discount-popup__text-content">
+                  <span class="ts-discount-popup__highlight"></span>
+                </span>
               </div>
-              <span class="ts-discount-popup__text-content">
-                <span class="ts-discount-popup__highlight"></span>
-              </span>
             </div>
           </div>
         </div>
-      </div>
-         {% endif %}         
+      {% endif %}
     </div>
   {% endif %}
 </div>

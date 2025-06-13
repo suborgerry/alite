@@ -4,7 +4,7 @@
       position: sticky;
       top: 0;
       z-index: 3;
-      transition: top 0.15s ease-out; 
+      transition: top 0.15s ease-out;
     }
 
     body.show-header #shopify-section-{{ section.id }} {
@@ -14,7 +14,7 @@
     .ts-header__discount {
       width: 100%;
       padding: 6px 0;
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.06);
       background: #fff;
     }
 
@@ -54,7 +54,8 @@
       min-width: 10%;
       height: 10px;
       border-radius: 9px;
-      transition: width 0.5s, background 0.3s;
+      transition: width 0.5s
+      , background 0.3s;
     }
 
     .header-discount__bar.error .ts-bar span {
@@ -65,7 +66,7 @@
       background: #FFC001;
     }
 
-    .header-discount__bar.success .ts-bar span{
+    .header-discount__bar.success .ts-bar span {
       background: #48FA7A;
     }
 
@@ -99,16 +100,19 @@
     <div class="header-discount__container">
       <div class="header-discount__mesage-top {% if cart.item_count >= 10 %}final{% endif %}">
         <p class="header-discount__mesage">
-          {{ 'ts.bar.buy' | t}} <span class="header-discount__count">4</span><span style="display: none;" class="ts-header__more-text">{{ 'ts.bar.more' | t}}</span> {{ 'ts.bar.symbols' | t}}<span style="font-weight: bold; color: #f00;">{{ 'ts.bar.get' | t}}<span class="header-discount__pers">10</span>{{ 'ts.bar.off' | t}}</span>
+          {{ 'ts.bar.buy' | t }}
+          <span class="header-discount__count">4</span>
+          <span style="display: none;" class="ts-header__more-text">{{ 'ts.bar.more' | t }}</span>
+          {{ 'ts.bar.symbols' | t }}<span style="font-weight: bold; color: #f00;">{{ 'ts.bar.get' | t }}<span class="header-discount__pers">10</span>
+            {{ 'ts.bar.off' | t }}</span>
         </p>
         <p class="header-discount__mesage-final">
-          {{ 'ts.bar.congratulations' | t}}<strong>{{ 'ts.bar.discount' | t}}</strong>
+          {{ 'ts.bar.congratulations' | t }}<strong>{{ 'ts.bar.discount' | t }}</strong>
         </p>
       </div>
       <div class="header-discount__bar error">
         <div class="ts-bar">
-          <span>
-          </span>
+          <span></span>
         </div>
       </div>
     </div>

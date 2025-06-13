@@ -1,36 +1,33 @@
-
 {% schema %}
-{
-  "name": "Contact block",
-  "tag": "section",
-  "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "title",
-      "default":"💌 Contact us"
+  {
+    "name": "Contact block",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
     },
-    {
-      "type": "text",
-      "id": "text",
-      "label": "text",
-      "default":"How can we help you?"
-    },
-    {
-      "type": "text",
-      "id": "btn-text",
-      "label": "Button text",
-      "default":"Send message"
-    },
-  ],
-  "presets": [
-    {
-      "name": "Contact block"
-    }
-  ]
-}
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "title",
+        "default": "💌 Contact us"
+      }, {
+        "type": "text",
+        "id": "text",
+        "label": "text",
+        "default": "How can we help you?"
+      }, {
+        "type": "text",
+        "id": "btn-text",
+        "label": "Button text",
+        "default": "Send message"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Contact block"
+      }
+    ]
+  }
 {% endschema %}

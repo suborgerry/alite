@@ -63,10 +63,10 @@
       font-size: 18px;
     }
     .background-image_section {
-    margin-top: 100px;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+      margin-top: 100px;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
   }
   @media screen and (max-width: 990px) {
     .background-image_section {
@@ -115,44 +115,42 @@
   </div>
 </div>
 {% schema %}
-{
-  "name": "Background image-section",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title"
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "label": "Subtitle"
-    },
-    {
-      "type": "text",
-      "id": "text",
-      "label": "Text"
-    },
-    {
-      "type": "text",
-      "id": "btn_text",
-      "label": "Button text"
-    },
-    {
-      "type": "url",
-      "id": "btn_url",
-      "label": "Button link"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Background image-section"
-    }
-  ]
-}
+  {
+    "name": "Background image-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text"
+      }, {
+        "type": "text",
+        "id": "btn_text",
+        "label": "Button text"
+      }, {
+        "type": "url",
+        "id": "btn_url",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Background image-section"
+      }
+    ]
+  }
 {% endschema %}

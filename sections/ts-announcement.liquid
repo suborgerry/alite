@@ -19,7 +19,7 @@
       padding: 0 50px;
     }
 
-    .ts-announcement__content { 
+    .ts-announcement__content {
       height: 45px;
       display: flex;
       align-items: center;
@@ -79,7 +79,7 @@
 
     .ts-announcement__close:hover svg {
       transform: rotate(90deg);
-    } 
+    }
 
     @media screen and (max-width: 749px) {
       .ts-announcement .ts-container {
@@ -98,15 +98,29 @@
         <a href="{{ section.settings.btn_link }}" class="ts-announcement__link">
           <span>{{- section.settings.btn_label -}}</span>
           <span class="ts-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.5453 2.12256L3.54926 3.08624L8.32388 3.09951L0.881348 10.5421L1.57287 11.2319L9.01448 3.79024L9.0346 8.55801L9.99948 8.56077L9.97696 3.10402L9.98178 3.10466L9.97782 2.14099L3.5453 2.12256Z" fill="#4BFE85"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="13"
+              viewBox="0 0 12 13"
+              fill="none">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M3.5453 2.12256L3.54926 3.08624L8.32388 3.09951L0.881348 10.5421L1.57287 11.2319L9.01448 3.79024L9.0346 8.55801L9.99948 8.56077L9.97696 3.10402L9.98178 3.10466L9.97782 2.14099L3.5453 2.12256Z"
+                fill="#4BFE85" />
             </svg>
           </span>
         </a>
 
         <span class="ts-announcement__close">
-          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
-            <path d="M10 1.00714L8.99286 0L5 3.99286L1.00714 0L0 1.00714L3.99286 5L0 8.99286L1.00714 10L5 6.00714L8.99286 10L10 8.99286L6.00714 5L10 1.00714Z" fill="white"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="10"
+            height="10"
+            viewBox="0 0 10 10"
+            fill="none">
+            <path d="M10 1.00714L8.99286 0L5 3.99286L1.00714 0L0 1.00714L3.99286 5L0 8.99286L1.00714 10L5 6.00714L8.99286 10L10 8.99286L6.00714 5L10 1.00714Z" fill="white" />
           </svg>
         </span>
       </div>
@@ -147,8 +161,7 @@
         "id": "btn_label",
         "label": "Link label",
         "default": "Learn more"
-      },
-      {
+      }, {
         "type": "url",
         "id": "btn_link",
         "label": "Link url"

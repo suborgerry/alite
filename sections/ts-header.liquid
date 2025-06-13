@@ -1,15 +1,15 @@
 {{ "ts-header.css" | asset_url | stylesheet_tag }}
 
 <style>
-  
-  .language-line{
-    display:none;
+
+  .language-line {
+    display: none;
   }
-  .localeItem:hover svg{
-    display:block;
+  .localeItem:hover svg {
+    display: block;
   }
-  .language-container{
-   position: absolute;
+  .language-container {
+    position: absolute;
     top: -40px;
     display: grid;
     right: 11%;
@@ -21,13 +21,13 @@
     justify-content: center;
     border-radius: 5px;
     overflow: hidden;
-}
+  }
   .dropup {
     position: relative;
     display: inline-block;
-}
+  }
 
-.localeBtn {
+  .localeBtn {
     background-color: #000;
     color: white;
     padding: 5px 15px;
@@ -40,18 +40,18 @@
     text-transform: uppercase;
     justify-content: space-between;
     gap: 15px;
-}
+  }
 
-.localeBtn:hover {
+  .localeBtn:hover {
     border: 2px solid #4BFE85;
-}
+  }
 
-.localeBtn:active {
+  .localeBtn:active {
     border: 2px solid #4BFE85;
-}
+  }
 
-.dropup-content {
-    display:none;
+  .dropup-content {
+    display: none;
     z-index: 1;
     border-radius: 10px;
     background-color: rgb(0 0 0 / 60%);
@@ -59,31 +59,32 @@
     backdrop-filter: blur(10px);
     opacity: 0;
     transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease
+    , transform 0.3s ease;
     visibility: hidden;
-}
+  }
 
   .show1 + .dropup-content {
-    display:block;
+    display: block;
     opacity: 1;
     transform: translateY(0);
     visibility: visible;
     overflow: scroll;
     max-height: 72vh;
     scrollbar-width: none;
-}
+  }
   .language-svg-container svg {
-  transition:all 0.3s;
-    transform:rotate(180deg);
-}
-.show1 .language-svg-container svg {
-  transform:rotate(0deg);
-}
+    transition: all 0.3s;
+    transform: rotate(180deg);
+  }
+  .show1 .language-svg-container svg {
+    transform: rotate(0deg);
+  }
 
-.dropup-content a {
+  .dropup-content a {
     color: #ffffff;
     font-size: 16px;
-    padding: 10px 10px;
+    padding: 10px;
     display: block;
     text-align: center;
     display: flex;
@@ -92,7 +93,7 @@
     justify-content: center;
     flex-direction: column;
     text-decoration: none;
-}
+  }
 
   #shopify-section-{{ section.id }} {
     position: sticky;
@@ -101,8 +102,9 @@
     z-index: 15;
     transition: transform 0.3s;
   }
-  
-  #shopify-section-{{ section.id }}.ts-hide {
+
+  #shopify-section-{{ section.id }}
+  .ts-hide {
     transform: translateY(-55px);
   }
 
@@ -111,31 +113,39 @@
       .ts-header__top-content .ts-container {
         grid-template-columns: 220px 1fr 1fr 1fr 220px;
       }
-  
+
       .ts-header__controls {
         max-width: 220px;
       }
     }
   {% endif %}
-  .ts-header-none li::before{
-  content:none !important;
-}
-  
+  .ts-header-none li::before {
+    content: none !important;
+  }
+
 </style>
 
 <div class="ts-header">
   <div class="ts-header__top-content">
     <div class="ts-container">
       <div class="ts-header__menu-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="16"
+          viewBox="0 0 18 16"
+          fill="none">
           <g clip-path="url(#clip0_44_2242)">
-            <path d="M17 0H1C0.447715 0 0 0.447715 0 1C0 1.55228 0.447715 2 1 2H17C17.5523 2 18 1.55228 18 1C18 0.447715 17.5523 0 17 0Z" fill="#1D1E1E"/>
-            <path d="M17 7H1C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9H17C17.5523 9 18 8.55228 18 8C18 7.44772 17.5523 7 17 7Z" fill="#1D1E1E"/>
-            <path d="M17 14H1C0.447715 14 0 14.4477 0 15C0 15.5523 0.447715 16 1 16H17C17.5523 16 18 15.5523 18 15C18 14.4477 17.5523 14 17 14Z" fill="#1D1E1E"/>
+            <path d="M17 0H1C0.447715 0 0 0.447715 0 1C0 1.55228 0.447715 2 1 2H17C17.5523 2 18 1.55228 18 1C18 0.447715 17.5523 0 17 0Z" fill="#1D1E1E" />
+            <path d="M17 7H1C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9H17C17.5523 9 18 8.55228 18 8C18 7.44772 17.5523 7 17 7Z" fill="#1D1E1E" />
+            <path d="M17 14H1C0.447715 14 0 14.4477 0 15C0 15.5523 0.447715 16 1 16H17C17.5523 16 18 15.5523 18 15C18 14.4477 17.5523 14 17 14Z" fill="#1D1E1E" />
           </g>
           <defs>
             <clipPath id="clip0_44_2242">
-              <rect width="18" height="16" fill="white"/>
+              <rect
+                width="18"
+                height="16"
+                fill="white" />
             </clipPath>
           </defs>
         </svg>
@@ -150,16 +160,16 @@
       </a>
 
       {% if section.blocks.size > 0 %}
-        {% if template == "page.promo"  or template == "page.set-up" or template == "page.faq" %}
+        {% if template == "page.promo" or template == "page.set-up" or template == "page.faq" %}
           <div class="ts-switcher">
             {% for block in section.blocks %}
               {% if block.type == "switcher" %}
                 {% if request.path == block.settings.lang_link_1 %}
                   {% assign labelActive1 = "switcher__label--active" %}
                 {% elsif request.path == block.settings.lang_link_faq_1 %}
-                  {% assign labelActive1 = "switcher__label--active" %}                
+                  {% assign labelActive1 = "switcher__label--active" %}
                 {% elsif request.path == block.settings.lang_link_set_1 %}
-                  {% assign labelActive1 = "switcher__label--active" %}                
+                  {% assign labelActive1 = "switcher__label--active" %}
                 {% endif %}
 
                 {% if template == "page.promo" %}
@@ -183,9 +193,9 @@
                 {% if request.path == block.settings.lang_link_2 %}
                   {% assign labelActive2 = "switcher__label--active" %}
                 {% elsif request.path == block.settings.lang_link_faq_2 %}
-                  {% assign labelActive2 = "switcher__label--active" %}  
+                  {% assign labelActive2 = "switcher__label--active" %}
                 {% elsif request.path == block.settings.lang_link_set_2 %}
-                  {% assign labelActive2 = "switcher__label--active" %}                  
+                  {% assign labelActive2 = "switcher__label--active" %}
                 {% endif %}
 
                 {% if template == "page.promo" %}
@@ -212,45 +222,65 @@
 
       <div class="ts-header__controls">
         <a href="{{ section.settings.cart_url | default: routes.cart_url }}" class="ts-header__cart-mobile">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M17 6H3C2.44772 6 2 6.44772 2 7V18C2 18.5523 2.44772 19 3 19H17C17.5523 19 18 18.5523 18 18V7C18 6.44772 17.5523 6 17 6Z" stroke="#1D1E1E" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M14 8V5C14 2.79086 12.2091 1 10 1C7.79086 1 6 2.79086 6 5V8" stroke="#1D1E1E" stroke-width="2" stroke-linecap="round"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none">
+            <path
+              d="M17 6H3C2.44772 6 2 6.44772 2 7V18C2 18.5523 2.44772 19 3 19H17C17.5523 19 18 18.5523 18 18V7C18 6.44772 17.5523 6 17 6Z"
+              stroke="#1D1E1E"
+              stroke-width="2"
+              stroke-linejoin="round" />
+            <path
+              d="M14 8V5C14 2.79086 12.2091 1 10 1C7.79086 1 6 2.79086 6 5V8"
+              stroke="#1D1E1E"
+              stroke-width="2"
+              stroke-linecap="round" />
           </svg>
           <span class="ts-cart__bubble-mob"></span>
         </a>
 
         {% if shop.customer_accounts_enabled == false %}
-          <a href="{{ section.settings.account_url | default: routes.account_url }}">{{ 'ts.header.account' | t}}</a>
+          <a href="{{ section.settings.account_url | default: routes.account_url }}">{{ 'ts.header.account' | t }}</a>
         {% endif %}
 
-        <a href="{{ section.settings.cart_url | default: routes.cart_url }}" class="ts-header__cart">{{ 'ts.header.cart' | t}} <span class="ts-cart__bubble"></span></a>
+        <a href="{{ section.settings.cart_url | default: routes.cart_url }}" class="ts-header__cart">{{ 'ts.header.cart' | t }}
+          <span class="ts-cart__bubble"></span>
+        </a>
       </div>
     </div>
   </div>
 
-    <p style=display:none;>template : {{ template }}</p>
-              
-    <style>
-  {% if template == 'collection.promo-materials' or template == 'product.material-1' or template == 'product.material-new' or template == 'collection.folding-frame' or template == 'product.flipper-new-hard' or template == 'product.flipper-new' or template == 'product.flipper-new-both' or template == 'collection.blackout' 
+  <p style=display:none;>template : {{ template }}</p>
+
+  <style>
+    {% if template == 'collection.promo-materials' or template == 'product.material-1' or template == 'product.material-new' or template == 'collection.folding-frame' or template == 'product.flipper-new-hard' or template == 'product.flipper-new' or template == 'product.flipper-new-both' or template == 'collection.blackout' 
         or template == 'product.blackout-us2' or template =="index" or template == 'product.blackout-eu' or template == 'product.blackout-eu2' or template == 'collection.nanotapes' or template == 'product.nanotape-us' or template == 'product.nanotape-eu' or template == 'product.blackout' or template == 'page.partner' %}
-    .ts-header__discount.header-discount {
-      display: none;
-    }
-  {% endif %}
-</style>
+      .ts-header__discount.header-discount {
+        display: none;
+      }
+    {% endif %}
+  </style>
 
 
-  {% if template == "page.promo" or template == "page.set-up" or template == "page.faq" or template == "page.promo-new-york"%}
+  {% if template == "page.promo" or template == "page.set-up" or template == "page.faq" or template == "page.promo-new-york" %}
     <div class="ts-header__bottom-content">
       <div class="ts-container">
         <div class="ts-header__menu-mobile">
           <div class="ts-menu-mobile__label-container">
             <span class="ts-menu-mobile__label">
-              {{ 'ts.header.menu_label' | t}}
+              {{ 'ts.header.menu_label' | t }}
             </span>
             <span class="ts-menu-mobile__caret">
-              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
-                <path d="M13.1337 6.80025L9.5 10.4261L5.86625 6.80025L4.75 7.9165L9.5 12.6665L14.25 7.9165L13.1337 6.80025Z" fill="white"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="19"
+                height="19"
+                viewBox="0 0 19 19"
+                fill="none">
+                <path d="M13.1337 6.80025L9.5 10.4261L5.86625 6.80025L4.75 7.9165L9.5 12.6665L14.25 7.9165L13.1337 6.80025Z" fill="white" />
               </svg>
             </span>
           </div>
@@ -280,7 +310,10 @@
             {% endfor %}
           </ul>
         {% endif %}
-        <a href="#ts-numbers" data-scroll class="ts-header__menu-link ts-header__menu-link--additional">
+        <a
+          href="#ts-numbers"
+          data-scroll
+          class="ts-header__menu-link ts-header__menu-link--additional">
           {{ section.settings.add_label }}
         </a>
       </div>
@@ -288,211 +321,250 @@
   {% endif %}
 
 
-
-
-                  
   <div class="ts-header__drawer ts-drawer">
     <span class="ts-drawer__close">
-        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
-          <path d="M11.7332 34.8332L9.1665 32.2665L19.4332 21.9998L9.1665 11.7332L11.7332 9.1665L21.9998 19.4332L32.2665 9.1665L34.8332 11.7332L24.5665 21.9998L34.8332 32.2665L32.2665 34.8332L21.9998 24.5665L11.7332 34.8332Z" fill="white"/>
-        </svg>
-      </span>
-            
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="44"
+        height="44"
+        viewBox="0 0 44 44"
+        fill="none">
+        <path d="M11.7332 34.8332L9.1665 32.2665L19.4332 21.9998L9.1665 11.7332L11.7332 9.1665L21.9998 19.4332L32.2665 9.1665L34.8332 11.7332L24.5665 21.9998L34.8332 32.2665L32.2665 34.8332L21.9998 24.5665L11.7332 34.8332Z" fill="white" />
+      </svg>
+    </span>
 
 
-            
-           {% form "localization", id: "localization_form_tag", class: "dropup" %}
-             <div class="language-container">
-  <button class="localeBtn" id="localeToggle" lang="{{ form.current_locale.iso_code | split: '-' | last }}">
-    <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1975 17.947C11.2083 17.947 12.2093 17.7479 13.1432 17.3611C14.0771 16.9742 14.9257 16.4072 15.6405 15.6925C16.3552 14.9777 16.9222 14.1291 17.3091 13.1952C17.6959 12.2613 17.895 11.2604 17.895 10.2495C17.895 9.23865 17.6959 8.2377 17.3091 7.3038C16.9222 6.36989 16.3552 5.52133 15.6405 4.80655C14.9257 4.09177 14.0771 3.52477 13.1432 3.13794C12.2093 2.7511 11.2083 2.552 10.1975 2.552C8.156 2.552 6.19811 3.36299 4.75455 4.80655C3.31098 6.25011 2.5 8.208 2.5 10.2495C2.5 12.291 3.31098 14.2489 4.75455 15.6925C6.19811 17.136 8.156 17.947 10.1975 17.947ZM12.6892 3.8045C12.9892 4.127 13.26 4.50284 13.4975 4.917C13.9333 5.67117 14.2733 6.57534 14.4933 7.57534C14.8394 7.662 15.1633 7.75867 15.465 7.86534C16.0217 8.06284 16.5108 8.29617 16.8983 8.56534C16.6277 7.49341 16.1044 6.50186 15.3721 5.6736C14.6398 4.84534 13.7198 4.20444 12.6892 3.8045ZM16.9983 11.4678C16.5958 11.767 16.0708 12.0245 15.465 12.2387C15.1883 12.3364 14.8922 12.4259 14.5767 12.507C14.365 13.6737 13.9933 14.7237 13.4983 15.582C13.2709 15.9819 12.9995 16.355 12.6892 16.6945C13.7954 16.266 14.7727 15.5601 15.5274 14.6448C16.282 13.7295 16.7886 12.6354 16.9983 11.4678ZM7.70667 16.6945C7.396 16.3551 7.12431 15.9819 6.89667 15.582C6.4025 14.7237 6.03 13.6737 5.81833 12.507C5.51853 12.4303 5.22214 12.3408 4.93 12.2387C4.32417 12.0245 3.79917 11.767 3.39667 11.4678C3.60642 12.6354 4.11296 13.7295 4.86761 14.6448C5.62225 15.5601 6.60047 16.266 7.70667 16.6945ZM3.49583 8.5645C3.88333 8.29617 4.3725 8.06284 4.92917 7.86534C5.23083 7.75922 5.55472 7.66256 5.90083 7.57534C6.12083 6.57534 6.46083 5.67117 6.89583 4.917C7.12322 4.51715 7.39463 4.144 7.705 3.8045C6.67472 4.20458 5.75517 4.84545 5.0232 5.67354C4.29122 6.50164 3.76808 7.49291 3.4975 8.5645M12.8142 5.31034C13.155 5.902 13.4358 6.60534 13.6383 7.39034C12.6328 7.20918 11.6141 7.11052 10.5925 7.09534V3.42034C11.4075 3.57867 12.1908 4.22867 12.8142 5.31034ZM13.8175 8.23034C12.7555 8.01547 11.6759 7.89969 10.5925 7.8845V12.2195C11.7983 12.1962 12.9192 12.067 13.88 11.8612C13.9506 11.3434 13.9861 10.8062 13.9867 10.2495C13.9867 9.54534 13.9275 8.86784 13.8175 8.23034ZM9.8025 3.4195V7.0945C8.78114 7.11 7.76275 7.20894 6.7575 7.39034C6.95917 6.60534 7.24083 5.90117 7.58083 5.31034C8.20417 4.2295 8.9875 3.57867 9.8025 3.4195ZM9.8025 7.8845C8.71911 7.89969 7.63948 8.01547 6.5775 8.23034C6.46389 8.89737 6.40729 9.57286 6.40833 10.2495C6.40833 10.8053 6.445 11.3445 6.515 11.8603C7.47583 12.067 8.59667 12.1962 9.8025 12.2187V7.8845ZM5.19333 8.6095C5.36833 8.54839 5.5525 8.49006 5.74583 8.4345C5.59428 9.50175 5.57692 10.5838 5.69417 11.6553C5.51917 11.6037 5.35222 11.5501 5.19333 11.4945C4.56 11.2703 4.07667 11.0137 3.75833 10.7478C3.4375 10.4803 3.32917 10.2437 3.32917 10.052C3.32917 9.86034 3.4375 9.62367 3.75833 9.35617C4.07667 9.09034 4.56 8.83367 5.19333 8.61034M7.58083 15.1895C7.18167 14.4962 6.86417 13.6478 6.66 12.6962C7.60833 12.8787 8.675 12.9887 9.8025 13.0095V17.0803C8.9875 16.9212 8.20417 16.2712 7.58083 15.1895ZM10.5925 17.0795V13.0078C11.647 12.9923 12.6982 12.8875 13.735 12.6945C13.5317 13.647 13.2133 14.4945 12.8142 15.1878C12.1908 16.2687 11.4075 16.9203 10.5925 17.0795ZM14.7758 10.2495C14.7758 10.7295 14.7508 11.1981 14.7008 11.6553C14.8758 11.6042 15.0428 11.5506 15.2017 11.4945C15.835 11.2703 16.3183 11.0137 16.6367 10.7478C16.9575 10.4803 17.0658 10.2437 17.0658 10.052C17.0658 9.86034 16.9575 9.62367 16.6367 9.35617C16.3183 9.09034 15.835 8.83367 15.2017 8.61034C15.0267 8.54867 14.8425 8.49006 14.6492 8.4345C14.7325 9.01784 14.7767 9.62534 14.7767 10.2495" fill="white"/>
-    </svg>
-             <div style="display: flex; gap: 5px;">
-{{ form.current_locale.iso_code | split: '-' | last }}
-      {% if form.current_locale.iso_code == "en" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_12.png?v=1724255849&amp;width=100">
-                </div>
-        {% elsif form.current_locale.iso_code == "pt-BR" %}
-         <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_7.png?v=1724255310&amp;width=100">
-                </div>
-        {% elsif form.current_locale.iso_code == "it" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_15.png?v=1724255993&amp;width=100">
-                </div>
-        {% elsif form.current_locale.iso_code == "nl" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_8.png?v=1724255399&amp;width=100">
-                </div>
-        {% elsif form.current_locale.iso_code == "es" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_10.png?v=1724255656&amp;width=100">
-                </div>
-        {% elsif form.current_locale.iso_code == "de" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_14.png?v=1724255955&amp;width=100">
-                </div>
-        {% elsif form.current_locale.iso_code == "ru" %}
-        <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/ff4a1a0b4f24ddb42b0d9265c1c6dc03.png?v=1742378200">
-                </div>
-        {% elsif form.current_locale.iso_code == "et" %}
-        <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Estonia.png?v=1742305604">
-                </div>
-        {% elsif form.current_locale.iso_code == "ga" %}
-        <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Ireland.png?v=1742305605">
-                </div>
-        {% elsif form.current_locale.iso_code == "el" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_4.png?v=1724254886&amp;width=100">
-                </div>
-        {% elsif form.current_locale.iso_code == "bg" %}
-        <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Bulgaria.png?v=1742305604">
-                </div>
-        {% elsif form.current_locale.iso_code == "fr" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_1.png?v=1724254626&amp;width=100">
-                </div>
-        {% elsif form.current_locale.iso_code == "bs" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_3.png?v=1724254771&amp;width=100">
-                </div>
-        {% elsif form.current_locale.iso_code == "cs" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_13.png?v=1724255917&amp;width=100">
-                </div>
-        {% elsif form.current_locale.iso_code == "hi" %}
-        <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/India.png?v=1742305603">
-                </div>
-        {% elsif form.current_locale.iso_code == "hr" %}
-        <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Croatia.png?v=1742305604">
-                </div>
-        {% endif %}
-               </div> 
-      <div class = "language-svg-container" style="display: flex; align-items: center;">
-      <svg width="13" height="10" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 6L5.5 2L10 6" stroke="white" stroke-width="2"/>
-</svg>
-</div>
-</button>
-  <div class="dropup-content" id="localeMenu">
-    {% for locale in shop.published_locales %}
-      <a href="#" class="localeItem" lang="{{ locale.iso_code }}">
-        <div style="display: flex; gap: 5px;">
-        {{ locale.iso_code | split: '-' | last }}
-        {% if locale.iso_code == "en" %}
-           <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_12.png?v=1724255849&amp;width=100">
-                </div>
-        {% elsif locale.iso_code == "pt-BR" %}
-         <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_7.png?v=1724255310&amp;width=100">
-                </div>
-        {% elsif locale.iso_code == "it" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_15.png?v=1724255993&amp;width=100">
-                </div>
-        {% elsif locale.iso_code == "nl" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_8.png?v=1724255399&amp;width=100">
-                </div>
-        {% elsif locale.iso_code == "es" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_10.png?v=1724255656&amp;width=100">
-                </div>
-        {% elsif locale.iso_code == "de" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_14.png?v=1724255955&amp;width=100">
-                </div>
-        {% elsif locale.iso_code == "ru" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/ff4a1a0b4f24ddb42b0d9265c1c6dc03.png?v=1742378200">
-                </div>
-        {% elsif locale.iso_code == "et" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Estonia.png?v=1742305604">
-                </div>
-        {% elsif locale.iso_code == "ga" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Ireland.png?v=1742305605">
-                </div>
-        {% elsif locale.iso_code == "el" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_4.png?v=1724254886&amp;width=100">
-                </div>
-        {% elsif locale.iso_code == "bg" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Bulgaria.png?v=1742305604">
-                </div>
-        {% elsif locale.iso_code == "fr" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_1.png?v=1724254626&amp;width=100">
-                </div>
-        {% elsif locale.iso_code == "bs" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_3.png?v=1724254771&amp;width=100">
-                </div>
-        {% elsif locale.iso_code == "cs" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_13.png?v=1724255917&amp;width=100">
-                </div>
-        {% elsif locale.iso_code == "hi" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/India.png?v=1742305603">
-                </div>
-        {% elsif locale.iso_code == "hr" %}
-          <div class="language_img-container">
-                  <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Croatia.png?v=1742305604">
-                </div>
-        {% endif %}
-      </div>
-        <svg class="language-line" width="40" height="1" viewBox="0 0 34 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line x1="-4.37114e-08" y1="0.5" x2="40" y2="0.499997" stroke="#4BFE85"/>
-</svg>
-
-      </a>
-    {% endfor %}
-  </div>
-            
-  <input type="hidden" name="locale_code" value="{{ form.current_locale.iso_code }}" id="localeCode"/>
+    {% form "localization"
+      , id: "localization_form_tag"
+      , class: "dropup" %}
+      <div class="language-container">
+        <button
+          class="localeBtn"
+          id="localeToggle"
+          lang="{{ form.current_locale.iso_code | split: '-' | last }}">
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10.1975 17.947C11.2083 17.947 12.2093 17.7479 13.1432 17.3611C14.0771 16.9742 14.9257 16.4072 15.6405 15.6925C16.3552 14.9777 16.9222 14.1291 17.3091 13.1952C17.6959 12.2613 17.895 11.2604 17.895 10.2495C17.895 9.23865 17.6959 8.2377 17.3091 7.3038C16.9222 6.36989 16.3552 5.52133 15.6405 4.80655C14.9257 4.09177 14.0771 3.52477 13.1432 3.13794C12.2093 2.7511 11.2083 2.552 10.1975 2.552C8.156 2.552 6.19811 3.36299 4.75455 4.80655C3.31098 6.25011 2.5 8.208 2.5 10.2495C2.5 12.291 3.31098 14.2489 4.75455 15.6925C6.19811 17.136 8.156 17.947 10.1975 17.947ZM12.6892 3.8045C12.9892 4.127 13.26 4.50284 13.4975 4.917C13.9333 5.67117 14.2733 6.57534 14.4933 7.57534C14.8394 7.662 15.1633 7.75867 15.465 7.86534C16.0217 8.06284 16.5108 8.29617 16.8983 8.56534C16.6277 7.49341 16.1044 6.50186 15.3721 5.6736C14.6398 4.84534 13.7198 4.20444 12.6892 3.8045ZM16.9983 11.4678C16.5958 11.767 16.0708 12.0245 15.465 12.2387C15.1883 12.3364 14.8922 12.4259 14.5767 12.507C14.365 13.6737 13.9933 14.7237 13.4983 15.582C13.2709 15.9819 12.9995 16.355 12.6892 16.6945C13.7954 16.266 14.7727 15.5601 15.5274 14.6448C16.282 13.7295 16.7886 12.6354 16.9983 11.4678ZM7.70667 16.6945C7.396 16.3551 7.12431 15.9819 6.89667 15.582C6.4025 14.7237 6.03 13.6737 5.81833 12.507C5.51853 12.4303 5.22214 12.3408 4.93 12.2387C4.32417 12.0245 3.79917 11.767 3.39667 11.4678C3.60642 12.6354 4.11296 13.7295 4.86761 14.6448C5.62225 15.5601 6.60047 16.266 7.70667 16.6945ZM3.49583 8.5645C3.88333 8.29617 4.3725 8.06284 4.92917 7.86534C5.23083 7.75922 5.55472 7.66256 5.90083 7.57534C6.12083 6.57534 6.46083 5.67117 6.89583 4.917C7.12322 4.51715 7.39463 4.144 7.705 3.8045C6.67472 4.20458 5.75517 4.84545 5.0232 5.67354C4.29122 6.50164 3.76808 7.49291 3.4975 8.5645M12.8142 5.31034C13.155 5.902 13.4358 6.60534 13.6383 7.39034C12.6328 7.20918 11.6141 7.11052 10.5925 7.09534V3.42034C11.4075 3.57867 12.1908 4.22867 12.8142 5.31034ZM13.8175 8.23034C12.7555 8.01547 11.6759 7.89969 10.5925 7.8845V12.2195C11.7983 12.1962 12.9192 12.067 13.88 11.8612C13.9506 11.3434 13.9861 10.8062 13.9867 10.2495C13.9867 9.54534 13.9275 8.86784 13.8175 8.23034ZM9.8025 3.4195V7.0945C8.78114 7.11 7.76275 7.20894 6.7575 7.39034C6.95917 6.60534 7.24083 5.90117 7.58083 5.31034C8.20417 4.2295 8.9875 3.57867 9.8025 3.4195ZM9.8025 7.8845C8.71911 7.89969 7.63948 8.01547 6.5775 8.23034C6.46389 8.89737 6.40729 9.57286 6.40833 10.2495C6.40833 10.8053 6.445 11.3445 6.515 11.8603C7.47583 12.067 8.59667 12.1962 9.8025 12.2187V7.8845ZM5.19333 8.6095C5.36833 8.54839 5.5525 8.49006 5.74583 8.4345C5.59428 9.50175 5.57692 10.5838 5.69417 11.6553C5.51917 11.6037 5.35222 11.5501 5.19333 11.4945C4.56 11.2703 4.07667 11.0137 3.75833 10.7478C3.4375 10.4803 3.32917 10.2437 3.32917 10.052C3.32917 9.86034 3.4375 9.62367 3.75833 9.35617C4.07667 9.09034 4.56 8.83367 5.19333 8.61034M7.58083 15.1895C7.18167 14.4962 6.86417 13.6478 6.66 12.6962C7.60833 12.8787 8.675 12.9887 9.8025 13.0095V17.0803C8.9875 16.9212 8.20417 16.2712 7.58083 15.1895ZM10.5925 17.0795V13.0078C11.647 12.9923 12.6982 12.8875 13.735 12.6945C13.5317 13.647 13.2133 14.4945 12.8142 15.1878C12.1908 16.2687 11.4075 16.9203 10.5925 17.0795ZM14.7758 10.2495C14.7758 10.7295 14.7508 11.1981 14.7008 11.6553C14.8758 11.6042 15.0428 11.5506 15.2017 11.4945C15.835 11.2703 16.3183 11.0137 16.6367 10.7478C16.9575 10.4803 17.0658 10.2437 17.0658 10.052C17.0658 9.86034 16.9575 9.62367 16.6367 9.35617C16.3183 9.09034 15.835 8.83367 15.2017 8.61034C15.0267 8.54867 14.8425 8.49006 14.6492 8.4345C14.7325 9.01784 14.7767 9.62534 14.7767 10.2495"
+              fill="white" />
+          </svg>
+          <div style="display: flex; gap: 5px;">
+            {{ form.current_locale.iso_code | split: '-' | last }}
+            {% if form.current_locale.iso_code == "en" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_12.png?v=1724255849&amp;width=100">
               </div>
-{% endform %}
+            {% elsif form.current_locale.iso_code == "pt-BR" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_7.png?v=1724255310&amp;width=100">
+              </div>
+            {% elsif form.current_locale.iso_code == "it" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_15.png?v=1724255993&amp;width=100">
+              </div>
+            {% elsif form.current_locale.iso_code == "nl" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_8.png?v=1724255399&amp;width=100">
+              </div>
+            {% elsif form.current_locale.iso_code == "es" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_10.png?v=1724255656&amp;width=100">
+              </div>
+            {% elsif form.current_locale.iso_code == "de" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_14.png?v=1724255955&amp;width=100">
+              </div>
+            {% elsif form.current_locale.iso_code == "ru" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/ff4a1a0b4f24ddb42b0d9265c1c6dc03.png?v=1742378200">
+              </div>
+            {% elsif form.current_locale.iso_code == "et" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Estonia.png?v=1742305604">
+              </div>
+            {% elsif form.current_locale.iso_code == "ga" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Ireland.png?v=1742305605">
+              </div>
+            {% elsif form.current_locale.iso_code == "el" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_4.png?v=1724254886&amp;width=100">
+              </div>
+            {% elsif form.current_locale.iso_code == "bg" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Bulgaria.png?v=1742305604">
+              </div>
+            {% elsif form.current_locale.iso_code == "fr" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_1.png?v=1724254626&amp;width=100">
+              </div>
+            {% elsif form.current_locale.iso_code == "bs" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_3.png?v=1724254771&amp;width=100">
+              </div>
+            {% elsif form.current_locale.iso_code == "cs" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_13.png?v=1724255917&amp;width=100">
+              </div>
+            {% elsif form.current_locale.iso_code == "hi" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/India.png?v=1742305603">
+              </div>
+            {% elsif form.current_locale.iso_code == "hr" %}
+              <div class="language_img-container">
+                <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Croatia.png?v=1742305604">
+              </div>
+            {% endif %}
+          </div>
+          <div class="language-svg-container" style="display: flex; align-items: center;">
+            <svg
+              width="13"
+              height="10"
+              viewBox="0 0 11 7"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 6L5.5 2L10 6"
+                stroke="white"
+                stroke-width="2" />
+            </svg>
+          </div>
+        </button>
+        <div class="dropup-content" id="localeMenu">
+          {% for locale in shop.published_locales %}
+            <a
+              href="#"
+              class="localeItem"
+              lang="{{ locale.iso_code }}">
+              <div style="display: flex; gap: 5px;">
+                {{ locale.iso_code | split: '-' | last }}
+                {% if locale.iso_code == "en" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_12.png?v=1724255849&amp;width=100">
+                  </div>
+                {% elsif locale.iso_code == "pt-BR" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_7.png?v=1724255310&amp;width=100">
+                  </div>
+                {% elsif locale.iso_code == "it" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_15.png?v=1724255993&amp;width=100">
+                  </div>
+                {% elsif locale.iso_code == "nl" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_8.png?v=1724255399&amp;width=100">
+                  </div>
+                {% elsif locale.iso_code == "es" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_10.png?v=1724255656&amp;width=100">
+                  </div>
+                {% elsif locale.iso_code == "de" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_14.png?v=1724255955&amp;width=100">
+                  </div>
+                {% elsif locale.iso_code == "ru" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/ff4a1a0b4f24ddb42b0d9265c1c6dc03.png?v=1742378200">
+                  </div>
+                {% elsif locale.iso_code == "et" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Estonia.png?v=1742305604">
+                  </div>
+                {% elsif locale.iso_code == "ga" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Ireland.png?v=1742305605">
+                  </div>
+                {% elsif locale.iso_code == "el" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_4.png?v=1724254886&amp;width=100">
+                  </div>
+                {% elsif locale.iso_code == "bg" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Bulgaria.png?v=1742305604">
+                  </div>
+                {% elsif locale.iso_code == "fr" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_1.png?v=1724254626&amp;width=100">
+                  </div>
+                {% elsif locale.iso_code == "bs" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_3.png?v=1724254771&amp;width=100">
+                  </div>
+                {% elsif locale.iso_code == "cs" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="//alite.cc/cdn/shop/files/Frame_1_13.png?v=1724255917&amp;width=100">
+                  </div>
+                {% elsif locale.iso_code == "hi" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/India.png?v=1742305603">
+                  </div>
+                {% elsif locale.iso_code == "hr" %}
+                  <div class="language_img-container">
+                    <img class="small-card_img" src="https://cdn.shopify.com/s/files/1/0761/7943/9962/files/Croatia.png?v=1742305604">
+                  </div>
+                {% endif %}
+              </div>
+              <svg
+                class="language-line"
+                width="40"
+                height="1"
+                viewBox="0 0 34 1"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <line
+                  x1="-4.37114e-08"
+                  y1="0.5"
+                  x2="40"
+                  y2="0.499997"
+                  stroke="#4BFE85" />
+              </svg>
+
+            </a>
+          {% endfor %}
+        </div>
+
+        <input
+          type="hidden"
+          name="locale_code"
+          value="{{ form.current_locale.iso_code }}"
+          id="localeCode" />
+      </div>
+    {% endform %}
 
 
-  
-<script>
-  document.getElementById("localeToggle").addEventListener("click", function(event) {
-    event.preventDefault();
-    let button = document.querySelector(".localeBtn");
-    let arrow = document.querySelector(".localeBtn div svg"); 
-    button.classList.toggle("show1");
-  });
+    <script>
+        document.getElementById("localeToggle").addEventListener("click", function(event) {
+          event.preventDefault();
+          let button = document.querySelector(".localeBtn");
+          let arrow = document.querySelector(".localeBtn div svg"); 
+          button.classList.toggle("show1");
+        });
 
-  document.querySelectorAll(".localeItem").forEach(item => {
-    item.addEventListener("click", event => {
+        document.querySelectorAll(".localeItem").forEach(item => {
+          item.addEventListener("click", event => {
       event.preventDefault();
       document.getElementById("localeCode").value = item.getAttribute("lang");
       document.getElementById("localization_form_tag").submit();
-    });
-  });
+          });
+        });
 
-  document.addEventListener("click", function(event) {
-    let menu = document.getElementById("localeMenu");
-    let button1 = document.querySelector(".localeBtn");
-    let button = document.getElementById("localeToggle");
-    if (!button.contains(event.target) && !menu.contains(event.target)) {
+        document.addEventListener("click", function(event) {
+          let menu = document.getElementById("localeMenu");
+          let button1 = document.querySelector(".localeBtn");
+          let button = document.getElementById("localeToggle");
+          if (!button.contains(event.target) && !menu.contains(event.target)) {
       button1.classList.remove("show1");
-    }
-  });
-</script>
+          }
+        });
+    </script>
 
-            
+
     <nav class="ts-drawer__content">
       {% if section.settings.menu != blank %}
         <div class="ts-drawer__menu ts-drawer__menu-main">
@@ -528,7 +600,7 @@
               </div>
             {% endif %}
           {% endif %}
-          
+
 
           <ul class="ts-drawer__links ts-header-none">
             {% if template == "page.promo" or template == "page.promo-new-york" or template == "page.set-up" or template == "page.faq" %}
@@ -545,45 +617,66 @@
                     <span class="ts-drawer__label ts-drawer__label--top">{{ link.title }}</span>
                   </p>
                   <ul class="ts-drawer__links-nested">
-                    {% for childlink in link.links %}        
+                    {% for childlink in link.links %}
                       {% if childlink.links != blank %}
-                        <li class = "ts-drawer__link-middle">
-                        <div class="ts-drawer__link-middle-text">
-                          <span class="ts-underline">{{ childlink.title }}</span>
+                        <li class="ts-drawer__link-middle">
+                          <div class="ts-drawer__link-middle-text">
+                            <span class="ts-underline">{{ childlink.title }}</span>
                           </div>
-                        <ul class="bottom-nested-links">
-                        {% for childchildlink in childlink.links %}
-                          <li class="ts-drawer__link ts-drawer__link-second">                       
-                        <a href="{{childchildlink.url }}" class="">
-                          <span>{{ childchildlink.title }} <svg width="55" height="20" viewBox="0 0 54 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 6.59717C0.447715 6.59717 0 7.04488 0 7.59717C0 8.14945 0.447715 8.59717 1 8.59717V6.59717ZM41.7071 8.30427C42.0976 7.91375 42.0976 7.28059 41.7071 6.89006L35.3431 0.5261C34.9526 0.135576 34.3195 0.135576 33.9289 0.5261C33.5384 0.916625 33.5384 1.54979 33.9289 1.94031L39.5858 7.59717L33.9289 13.254C33.5384 13.6445 33.5384 14.2777 33.9289 14.6682C34.3195 15.0588 34.9526 15.0588 35.3431 14.6682L41.7071 8.30427ZM1 8.59717L41 8.59717V6.59717L1 6.59717V8.59717Z" fill="white"/>
-                        </svg></span>
-                          
-                        </a>
-                           
- 
-                      </li>
-                          {% endfor %}
-                        </ul>
-                      </li>
-                        {% else %}
-                        <li class="ts-drawer__link ">
-                        <a href="{{ childlink.url }}" {% if childlink.title == "Track your order" %} target="_blank" {% endif %}} class="">
-                          <span class="ts-underline" style="font-size: 30px;">{{ childlink.title }}</span>
-                          
-                        </a>
-                      </li>
-                        {% endif %}
+                          <ul class="bottom-nested-links">
+                            {% for childchildlink in childlink.links %}
+                              <li class="ts-drawer__link ts-drawer__link-second">
+                                <a href="{{childchildlink.url }}" class="">
+                                  <span>{{ childchildlink.title }}
+                                    <svg
+                                      width="55"
+                                      height="20"
+                                      viewBox="0 0 54 15"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M1 6.59717C0.447715 6.59717 0 7.04488 0 7.59717C0 8.14945 0.447715 8.59717 1 8.59717V6.59717ZM41.7071 8.30427C42.0976 7.91375 42.0976 7.28059 41.7071 6.89006L35.3431 0.5261C34.9526 0.135576 34.3195 0.135576 33.9289 0.5261C33.5384 0.916625 33.5384 1.54979 33.9289 1.94031L39.5858 7.59717L33.9289 13.254C33.5384 13.6445 33.5384 14.2777 33.9289 14.6682C34.3195 15.0588 34.9526 15.0588 35.3431 14.6682L41.7071 8.30427ZM1 8.59717L41 8.59717V6.59717L1 6.59717V8.59717Z" fill="white" />
+                                    </svg>
+                                  </span>
 
-                     
-                      
+                                </a>
+
+
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        </li>
+                      {% else %}
+                        <li class="ts-drawer__link ">
+                          <a
+                            href="{{ childlink.url }}"
+                            {% if childlink.title == "Track your order" %}
+                            target="_blank"
+                            {% endif %}
+                            }
+                            class="">
+                            <span class="ts-underline" style="font-size: 30px;">{{ childlink.title }}</span>
+
+                          </a>
+                        </li>
+                      {% endif %}
+
+
                     {% endfor %}
                   </ul>
                 {% else %}
                   <a href="{{ link.url }}">
                     <span class="ts-drawer__link-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="39" viewBox="0 0 36 39" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6359 6.36816L10.6478 9.2592L24.9716 9.29901L2.64404 31.6267L4.7186 33.6961L27.0434 11.3712L27.1038 25.6745L29.9984 25.6828L29.9309 9.31254L29.9453 9.31446L29.9334 6.42345L10.6359 6.36816Z" fill="#4BFE85"/>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="36"
+                        height="39"
+                        viewBox="0 0 36 39"
+                        fill="none">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M10.6359 6.36816L10.6478 9.2592L24.9716 9.29901L2.64404 31.6267L4.7186 33.6961L27.0434 11.3712L27.1038 25.6745L29.9984 25.6828L29.9309 9.31254L29.9453 9.31446L29.9334 6.42345L10.6359 6.36816Z"
+                          fill="#4BFE85" />
                       </svg>
                     </span>
                     <span class="ts-drawer__label ts-drawer__label--top">{{ link.title }}</span>
@@ -594,11 +687,9 @@
           </ul>
         </div>
       {% endif %}
-                    
-      
 
-     
-        {% if section.settings.menu-stickers != blank %}
+
+      {% if section.settings.menu-stickers != blank %}
         <div class="ts-drawer__menu ts-drawer__menu-stikers">
           {% if section.blocks.size > 0 %}
             {% if template == "page.promo" or template == "page.promo-new-york" or template == "page.set-up" or template == "page.faq" %}
@@ -616,7 +707,7 @@
                       {% endif %}
                       <span>{{ block.settings.lang_label_1 }}</span>
                     </a>
-      
+
                     {% if request.path == block.settings.lang_link_2 %}
                       {% assign labelActive2 = "switcher__label--active" %}
                     {% endif %}
@@ -633,7 +724,7 @@
               </div>
             {% endif %}
           {% endif %}
-          
+
 
           <ul class="ts-drawer__links ts-header-none">
             {% if template == "page.promo" or template == "page.promo-new-york" or template == "page.set-up" or template == "page.faq" %}
@@ -646,52 +737,78 @@
               <li class="ts-drawer__link-top">
                 {% if link.links != blank %}
                   <div class="back-button">
-                    <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M37 24.5C37.8284 24.5 38.5 23.8284 38.5 23C38.5 22.1716 37.8284 21.5 37 21.5L37 24.5ZM8.93934 21.9393C8.35355 22.5251 8.35355 23.4749 8.93934 24.0607L18.4853 33.6066C19.0711 34.1924 20.0208 34.1924 20.6066 33.6066C21.1924 33.0208 21.1924 32.0711 20.6066 31.4853L12.1213 23L20.6066 14.5147C21.1924 13.9289 21.1924 12.9792 20.6066 12.3934C20.0208 11.8076 19.0711 11.8076 18.4853 12.3934L8.93934 21.9393ZM37 21.5L10 21.5L10 24.5L37 24.5L37 21.5Z" fill="#4BFE85"/>
-</svg>
+                    <svg
+                      width="47"
+                      height="47"
+                      viewBox="0 0 47 47"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M37 24.5C37.8284 24.5 38.5 23.8284 38.5 23C38.5 22.1716 37.8284 21.5 37 21.5L37 24.5ZM8.93934 21.9393C8.35355 22.5251 8.35355 23.4749 8.93934 24.0607L18.4853 33.6066C19.0711 34.1924 20.0208 34.1924 20.6066 33.6066C21.1924 33.0208 21.1924 32.0711 20.6066 31.4853L12.1213 23L20.6066 14.5147C21.1924 13.9289 21.1924 12.9792 20.6066 12.3934C20.0208 11.8076 19.0711 11.8076 18.4853 12.3934L8.93934 21.9393ZM37 21.5L10 21.5L10 24.5L37 24.5L37 21.5Z" fill="#4BFE85" />
+                    </svg>
 
                     <span class="ts-drawer__label ts-drawer__label--top">{{ link.title }}</span>
                   </div>
                   <ul class="ts-drawer__links-nested ts-drawer__links-nested-stikers">
-                    {% for childlink in link.links %}        
+                    {% for childlink in link.links %}
                       {% if childlink.links != blank %}
-                        <li class = "ts-drawer__link-middle">
-                        <div class="ts-drawer__link-middle-text">
-                          <span class="ts-underline">{{ childlink.title }}</span>
-                 
-                          
-                        </div>
-                        <ul class="bottom-nested-links">
-                        {% for childchildlink in childlink.links %}
-                          <li class="ts-drawer__link ts-drawer__link-second">                       
-                        <a href="{{childchildlink.url }}" class="">
-                          <span>{{ childchildlink.title }} <svg width="55" height="20" viewBox="0 0 54 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 6.59717C0.447715 6.59717 0 7.04488 0 7.59717C0 8.14945 0.447715 8.59717 1 8.59717V6.59717ZM41.7071 8.30427C42.0976 7.91375 42.0976 7.28059 41.7071 6.89006L35.3431 0.5261C34.9526 0.135576 34.3195 0.135576 33.9289 0.5261C33.5384 0.916625 33.5384 1.54979 33.9289 1.94031L39.5858 7.59717L33.9289 13.254C33.5384 13.6445 33.5384 14.2777 33.9289 14.6682C34.3195 15.0588 34.9526 15.0588 35.3431 14.6682L41.7071 8.30427ZM1 8.59717L41 8.59717V6.59717L1 6.59717V8.59717Z" fill="white"/>
-</svg></span>
-                          
-                        </a>
-                      </li>
-                          {% endfor %}
-                        </ul>
-                      </li>
-                        {% else %}
-                        <li class="ts-drawer__link ">
-                        <a href="{{ childlink.url }}" {% if childlink.title == "Track your order" %} target="_blank" {% endif %}} class="">
-                          <span class="ts-underline" style="font-size: 30px;">{{ childlink.title }}</span>
-                          
-                        </a>
-                      </li>
-                        {% endif %}
+                        <li class="ts-drawer__link-middle">
+                          <div class="ts-drawer__link-middle-text">
+                            <span class="ts-underline">{{ childlink.title }}</span>
 
-                     
-                      
+
+                          </div>
+                          <ul class="bottom-nested-links">
+                            {% for childchildlink in childlink.links %}
+                              <li class="ts-drawer__link ts-drawer__link-second">
+                                <a href="{{childchildlink.url }}" class="">
+                                  <span>{{ childchildlink.title }}
+                                    <svg
+                                      width="55"
+                                      height="20"
+                                      viewBox="0 0 54 15"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M1 6.59717C0.447715 6.59717 0 7.04488 0 7.59717C0 8.14945 0.447715 8.59717 1 8.59717V6.59717ZM41.7071 8.30427C42.0976 7.91375 42.0976 7.28059 41.7071 6.89006L35.3431 0.5261C34.9526 0.135576 34.3195 0.135576 33.9289 0.5261C33.5384 0.916625 33.5384 1.54979 33.9289 1.94031L39.5858 7.59717L33.9289 13.254C33.5384 13.6445 33.5384 14.2777 33.9289 14.6682C34.3195 15.0588 34.9526 15.0588 35.3431 14.6682L41.7071 8.30427ZM1 8.59717L41 8.59717V6.59717L1 6.59717V8.59717Z" fill="white" />
+                                    </svg>
+                                  </span>
+
+                                </a>
+                              </li>
+                            {% endfor %}
+                          </ul>
+                        </li>
+                      {% else %}
+                        <li class="ts-drawer__link ">
+                          <a
+                            href="{{ childlink.url }}"
+                            {% if childlink.title == "Track your order" %}
+                            target="_blank"
+                            {% endif %}
+                            }
+                            class="">
+                            <span class="ts-underline" style="font-size: 30px;">{{ childlink.title }}</span>
+
+                          </a>
+                        </li>
+                      {% endif %}
+
+
                     {% endfor %}
                   </ul>
                 {% else %}
                   <a href="{{ link.url }}">
                     <span class="ts-drawer__link-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="39" viewBox="0 0 36 39" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.6359 6.36816L10.6478 9.2592L24.9716 9.29901L2.64404 31.6267L4.7186 33.6961L27.0434 11.3712L27.1038 25.6745L29.9984 25.6828L29.9309 9.31254L29.9453 9.31446L29.9334 6.42345L10.6359 6.36816Z" fill="#4BFE85"/>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="36"
+                        height="39"
+                        viewBox="0 0 36 39"
+                        fill="none">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M10.6359 6.36816L10.6478 9.2592L24.9716 9.29901L2.64404 31.6267L4.7186 33.6961L27.0434 11.3712L27.1038 25.6745L29.9984 25.6828L29.9309 9.31254L29.9453 9.31446L29.9334 6.42345L10.6359 6.36816Z"
+                          fill="#4BFE85" />
                       </svg>
                     </span>
                     <span class="ts-drawer__label ts-drawer__label--top">{{ link.title }}</span>
@@ -700,37 +817,34 @@
               </li>
             {% endfor %}
           </ul>
-                          {% if section.settings.menu_image_big != blank %}
-        <div class="ts-drawer__media ts-drawer__media--big">
-          {{ section.settings.menu_image_big | image_url: width: 600 | image_tag }}
+          {% if section.settings.menu_image_big != blank %}
+            <div class="ts-drawer__media ts-drawer__media--big">
+              {{ section.settings.menu_image_big | image_url: width: 600 | image_tag }}
+            </div>
+          {% endif %}
         </div>
       {% endif %}
-        </div>
-      {% endif %}
-                    
-     
 
-      
-      
-    </nav> 
+
+    </nav>
     <div style="position: relative; height: 100%;">
-       {% if section.settings.small_menu != blank %}
-         <nav>
-        <ul class="ts-drawer__menu-small ts-header-none">
-          {% for link in section.settings.small_menu.links %}
-            <li>
-              <a href="{{ link.url }}">
-                {{ link.title }}
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-         </nav>
+      {% if section.settings.small_menu != blank %}
+        <nav>
+          <ul class="ts-drawer__menu-small ts-header-none">
+            {% for link in section.settings.small_menu.links %}
+              <li>
+                <a href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
       {% endif %}
-     </div>
-    </div>   
-    </div>                                            
-     <script>
+    </div>
+  </div>
+</div>
+<script>
     document.addEventListener("DOMContentLoaded", function () {
     const headerDrawer = document.querySelector(".ts-drawer__content");
     const firstNestedLink = document.querySelector(".bottom-nested-links li:first-child");
@@ -768,12 +882,12 @@
             }, 400); // Задержка 300 мс перед возвратом
         });
     }
-});
+  });
 
 
 
 
-     </script>                     
+</script>
 <script>
   const bar = document.querySelector("[id*='ts_announcement']")
   if(bar){
@@ -891,9 +1005,9 @@
             }
         });
     });
-});
+  });
 
-document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     const menuBtn = document.querySelector(".ts-header__menu-btn");
     const drawerCloseBtn = document.querySelector(".ts-drawer__close");
     const widget = document.querySelector(".vfrc-widget");
@@ -909,7 +1023,7 @@ document.addEventListener("DOMContentLoaded", function () {
             widget.style.visibility = "visible";
         });
     }
-});
+  });
 
 
 
@@ -938,44 +1052,37 @@ document.addEventListener("DOMContentLoaded", function () {
         "type": "link_list",
         "id": "menu_promo",
         "label": "Opened menu link list (Promo)"
-      },
-      {
+      }, {
         "type": "link_list",
         "id": "menu",
         "label": "Opened menu link list (NOT Promo)"
-      },
-      {
+      }, {
         "type": "link_list",
         "id": "menu-stickers",
         "label": "Stikers menu"
-      },
-      {
+      }, {
         "type": "link_list",
         "id": "small_menu",
         "label": "Small menu link list"
-      },
-      {
+      }, {
         "type": "text",
         "id": "add_label",
         "label": "Buy button text",
         "default": "Buy"
-      },
-      {
+      }, {
         "type": "url",
         "id": "add_link",
         "label": "Buy button link"
-      },
-      {
+      }, {
         "type": "url",
         "id": "cart_url",
-        "label": "Cart url" 
-      },
-      {
+        "label": "Cart url"
+      }, {
         "type": "url",
         "id": "account_url",
-        "label": "Account url" 
+        "label": "Account url"
       }
-    ],  
+    ],
     "blocks": [
       {
         "type": "switcher",
@@ -1000,52 +1107,42 @@ document.addEventListener("DOMContentLoaded", function () {
             "type": "text",
             "id": "lang_label_short_1",
             "label": "Toggle short label"
-          },
-          {
+          }, {
             "type": "url",
             "id": "lang_link_1",
             "label": "Toggle link"
-          },
-          {
+          }, {
             "type": "url",
             "id": "lang_link_faq_1",
             "label": "Toggle link for FAQ page"
-          },
-          {
+          }, {
             "type": "url",
             "id": "lang_link_set_1",
             "label": "Toggle link for Set Up page"
-          },
-          {
+          }, {
             "type": "header",
             "content": "Toogle 2"
-          },
-          {
+          }, {
             "type": "image_picker",
             "id": "lang_icon_2",
             "label": "Country icon"
-          },
-          {
+          }, {
             "type": "text",
             "id": "lang_label_2",
             "label": "Toggle label"
-          },
-          {
+          }, {
             "type": "text",
             "id": "lang_label_short_2",
             "label": "Toggle short label"
-          },
-          {
+          }, {
             "type": "url",
             "id": "lang_link_2",
             "label": "Toggle link"
-          },
-          {
+          }, {
             "type": "url",
             "id": "lang_link_faq_2",
             "label": "Toggle link for FAQ page"
-          },
-          {
+          }, {
             "type": "url",
             "id": "lang_link_set_2",
             "label": "Toggle link for Set Up page"

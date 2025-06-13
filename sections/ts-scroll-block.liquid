@@ -4,7 +4,7 @@
 
 <style>
   .ts-scroll {
-    padding-top: 30px;    
+    padding-top: 30px;
     overflow-x: hidden;
 
   }
@@ -199,28 +199,33 @@
 
 <div class="ts-scroll">
   <div class="ts-scroll__container">
-    
-      <div class="ts-scroll__heading">
-        {% if section.settings.subtitle != blank %}
-          <p class="ts-scroll__subtitle">
-            {{ section.settings.subtitle }}
-          </p>
-        {% endif %}
 
-        {% if section.settings.title != blank %}
-          <h2 class="ts-scroll__title">
-            {{ section.settings.title }}
-          </h2>
-        {% endif %}
+    <div class="ts-scroll__heading">
+      {% if section.settings.subtitle != blank %}
+        <p class="ts-scroll__subtitle">
+          {{ section.settings.subtitle }}
+        </p>
+      {% endif %}
+
+      {% if section.settings.title != blank %}
+        <h2 class="ts-scroll__title">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+    </div>
+    <div class="ts-scroll__media-inner">
+      <div class="ts-scroll__media">
+        <video
+          playsinline="playsinline"
+          width="400x"
+          loop="loop"
+          muted="muted"
+          preload="metadata">
+          <source src="{{ section.settings.video.sources[1].url }}" type="video/mp4">
+        </video>
       </div>
-      <div class="ts-scroll__media-inner"> 
-        <div class="ts-scroll__media"> 
-          <video playsinline="playsinline" width="400x" loop="loop" muted="muted" preload="metadata">
-            <source src="{{ section.settings.video.sources[1].url }}" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    
+    </div>
+
 
     <div class="ts-scroll__blocks">
       {% for block in section.blocks %}
@@ -230,7 +235,10 @@
           </h3>
 
           <div class="scroll-block__animation">
-            <p class="scroll-block__description reveal-type" data-bg-color="#cccccc" data-fg-color="#000">
+            <p
+              class="scroll-block__description reveal-type"
+              data-bg-color="#cccccc"
+              data-fg-color="#000">
               {{ block.settings.description }}
             </p>
           </div>
@@ -363,8 +371,7 @@
         "type": "image_picker",
         "id": "image_1",
         "label": "Image for animation"
-      },
-      {
+      }, {
         "type": "image_picker",
         "id": "image_2",
         "label": "Image for animation"
@@ -379,8 +386,7 @@
             "type": "text",
             "id": "title",
             "label": "Title"
-          },
-          {
+          }, {
             "type": "text",
             "id": "description",
             "label": "Subtitle desktop",
@@ -394,5 +400,5 @@
         "name": "TS Scroll blocks"
       }
     ]
-  } 
+  }
 {% endschema %}

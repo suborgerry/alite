@@ -5,36 +5,41 @@
   {% if section.settings.title != blank %}
     <h2 class="ts-state-page__title">{{ section.settings.title }}</h2>
   {% endif %}
-     <input autocomplete="off" type="search" id="state-search" name="state-search" placeholder="{{ section.settings.select_placeholder }}" />
-    <div class="ts-state-page__options">
-      {% assign sortCollections = collections | sort : "title" %}
-      {% assign revesedCollections = sortCollections | reverse %}
-      {% for curCollection in sortCollections %}
-        {% for stateYearCol in revesedCollections  %}
-          {% if stateYearCol.metafields.custom.year_fitler_name %}
-            {% if stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.canada_filter_name and stateYearCol.metafields.custom.year_order == "1"%}
-                {% assign handle = stateYearCol.handle %}
-                {% break %}
-              {% elsif stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.canada_filter_name%}
-                {% assign handle = stateYearCol.handle %}
-                {% continue %}
-               {% else %}
-              {% unless handle %}
-                {% assign handle = curCollection.handle %}
-                {% endunless %}
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-        {% if curCollection.metafields.custom.canada_filter_name and curCollection.all_products_count > 0 %}
+  <input
+    autocomplete="off"
+    type="search"
+    id="state-search"
+    name="state-search"
+    placeholder="{{ section.settings.select_placeholder }}" />
+  <div class="ts-state-page__options">
+    {% assign sortCollections = collections | sort: "title" %}
+    {% assign revesedCollections = sortCollections | reverse %}
+    {% for curCollection in sortCollections %}
+      {% for stateYearCol in revesedCollections %}
+        {% if stateYearCol.metafields.custom.year_fitler_name %}
+          {% if stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.canada_filter_name and stateYearCol.metafields.custom.year_order == "1" %}
+            {% assign handle = stateYearCol.handle %}
+            {% break %}
+          {% elsif stateYearCol.metafields.custom.year_fitler_name == curCollection.metafields.custom.canada_filter_name %}
+            {% assign handle = stateYearCol.handle %}
+            {% continue %}
+          {% else %}
+            {% unless handle %}
+              {% assign handle = curCollection.handle %}
+            {% endunless %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      {% if curCollection.metafields.custom.canada_filter_name and curCollection.all_products_count > 0 %}
         <div class="ts-state-page__option" data-handle="{{ handle}}">
-          {{ curCollection.metafields.custom.canada_filter_name}}
+          {{ curCollection.metafields.custom.canada_filter_name }}
         </div>
       {% endif %}
-      {% endfor %}
-    </div>
+    {% endfor %}
   </div>
+</div>
 <script>
-document.addEventListener("DOMContentLoaded", (event) => {
+  document.addEventListener("DOMContentLoaded", (event) => {
   const search = document.querySelector("#state-search");
   const optionsContainer = document.querySelector(".ts-state-page__options");
   search.addEventListener("click",function(){
@@ -61,7 +66,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       }
     })
   }, 1);
-});
+  });
 
   });
 </script>
@@ -75,14 +80,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
         "id": "title",
         "label": "Title",
         "default": "Choose your city!"
-      },
-      {
+      }, {
         "type": "text",
         "id": "select_placeholder",
         "label": "Select",
         "default": "City"
-      },
-      {
+      }, {
         "type": "collection",
         "id": "collection",
         "label": "Collection connected"
@@ -93,5 +96,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
         "name": "TS Canada"
       }
     ]
-  } 
+  }
 {% endschema %}
