@@ -339,6 +339,7 @@
       , class: "dropup" %}
       <div class="language-container">
         <button
+          aria-label="locale button"
           class="localeBtn"
           id="localeToggle"
           lang="{{ form.current_locale.iso_code | split: '-' | last }}">
